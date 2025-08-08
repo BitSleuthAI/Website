@@ -1,0 +1,41 @@
+// src/app/wallet/page.tsx
+"use client";
+
+import { useState } from 'react';
+import { Header } from '@/components/landing/Header';
+import { Footer } from '@/components/landing/Footer';
+import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
+import { TermsOfServiceModal } from '@/components/landing/TermsOfServiceModal';
+import { WalletHeroSection } from '@/components/landing/WalletHeroSection';
+import { WalletFeaturesSection } from '@/components/landing/WalletFeaturesSection';
+import { WalletHowItWorksSection } from '@/components/landing/WalletHowItWorksSection';
+import { WalletFaqSection } from '@/components/landing/WalletFaqSection';
+import { WalletAboutSection } from '@/components/landing/WalletAboutSection';
+
+export default function WalletPage() {
+  const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
+
+  const openPrivacyModal = () => setActiveModal('privacy');
+  const openTermsModal = () => setActiveModal('terms');
+  const closeModal = () => setActiveModal(null);
+
+  return (
+    <div className="flex flex-col min-h-dvh bg-background overflow-x-hidden">
+      <Header basePath="/wallet" />
+      <main className="flex-1">
+        <WalletHeroSection />
+        <WalletFeaturesSection />
+        <WalletHowItWorksSection />
+        <WalletFaqSection />
+        <WalletAboutSection />
+      </main>
+      <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />
+      <PrivacyPolicyModal isOpen={activeModal === 'privacy'} onOpenChange={closeModal} />
+      <TermsOfServiceModal 
+        isOpen={activeModal === 'terms'} 
+        onOpenChange={closeModal}
+        onPrivacyClick={openPrivacyModal} 
+      />
+    </div>
+  );
+}
