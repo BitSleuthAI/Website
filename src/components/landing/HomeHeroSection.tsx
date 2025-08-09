@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export function HomeHeroSection() {
   return (
-    <section className="w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-background to-black text-foreground">
+    <section className="w-full py-20 md:py-32 lg:py-40 bg-gradient-to-br from-background to-muted dark:to-black text-foreground">
       <div className="container max-w-4xl mx-auto text-center px-4 md:px-6">
         <div className="space-y-6">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
