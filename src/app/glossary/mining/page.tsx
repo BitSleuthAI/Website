@@ -31,7 +31,7 @@ export default function MiningGlossaryPage() {
             </Link>
           </Button>
           <article className="prose prose-invert max-w-none">
-            <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h1 className="text-4xl font-bold mb-4 text-gradient-title">
               What Is Mining?
             </h1>
             <p className="text-lg text-muted-foreground font-normal">
@@ -71,14 +71,14 @@ export default function MiningGlossaryPage() {
                 </div>
             </div>
             
-            <h2 className="text-3xl font-bold mt-12 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-title">
               A Global Competition
             </h2>
             <p className="text-muted-foreground font-normal">
              Mining is performed by a decentralized network of participants all over the world. This distribution of power is fundamental to Bitcoin's value proposition, ensuring no single entity can control the network or censor transactions.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-title">
               Mining Approaches: Pooled vs. Solo
             </h2>
             <p className="text-muted-foreground font-normal">

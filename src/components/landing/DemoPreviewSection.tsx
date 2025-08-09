@@ -6,7 +6,7 @@ export function DemoPreviewSection() {
   return (
     <section className="w-full py-20 md:py-24 lg:py-32 bg-primary/10">
       <div className="container max-w-4xl mx-auto text-center px-4 md:px-6">
-        <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">Try It Yourself</h2>
+        <h2 className="text-3xl font-bold mb-6 text-gradient-title">Try It Yourself</h2>
         <div className="flex justify-center gap-4 mb-8">
           <Button asChild size="lg">
             <a href="https://app.bitsleuth.ai/">Try Live App</a>

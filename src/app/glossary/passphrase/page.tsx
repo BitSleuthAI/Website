@@ -31,7 +31,7 @@ export default function PassphraseGlossaryPage() {
             </Link>
           </Button>
           <article className="prose prose-invert max-w-none">
-            <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h1 className="text-4xl font-bold mb-4 text-gradient-title">
               What Is a Passphrase? Understanding Your Wallet&apos;s Most Important Security Feature
             </h1>
             <p className="text-lg text-muted-foreground font-normal">
@@ -63,7 +63,7 @@ export default function PassphraseGlossaryPage() {
               or 24 words, making it compatible with most major wallets.
             </p>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-title">
               Why Your Crypto Passphrase Matters
             </h2>
             <p className="text-muted-foreground font-normal">
@@ -94,7 +94,7 @@ export default function PassphraseGlossaryPage() {
               </ul>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-title">
               Your Crypto, Your Responsibility
             </h2>
             <p className="text-muted-foreground font-normal">

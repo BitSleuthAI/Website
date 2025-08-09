@@ -51,13 +51,13 @@ export default function PrivacyPolicyPage() {
               Policy.
             </p>
 
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">1. Who We Are</h3>
+            <h3 className="text-xl font-bold text-gradient-title">1. Who We Are</h3>
             <p className="font-normal">
               BitSleuth is a technology company focused on Bitcoin analytics and wallet services. We
               operate with a privacy-first mindset, especially within our wallet platform.
             </p>
 
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">2. What Data We Collect</h3>
+            <h3 className="text-xl font-bold text-gradient-title">2. What Data We Collect</h3>
             <p className="font-normal">We collect limited data to support our services:</p>
             <p className="font-semibold">
               <strong>On <a href="https://www.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.bitsleuth.ai</a> and <a href="https://app.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">app.bitsleuth.ai</a>:</strong>
@@ -77,7 +77,7 @@ export default function PrivacyPolicyPage() {
               </li>
             </ul>
 
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">3. How We Use Your Information</h3>
+            <h3 className="text-xl font-bold text-gradient-title">3. How We Use Your Information</h3>
             <p className="font-normal">We only use your information for the following purposes:</p>
             <ul className="list-disc pl-6 font-normal">
               <li>To understand how our website and analytics app are used.</li>
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
               <li>Collect payment data or use third-party crypto exchange services.</li>
             </ul>
 
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">4. Cookies</h3>
+            <h3 className="text-xl font-bold text-gradient-title">4. Cookies</h3>
             <p className="font-normal">
               We use cookies solely for analytics purposes on <a href="https://www.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.bitsleuth.ai</a> and <a href="https://app.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">app.bitsleuth.ai</a>. These help us understand how users interact with our site so we can
               improve it.
@@ -100,7 +100,7 @@ export default function PrivacyPolicyPage() {
               You can opt out of Google Analytics tracking by using Google’s opt-out browser add-on.
             </p>
 
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">5. Data Storage and Retention</h3>
+            <h3 className="text-xl font-bold text-gradient-title">5. Data Storage and Retention</h3>
             <p className="font-normal">
               Google Analytics data is stored securely by Google and retained in accordance with
               their policies.
@@ -111,7 +111,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="font-normal">We do not store or retain personal data from <a href="https://wallet.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">wallet.bitsleuth.ai</a>.</p>
 
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">6. Your Rights</h3>
+            <h3 className="text-xl font-bold text-gradient-title">6. Your Rights</h3>
             <p className="font-normal">
               Depending on your location, you may have rights under applicable data protection laws,
               such as:
@@ -131,21 +131,21 @@ export default function PrivacyPolicyPage() {
               </a>
             </p>
 
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">7. Data Security</h3>
+            <h3 className="text-xl font-bold text-gradient-title">7. Data Security</h3>
             <p className="font-normal">
               We take appropriate technical and organisational measures to protect any personal data
               we do hold. However, no internet transmission is ever 100% secure, so we cannot
               guarantee absolute security.
             </p>
 
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">8. Changes to This Policy</h3>
+            <h3 className="text-xl font-bold text-gradient-title">8. Changes to This Policy</h3>
             <p className="font-normal">
               We may update this Privacy Policy from time to time. Any changes will be posted on
               our site, and the updated policy will be here.
             </p>
             <p className="font-normal">We encourage you to check this page periodically.</p>
 
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">9. Contact Us</h3>
+            <h3 className="text-xl font-bold text-gradient-title">9. Contact Us</h3>
             <p className="font-normal">
               If you have any questions or concerns about this Privacy Policy, please get in touch
               at:

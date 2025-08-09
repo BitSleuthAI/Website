@@ -31,7 +31,7 @@ export default function BtcGlossaryPage() {
             </Link>
           </Button>
           <article className="prose prose-invert max-w-none">
-            <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h1 className="text-4xl font-bold mb-4 text-gradient-title">
               What Is BTC?
             </h1>
             <p className="text-lg text-muted-foreground font-normal">

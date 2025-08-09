@@ -30,12 +30,12 @@ export default function TransactionPrivacyGlossaryPage() {
             </Link>
           </Button>
           <article className="prose prose-invert max-w-none">
-            <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h1 className="text-4xl font-bold mb-4 text-gradient-title">
               Understanding Bitcoin Anonymity
             </h1>
             
             <div className="mt-8">
-              <h2 className="text-2xl font-bold flex items-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+              <h2 className="text-2xl font-bold flex items-center text-gradient-title">
                 <Fingerprint className="mr-3 h-7 w-7 text-primary" />
                 On-Chain Privacy
               </h2>
@@ -48,7 +48,7 @@ export default function TransactionPrivacyGlossaryPage() {
             </div>
 
             <div className="mt-12">
-              <h2 className="text-2xl font-bold flex items-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+              <h2 className="text-2xl font-bold flex items-center text-gradient-title">
                 <ShieldCheck className="mr-3 h-7 w-7 text-primary" />
                 IP Address Privacy
               </h2>

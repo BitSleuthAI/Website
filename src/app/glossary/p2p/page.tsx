@@ -31,7 +31,7 @@ export default function P2PGlossaryPage() {
             </Link>
           </Button>
           <article className="prose prose-invert max-w-none">
-            <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h1 className="text-4xl font-bold mb-4 text-gradient-title">
               What Is P2P (Peer-to-Peer)?
             </h1>
             <p className="text-lg text-muted-foreground font-normal">
@@ -71,7 +71,7 @@ export default function P2PGlossaryPage() {
                 </div>
             </div>
             
-            <h2 className="text-3xl font-bold mt-12 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-title">
               The Foundation of Decentralization
             </h2>
             <p className="text-muted-foreground font-normal">

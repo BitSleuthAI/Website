@@ -31,7 +31,7 @@ export default function PrivateKeyGlossaryPage() {
             </Link>
           </Button>
           <article className="prose prose-invert max-w-none">
-            <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h1 className="text-4xl font-bold mb-4 text-gradient-title">
               What Is a Private Key?
             </h1>
             <p className="text-lg text-muted-foreground font-normal">
@@ -50,7 +50,7 @@ export default function PrivateKeyGlossaryPage() {
               </CardContent>
             </Card>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-title">
               Private Key vs. Passphrase
             </h2>
             <p className="text-muted-foreground font-normal">

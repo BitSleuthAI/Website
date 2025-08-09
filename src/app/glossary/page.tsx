@@ -124,7 +124,7 @@ export default function GlossaryIndexPage() {
                 Back to Home
             </Link>
           </Button>
-          <h1 className="text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-white">
+          <h1 className="text-4xl font-bold mb-8 text-gradient-title">
             Glossary
           </h1>
           <div className="space-y-6">
