@@ -7,3 +7,6 @@ runConfig:
   maxInstances: 1
 
 # Environment variables and secrets
+env:
+  - variable: NEXT_PUBLIC_GA_MEASUREMENT_ID
+    secret: NEXT_PUBLIC_GA_MEASUREMENT_ID
