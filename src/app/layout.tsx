@@ -9,6 +9,8 @@ import { CookieConsent } from '@/components/landing/CookieConsent';
 import { ThemeProvider } from '@/components/theme-provider';
 import { useEffect, useState }from 'react';
 
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-RPS0XSGWJ5';
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -44,18 +46,18 @@ export default function RootLayout({
         <title>BitSleuth | AI-Powered Bitcoin Wallet Analysis</title>
         <meta name="description" content="Analyze Bitcoin wallets like a pro. BitSleuth offers AI-powered insights, transaction visualization, and OPSEC risk detection for any BTC address." />
         <meta name="color-scheme" content="light dark" />
-        {analyticsAllowed && (
+        {analyticsAllowed && GA_MEASUREMENT_ID && (
           <>
             <Script
               strategy="afterInteractive"
-              src="https://www.googletagmanager.com/gtag/js?id=G-RPS0XSGWJ5"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
             />
             <Script id="google-analytics" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-RPS0XSGWJ5');
+                gtag('config', '${GA_MEASUREMENT_ID}');
               `}
             </Script>
           </>
