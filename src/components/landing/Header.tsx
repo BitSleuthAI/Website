@@ -102,14 +102,14 @@ export function Header({ basePath = '' }: HeaderProps) {
                 </a>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <a href="https://wallet.bitsleuth.ai/" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Link href="/wallet" className="w-full">
                   <div className="flex items-start gap-3">
                       <Lock className="h-5 w-5 mt-1 text-primary" />
                       <div>
                           <p className="font-semibold">Privacy Wallet</p>
                       </div>
                   </div>
-                </a>
+                </Link>
               </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -154,9 +154,9 @@ export function Header({ basePath = '' }: HeaderProps) {
                       </a>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <a href="https://wallet.bitsleuth.ai/" target="_blank" rel="noopener noreferrer" className="w-full font-medium">
+                      <Link href="/wallet" className="w-full font-medium">
                         Privacy Wallet
-                      </a>
+                      </Link>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
