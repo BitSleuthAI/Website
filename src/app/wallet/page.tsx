@@ -8,6 +8,10 @@ import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
 import { TermsOfServiceModal } from '@/components/landing/TermsOfServiceModal';
 import { WalletHeroSection } from '@/components/landing/WalletHeroSection';
 import { WalletFeaturesSection } from '@/components/landing/WalletFeaturesSection';
+import { WalletSecuritySection } from '@/components/landing/WalletSecuritySection';
+import { WalletBuiltForBitcoinersSection } from '@/components/landing/WalletBuiltForBitcoinersSection';
+import { WalletSeamlessExperienceSection } from '@/components/landing/WalletSeamlessExperienceSection';
+import { WalletWaitlistSection } from '@/components/landing/WalletWaitlistSection';
 import { WalletHowItWorksSection } from '@/components/landing/WalletHowItWorksSection';
 import { WalletFaqSection } from '@/components/landing/WalletFaqSection';
 import { WalletAboutSection } from '@/components/landing/WalletAboutSection';
@@ -25,8 +29,12 @@ export default function WalletPage() {
       <main className="flex-1">
         <WalletHeroSection />
         <WalletFeaturesSection />
+        <WalletSecuritySection />
+        <WalletBuiltForBitcoinersSection />
+        <WalletSeamlessExperienceSection />
         <WalletHowItWorksSection />
         <WalletFaqSection />
+        <WalletWaitlistSection />
         <WalletAboutSection />
       </main>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />
