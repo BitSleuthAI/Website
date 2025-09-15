@@ -28,7 +28,7 @@ export function HeroSection() {
       <div className="container max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center px-4 md:px-6">
         <div className="space-y-6">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-gradient-title">
-            Analyze Bitcoin Wallets Like a Pro
+            BitSleuth Analyzer: Analyze Bitcoin Wallets Like a Pro
           </h1>
           <p className="text-lg text-muted-foreground md:text-xl font-normal">
             Visualize transactions, trace flows, and spot OPSEC risks with AI-powered insights. Advanced analytics, visualized insights, and total transparency.
