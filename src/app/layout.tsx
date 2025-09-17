@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="!scroll-smooth">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no, minimal-ui" />
         <title>BitSleuth | AI-Powered Bitcoin Wallet Analysis</title>
         <meta name="description" content="Analyze Bitcoin wallets like a pro. BitSleuth offers AI-powered insights, transaction visualization, and OPSEC risk detection for any BTC address." />
         <meta name="color-scheme" content="light dark" />

@@ -9,9 +9,9 @@ import Link from "next/link";
 
 export function HomeHeroSection() {
   return (
-    <section className="w-full py-20 md:py-24 lg:py-32 bg-gradient-to-br from-background to-muted dark:to-black text-foreground relative overflow-hidden">
+    <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-gradient-to-br from-background to-muted dark:to-black text-foreground relative overflow-hidden">
       <BackgroundBeams />
-      <div className="w-full max-w-4xl mx-auto text-center px-4 md:px-6 relative z-10" style={{ paddingLeft: 'max(1rem, env(safe-area-inset-left))', paddingRight: 'max(1rem, env(safe-area-inset-right))' }}>
+      <div className="w-full max-w-4xl mx-auto text-center px-4 md:px-6 relative z-10">
         <div className="space-y-6">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-gradient-title">
             One Brand. Two Powerful Bitcoin Tools.

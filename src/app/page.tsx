@@ -18,9 +18,9 @@ export default function Home() {
   const closeModal = () => setActiveModal(null);
 
   return (
-    <div className="flex flex-col min-h-dvh bg-background overflow-x-hidden w-full">
+    <div className="flex flex-col min-h-screen bg-background">
       <Header />
-      <main className="flex-1 w-full">
+      <main className="flex-1">
         <HomeHeroSection />
         <AboutSection />
       </main>
