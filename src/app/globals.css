@@ -178,6 +178,15 @@
     position: relative;
   }
   
+  /* Mobile: Add padding to account for sticky header and footer */
+  @media (max-width: 768px) {
+    main {
+      /* Add padding for sticky header and footer */
+      padding-top: calc(4rem + env(safe-area-inset-top));
+      padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+    }
+  }
+  
   /* Full-width sections for edge-to-edge layout */
   .edge-to-edge-section {
     width: 100vw;
@@ -185,6 +194,16 @@
     margin-right: calc(-50vw + 50%);
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Mobile edge-to-edge header */
+  @media (max-width: 768px) {
+    .edge-to-edge-section {
+      /* Extend to true edge on mobile */
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      width: 100vw;
+    }
   }
   
   /* Regular sections maintain normal width */
@@ -216,6 +235,46 @@
     body {
       -webkit-text-size-adjust: 100%;
       -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Mobile header and footer animations */
+    header {
+      will-change: top, padding-top;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    
+    footer {
+      will-change: transform, bottom;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    
+    /* Header scrolled state */
+    header.scrolled {
+      top: 0 !important;
+      padding-top: calc(1rem + env(safe-area-inset-top)) !important;
+    }
+    
+    /* Footer visibility states */
+    footer.visible {
+      transform: translateY(0) !important;
+    }
+    
+    footer.hidden {
+      transform: translateY(100%) !important;
+    }
+    
+    /* Smooth scrolling for mobile */
+    html {
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+    
+    /* Prevent bounce on iOS */
+    body {
+      overscroll-behavior-y: none;
+      -webkit-overflow-scrolling: touch;
     }
   }
   
@@ -261,6 +320,49 @@
   
   body {
     background: hsl(var(--background));
+  }
+  
+  /* Mobile-specific viewport and safe area handling */
+  @media (max-width: 768px) {
+    /* Ensure content extends behind device UI for true edge-to-edge */
+    html {
+      background: hsl(var(--background));
+      /* Remove padding to go truly edge-to-edge */
+      padding: 0;
+    }
+    
+    body {
+      background: hsl(var(--background));
+      /* Remove padding to go truly edge-to-edge */
+      padding: 0;
+    }
+    
+    /* Smooth header/footer transitions */
+    header, footer {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Header and footer visibility states */
+    header.visible {
+      transform: translateY(0) !important;
+    }
+    
+    header.hidden {
+      transform: translateY(-100%) !important;
+    }
+    
+    footer.visible {
+      transform: translateY(0) !important;
+    }
+    
+    footer.hidden {
+      transform: translateY(100%) !important;
+    }
+    
+    /* Prevent content from being hidden behind header */
+    main {
+      padding-top: 0;
+    }
   }
   
   /* Ensure full coverage on all devices */

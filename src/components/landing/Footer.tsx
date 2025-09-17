@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Search } from 'lucide-react';
+import { useScrollPosition } from '@/hooks/use-scroll-position';
 
 interface FooterProps {
   onTermsClick: () => void;
@@ -7,8 +8,23 @@ interface FooterProps {
 }
 
 export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
+  const { scrollY, scrollDirection, isAtBottom } = useScrollPosition();
+  
+  // Calculate footer state based on scroll
+  // Footer should show when scrolling up, hide when scrolling down (unless at bottom)
+  const shouldShowFooter = isAtBottom || scrollDirection === 'up';
+  
+  
   return (
-    <footer className="edge-to-edge-section flex flex-col gap-2 sm:flex-row py-6 shrink-0 items-center px-4 md:px-6 border-t" style={{ paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom))' }}>
+    <footer 
+      className={`edge-to-edge-section flex flex-col gap-2 sm:flex-row py-6 shrink-0 items-center px-4 md:px-6 border-t sticky bottom-0 z-40 bg-background/80 backdrop-blur-sm transition-all duration-300 ease-in-out ${
+        shouldShowFooter ? 'visible' : 'hidden'
+      }`}
+      style={{ 
+        paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom))',
+        transform: shouldShowFooter ? 'translateY(0)' : 'translateY(100%)'
+      }}
+    >
       <div className="flex items-center gap-2">
         <Search className="h-6 w-6 text-primary" />
         <p className="text-sm text-muted-foreground font-normal">&copy; {new Date().getFullYear()} BitSleuth. All rights reserved.</p>

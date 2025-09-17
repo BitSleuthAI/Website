@@ -10,12 +10,15 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Menu, Search, ChevronDown, BarChart, Lock, Rocket } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useScrollPosition } from "@/hooks/use-scroll-position";
 
 interface HeaderProps {
   basePath?: string;
 }
 
 export function Header({ basePath = '' }: HeaderProps) {
+  const { scrollY, scrollDirection, isAtTop } = useScrollPosition();
+  
   const allNavLinks = [
     { href: `${basePath}/#features`, label: "Features" },
     { href: `${basePath}/#pricing`, label: "Pricing" },
@@ -30,13 +33,25 @@ export function Header({ basePath = '' }: HeaderProps) {
   });
 
   const showNavLinks = basePath === '/analyzer' || basePath === '/wallet';
+  
+  // Calculate header state based on scroll
+  // Header should hide when scrolling down, show when scrolling up or at top
+  const shouldShowHeader = scrollDirection === 'up' || scrollY <= 20;
+  const isAtVeryTop = scrollY <= 0;
+  
 
   return (
-    <header className="edge-to-edge-section px-4 lg:px-6 flex items-center shadow-sm sticky top-0 z-50 bg-background/80 backdrop-blur-sm" style={{ 
-      paddingTop: 'calc(1rem + env(safe-area-inset-top))',
-      paddingBottom: '1rem',
-      minHeight: 'calc(4rem + env(safe-area-inset-top))'
-    }}>
+    <header 
+      className={`edge-to-edge-section px-4 lg:px-6 flex items-center shadow-sm sticky top-0 z-50 bg-background/80 backdrop-blur-sm transition-all duration-300 ease-in-out ${
+        shouldShowHeader ? 'visible' : 'hidden'
+      }`}
+      style={{ 
+        paddingTop: isAtVeryTop ? 'calc(1rem + env(safe-area-inset-top))' : '1rem',
+        paddingBottom: '1rem',
+        minHeight: isAtVeryTop ? 'calc(4rem + env(safe-area-inset-top))' : '4rem',
+        transform: shouldShowHeader ? 'translateY(0)' : 'translateY(-100%)'
+      }}
+    >
       <Link href="/" className="flex items-center justify-center">
         <Search className="h-6 w-6 text-primary" />
         <span className="ml-2 font-bold text-lg">BitSleuth</span>
