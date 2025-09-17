@@ -42,21 +42,20 @@ export function Header({ basePath = '' }: HeaderProps) {
 
   return (
     <header 
-      className={`edge-to-edge-section px-4 lg:px-6 flex items-center shadow-sm sticky top-0 z-50 bg-background/80 backdrop-blur-sm transition-all duration-300 ease-in-out ${
+      className={`edge-to-edge-section edge-to-edge-header flex items-center shadow-sm transition-all duration-300 ease-in-out ${
         shouldShowHeader ? 'visible' : 'hidden'
       }`}
       style={{ 
-        paddingTop: isAtVeryTop ? 'calc(1rem + env(safe-area-inset-top))' : '1rem',
-        paddingBottom: '1rem',
-        minHeight: isAtVeryTop ? 'calc(4rem + env(safe-area-inset-top))' : '4rem',
+        minHeight: isAtVeryTop ? 'calc(4rem + var(--inset-top))' : '4rem',
         transform: shouldShowHeader ? 'translateY(0)' : 'translateY(-100%)'
       }}
     >
-      <Link href="/" className="flex items-center justify-center">
-        <Search className="h-6 w-6 text-primary" />
-        <span className="ml-2 font-bold text-lg">BitSleuth</span>
-      </Link>
-      <nav className="ml-auto hidden gap-6 sm:flex items-center">
+      <div className="edge-to-edge-content flex items-center w-full">
+        <Link href="/" className="flex items-center justify-center">
+          <Search className="h-6 w-6 text-primary" />
+          <span className="ml-2 font-bold text-lg">BitSleuth</span>
+        </Link>
+        <nav className="ml-auto hidden gap-6 sm:flex items-center">
         <ThemeToggle />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -133,7 +132,8 @@ export function Header({ basePath = '' }: HeaderProps) {
           </DropdownMenuContent>
         </DropdownMenu>
 
-      </nav>
+        </nav>
+      </div>
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="ml-auto sm:hidden">

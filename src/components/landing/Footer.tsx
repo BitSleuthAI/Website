@@ -17,19 +17,20 @@ export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
   
   return (
     <footer 
-      className={`edge-to-edge-section flex flex-col gap-2 sm:flex-row py-6 shrink-0 items-center px-4 md:px-6 border-t sticky bottom-0 z-40 bg-background/80 backdrop-blur-sm transition-all duration-300 ease-in-out ${
+      className={`edge-to-edge-section edge-to-edge-footer flex flex-col gap-2 sm:flex-row py-6 shrink-0 items-center border-t transition-all duration-300 ease-in-out ${
         shouldShowFooter ? 'visible' : 'hidden'
       }`}
       style={{ 
-        paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom))',
-        transform: shouldShowFooter ? 'translateY(0)' : 'translateY(100%)'
+        transform: shouldShowFooter ? 'translateY(0)' : 'translateY(100%)',
+        display: 'flex' // Ensure footer is always displayed
       }}
     >
-      <div className="flex items-center gap-2">
-        <Search className="h-6 w-6 text-primary" />
-        <p className="text-sm text-muted-foreground font-normal">&copy; {new Date().getFullYear()} BitSleuth. All rights reserved.</p>
-      </div>
-      <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+      <div className="edge-to-edge-content flex flex-col gap-2 sm:flex-row items-center w-full">
+        <div className="flex items-center gap-2">
+          <Search className="h-6 w-6 text-primary" />
+          <p className="text-sm text-muted-foreground font-normal">&copy; {new Date().getFullYear()} BitSleuth. All rights reserved.</p>
+        </div>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
         <Link
           href="/glossary"
           className="text-sm hover:underline underline-offset-4 text-muted-foreground font-medium"
@@ -51,7 +52,8 @@ export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
         <button onClick={onPrivacyClick} className="text-sm hover:underline underline-offset-4 text-muted-foreground font-medium">
           Privacy Policy
         </button>
-      </nav>
+        </nav>
+      </div>
     </footer>
   );
 }

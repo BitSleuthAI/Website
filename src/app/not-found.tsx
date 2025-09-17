@@ -30,7 +30,7 @@ const RobotIcon = () => (
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-dvh flex-col items-center justify-center bg-background px-4 py-12 text-center">
+    <div className="flex min-h-dvh flex-col items-center justify-center bg-background px-4 py-12 text-center edge-to-edge-container">
       <Card className="w-full max-w-md bg-card/80 backdrop-blur-sm border-border/50 shadow-glow">
         <CardContent className="p-10">
           <div className="mx-auto mb-6 flex justify-center">

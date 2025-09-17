@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { CookieConsent } from '@/components/landing/CookieConsent';
 import { ThemeProvider } from '@/components/theme-provider';
 import { useEffect, useState }from 'react';
+import { useIOS26Viewport } from '@/hooks/use-ios26-viewport';
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-RPS0XSGWJ5';
 
@@ -24,6 +25,7 @@ export default function RootLayout({
 }>) {
   const [isClient, setIsClient] = useState(false)
   const [analyticsAllowed, setAnalyticsAllowed] = useState(false);
+  const { isIOS26, viewportHeight } = useIOS26Viewport();
 
   useEffect(() => {
     setIsClient(true)
@@ -44,10 +46,25 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="!scroll-smooth">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no, minimal-ui" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <title>BitSleuth | AI-Powered Bitcoin Wallet Analysis</title>
         <meta name="description" content="Analyze Bitcoin wallets like a pro. BitSleuth offers AI-powered insights, transaction visualization, and OPSEC risk detection for any BTC address." />
         <meta name="color-scheme" content="light dark" />
+        {/* iOS 26.0 Safari Liquid Glass compatibility */}
+        {isIOS26 && (
+          <style dangerouslySetInnerHTML={{
+            __html: `
+              :root {
+                --viewport-height: ${viewportHeight}px;
+              }
+              html, body {
+                height: var(--viewport-height) !important;
+              }
+            `
+          }} />
+        )}
         {analyticsAllowed && GA_MEASUREMENT_ID && (
           <>
             <Script

@@ -20,9 +20,9 @@ export default function MiningGlossaryPage() {
   const closeModal = () => setActiveModal(null);
 
   return (
-    <div className="flex flex-col min-h-dvh bg-background">
+    <div className="flex flex-col min-h-dvh bg-background edge-to-edge-container">
       <Header />
-      <main className="flex-1 py-12 md:py-20 lg:py-24">
+      <main className="flex-1 py-12 md:py-20 lg:py-24 edge-to-edge-main">
         <div className="container max-w-4xl mx-auto px-4 md:px-6">
            <Button variant="ghost" asChild className="mb-8">
             <Link href="/glossary">

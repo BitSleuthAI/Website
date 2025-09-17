@@ -49,6 +49,12 @@
     --heading-start: hsl(var(--primary));
     --heading-via: hsl(276 100% 70%);
     --heading-end: hsl(240 10% 16%);
+
+    /* iOS Edge-to-Edge Safe Area Insets */
+    --inset-top: env(safe-area-inset-top);
+    --inset-bottom: env(safe-area-inset-bottom);
+    --inset-left: env(safe-area-inset-left);
+    --inset-right: env(safe-area-inset-right);
   }
 
   .dark {
@@ -114,6 +120,128 @@
     width: 100vw;
     overflow-x: hidden;
     position: relative;
+  }
+  
+  /* iOS Edge-to-Edge Body with Glass Effect */
+  body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: rgba(20, 20, 20, 0.8); /* glass-like background */
+    backdrop-filter: blur(12px); /* glass blur */
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+  }
+  
+  /* Ensure html also has background for edge-to-edge */
+  html {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  /* Dark theme body background */
+  .dark body, .dark html {
+    background: rgba(10, 10, 10, 0.8);
+  }
+  
+  /* Light theme body background */
+  .light body, .light html {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* iOS 26.0 Safari Liquid Glass compatibility */
+  @supports (-webkit-touch-callout: none) {
+    html {
+      /* Set background on html element for proper modal rendering */
+      background: hsl(var(--background));
+      height: 100vh;
+      height: 100dvh;
+    }
+    
+    body {
+      /* Body background should be transparent for proper layering */
+      background: transparent;
+      height: 100vh;
+      height: 100dvh;
+    }
+  }
+  
+  /* iOS Edge-to-Edge Page Wrapper */
+  .edge-to-edge-container {
+    padding-top: var(--inset-top);
+    padding-bottom: var(--inset-bottom);
+    padding-left: var(--inset-left);
+    padding-right: var(--inset-right);
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  /* Glass Header with Edge-to-Edge */
+  .edge-to-edge-header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    background: rgba(30, 30, 30, 0.3);
+    padding-top: var(--inset-top);
+    padding-left: var(--inset-left);
+    padding-right: var(--inset-right);
+    z-index: 50;
+  }
+  
+  /* Light mode header - more transparent */
+  .light .edge-to-edge-header {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+  }
+  
+  /* Glass Footer with Edge-to-Edge */
+  .edge-to-edge-footer {
+    position: sticky;
+    bottom: 0;
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    background: rgba(30, 30, 30, 0.3);
+    padding-bottom: var(--inset-bottom);
+    padding-left: var(--inset-left);
+    padding-right: var(--inset-right);
+    z-index: 40;
+  }
+  
+  /* Light mode footer - more transparent */
+  .light .edge-to-edge-footer {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+  }
+  
+  /* Main content with safe area padding */
+  .edge-to-edge-main {
+    padding-left: var(--inset-left);
+    padding-right: var(--inset-right);
+    /* No top/bottom padding needed with sticky positioning */
+  }
+  
+  /* Full-height sections for edge-to-edge */
+  .hero {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  
+  /* Dark theme hero */
+  .dark .hero {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Light theme hero */
+  .light .hero {
+    background: rgba(255, 255, 255, 0.1);
   }
   
   /* Modern hidden scrollbar approach - comprehensive */
@@ -192,8 +320,15 @@
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
+    /* Remove padding to allow true edge-to-edge */
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  /* Content inside edge-to-edge sections */
+  .edge-to-edge-content {
+    padding-left: max(16px, var(--inset-left));
+    padding-right: max(16px, var(--inset-right));
   }
   
   /* Mobile edge-to-edge header */
@@ -203,6 +338,12 @@
       margin-left: calc(-50vw + 50%);
       margin-right: calc(-50vw + 50%);
       width: 100vw;
+    }
+    
+    /* Ensure footer is visible on mobile */
+    .edge-to-edge-footer {
+      display: flex !important;
+      opacity: 1;
     }
   }
   
@@ -370,6 +511,45 @@
     height: 100vh;
     height: 100dvh;
     width: 100vw;
+  }
+  
+  /* iOS 26.0 Safari Liquid Glass - Modal/Overlay compatibility */
+  @supports (-webkit-touch-callout: none) {
+    /* Ensure modals and overlays cover the entire screen including address bar area */
+    .modal-overlay,
+    .fixed-overlay,
+    [data-radix-popper-content-wrapper] {
+      height: var(--viewport-height, 100vh) !important;
+      height: var(--viewport-height, 100dvh) !important;
+    }
+    
+    /* For modals that need to cover the full screen */
+    .full-screen-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: var(--viewport-height, 100vh) !important;
+      height: var(--viewport-height, 100dvh) !important;
+      background: rgba(0, 0, 0, 0.5); /* Transparent black for dimming */
+    }
+    
+    /* Content inside modals should use 100vh for proper scrolling */
+    .modal-content {
+      height: 100vh;
+      height: 100dvh;
+      max-height: 100vh;
+      max-height: 100dvh;
+    }
+    
+    /* iOS 26.0 compatible elements */
+    .ios26-compatible {
+      /* Ensure proper rendering in Liquid Glass mode */
+      will-change: transform;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
   }
   
   /* Extend content behind device UI */

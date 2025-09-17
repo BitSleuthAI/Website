@@ -24,9 +24,9 @@ export default function AnalyzerPage() {
   const closeModal = () => setActiveModal(null);
 
   return (
-    <div className="flex flex-col min-h-dvh bg-background overflow-x-hidden">
+    <div className="flex flex-col min-h-dvh bg-background overflow-x-hidden edge-to-edge-container">
       <Header basePath="/analyzer" />
-      <main className="flex-1">
+      <main className="flex-1 edge-to-edge-main">
         <HeroSection />
         <FeaturesSection />
         <HowItWorksSection />

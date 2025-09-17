@@ -18,9 +18,9 @@ export default function Home() {
   const closeModal = () => setActiveModal(null);
 
   return (
-    <div className="flex flex-col min-h-screen bg-background">
+    <div className="flex flex-col min-h-screen bg-background edge-to-edge-container">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 edge-to-edge-main">
         <HomeHeroSection />
         <AboutSection />
       </main>

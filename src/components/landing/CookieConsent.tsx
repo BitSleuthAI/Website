@@ -6,10 +6,12 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '../ui/card';
 import { CookieCustomizationModal } from './CookieCustomizationModal';
+import { useIOS26Viewport } from '@/hooks/use-ios26-viewport';
 
 export function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
   const [isCustomizeModalOpen, setIsCustomizeModalOpen] = useState(false);
+  const { isIOS26 } = useIOS26Viewport();
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie_consent');
@@ -51,7 +53,7 @@ export function CookieConsent() {
   return (
     <>
       {!isCustomizeModalOpen && (
-        <div className="fixed bottom-4 left-4 z-[100]">
+        <div className={`fixed bottom-4 left-4 z-[100] ${isIOS26 ? 'ios26-compatible' : ''}`}>
             <Card className="max-w-md p-6 bg-background/80 backdrop-blur-sm border-border/50 shadow-glow">
                 <h3 className="text-lg font-bold mb-2">We value your privacy</h3>
                 <p className="text-sm text-muted-foreground mb-4 font-normal">
