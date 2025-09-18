@@ -6,17 +6,70 @@ import { Footer } from '@/components/landing/Footer';
 import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
 import { TermsOfServiceModal } from '@/components/landing/TermsOfServiceModal';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { BackgroundBeams } from '@/components/ui/background-beams';
+import { toast } from '@/hooks/use-toast';
 import { Lock, Clock, ArrowRight, Shield, Smartphone, Download, Mail, Check } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ComingSoonPage() {
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const openPrivacyModal = () => setActiveModal('privacy');
   const openTermsModal = () => setActiveModal('terms');
   const closeModal = () => setActiveModal(null);
+
+  const handleWaitlistSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      toast({
+        title: "Email required",
+        description: "Please enter your email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        toast({
+          title: "You're on the list!",
+          description: "We'll be in touch soon.",
+        });
+        setEmail('');
+      } else {
+        toast({
+          title: "Error",
+          description: data.error || "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-dvh bg-background overflow-x-hidden">
@@ -130,23 +183,26 @@ export default function ComingSoonPage() {
                       </p>
                     </div>
                     
-                    <div className="space-y-4">
+                    <form onSubmit={handleWaitlistSubmit} className="space-y-4">
                       <div className="flex gap-2">
-                        <input
+                        <Input
                           type="email"
                           placeholder="Enter your email address"
-                          className="flex-1 px-4 py-3 rounded-md border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="flex-1 bg-background text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary"
+                          disabled={isLoading}
                         />
-                        <Button className="px-8">
+                        <Button type="submit" className="px-8" disabled={isLoading}>
                           <Download className="mr-2 h-4 w-4" />
-                          Join
+                          {isLoading ? "Joining..." : "Join"}
                         </Button>
                       </div>
                       
                       <p className="text-xs text-muted-foreground text-center">
                         We respect your privacy. No spam, just updates about BitSleuth Wallet.
                       </p>
-                    </div>
+                    </form>
                   </div>
                 </CardContent>
               </Card>
