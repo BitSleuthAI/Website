@@ -35,6 +35,13 @@ export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
         <button onClick={onPrivacyClick} className="text-sm hover:underline underline-offset-4 text-muted-foreground font-medium">
           Privacy Policy
         </button>
+        <Link
+          href="/company-information"
+          className="text-sm hover:underline underline-offset-4 text-muted-foreground font-medium"
+          prefetch={false}
+        >
+          Company Information
+        </Link>
       </nav>
     </footer>
   );
