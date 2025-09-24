@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from 'react';
+import { walletMetadata, walletStructuredData } from './metadata';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
@@ -25,7 +26,14 @@ export default function WalletPage() {
   const closeModal = () => setActiveModal(null);
 
   return (
-    <div className="flex flex-col min-h-dvh bg-background overflow-x-hidden">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(walletStructuredData)
+        }}
+      />
+      <div className="flex flex-col min-h-dvh bg-background overflow-x-hidden">
       <Header basePath="/wallet" />
       <main className="flex-1">
         <WalletHeroSection />
@@ -46,6 +54,7 @@ export default function WalletPage() {
         onOpenChange={closeModal}
         onPrivacyClick={openPrivacyModal} 
       />
-    </div>
+      </div>
+    </>
   );
 }

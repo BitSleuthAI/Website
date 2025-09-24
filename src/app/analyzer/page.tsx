@@ -3,6 +3,7 @@
 "use client";
 
 import { useState } from 'react';
+import { analyzerMetadata, analyzerStructuredData } from './metadata';
 import { Header } from '@/components/landing/Header';
 import { HeroSection } from '@/components/landing/HeroSection';
 import { FeaturesSection } from '@/components/landing/FeaturesSection';
@@ -24,7 +25,14 @@ export default function AnalyzerPage() {
   const closeModal = () => setActiveModal(null);
 
   return (
-    <div className="flex flex-col min-h-dvh bg-background overflow-x-hidden">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(analyzerStructuredData)
+        }}
+      />
+      <div className="flex flex-col min-h-dvh bg-background overflow-x-hidden">
       <Header basePath="/analyzer" />
       <main className="flex-1">
         <HeroSection />
@@ -43,6 +51,7 @@ export default function AnalyzerPage() {
         onOpenChange={closeModal}
         onPrivacyClick={openPrivacyModal} 
       />
-    </div>
+      </div>
+    </>
   );
 }
