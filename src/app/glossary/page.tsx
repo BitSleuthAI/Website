@@ -129,6 +129,22 @@ export default function GlossaryIndexPage() {
           <h1 className="text-4xl font-bold mb-8 text-gradient-title">
             Glossary
           </h1>
+          
+          <div className="mb-12 space-y-4 text-lg">
+            <p className="text-muted-foreground leading-relaxed">
+              <span className="font-bold text-foreground">Bitcoin</span> is powered by{' '}
+              <span className="font-bold text-foreground">peer-to-peer technology</span>, with no central authority or banks in control. Transactions and the creation of new bitcoins are managed by the network itself.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              It's <span className="font-bold text-foreground">open-source</span> and{' '}
+              <span className="font-bold text-foreground">public by design</span> — nobody owns it, and{' '}
+              <span className="font-bold text-foreground">anyone can take part</span>.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              With its <span className="font-bold text-foreground">unique properties</span>, Bitcoin unlocks possibilities that no traditional payment system ever could.
+            </p>
+          </div>
+
           <div className="space-y-6">
             {glossaryTerms.sort((a,b) => a.term.localeCompare(b.term)).map((item) => (
               <Link key={item.term} href={item.href} className="block group">
