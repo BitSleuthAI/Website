@@ -154,6 +154,8 @@
   
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-display: swap;
   }
   
   /* Global scrollbar hiding for all screen sizes */
@@ -240,6 +242,85 @@
   /* Smooth transitions and prevent layout shifts */
   * {
     box-sizing: border-box;
+  }
+  
+  /* Prevent layout shifts from font loading */
+  html {
+    font-display: swap;
+  }
+  
+  /* Reserve space for fixed elements to prevent CLS */
+  body {
+    /* Remove padding-bottom as it can cause layout shifts */
+  }
+  
+  /* Prevent layout shifts from dynamic content */
+  .card-container {
+    min-height: 200px;
+    contain: layout;
+  }
+  
+  /* Ensure consistent spacing for dynamic elements */
+  .dynamic-content {
+    contain: layout style;
+  }
+  
+  /* Add containment to main sections */
+  section {
+    contain: layout;
+  }
+  
+  /* Prevent layout shifts from animations */
+  .animate-in {
+    contain: layout;
+  }
+  
+  /* Ensure cookie banner doesn't cause layout shifts */
+  .cookie-banner-container {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 100;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out;
+  }
+  
+  /* Prevent layout shifts from dynamic content loading */
+  .prevent-layout-shift {
+    contain: layout style;
+  }
+  
+  /* Prevent layout shifts from images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Smooth transitions for theme changes - only for specific properties */
+  * {
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+  
+  /* Prevent layout shifts during theme changes */
+  html, body {
+    transition: none; /* No transitions on root elements */
+  }
+  
+  /* Smooth animations for elements that appear/disappear */
+  .animate-in {
+    animation: slideInFromBottom 0.3s ease-out;
+  }
+  
+  @keyframes slideInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   /* Ensure smooth scrolling and modern feel */

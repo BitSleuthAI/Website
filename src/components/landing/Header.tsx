@@ -35,7 +35,8 @@ export function Header({ basePath = '' }: HeaderProps) {
     <header className="edge-to-edge-section px-4 lg:px-6 flex items-center shadow-sm sticky top-0 z-50 bg-background/80 backdrop-blur-sm" style={{ 
       paddingTop: 'calc(1rem + env(safe-area-inset-top))',
       paddingBottom: '1rem',
-      minHeight: 'calc(4rem + env(safe-area-inset-top))'
+      minHeight: 'calc(4rem + env(safe-area-inset-top))',
+      height: 'calc(4rem + env(safe-area-inset-top))' // Fixed height to prevent layout shift
     }}>
       <Link href="/" className="flex items-center justify-center">
         <Search className="h-6 w-6 text-primary" />

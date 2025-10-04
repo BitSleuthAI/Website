@@ -12,10 +12,13 @@ export function CookieConsent() {
   const [isCustomizeModalOpen, setIsCustomizeModalOpen] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie_consent');
-    if (consent === null) {
-      setIsVisible(true);
-    }
+    // Use requestAnimationFrame to prevent layout shift
+    requestAnimationFrame(() => {
+      const consent = localStorage.getItem('cookie_consent');
+      if (consent === null) {
+        setIsVisible(true);
+      }
+    });
   }, []);
 
   const setConsent = (consent: object) => {
@@ -51,7 +54,7 @@ export function CookieConsent() {
   return (
     <>
       {!isCustomizeModalOpen && (
-        <div className="fixed bottom-4 left-4 z-[100]">
+        <div className="cookie-banner-container md:left-4 md:right-auto md:max-w-md animate-in slide-in-from-bottom-4 duration-300">
             <Card className="max-w-md p-6 bg-background/80 backdrop-blur-sm border-border/50 shadow-glow">
                 <h3 className="text-lg font-bold mb-2">We value your privacy</h3>
                 <p className="text-sm text-muted-foreground mb-4 font-normal">

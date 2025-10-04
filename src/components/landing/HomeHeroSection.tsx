@@ -20,7 +20,7 @@ export function HomeHeroSection() {
             Whether you're analyzing blockchain data or securing your assets with a privacy-first wallet, BitSleuth provides the tools you need for Bitcoin transparency and sovereignty.
           </p>
           <div className="grid md:grid-cols-2 gap-8 pt-8">
-            <Card className="text-left bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-colors shadow-glow">
+            <Card className="text-left bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-colors shadow-glow min-h-[200px]">
                 <CardHeader className="flex flex-row items-center gap-4">
                     <BarChart className="h-8 w-8 text-primary"/>
                     <CardTitle className="text-2xl font-bold">Wallet Analyzer</CardTitle>
@@ -34,7 +34,7 @@ export function HomeHeroSection() {
                     </Button>
                 </CardContent>
             </Card>
-            <Card className="text-left bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-colors shadow-glow">
+            <Card className="text-left bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-colors shadow-glow min-h-[200px]">
                 <CardHeader className="flex flex-row items-center gap-4">
                     <ShieldCheck className="h-8 w-8 text-primary"/>
                     <CardTitle className="text-2xl font-bold">Privacy Wallet</CardTitle>
