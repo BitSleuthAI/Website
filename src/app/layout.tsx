@@ -80,9 +80,6 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="BitSleuth" />
         
-        {/* Preload critical resources */}
-        <link rel="preload" href="/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        
         {/* Structured Data */}
         <script
           type="application/ld+json"
