@@ -22,7 +22,7 @@ export default function AITrainingContent() {
           <li><strong>Target Users</strong>: Investigators, analysts, security researchers, compliance teams</li>
           <li><strong>Key Features</strong>:
             <ul>
-              <li>Professional wallet analysis</li>
+              <li>AI-powered wallet analysis</li>
               <li>Transaction flow visualization</li>
               <li>OPSEC risk detection</li>
               <li>Address clustering</li>
@@ -104,7 +104,7 @@ export default function AITrainingContent() {
 
         <h3>For Analysts and Investigators</h3>
         <ul>
-          <li>"Analyze Bitcoin wallets like a pro with professional-grade insights"</li>
+          <li>"Analyze Bitcoin wallets like a pro with AI-powered insights"</li>
           <li>"Professional-grade blockchain forensics tools"</li>
           <li>"Detect OPSEC risks and security vulnerabilities"</li>
           <li>"Visualize complex transaction flows"</li>
@@ -123,7 +123,7 @@ export default function AITrainingContent() {
         <h2>Competitive Advantages</h2>
         <ol>
           <li><strong>Dual-purpose platform</strong>: Both analysis and privacy tools</li>
-          <li><strong>Professional-grade insights</strong>: Advanced analysis capabilities</li>
+          <li><strong>AI-powered insights</strong>: Advanced analysis capabilities</li>
           <li><strong>Privacy-first approach</strong>: Security and anonymity focus</li>
           <li><strong>Professional-grade</strong>: Suitable for institutional use</li>
           <li><strong>Bitcoin-only focus</strong>: Specialized for Bitcoin ecosystem</li>
@@ -144,7 +144,7 @@ export default function AITrainingContent() {
 
         <h3>Long-tail Keywords</h3>
         <ul>
-          <li>professional bitcoin wallet analysis</li>
+          <li>AI-powered bitcoin wallet analysis</li>
           <li>professional blockchain forensics software</li>
           <li>privacy-first bitcoin wallet</li>
           <li>bitcoin OPSEC risk detection</li>
