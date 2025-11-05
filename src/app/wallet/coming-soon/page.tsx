@@ -13,6 +13,8 @@ import { toast } from '@/hooks/use-toast';
 import { Lock, Clock, ArrowRight, Shield, Smartphone, Download, Mail, Check } from 'lucide-react';
 import Link from 'next/link';
 
+const TESTFLIGHT_BETA_URL = 'https://testflight.apple.com/join/ydx1xxFK';
+
 export default function ComingSoonPage() {
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
   const [email, setEmail] = useState('');
@@ -270,13 +272,13 @@ export default function ComingSoonPage() {
                   <p className="text-sm text-primary font-medium">
                     Want to participate in the iOS beta testing? To join the BitSleuth Wallet beta, open the link{' '}
                     <a 
-                      href="https://testflight.apple.com/join/ydx1xxFK" 
+                      href={TESTFLIGHT_BETA_URL} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="underline hover:text-primary/80 transition-colors"
                       aria-label="Join BitSleuth Wallet TestFlight beta"
                     >
-                      https://testflight.apple.com/join/ydx1xxFK
+                      {TESTFLIGHT_BETA_URL}
                     </a>
                     {' '}on your iPhone after you install TestFlight and help test the beta version!
                   </p>
