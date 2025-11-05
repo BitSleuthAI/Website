@@ -190,28 +190,26 @@ npm run build
 
 ## 🤝 Contributing
 
-### Development Guidelines
-1. **Branch Naming**: `feature/description` or `fix/description`
-2. **Commit Messages**: Use conventional commits
-3. **Code Style**: Follow ESLint and Prettier configurations
-4. **Testing**: Test all changes manually before submitting
-5. **Documentation**: Update README if adding new features
-6. **Documentation Files**: All markdown documentation files (e.g., `.md` files) should be stored in the `docs/` folder for consistency and easy discovery
+We welcome contributions to the BitSleuth Website! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on:
 
-### Pull Request Process
-1. Create feature branch from `dev`
-2. Make changes with proper testing
-3. Update documentation if needed
-4. Submit PR with clear description
-5. Request review from team members
+- 📚 **Documentation Organization**: All markdown documentation files must be stored in the `docs/` folder
+- 🚀 Getting started with development
+- 💻 Development workflow and branch strategy
+- 📝 Code style and standards
+- 🧪 Testing requirements
+- 📄 Documentation best practices
+- 🔍 Pull request process
+- 🎯 Code review guidelines
 
-### Code Review Checklist
-- [ ] Code follows project conventions
-- [ ] No console.log statements in production code
-- [ ] TypeScript types are properly defined
-- [ ] Components are properly documented
-- [ ] Performance impact is considered
-- [ ] Accessibility standards are met
+### Quick Reference
+
+**Branch Naming**: `feature/description`, `fix/description`, or `docs/description`
+
+**Commit Messages**: Use conventional commits (`feat:`, `fix:`, `docs:`, etc.)
+
+**Documentation Files**: All markdown documentation files (e.g., `.md` files) should be stored in the `docs/` folder for consistency and easy discovery
+
+For complete guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
