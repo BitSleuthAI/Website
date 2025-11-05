@@ -506,6 +506,10 @@ npm install
 ## Additional Resources
 
 ### Documentation
+
+**File Organization:** All markdown documentation files (`.md`) are stored in the `docs/` folder for consistency and easy discovery. When creating new documentation, place it in this directory.
+
+**Available Documentation:**
 - **README.md:** Quick start and overview
 - **docs/PRD.md:** Detailed product requirements
 - **docs/SEO_STRATEGY.md:** SEO strategy and keywords
@@ -538,7 +542,7 @@ Use conventional commits:
 1. Create feature branch from `dev`
 2. Make changes with proper testing
 3. Run typecheck and lint
-4. Update documentation if needed
+4. Update documentation if needed (all markdown documentation files should be placed in the `docs/` folder)
 5. Submit PR with clear description
 6. Request review from team
 

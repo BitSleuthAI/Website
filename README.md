@@ -196,6 +196,7 @@ npm run build
 3. **Code Style**: Follow ESLint and Prettier configurations
 4. **Testing**: Test all changes manually before submitting
 5. **Documentation**: Update README if adding new features
+6. **Documentation Files**: All markdown documentation files (e.g., `.md` files) should be stored in the `docs/` folder for consistency and easy discovery
 
 ### Pull Request Process
 1. Create feature branch from `dev`
@@ -215,6 +216,9 @@ npm run build
 ---
 
 ## 📚 Documentation
+
+### File Organization
+**All documentation files (markdown `.md` files) are stored in the `docs/` folder** to maintain consistency and make them easy to find. When creating new documentation, please place it in this directory.
 
 ### Additional Resources
 - **PRD**: `docs/PRD.md` - Product Requirements Document

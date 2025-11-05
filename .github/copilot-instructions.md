@@ -55,5 +55,10 @@
 - See `docs/PRD.md` and `docs/SEO_STRATEGY.md` for requirements and SEO
 - See `src/components/landing/` and `src/components/ui/` for UI patterns
 
+## Documentation File Organization
+- **All markdown documentation files (`.md`) must be stored in the `docs/` folder**
+- This ensures consistency and makes documentation easy to find
+- When creating new documentation, always place it in the `docs/` directory
+
 ---
 For unclear conventions or missing details, ask for clarification or review the README and docs folder.
