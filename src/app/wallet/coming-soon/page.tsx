@@ -10,10 +10,11 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { toast } from '@/hooks/use-toast';
-import { Lock, Clock, ArrowRight, Shield, Smartphone, Download, Mail, Check } from 'lucide-react';
+import { Lock, Clock, ArrowRight, Shield, Smartphone, Download, Mail, Check, Apple, PlaySquare } from 'lucide-react';
 import Link from 'next/link';
 
 const TESTFLIGHT_BETA_URL = 'https://testflight.apple.com/join/ydx1xxFK';
+const GOOGLE_PLAY_BETA_URL = 'https://play.google.com/store/apps/details?id=ai.bitsleuth.wallet';
 
 export default function ComingSoonPage() {
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
@@ -264,24 +265,83 @@ export default function ComingSoonPage() {
                 <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">
                   <Check className="h-4 w-4" />
                 </div>
-                <div>
+                <div className="w-full">
                   <h3 className="text-xl font-semibold mb-2">Beta Testing</h3>
-                  <p className="text-muted-foreground mb-3">
+                  <p className="text-muted-foreground mb-4">
                     Limited beta release for early adopters and security testing.
                   </p>
-                  <p className="text-sm text-primary font-medium">
-                    Want to participate in the iOS beta testing? To join the BitSleuth Wallet beta, open the link{' '}
-                    <a 
-                      href={TESTFLIGHT_BETA_URL} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="underline hover:text-primary/80 transition-colors"
-                      aria-label="Join BitSleuth Wallet TestFlight beta"
-                    >
-                      {TESTFLIGHT_BETA_URL}
-                    </a>
-                    {' '}on your iPhone after you install TestFlight and help test the beta version!
-                  </p>
+                  
+                  <div className="space-y-3">
+                    <p className="text-sm font-medium text-foreground mb-3">
+                      Want to participate in the iOS or Android beta testing? Help us test and improve BitSleuth Wallet!
+                    </p>
+                    
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {/* iOS TestFlight Card */}
+                      <Card className="bg-card/50 hover:border-primary/50 transition-all hover:shadow-glow">
+                        <CardContent className="p-4">
+                          <div className="flex items-start gap-3">
+                            <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                              <Apple className="h-5 w-5 text-primary" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-semibold text-sm mb-1">iOS Beta</h4>
+                              <p className="text-xs text-muted-foreground mb-2">
+                                Install TestFlight on your iPhone, then join:
+                              </p>
+                              <Button 
+                                asChild 
+                                size="sm" 
+                                className="w-full text-xs h-8"
+                              >
+                                <a
+                                  href={TESTFLIGHT_BETA_URL}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  aria-label="Join BitSleuth Wallet iOS TestFlight beta"
+                                >
+                                  <Apple className="mr-1.5 h-3.5 w-3.5" />
+                                  Join TestFlight Beta
+                                </a>
+                              </Button>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Android Google Play Card */}
+                      <Card className="bg-card/50 hover:border-primary/50 transition-all hover:shadow-glow">
+                        <CardContent className="p-4">
+                          <div className="flex items-start gap-3">
+                            <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                              <PlaySquare className="h-5 w-5 text-primary" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-semibold text-sm mb-1">Android Beta</h4>
+                              <p className="text-xs text-muted-foreground mb-2">
+                                Download directly from Google Play Store:
+                              </p>
+                              <Button 
+                                asChild 
+                                size="sm" 
+                                className="w-full text-xs h-8"
+                              >
+                                <a
+                                  href={GOOGLE_PLAY_BETA_URL}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  aria-label="Download BitSleuth Wallet Android beta from Google Play"
+                                >
+                                  <PlaySquare className="mr-1.5 h-3.5 w-3.5" />
+                                  Get on Google Play
+                                </a>
+                              </Button>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
