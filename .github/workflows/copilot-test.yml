@@ -11,7 +11,7 @@ on:
         options:
           - full
           - ui
-          - report
+          - api
 #  pull_request:
 #    branches:
 #      - main
@@ -25,38 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      # Test XPUB for wallet testing
-      TEST_XPUB: ${{ vars.TEST_XPUB }}
-      
-      # Firebase (Client-side) - Public configuration
-      NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
-      NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}
-      NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_PROJECT_ID }}
-      NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${{ secrets.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET }}
-      NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID }}
-      NEXT_PUBLIC_FIREBASE_APP_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_APP_ID }}
-      NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID }}
-      
-      # Google Sheets (Server-side) - Private
-      GOOGLE_SHEETS_ID: ${{ secrets.GOOGLE_SHEETS_ID }}
+      # Google Sheets (Server-side) - For feedback/waitlist storage
+      GOOGLE_SHEETS_ID_FEEDBACK: ${{ secrets.GOOGLE_SHEETS_ID_FEEDBACK }}
       GOOGLE_SHEETS_CLIENT_EMAIL: ${{ secrets.GOOGLE_SHEETS_CLIENT_EMAIL }}
       GOOGLE_SHEETS_PRIVATE_KEY: ${{ secrets.GOOGLE_SHEETS_PRIVATE_KEY }}
-      
-      # API Keys (Server-side) - Private
-      CRYPTOCOMPARE_API_KEY: ${{ secrets.CRYPTOCOMPARE_API_KEY }}
-      COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
-      BLOCKCHAIN_COM_API_KEY: ${{ secrets.BLOCKCHAIN_COM_API_KEY }}
-      BLOCKCHAIN_COM_API_SECRET: ${{ secrets.BLOCKCHAIN_COM_API_SECRET }}
-      TRM_LABS_API_KEY: ${{ secrets.TRM_LABS_API_KEY }}
-      CHAINABUSE_API_KEY: ${{ secrets.CHAINABUSE_API_KEY }}
-      
-      # Public API Keys (Client-side)
-      NEXT_PUBLIC_CHAINABUSE_API_KEY: ${{ secrets.NEXT_PUBLIC_CHAINABUSE_API_KEY }}
-      NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }}
-      NEXT_PUBLIC_RECAPTCHA_ENTERPRISE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_ENTERPRISE_SITE_KEY }}
-      
-      # Google AI API Key (for Gemini models)
-      GOOGLE_GENAI_API_KEY: ${{ secrets.GOOGLE_GENAI_API_KEY }}
     
     steps:
       - name: Checkout repository
@@ -74,35 +46,11 @@ jobs:
       - name: Create .env.local file
         run: |
           cat > .env.local << EOF
-          # Firebase (Client-side)
-          NEXT_PUBLIC_FIREBASE_API_KEY="${NEXT_PUBLIC_FIREBASE_API_KEY}"
-          NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="${NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN}"
-          NEXT_PUBLIC_FIREBASE_PROJECT_ID="${NEXT_PUBLIC_FIREBASE_PROJECT_ID}"
-          NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET="${NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET}"
-          NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID="${NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID}"
-          NEXT_PUBLIC_FIREBASE_APP_ID="${NEXT_PUBLIC_FIREBASE_APP_ID}"
-          NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID="${NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID}"
-          
           # Google Sheets (Server-side)
-          GOOGLE_SHEETS_ID="${GOOGLE_SHEETS_ID}"
+          # Keep these secret. They are used for writing feedback to a Google Sheet.
+          GOOGLE_SHEETS_ID_FEEDBACK="${GOOGLE_SHEETS_ID_FEEDBACK}"
           GOOGLE_SHEETS_CLIENT_EMAIL="${GOOGLE_SHEETS_CLIENT_EMAIL}"
           GOOGLE_SHEETS_PRIVATE_KEY="${GOOGLE_SHEETS_PRIVATE_KEY}"
-          
-          # API Keys (Server-side)
-          CRYPTOCOMPARE_API_KEY="${CRYPTOCOMPARE_API_KEY}"
-          COINGECKO_API_KEY="${COINGECKO_API_KEY}"
-          BLOCKCHAIN_COM_API_KEY="${BLOCKCHAIN_COM_API_KEY}"
-          BLOCKCHAIN_COM_API_SECRET="${BLOCKCHAIN_COM_API_SECRET}"
-          TRM_LABS_API_KEY="${TRM_LABS_API_KEY}"
-          CHAINABUSE_API_KEY="${CHAINABUSE_API_KEY}"
-          
-          # Public API Keys
-          NEXT_PUBLIC_CHAINABUSE_API_KEY="${NEXT_PUBLIC_CHAINABUSE_API_KEY}"
-          NEXT_PUBLIC_RECAPTCHA_SITE_KEY="${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}"
-          NEXT_PUBLIC_RECAPTCHA_ENTERPRISE_SITE_KEY="${NEXT_PUBLIC_RECAPTCHA_ENTERPRISE_SITE_KEY}"
-          
-          # Google AI API Key
-          GOOGLE_GENAI_API_KEY="${GOOGLE_GENAI_API_KEY}"
           EOF
       
       - name: Type check
@@ -116,14 +64,6 @@ jobs:
       - name: Build application
         run: npm run build
       
-      - name: Display test XPUB
-        run: |
-          if [ -n "$TEST_XPUB" ]; then
-            echo "Test XPUB is configured: ${TEST_XPUB:0:20}..."
-          else
-            echo "⚠️ TEST_XPUB is not configured in repository variables"
-          fi
-      
       - name: Test summary
         run: |
           echo "## Test Environment Configuration ✅" >> $GITHUB_STEP_SUMMARY
@@ -132,28 +72,22 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           
           # Check which variables are set
-          if [ -n "$TEST_XPUB" ]; then
-            echo "- ✅ TEST_XPUB: Configured" >> $GITHUB_STEP_SUMMARY
+          if [ -n "$GOOGLE_SHEETS_ID_FEEDBACK" ]; then
+            echo "- ✅ GOOGLE_SHEETS_ID_FEEDBACK: Configured" >> $GITHUB_STEP_SUMMARY
           else
-            echo "- ❌ TEST_XPUB: Not configured" >> $GITHUB_STEP_SUMMARY
+            echo "- ❌ GOOGLE_SHEETS_ID_FEEDBACK: Not configured" >> $GITHUB_STEP_SUMMARY
           fi
           
-          if [ -n "$COINGECKO_API_KEY" ]; then
-            echo "- ✅ COINGECKO_API_KEY: Configured" >> $GITHUB_STEP_SUMMARY
+          if [ -n "$GOOGLE_SHEETS_CLIENT_EMAIL" ]; then
+            echo "- ✅ GOOGLE_SHEETS_CLIENT_EMAIL: Configured" >> $GITHUB_STEP_SUMMARY
           else
-            echo "- ❌ COINGECKO_API_KEY: Not configured" >> $GITHUB_STEP_SUMMARY
+            echo "- ❌ GOOGLE_SHEETS_CLIENT_EMAIL: Not configured" >> $GITHUB_STEP_SUMMARY
           fi
           
-          if [ -n "$GOOGLE_GENAI_API_KEY" ]; then
-            echo "- ✅ GOOGLE_GENAI_API_KEY: Configured" >> $GITHUB_STEP_SUMMARY
+          if [ -n "$GOOGLE_SHEETS_PRIVATE_KEY" ]; then
+            echo "- ✅ GOOGLE_SHEETS_PRIVATE_KEY: Configured" >> $GITHUB_STEP_SUMMARY
           else
-            echo "- ❌ GOOGLE_GENAI_API_KEY: Not configured" >> $GITHUB_STEP_SUMMARY
-          fi
-          
-          if [ -n "$NEXT_PUBLIC_FIREBASE_API_KEY" ]; then
-            echo "- ✅ Firebase: Configured" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "- ❌ Firebase: Not configured" >> $GITHUB_STEP_SUMMARY
+            echo "- ❌ GOOGLE_SHEETS_PRIVATE_KEY: Not configured" >> $GITHUB_STEP_SUMMARY
           fi
           
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -162,4 +96,4 @@ jobs:
           echo "To configure missing variables:" >> $GITHUB_STEP_SUMMARY
           echo "1. Go to Settings > Secrets and variables > Actions" >> $GITHUB_STEP_SUMMARY
           echo "2. Add missing secrets to Repository secrets" >> $GITHUB_STEP_SUMMARY
-          echo "3. Add TEST_XPUB to Repository variables" >> $GITHUB_STEP_SUMMARY
+          echo "3. Refer to .github/workflows/README.md for detailed setup instructions" >> $GITHUB_STEP_SUMMARY
