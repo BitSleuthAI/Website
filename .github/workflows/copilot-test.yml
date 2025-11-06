@@ -1,0 +1,99 @@
+name: Copilot Agent Testing
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_type:
+        description: 'Type of test to run'
+        required: false
+        default: 'full'
+        type: choice
+        options:
+          - full
+          - ui
+          - api
+#  pull_request:
+#    branches:
+#      - main
+#      - dev
+#  push:
+#    branches:
+#      - main
+
+jobs:
+  test-with-environment:
+    runs-on: ubuntu-latest
+    
+    env:
+      # Google Sheets (Server-side) - For feedback/waitlist storage
+      GOOGLE_SHEETS_ID_FEEDBACK: ${{ secrets.GOOGLE_SHEETS_ID_FEEDBACK }}
+      GOOGLE_SHEETS_CLIENT_EMAIL: ${{ secrets.GOOGLE_SHEETS_CLIENT_EMAIL }}
+      GOOGLE_SHEETS_PRIVATE_KEY: ${{ secrets.GOOGLE_SHEETS_PRIVATE_KEY }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Create .env.local file
+        run: |
+          cat > .env.local << EOF
+          # Google Sheets (Server-side)
+          # Keep these secret. They are used for writing feedback to a Google Sheet.
+          GOOGLE_SHEETS_ID_FEEDBACK="${GOOGLE_SHEETS_ID_FEEDBACK}"
+          GOOGLE_SHEETS_CLIENT_EMAIL="${GOOGLE_SHEETS_CLIENT_EMAIL}"
+          GOOGLE_SHEETS_PRIVATE_KEY="${GOOGLE_SHEETS_PRIVATE_KEY}"
+          EOF
+      
+      - name: Type check
+        run: npm run typecheck
+        continue-on-error: true
+      
+      - name: Lint
+        run: npm run lint
+        continue-on-error: true
+      
+      - name: Build application
+        run: npm run build
+      
+      - name: Test summary
+        run: |
+          echo "## Test Environment Configuration ✅" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Environment Variables Status" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Check which variables are set
+          if [ -n "$GOOGLE_SHEETS_ID_FEEDBACK" ]; then
+            echo "- ✅ GOOGLE_SHEETS_ID_FEEDBACK: Configured" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- ❌ GOOGLE_SHEETS_ID_FEEDBACK: Not configured" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ -n "$GOOGLE_SHEETS_CLIENT_EMAIL" ]; then
+            echo "- ✅ GOOGLE_SHEETS_CLIENT_EMAIL: Configured" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- ❌ GOOGLE_SHEETS_CLIENT_EMAIL: Not configured" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ -n "$GOOGLE_SHEETS_PRIVATE_KEY" ]; then
+            echo "- ✅ GOOGLE_SHEETS_PRIVATE_KEY: Configured" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- ❌ GOOGLE_SHEETS_PRIVATE_KEY: Not configured" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "To configure missing variables:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Go to Settings > Secrets and variables > Actions" >> $GITHUB_STEP_SUMMARY
+          echo "2. Add missing secrets to Repository secrets" >> $GITHUB_STEP_SUMMARY
+          echo "3. Refer to .github/workflows/README.md for detailed setup instructions" >> $GITHUB_STEP_SUMMARY
