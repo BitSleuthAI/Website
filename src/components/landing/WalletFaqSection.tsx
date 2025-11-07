@@ -24,6 +24,10 @@ const faqs = [
   {
     question: "Is this wallet a good choice for beginners?",
     answer: "This wallet is designed for users who understand the importance of self-custody and are comfortable with the responsibility of managing their own keys. If you are new to Bitcoin, we recommend reading our glossary to understand the core concepts."
+  },
+  {
+    question: "How can I get support?",
+    answer: <>For any questions or assistance, please contact our support team at <a href="mailto:support@bitsleuth.ai" className="text-primary underline">support@bitsleuth.ai</a>.</>,
   }
 ];
 
