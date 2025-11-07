@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { toast } from '@/hooks/use-toast';
-import { Lock, Clock, ArrowRight, Shield, Smartphone, Download, Mail, Check, Apple, PlaySquare } from 'lucide-react';
+import { Lock, Clock, ArrowRight, Shield, Smartphone, Download, Mail, Check } from 'lucide-react';
 import Link from 'next/link';
 
 const TESTFLIGHT_BETA_URL = 'https://testflight.apple.com/join/ydx1xxFK';
@@ -282,7 +282,7 @@ export default function ComingSoonPage() {
                         <CardContent className="p-4">
                           <div className="flex items-start gap-3">
                             <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                              <Apple className="h-5 w-5 text-primary" />
+                              <Smartphone className="h-5 w-5 text-primary" />
                             </div>
                             <div className="flex-1 min-w-0">
                               <h4 className="font-semibold text-sm mb-1">iOS Beta</h4>
@@ -300,7 +300,6 @@ export default function ComingSoonPage() {
                                   rel="noopener noreferrer"
                                   aria-label="Join BitSleuth Wallet iOS TestFlight beta"
                                 >
-                                  <Apple className="mr-1.5 h-3.5 w-3.5" />
                                   Join TestFlight Beta
                                 </a>
                               </Button>
@@ -314,7 +313,7 @@ export default function ComingSoonPage() {
                         <CardContent className="p-4">
                           <div className="flex items-start gap-3">
                             <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                              <PlaySquare className="h-5 w-5 text-primary" />
+                              <Smartphone className="h-5 w-5 text-primary" />
                             </div>
                             <div className="flex-1 min-w-0">
                               <h4 className="font-semibold text-sm mb-1">Android Beta</h4>
@@ -332,7 +331,6 @@ export default function ComingSoonPage() {
                                   rel="noopener noreferrer"
                                   aria-label="Download BitSleuth Wallet Android beta from Google Play"
                                 >
-                                  <PlaySquare className="mr-1.5 h-3.5 w-3.5" />
                                   Get on Google Play
                                 </a>
                               </Button>
