@@ -32,9 +32,11 @@ export function Header({ basePath = '' }: HeaderProps) {
   const showNavLinks = basePath === '/analyzer' || basePath === '/wallet';
 
   return (
-    <header className="edge-to-edge-section px-4 lg:px-6 flex items-center shadow-sm sticky top-0 z-50 bg-background/80 backdrop-blur-sm" style={{ 
+    <header className="edge-to-edge-section flex items-center shadow-sm sticky top-0 z-50 bg-background/80 backdrop-blur-sm" style={{ 
       paddingTop: 'calc(1rem + env(safe-area-inset-top))',
       paddingBottom: '1rem',
+      paddingLeft: 'max(1rem, env(safe-area-inset-left))',
+      paddingRight: 'max(1rem, env(safe-area-inset-right))',
       minHeight: 'calc(4rem + env(safe-area-inset-top))',
       height: 'calc(4rem + env(safe-area-inset-top))' // Fixed height to prevent layout shift
     }}>
