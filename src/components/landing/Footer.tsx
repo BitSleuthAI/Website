@@ -8,7 +8,11 @@ interface FooterProps {
 
 export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
   return (
-    <footer className="edge-to-edge-section flex flex-col gap-2 sm:flex-row py-6 shrink-0 items-center px-4 md:px-6 border-t" style={{ paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom))' }}>
+    <footer className="edge-to-edge-section flex flex-col gap-2 sm:flex-row py-6 shrink-0 items-center border-t" style={{ 
+      paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom))',
+      paddingLeft: 'max(1rem, env(safe-area-inset-left))',
+      paddingRight: 'max(1rem, env(safe-area-inset-right))'
+    }}>
       <div className="flex items-center gap-2">
         <Search className="h-6 w-6 text-primary" />
         <p className="text-sm text-muted-foreground font-normal">&copy; {new Date().getFullYear()} BitSleuth. All rights reserved.</p>
