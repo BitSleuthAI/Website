@@ -42,7 +42,7 @@ export function PricingSection() {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {plans.map((plan, idx) => (
-            <Card key={idx} className={`relative flex flex-col text-left overflow-hidden shadow-glow ${plan.popular ? 'border-primary border-2' : ''} ${plan.comingSoon ? 'blur-sm pointer-events-none' : ''}`}>
+            <Card key={idx} className={`relative flex flex-col text-left overflow-hidden shadow-glow ${plan.comingSoon ? 'blur-sm pointer-events-none' : ''}`}>
               {plan.comingSoon && (
                   <Badge variant="secondary" className="absolute top-4 right-4 text-xs font-bold py-1 px-3 z-10 blur-none">COMING SOON</Badge>
               )}
@@ -55,7 +55,7 @@ export function PricingSection() {
                 <ul className="space-y-2 mb-8 flex-grow font-medium">
                     {plan.features.map(feature => <li key={feature} className="flex items-center gap-2">✅<span>{feature}</span></li>)}
                 </ul>
-                <Button asChild variant={plan.popular ? 'default' : 'outline'} className="w-full">
+                <Button asChild variant="outline" className="w-full">
                   {plan.href ? <a href={plan.href}>{plan.cta}</a> : <span>{plan.cta}</span>}
                 </Button>
               </CardContent>

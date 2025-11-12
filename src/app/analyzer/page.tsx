@@ -3,7 +3,7 @@
 "use client";
 
 import { useState } from 'react';
-import { analyzerMetadata, analyzerStructuredData } from './metadata';
+import { analyzerStructuredData } from './metadata';
 import { Header } from '@/components/landing/Header';
 import { HeroSection } from '@/components/landing/HeroSection';
 import { FeaturesSection } from '@/components/landing/FeaturesSection';

@@ -18,10 +18,6 @@ export default function PrivacyPolicyPage() {
   const openPrivacyModal = () => setActiveModal('privacy');
   const openTermsModal = () => setActiveModal('terms');
   const closeModal = () => setActiveModal(null);
-  
-  const handleTermsClickInPrivacy = () => {
-    setActiveModal('terms');
-  };
 
   return (
     <div className="flex flex-col min-h-dvh bg-background">

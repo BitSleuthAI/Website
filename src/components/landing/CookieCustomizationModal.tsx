@@ -61,7 +61,7 @@ export function CookieCustomizationModal({
     onAcceptAll
 }: CookieCustomizationModalProps) {
   const [showMore, setShowMore] = useState(false);
-  const [preferences, setPreferences] = useState({
+  const [preferences, setPreferences] = useState<Record<string, boolean>>({
     necessary: true,
     functional: false,
     analytics: false,
@@ -124,7 +124,7 @@ export function CookieCustomizationModal({
                          ) : (
                            <Switch
                                 id={category.id}
-                                checked={(preferences as any)[category.id]}
+                                checked={preferences[category.id] ?? false}
                                 onCheckedChange={(checked) => handleSwitchChange(category.id, checked)}
                                 className="mr-4"
                             />
