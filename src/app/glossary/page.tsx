@@ -8,7 +8,7 @@ import { Header } from '@/components/landing/Header';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChevronRight, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation'; // Unused for now
 import { Button } from '@/components/ui/button';
 import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
 import { TermsOfServiceModal } from '@/components/landing/TermsOfServiceModal';
@@ -107,7 +107,6 @@ const glossaryTerms = [
 ];
 
 export default function GlossaryIndexPage() {
-  const router = useRouter();
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
 
   const openPrivacyModal = () => setActiveModal('privacy');

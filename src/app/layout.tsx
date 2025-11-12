@@ -25,22 +25,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isClient, setIsClient] = useState(false)
-  const [analyticsAllowed, setAnalyticsAllowed] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [analyticsAllowed, setAnalyticsAllowed] = useState(() => {
+    // Initialize from localStorage on mount (only runs once)
+    if (typeof window === 'undefined') return false;
+    try {
+      const consent = localStorage.getItem('cookie_consent');
+      if (consent) {
+        const parsedConsent = JSON.parse(consent);
+        return parsedConsent.analytics === true;
+      }
+    } catch (e) {
+      console.error("Error parsing cookie consent:", e);
+    }
+    return false;
+  });
 
   useEffect(() => {
+    // This is a legitimate hydration pattern - set client flag after mount
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsClient(true)
-    const consent = localStorage.getItem('cookie_consent');
-    if (consent) {
-        try {
-            const parsedConsent = JSON.parse(consent);
-            if (parsedConsent.analytics) {
-                setAnalyticsAllowed(true);
-            }
-        } catch (e) {
-            console.error("Error parsing cookie consent:", e);
-        }
-    }
-    
   }, [])
 
   return (

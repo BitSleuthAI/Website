@@ -35,24 +35,34 @@ export function ThemeProvider({
   children: React.ReactNode;
   defaultTheme?: ThemePreference;
 }) {
-  const [theme, setThemeState] = useState<ThemePreference>(defaultTheme);
-  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
+  // Initialize theme from localStorage or default
+  const [theme, setThemeState] = useState<ThemePreference>(() => {
+    if (typeof window === 'undefined') return defaultTheme;
+    try {
+      const stored = localStorage.getItem("theme");
+      return (stored as ThemePreference) || defaultTheme;
+    } catch {
+      return defaultTheme;
+    }
+  });
 
-  // Initialize from localStorage and system
-  useEffect(() => {
+  // Initialize resolved theme
+  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">(() => {
+    if (typeof window === 'undefined') return "light";
     try {
       const stored = localStorage.getItem("theme");
       const initialPref = (stored as ThemePreference) || defaultTheme;
-      const initialResolved = initialPref === "system" ? getSystemTheme() : initialPref;
-      setThemeState(initialPref);
-      setResolvedTheme(initialResolved);
-      applyThemeClass(initialResolved);
+      return initialPref === "system" ? getSystemTheme() : initialPref;
     } catch {
-      const initialResolved = defaultTheme === "system" ? getSystemTheme() : defaultTheme;
-      setResolvedTheme(initialResolved);
-      applyThemeClass(initialResolved);
+      return defaultTheme === "system" ? getSystemTheme() : defaultTheme;
     }
-  }, [defaultTheme]);
+  });
+
+  // Apply theme class on mount
+  useEffect(() => {
+    applyThemeClass(resolvedTheme);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // React to system changes when in system mode
   useEffect(() => {

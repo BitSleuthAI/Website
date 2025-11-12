@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from 'react';
-import { walletMetadata, walletStructuredData } from './metadata';
+import { walletStructuredData } from './metadata';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
