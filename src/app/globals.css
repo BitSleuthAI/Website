@@ -11,8 +11,8 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 276 100% 50%;
-    --primary-foreground: 276 100% 95%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
@@ -23,7 +23,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 276 100% 50%;
+    --ring: 25 95% 53%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -39,16 +39,16 @@
     /* Sidebar light */
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 240 10% 3.9%;
-    --sidebar-primary: 276 100% 50%;
+    --sidebar-primary: 25 95% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 10% 3.9%;
     --sidebar-border: 240 5.9% 90%;
-    --sidebar-ring: 276 100% 60%;
+    --sidebar-ring: 25 95% 53%;
 
     /* Heading gradient colors (light) */
-    --heading-start: hsl(var(--primary));
-    --heading-via: hsl(276 100% 70%);
+    --heading-start: hsl(25 95% 53%);
+    --heading-via: hsl(25 95% 63%);
     --heading-end: hsl(240 10% 16%);
   }
 
@@ -60,8 +60,8 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 276 100% 68.4%;
-    --primary-foreground: 276 100% 15%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
@@ -72,7 +72,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 276 100% 75%;
+    --ring: 25 95% 53%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -88,16 +88,16 @@
     /* Sidebar dark */
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 276 100% 68.4%;
+    --sidebar-primary: 25 95% 53%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 14.9%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 276 100% 75%;
+    --sidebar-ring: 25 95% 53%;
 
     /* Heading gradient colors (dark) */
-    --heading-start: hsl(var(--primary));
-    --heading-via: hsl(276 100% 76%);
+    --heading-start: hsl(25 95% 53%);
+    --heading-via: hsl(25 95% 63%);
     --heading-end: hsl(0 0% 98%);
   }
 }
