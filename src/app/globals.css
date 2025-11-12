@@ -331,6 +331,18 @@
     height: auto;
   }
   
+  /* Touch manipulation for better mobile responsiveness */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  button,
+  a,
+  [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
   /* Smooth transitions for theme changes - only for specific properties */
   * {
     transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
