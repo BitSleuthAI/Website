@@ -50,7 +50,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="!scroll-smooth">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no, minimal-ui" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5, user-scalable=yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <title>BitSleuth | AI-Powered Bitcoin Wallet Analysis & Privacy Wallet</title>
         <meta name="description" content="Professional Bitcoin wallet analysis with AI-powered insights, transaction visualization, and OPSEC risk detection. Plus a privacy-first non-custodial wallet for secure Bitcoin storage." />
         <meta name="keywords" content="bitcoin wallet analysis, blockchain analysis, bitcoin privacy, wallet security, OPSEC, bitcoin tools, cryptocurrency analysis, bitcoin wallet, non-custodial wallet, bitcoin transparency" />
@@ -79,9 +82,8 @@ export default function RootLayout({
         
         {/* Additional SEO */}
         <link rel="canonical" href="https://www.bitsleuth.ai/" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="apple-mobile-web-app-title" content="BitSleuth" />
         
         {/* Structured Data */}
