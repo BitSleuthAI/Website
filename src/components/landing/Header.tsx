@@ -32,7 +32,7 @@ export function Header({ basePath = '' }: HeaderProps) {
   const showNavLinks = basePath === '/analyzer' || basePath === '/wallet';
 
   return (
-    <header className="edge-to-edge-section flex items-center shadow-sm sticky top-0 z-50 bg-background/80 backdrop-blur-sm" style={{ 
+    <header className="edge-to-edge-section flex items-center shadow-sm sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50" style={{ 
       paddingTop: 'calc(1rem + env(safe-area-inset-top))',
       paddingBottom: '1rem',
       paddingLeft: 'max(1rem, env(safe-area-inset-left))',
@@ -40,7 +40,7 @@ export function Header({ basePath = '' }: HeaderProps) {
       minHeight: 'calc(4rem + env(safe-area-inset-top))',
       height: 'calc(4rem + env(safe-area-inset-top))' // Fixed height to prevent layout shift
     }}>
-      <Link href="/" className="flex items-center justify-center">
+      <Link href="/" className="flex items-center justify-center hover:opacity-80 transition-opacity">
         <Search className="h-6 w-6 text-primary" />
         <span className="ml-2 font-bold text-lg">BitSleuth</span>
       </Link>
