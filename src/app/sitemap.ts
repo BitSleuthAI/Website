@@ -1,5 +1,6 @@
-
 import { type MetadataRoute } from 'next';
+import fs from 'fs';
+import path from 'path';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.bitsleuth.ai';
@@ -32,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/glossary`,
       lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'weekly' as const, // Changed to weekly due to active term additions
       priority: 0.8,
     },
     {
@@ -61,30 +62,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const glossaryTerms = [
-    'address',
-    'bit',
-    'bitcoin',
-    'block',
-    'blockchain',
-    'btc',
-    'confirmation',
-    'cryptography',
-    'double-spend',
-    'hash-rate',
-    'mining',
-    'p2p',
-    'passphrase',
-    'private-key',
-    'signature',
-    'transaction-privacy',
-    'wallet',
-  ];
+  // Dynamically read all glossary terms from the filesystem
+  const glossaryPath = path.join(process.cwd(), 'src', 'app', 'glossary');
+  let glossaryTerms: string[] = [];
+  
+  try {
+    const entries = fs.readdirSync(glossaryPath, { withFileTypes: true });
+    glossaryTerms = entries
+      .filter((entry) => entry.isDirectory())
+      .map((entry) => entry.name)
+      .sort();
+  } catch (error) {
+    console.error('Error reading glossary directory:', error);
+    // Fallback to empty array if directory can't be read
+    glossaryTerms = [];
+  }
 
   const glossaryPages = glossaryTerms.map((term) => ({
     url: `${baseUrl}/glossary/${term}`,
     lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
+    changeFrequency: 'weekly' as const, // Changed to weekly since terms are being actively added
     priority: 0.7,
   }));
 
