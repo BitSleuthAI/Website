@@ -25,8 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isClient, setIsClient] = useState(false)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [analyticsAllowed, setAnalyticsAllowed] = useState(() => {
+  const [analyticsAllowed] = useState(() => {
     // Initialize from localStorage on mount (only runs once)
     if (typeof window === 'undefined') return false;
     try {
