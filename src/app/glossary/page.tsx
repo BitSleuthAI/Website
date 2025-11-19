@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { Footer } from '@/components/landing/Footer';
 import { Header } from '@/components/landing/Header';
 import { Card, CardContent } from '@/components/ui/card';
-import { ChevronRight, ArrowLeft, Search } from 'lucide-react';
+import { ChevronRight, ArrowLeft, Search, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -14,6 +14,7 @@ import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
 import { TermsOfServiceModal } from '@/components/landing/TermsOfServiceModal';
 import { BackgroundBeams } from '@/components/ui/background-beams';
 import { generateGlossaryCollectionSchema } from '@/lib/structured-data';
+import { ValueBadge } from '@/components/ui/value-badge';
 
 
 const glossaryTerms = [
@@ -293,8 +294,8 @@ export default function GlossaryIndexPage() {
               </Link>
             </Button>
             <div className="space-y-6 text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
-                <span className="text-sm font-medium text-primary">Learning Hub</span>
+              <div className="mb-4 inline-block">
+                <ValueBadge icon={GraduationCap} text="Learning Hub" variant="primary" />
               </div>
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-gradient-title pb-2">
                 Bitcoin Glossary
