@@ -138,9 +138,9 @@ export default function ComingSoonPage() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-card/50 hover:border-primary/50 transition-colors shadow-glow p-6 text-center">
+              <Card className="bg-card/50 hover:border-complementary/50 transition-colors shadow-glow p-6 text-center">
                 <CardHeader className="p-2">
-                  <Shield className="h-12 w-12 text-primary mx-auto" />
+                  <Shield className="h-12 w-12 text-complementary mx-auto" />
                 </CardHeader>
                 <CardContent className="p-2">
                   <CardTitle className="font-bold text-xl mb-2">Privacy-First</CardTitle>

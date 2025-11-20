@@ -6,14 +6,17 @@ const steps = [
   {
     title: "Step 1",
     description: "Paste a Bitcoin wallet address into the analysis bar.",
+    colorScheme: "primary",
   },
   {
     title: "Step 2",
     description: "BitSleuth analyzes the transaction history and OPSEC risks.",
+    colorScheme: "complementary",
   },
   {
     title: "Step 3",
     description: "View visual insights and chat with our AI to understand the data.",
+    colorScheme: "primary",
   },
 ];
 
@@ -30,7 +33,9 @@ export function HowItWorksSection() {
           {steps.map((step, idx) => (
             <Card key={idx} className="bg-secondary/30 text-left shadow-glow">
                 <CardHeader>
-                    <CardTitle className="text-lg font-bold mb-2 text-primary">{step.title}</CardTitle>
+                    <CardTitle className={`text-lg font-bold mb-2 ${
+                      step.colorScheme === 'complementary' ? 'text-complementary' : 'text-primary'
+                    }`}>{step.title}</CardTitle>
                 </CardHeader>
               <CardContent>
                 <p className="font-normal">{step.description}</p>
