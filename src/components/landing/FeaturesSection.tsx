@@ -6,10 +6,10 @@ import { BarChart3, Search, Bot, LineChart, ShieldAlert, BookUser, Zap, Bitcoin 
 
 const features = [
   {
-    icon: <BarChart3 className="h-8 w-8 text-complementary" />,
+    icon: <BarChart3 className="h-8 w-8 text-primary" />,
     title: 'Wallet Visualization',
     description: 'See a clear, interactive graph of all transactions and fund flows.',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     icon: <Search className="h-8 w-8 text-primary" />,
@@ -24,10 +24,10 @@ const features = [
     colorScheme: 'primary',
   },
   {
-    icon: <LineChart className="h-8 w-8 text-complementary" />,
+    icon: <LineChart className="h-8 w-8 text-primary" />,
     title: 'Transaction History Graphs',
     description: 'Track wallet balance and activity over time with detailed charts.',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     icon: <ShieldAlert className="h-8 w-8 text-primary" />,
@@ -61,11 +61,7 @@ export function FeaturesSection() {
           {features.map((feature, idx) => (
             <Card 
               key={idx} 
-              className={`bg-card/50 transition-colors shadow-glow p-4 flex flex-col items-center ${
-                feature.colorScheme === 'complementary' 
-                  ? 'hover:border-complementary/50' 
-                  : 'hover:border-primary/50'
-              }`}
+              className="bg-card/50 transition-colors shadow-glow p-4 flex flex-col items-center hover:border-primary/50"
             >
               <CardHeader className="p-2">
                  {feature.icon}

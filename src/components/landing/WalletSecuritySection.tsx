@@ -41,11 +41,7 @@ export function WalletSecuritySection() {
           {securityFeatures.map((feature, idx) => (
             <Card 
               key={idx} 
-              className={`bg-card/50 transition-colors shadow-glow p-4 ${
-                feature.colorScheme === 'complementary' 
-                  ? 'hover:border-complementary/50' 
-                  : 'hover:border-primary/50'
-              }`}
+              className="bg-card/50 transition-colors shadow-glow p-4 hover:border-primary/50"
             >
               <CardHeader className="flex flex-col items-center text-center p-2">
                 {feature.icon}

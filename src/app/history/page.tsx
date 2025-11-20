@@ -374,16 +374,16 @@ export default function HistoryPage() {
                 </Card>
 
                 {/* Proof-of-Work */}
-                <Card className="bg-background border-complementary/20">
+                <Card className="bg-background border-primary/20">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
-                      <div className="p-4 rounded-xl bg-complementary/10">
-                        <Shield className="h-12 w-12 text-complementary" />
+                      <div className="p-4 rounded-xl bg-primary/10">
+                        <Shield className="h-12 w-12 text-primary" />
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold mb-4">Proof-of-Work Consensus</h3>
                         <p className="text-muted-foreground mb-4">
-                          <Link href="/glossary/mining" className="text-complementary hover:underline">Mining</Link> uses computational work to achieve consensus. Miners compete to solve complex mathematical puzzles, and the winner gets to add the next block. This process makes attacks expensive—an attacker would need to control more computing power than the entire honest network combined.
+                          <Link href="/glossary/mining" className="text-primary hover:underline">Mining</Link> uses computational work to achieve consensus. Miners compete to solve complex mathematical puzzles, and the winner gets to add the next block. This process makes attacks expensive—an attacker would need to control more computing power than the entire honest network combined.
                         </p>
                         <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                           <p className="text-sm text-muted-foreground">
@@ -413,11 +413,11 @@ export default function HistoryPage() {
                 </Card>
 
                 {/* Incentive System */}
-                <Card className="bg-background border-complementary/20">
+                <Card className="bg-background border-primary/20">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
-                      <div className="p-4 rounded-xl bg-complementary/10">
-                        <Coins className="h-12 w-12 text-complementary" />
+                      <div className="p-4 rounded-xl bg-primary/10">
+                        <Coins className="h-12 w-12 text-primary" />
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold mb-4">The Incentive System</h3>

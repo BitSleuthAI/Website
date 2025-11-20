@@ -704,7 +704,7 @@ export default function LearnPage() {
                     description: 'Your secret code that proves ownership and allows spending',
                     icon: Lock,
                     slug: 'private-key',
-                    colorScheme: 'complementary'
+                    colorScheme: 'primary'
                   },
                   {
                     term: 'Wallet',
@@ -725,7 +725,7 @@ export default function LearnPage() {
                     description: 'Process of validating transactions and securing the network',
                     icon: TrendingUp,
                     slug: 'mining',
-                    colorScheme: 'complementary'
+                    colorScheme: 'primary'
                   },
                   {
                     term: 'Peer-to-Peer',
@@ -736,36 +736,20 @@ export default function LearnPage() {
                   },
                 ].map((concept) => (
                   <Link key={concept.slug} href={`/glossary/${concept.slug}`} className="group">
-                    <Card className={`h-full transition-all duration-300 hover:shadow-lg ${
-                      concept.colorScheme === 'complementary' 
-                        ? 'hover:border-complementary/50 hover:bg-secondary/20' 
-                        : 'hover:border-primary/50 hover:bg-secondary/20'
-                    }`}>
+                    <Card className="h-full transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:bg-secondary/20">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-3 mb-3">
-                          <div className={`p-2 rounded-lg transition-colors ${
-                            concept.colorScheme === 'complementary' 
-                              ? 'bg-complementary/10 group-hover:bg-complementary/20' 
-                              : 'bg-primary/10 group-hover:bg-primary/20'
-                          }`}>
-                            <concept.icon className={`h-6 w-6 ${
-                              concept.colorScheme === 'complementary' ? 'text-complementary' : 'text-primary'
-                            }`} />
+                          <div className="p-2 rounded-lg transition-colors bg-primary/10 group-hover:bg-primary/20">
+                            <concept.icon className="h-6 w-6 text-primary" />
                           </div>
-                          <h3 className={`text-xl font-bold transition-colors ${
-                            concept.colorScheme === 'complementary' 
-                              ? 'group-hover:text-complementary' 
-                              : 'group-hover:text-primary'
-                          }`}>
+                          <h3 className="text-xl font-bold transition-colors group-hover:text-primary">
                             {concept.term}
                           </h3>
                         </div>
                         <p className="text-muted-foreground text-sm">
                           {concept.description}
                         </p>
-                        <div className={`mt-4 flex items-center text-sm group-hover:underline ${
-                          concept.colorScheme === 'complementary' ? 'text-complementary' : 'text-primary'
-                        }`}>
+                        <div className="mt-4 flex items-center text-sm group-hover:underline text-primary">
                           Learn more
                           <ArrowRight className="ml-1 h-4 w-4" />
                         </div>
