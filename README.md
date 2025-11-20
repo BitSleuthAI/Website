@@ -219,11 +219,23 @@ For complete guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 ### File Organization
 **All documentation files (markdown `.md` files) are stored in the `docs/` folder** to maintain consistency and make them easy to find. When creating new documentation, please place it in this directory.
 
-### Additional Resources
+### Active Documentation
+Current, relevant documentation for development:
 - **PRD**: `docs/PRD.md` - Product Requirements Document
-- **SEO Strategy**: `docs/SEO_STRATEGY.md` - SEO optimization guide
+- **Implementation History**: `docs/IMPLEMENTATION_HISTORY.md` - Consolidated history of completed work and current state
+- **SEO Strategy**: `docs/SEO_STRATEGY.md` - SEO optimization guide and ongoing strategy
 - **MCP Server**: `docs/MCP_SERVER.md` - Model Context Protocol server configuration
 - **Visual Recommendations**: `docs/todo.md` - UI/UX improvement suggestions
+
+### Historical Documentation
+Completed implementations are documented in `docs/archive/` for reference:
+- Glossary SEO updates and AI bot optimization
+- Answer Engine Optimization (AEO) implementation
+- Edge-to-edge viewport for mobile
+- Component library updates (shadcn/ui, Radix UI)
+- Tailwind CSS version management
+
+See `docs/archive/README.md` for details on archived documentation.
 
 ### External Links
 - [Next.js Documentation](https://nextjs.org/docs)
