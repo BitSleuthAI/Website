@@ -78,10 +78,10 @@ export default function PrivateKeyGlossaryPage() {
             <div className="mt-8 p-4 bg-destructive/10 border-l-4 border-destructive rounded-r-md">
                  <div className="flex items-center">
                     <ShieldAlert className="h-6 w-6 mr-3 text-destructive" />
-                    <h3 className="text-xl font-bold text-destructive-foreground">Protect Your Keys</h3>
+                    <h3 className="text-xl font-bold text-foreground">Protect Your Keys</h3>
                  </div>
-                 <p className="text-destructive-foreground/80 mt-2 font-normal">
-                    In practice, you should never handle your raw private keys directly. Your wallet software takes care of this for you. Your primary responsibility is to securely back up your <Link href="/glossary/passphrase" className="font-bold text-destructive-foreground hover:underline">passphrase</Link> and keep it secret. Anyone with access to it can access your bitcoin.
+                 <p className="text-foreground/90 mt-2 font-normal">
+                    In practice, you should never handle your raw private keys directly. Your wallet software takes care of this for you. Your primary responsibility is to securely back up your <Link href="/glossary/passphrase" className="font-bold text-foreground hover:underline">passphrase</Link> and keep it secret. Anyone with access to it can access your bitcoin.
                 </p>
             </div>
 

@@ -55,7 +55,7 @@ export default function PrivacyPolicyPage() {
               operate with a privacy-first mindset, especially within our wallet platform.
             </p>
 
-            <h3 className="text-xl font-bold text-complementary">2. What Data We Collect</h3>
+            <h3 className="text-xl font-bold text-primary">2. What Data We Collect</h3>
             <p className="font-normal">We collect limited data to support our services:</p>
             <p className="font-semibold">
               <strong>On <a href="https://www.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.bitsleuth.ai</a> and <a href="https://app.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">app.bitsleuth.ai</a>:</strong>
@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
               </li>
             </ul>
 
-            <h3 className="text-xl font-bold text-complementary">3. How We Use Your Information</h3>
+            <h3 className="text-xl font-bold text-primary">3. How We Use Your Information</h3>
             <p className="font-normal">We only use your information for the following purposes:</p>
             <ul className="list-disc pl-6 font-normal">
               <li>To understand how our website and analytics app are used.</li>
@@ -108,7 +108,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="font-normal">We do not store or retain personal data from Wallet App.</p>
 
-            <h3 className="text-xl font-bold text-complementary">6. Your Rights</h3>
+            <h3 className="text-xl font-bold text-primary">6. Your Rights</h3>
             <p className="font-normal">
               Depending on your location, you may have rights under applicable data protection laws,
               such as:

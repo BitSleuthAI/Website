@@ -33,13 +33,13 @@ export default function TaprootGlossaryPage() {
               What Is Taproot?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              Taproot is a major Bitcoin protocol upgrade activated in November 2021 that enhances privacy, efficiency, and smart contract flexibility. It introduces <Link href="/glossary/schnorr-signature" className="text-complementary hover:underline">Schnorr signatures</Link> and enables more complex Bitcoin scripts to appear identical to simple transactions on the blockchain.
+              Taproot is a major Bitcoin protocol upgrade activated in November 2021 that enhances privacy, efficiency, and smart contract flexibility. It introduces <Link href="/glossary/schnorr-signature" className="text-primary hover:underline">Schnorr signatures</Link> and enables more complex Bitcoin scripts to appear identical to simple transactions on the blockchain.
             </p>
 
             <Card className="my-6 bg-secondary/30">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <Lock className="mr-2 h-6 w-6 text-complementary" />
+                    <Lock className="mr-2 h-6 w-6 text-primary" />
                     Privacy Through Uniformity
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -55,7 +55,7 @@ export default function TaprootGlossaryPage() {
              <div className="mt-8 grid gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Eye className="mr-2 h-6 w-6 text-complementary" />
+                        <Eye className="mr-2 h-6 w-6 text-primary" />
                         Enhanced Privacy
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -64,17 +64,17 @@ export default function TaprootGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Zap className="mr-2 h-6 w-6 text-complementary" />
+                        <Zap className="mr-2 h-6 w-6 text-primary" />
                         Lower Fees & Better Efficiency
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Schnorr signatures enable signature aggregation, reducing the data size of multi-signature transactions. This results in lower <Link href="/glossary/fee-rate" className="text-complementary hover:underline">fees</Link> and more efficient use of block space.
+                      Schnorr signatures enable signature aggregation, reducing the data size of multi-signature transactions. This results in lower <Link href="/glossary/fee-rate" className="text-primary hover:underline">fees</Link> and more efficient use of block space.
                     </p>
                 </div>
             </div>
             
             <p className="text-muted-foreground mt-8 font-normal">
-             Taproot builds on <Link href="/glossary/segwit" className="text-complementary hover:underline">SegWit</Link> and works alongside <Link href="/glossary/miniscript" className="text-complementary hover:underline">Miniscript</Link> to enable more sophisticated Bitcoin applications while keeping the network secure and private. It represents a significant step forward in Bitcoin's evolution.
+             Taproot builds on <Link href="/glossary/segwit" className="text-primary hover:underline">SegWit</Link> and works alongside <Link href="/glossary/miniscript" className="text-primary hover:underline">Miniscript</Link> to enable more sophisticated Bitcoin applications while keeping the network secure and private. It represents a significant step forward in Bitcoin's evolution.
             </p>
           </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

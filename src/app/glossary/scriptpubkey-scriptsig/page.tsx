@@ -33,13 +33,13 @@ export default function ScriptPubKeyScriptSigGlossaryPage() {
               What Are ScriptPubKey and ScriptSig?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              ScriptPubKey and ScriptSig are the two halves of Bitcoin's programmable transaction system. ScriptPubKey (locking script) defines the conditions required to spend a <Link href="/glossary/utxo" className="text-complementary hover:underline">UTXO</Link>, while ScriptSig (unlocking script) provides the data needed to satisfy those conditions.
+              ScriptPubKey and ScriptSig are the two halves of Bitcoin's programmable transaction system. ScriptPubKey (locking script) defines the conditions required to spend a <Link href="/glossary/utxo" className="text-primary hover:underline">UTXO</Link>, while ScriptSig (unlocking script) provides the data needed to satisfy those conditions.
             </p>
 
             <Card className="my-6 bg-secondary/30">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <Code className="mr-2 h-6 w-6 text-complementary" />
+                    <Code className="mr-2 h-6 w-6 text-primary" />
                     Bitcoin Script Language
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -55,16 +55,16 @@ export default function ScriptPubKeyScriptSigGlossaryPage() {
              <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Lock className="mr-2 h-6 w-6 text-complementary" />
+                        <Lock className="mr-2 h-6 w-6 text-primary" />
                         ScriptPubKey (Locking Script)
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Placed in transaction outputs, ScriptPubKey specifies the conditions for spending the bitcoin. Most commonly, it requires a valid <Link href="/glossary/signature" className="text-complementary hover:underline">digital signature</Link> from the owner's <Link href="/glossary/private-key" className="text-complementary hover:underline">private key</Link>.
+                      Placed in transaction outputs, ScriptPubKey specifies the conditions for spending the bitcoin. Most commonly, it requires a valid <Link href="/glossary/signature" className="text-primary hover:underline">digital signature</Link> from the owner's <Link href="/glossary/private-key" className="text-primary hover:underline">private key</Link>.
                     </p>
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Key className="mr-2 h-6 w-6 text-complementary" />
+                        <Key className="mr-2 h-6 w-6 text-primary" />
                         ScriptSig (Unlocking Script)
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -74,7 +74,7 @@ export default function ScriptPubKeyScriptSigGlossaryPage() {
             </div>
             
             <p className="text-muted-foreground mt-8 font-normal">
-             With <Link href="/glossary/segwit" className="text-complementary hover:underline">SegWit</Link>, witness data replaced ScriptSig for signature data, improving transaction malleability and efficiency. Modern tools like <Link href="/glossary/miniscript" className="text-complementary hover:underline">Miniscript</Link> make it easier to compose complex scripts safely.
+             With <Link href="/glossary/segwit" className="text-primary hover:underline">SegWit</Link>, witness data replaced ScriptSig for signature data, improving transaction malleability and efficiency. Modern tools like <Link href="/glossary/miniscript" className="text-primary hover:underline">Miniscript</Link> make it easier to compose complex scripts safely.
             </p>
           </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

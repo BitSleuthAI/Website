@@ -33,17 +33,17 @@ export default function CoinSelectionGlossaryPage() {
               What Is Coin Selection?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              Coin selection is the process by which a Bitcoin <Link href="/glossary/wallet" className="text-complementary hover:underline">wallet</Link> chooses which <Link href="/glossary/utxo" className="text-complementary hover:underline">UTXOs</Link> to spend when creating a transaction. Different selection algorithms optimize for various goals like minimizing fees, enhancing privacy, or reducing future wallet complexity.
+              Coin selection is the process by which a Bitcoin <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> chooses which <Link href="/glossary/utxo" className="text-primary hover:underline">UTXOs</Link> to spend when creating a transaction. Different selection algorithms optimize for various goals like minimizing fees, enhancing privacy, or reducing future wallet complexity.
             </p>
 
             <Card className="my-6 bg-secondary/30">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <Wallet className="mr-2 h-6 w-6 text-complementary" />
+                    <Wallet className="mr-2 h-6 w-6 text-primary" />
                     Why It Matters
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
-                    Your wallet might have dozens or hundreds of UTXOs from previous transactions. The selection algorithm determines which ones to use as inputs, affecting transaction size, <Link href="/glossary/fee-rate" className="text-complementary hover:underline">fees</Link>, privacy, and future wallet management.
+                    Your wallet might have dozens or hundreds of UTXOs from previous transactions. The selection algorithm determines which ones to use as inputs, affecting transaction size, <Link href="/glossary/fee-rate" className="text-primary hover:underline">fees</Link>, privacy, and future wallet management.
                 </p>
               </CardContent>
             </Card>
@@ -55,16 +55,16 @@ export default function CoinSelectionGlossaryPage() {
              <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <DollarSign className="mr-2 h-6 w-6 text-complementary" />
+                        <DollarSign className="mr-2 h-6 w-6 text-primary" />
                         Fee Optimization
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Strategies like "Branch and Bound" aim to create transactions with exact change or minimal change outputs, reducing overall transaction size and fees. Some algorithms consolidate <Link href="/glossary/dust-limit" className="text-complementary hover:underline">dust</Link> UTXOs when fees are low.
+                      Strategies like "Branch and Bound" aim to create transactions with exact change or minimal change outputs, reducing overall transaction size and fees. Some algorithms consolidate <Link href="/glossary/dust-limit" className="text-primary hover:underline">dust</Link> UTXOs when fees are low.
                     </p>
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Eye className="mr-2 h-6 w-6 text-complementary" />
+                        <Eye className="mr-2 h-6 w-6 text-primary" />
                         Privacy Considerations
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -74,7 +74,7 @@ export default function CoinSelectionGlossaryPage() {
             </div>
             
             <p className="text-muted-foreground mt-8 font-normal">
-             Bitcoin Core and other wallets implement sophisticated coin selection algorithms. Some wallets offer manual coin control, letting advanced users choose specific UTXOs. Understanding coin selection helps optimize both costs and <Link href="/glossary/transaction-privacy" className="text-complementary hover:underline">privacy</Link> in Bitcoin transactions.
+             Bitcoin Core and other wallets implement sophisticated coin selection algorithms. Some wallets offer manual coin control, letting advanced users choose specific UTXOs. Understanding coin selection helps optimize both costs and <Link href="/glossary/transaction-privacy" className="text-primary hover:underline">privacy</Link> in Bitcoin transactions.
             </p>
           </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

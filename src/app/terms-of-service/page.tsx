@@ -63,7 +63,7 @@ export default function TermsOfServicePage() {
               exchange platforms.
             </p>
 
-            <h3 className="text-xl font-bold text-complementary">2. Eligibility</h3>
+            <h3 className="text-xl font-bold text-primary">2. Eligibility</h3>
             <p className="font-normal">
               To use the Services, you must be at least 18 years old or the age of legal majority
               in your jurisdiction. By using our Services, you confirm that you meet these
@@ -88,7 +88,7 @@ export default function TermsOfServicePage() {
               <li>Use any automated tools (such as bots or scrapers) without our prior consent.</li>
             </ul>
 
-            <h3 className="text-xl font-bold text-complementary">4. Our Wallet & Analytics Tools</h3>
+            <h3 className="text-xl font-bold text-primary">4. Our Wallet & Analytics Tools</h3>
             <p className="font-normal">We provide two core applications:</p>
             <p className="font-semibold">
               <strong>Bitcoin Wallet App</strong>

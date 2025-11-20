@@ -34,17 +34,17 @@ export default function SignatureGlossaryPage() {
               What Is a Digital Signature?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              In Bitcoin, a digital signature is a mathematical proof that a transaction has been authorized by the owner of the funds. It is created using a <Link href="/glossary/private-key" className="text-complementary hover:underline">private key</Link> and is included in every transaction broadcast to the network.
+              In Bitcoin, a digital signature is a mathematical proof that a transaction has been authorized by the owner of the funds. It is created using a <Link href="/glossary/private-key" className="text-primary hover:underline">private key</Link> and is included in every transaction broadcast to the network.
             </p>
 
             <Card className="my-6 bg-secondary/30">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <PenSquare className="mr-2 h-6 w-6 text-complementary" />
+                    <PenSquare className="mr-2 h-6 w-6 text-primary" />
                     How It Works
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
-                   When you send bitcoin from your <Link href="/glossary/wallet" className="text-complementary hover:underline">wallet</Link>, it uses your private key to "sign" the transaction details. This signature is unique to that specific transaction and cannot be forged without the private key.
+                   When you send bitcoin from your <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link>, it uses your private key to "sign" the transaction details. This signature is unique to that specific transaction and cannot be forged without the private key.
                 </p>
               </CardContent>
             </Card>
@@ -52,7 +52,7 @@ export default function SignatureGlossaryPage() {
             <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <ShieldCheck className="mr-2 h-6 w-6 text-complementary" />
+                        <ShieldCheck className="mr-2 h-6 w-6 text-primary" />
                         Proving Ownership
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -61,7 +61,7 @@ export default function SignatureGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <PenSquare className="mr-2 h-6 w-6 text-complementary" />
+                        <PenSquare className="mr-2 h-6 w-6 text-primary" />
                         Ensuring Integrity
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">

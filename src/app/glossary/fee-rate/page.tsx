@@ -34,17 +34,17 @@ export default function FeeRateGlossaryPage() {
               What Is Fee Rate (sat/vB)?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              Fee rate, measured in satoshis per virtual byte (sat/vB), represents how much you're paying per unit of transaction data. It's the primary metric miners use to prioritize transactions from the <Link href="/glossary/mempool" className="text-complementary hover:underline">mempool</Link> when building blocks.
+              Fee rate, measured in satoshis per virtual byte (sat/vB), represents how much you're paying per unit of transaction data. It's the primary metric miners use to prioritize transactions from the <Link href="/glossary/mempool" className="text-primary hover:underline">mempool</Link> when building blocks.
             </p>
 
             <Card className="my-6 bg-secondary/30">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <Scale className="mr-2 h-6 w-6 text-complementary" />
+                    <Scale className="mr-2 h-6 w-6 text-primary" />
                     Understanding Virtual Bytes
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
-                    Virtual bytes (vBytes) account for the <Link href="/glossary/segwit" className="text-complementary hover:underline">SegWit</Link> discount, where witness data takes up less block weight. A transaction's total fee is calculated as: fee rate × transaction size in vBytes.
+                    Virtual bytes (vBytes) account for the <Link href="/glossary/segwit" className="text-primary hover:underline">SegWit</Link> discount, where witness data takes up less block weight. A transaction's total fee is calculated as: fee rate × transaction size in vBytes.
                 </p>
               </CardContent>
             </Card>
@@ -56,26 +56,26 @@ export default function FeeRateGlossaryPage() {
              <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <TrendingUp className="mr-2 h-6 w-6 text-complementary" />
+                        <TrendingUp className="mr-2 h-6 w-6 text-primary" />
                         Fee Market Dynamics
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Fee rates fluctuate based on network demand. During high activity, you need higher sat/vB rates for timely <Link href="/glossary/confirmation" className="text-complementary hover:underline">confirmation</Link>. During quiet periods, lower rates suffice.
+                      Fee rates fluctuate based on network demand. During high activity, you need higher sat/vB rates for timely <Link href="/glossary/confirmation" className="text-primary hover:underline">confirmation</Link>. During quiet periods, lower rates suffice.
                     </p>
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <DollarSign className="mr-2 h-6 w-6 text-complementary" />
+                        <DollarSign className="mr-2 h-6 w-6 text-primary" />
                         Optimizing Fees
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Transaction size varies based on input/output count and address types. <Link href="/glossary/segwit" className="text-complementary hover:underline">SegWit</Link> and <Link href="/glossary/taproot" className="text-complementary hover:underline">Taproot</Link> addresses reduce transaction size, resulting in lower total fees at the same sat/vB rate.
+                      Transaction size varies based on input/output count and address types. <Link href="/glossary/segwit" className="text-primary hover:underline">SegWit</Link> and <Link href="/glossary/taproot" className="text-primary hover:underline">Taproot</Link> addresses reduce transaction size, resulting in lower total fees at the same sat/vB rate.
                     </p>
                 </div>
             </div>
             
             <p className="text-muted-foreground mt-8 font-normal">
-             Most <Link href="/glossary/wallet" className="text-complementary hover:underline">wallets</Link> automatically suggest appropriate fee rates based on current mempool conditions. Advanced users can manually set rates using tools like <Link href="/glossary/rbf" className="text-complementary hover:underline">RBF</Link> to adjust after broadcasting if needed. Understanding fee rates helps optimize both cost and confirmation speed.
+             Most <Link href="/glossary/wallet" className="text-primary hover:underline">wallets</Link> automatically suggest appropriate fee rates based on current mempool conditions. Advanced users can manually set rates using tools like <Link href="/glossary/rbf" className="text-primary hover:underline">RBF</Link> to adjust after broadcasting if needed. Understanding fee rates helps optimize both cost and confirmation speed.
             </p>
           </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

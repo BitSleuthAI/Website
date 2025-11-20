@@ -33,13 +33,13 @@ export default function DescriptorWalletGlossaryPage() {
               What Is a Descriptor Wallet?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              A descriptor wallet is a modern Bitcoin <Link href="/glossary/wallet" className="text-complementary hover:underline">wallet</Link> implementation that uses output script descriptors to precisely define how to derive addresses and create spending conditions. It provides a more flexible and explicit alternative to traditional <Link href="/glossary/bip32" className="text-complementary hover:underline">BIP32</Link>/<Link href="/glossary/bip44" className="text-complementary hover:underline">BIP44</Link> wallets.
+              A descriptor wallet is a modern Bitcoin <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> implementation that uses output script descriptors to precisely define how to derive addresses and create spending conditions. It provides a more flexible and explicit alternative to traditional <Link href="/glossary/bip32" className="text-primary hover:underline">BIP32</Link>/<Link href="/glossary/bip44" className="text-primary hover:underline">BIP44</Link> wallets.
             </p>
 
             <Card className="my-6 bg-secondary/30">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <FileCode className="mr-2 h-6 w-6 text-complementary" />
+                    <FileCode className="mr-2 h-6 w-6 text-primary" />
                     What Are Descriptors?
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -55,26 +55,26 @@ export default function DescriptorWalletGlossaryPage() {
              <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Shield className="mr-2 h-6 w-6 text-complementary" />
+                        <Shield className="mr-2 h-6 w-6 text-primary" />
                         Explicit & Unambiguous
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Descriptors remove guesswork by explicitly stating how to generate <Link href="/glossary/address" className="text-complementary hover:underline">addresses</Link>. This eliminates compatibility issues and ensures wallets can always reconstruct the correct address types.
+                      Descriptors remove guesswork by explicitly stating how to generate <Link href="/glossary/address" className="text-primary hover:underline">addresses</Link>. This eliminates compatibility issues and ensures wallets can always reconstruct the correct address types.
                     </p>
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Zap className="mr-2 h-6 w-6 text-complementary" />
+                        <Zap className="mr-2 h-6 w-6 text-primary" />
                         Advanced Features
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Descriptor wallets natively support modern address formats like <Link href="/glossary/taproot" className="text-complementary hover:underline">Taproot</Link> (P2TR) and work seamlessly with <Link href="/glossary/miniscript" className="text-complementary hover:underline">Miniscript</Link> for complex spending policies.
+                      Descriptor wallets natively support modern address formats like <Link href="/glossary/taproot" className="text-primary hover:underline">Taproot</Link> (P2TR) and work seamlessly with <Link href="/glossary/miniscript" className="text-primary hover:underline">Miniscript</Link> for complex spending policies.
                     </p>
                 </div>
             </div>
             
             <p className="text-muted-foreground mt-8 font-normal">
-             Bitcoin Core adopted descriptor wallets as the default in version 23.0, reflecting their growing importance. They're particularly valuable for multi-sig setups, hardware wallet coordination, and <Link href="/glossary/psbt" className="text-complementary hover:underline">PSBT</Link> workflows requiring precise script definitions.
+             Bitcoin Core adopted descriptor wallets as the default in version 23.0, reflecting their growing importance. They're particularly valuable for multi-sig setups, hardware wallet coordination, and <Link href="/glossary/psbt" className="text-primary hover:underline">PSBT</Link> workflows requiring precise script definitions.
             </p>
           </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

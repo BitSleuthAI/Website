@@ -39,11 +39,11 @@ export default function PSBTGlossaryPage() {
             <Card className="my-6 bg-secondary/30">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <Workflow className="mr-2 h-6 w-6 text-complementary" />
+                    <Workflow className="mr-2 h-6 w-6 text-primary" />
                     Transaction Workflow
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
-                    A PSBT moves through stages: Creator (builds transaction structure), Updater (adds <Link href="/glossary/utxo" className="text-complementary hover:underline">UTXO</Link> data), Signer (adds <Link href="/glossary/signature" className="text-complementary hover:underline">signatures</Link>), and Finalizer (assembles complete transaction). Each role can be performed by different software or hardware.
+                    A PSBT moves through stages: Creator (builds transaction structure), Updater (adds <Link href="/glossary/utxo" className="text-primary hover:underline">UTXO</Link> data), Signer (adds <Link href="/glossary/signature" className="text-primary hover:underline">signatures</Link>), and Finalizer (assembles complete transaction). Each role can be performed by different software or hardware.
                 </p>
               </CardContent>
             </Card>
@@ -55,7 +55,7 @@ export default function PSBTGlossaryPage() {
              <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Users className="mr-2 h-6 w-6 text-complementary" />
+                        <Users className="mr-2 h-6 w-6 text-primary" />
                         Multi-Signature Coordination
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -64,17 +64,17 @@ export default function PSBTGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Shield className="mr-2 h-6 w-6 text-complementary" />
+                        <Shield className="mr-2 h-6 w-6 text-primary" />
                         Hardware Wallet Integration
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Hardware wallets use PSBTs to safely sign transactions created by watch-only <Link href="/glossary/wallet" className="text-complementary hover:underline">wallets</Link>. The unsigned PSBT is passed to the hardware device, signed offline, then returned for broadcast.
+                      Hardware wallets use PSBTs to safely sign transactions created by watch-only <Link href="/glossary/wallet" className="text-primary hover:underline">wallets</Link>. The unsigned PSBT is passed to the hardware device, signed offline, then returned for broadcast.
                     </p>
                 </div>
             </div>
             
             <p className="text-muted-foreground mt-8 font-normal">
-             PSBTs have become the standard for interoperability between Bitcoin wallets and signing devices. They work seamlessly with <Link href="/glossary/descriptor-wallet" className="text-complementary hover:underline">descriptor wallets</Link> and support all address types including <Link href="/glossary/segwit" className="text-complementary hover:underline">SegWit</Link> and <Link href="/glossary/taproot" className="text-complementary hover:underline">Taproot</Link>.
+             PSBTs have become the standard for interoperability between Bitcoin wallets and signing devices. They work seamlessly with <Link href="/glossary/descriptor-wallet" className="text-primary hover:underline">descriptor wallets</Link> and support all address types including <Link href="/glossary/segwit" className="text-primary hover:underline">SegWit</Link> and <Link href="/glossary/taproot" className="text-primary hover:underline">Taproot</Link>.
             </p>
           </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

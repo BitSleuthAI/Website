@@ -47,7 +47,7 @@ export default function BitGlossaryPage() {
             <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Coins className="mr-2 h-6 w-6 text-complementary" />
+                        <Coins className="mr-2 h-6 w-6 text-primary" />
                         Why Use Bits?
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -56,7 +56,7 @@ export default function BitGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Scale className="mr-2 h-6 w-6 text-complementary" />
+                        <Scale className="mr-2 h-6 w-6 text-primary" />
                         Bits vs. Satoshis
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
