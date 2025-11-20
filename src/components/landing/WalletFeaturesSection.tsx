@@ -13,10 +13,10 @@ const features = [
     colorScheme: 'primary',
   },
   {
-    icon: <Fingerprint className="h-8 w-8 text-complementary" />,
+    icon: <Fingerprint className="h-8 w-8 text-primary" />,
     title: 'On-Chain Privacy',
     description: 'Designed to mitigate address reuse and protect your transaction history from trivial blockchain analysis.',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     icon: <ShieldOff className="h-8 w-8 text-primary" />,
@@ -44,11 +44,7 @@ export function WalletFeaturesSection() {
           {features.map((feature, idx) => (
             <Card 
               key={idx} 
-              className={`bg-card/50 transition-colors shadow-glow p-4 ${
-                feature.colorScheme === 'complementary' 
-                  ? 'hover:border-complementary/50' 
-                  : 'hover:border-primary/50'
-              }`}
+              className="bg-card/50 transition-colors shadow-glow p-4 hover:border-primary/50"
             >
               <CardHeader className="flex flex-row items-start gap-4 p-2">
                  {feature.icon}

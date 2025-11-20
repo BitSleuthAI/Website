@@ -91,12 +91,12 @@ export function EducationalSection() {
           </Card>
 
           {/* Bitcoin History Card */}
-          <Card className="group bg-gradient-to-br from-background to-secondary/20 border-complementary/30 hover:border-complementary/60 hover:shadow-xl hover:shadow-complementary/20 transition-all duration-300 hover:scale-[1.02] overflow-hidden">
+          <Card className="group bg-gradient-to-br from-background to-secondary/20 border-primary/30 hover:border-primary/60 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] overflow-hidden">
             <CardContent className="p-8">
               {/* Icon and Title */}
               <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 rounded-xl bg-complementary/10 group-hover:bg-complementary/20 transition-colors">
-                  <Clock className="h-10 w-10 text-complementary" />
+                <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <Clock className="h-10 w-10 text-primary" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-1">Bitcoin History</h3>
@@ -112,21 +112,21 @@ export function EducationalSection() {
               {/* Feature List */}
               <div className="space-y-3 mb-6">
                 <div className="flex items-start gap-3">
-                  <FileText className="h-5 w-5 text-complementary mt-0.5 flex-shrink-0" />
+                  <FileText className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="font-semibold text-sm">The Whitepaper</div>
                     <div className="text-xs text-muted-foreground">Satoshi's vision simplified</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Lightbulb className="h-5 w-5 text-complementary mt-0.5 flex-shrink-0" />
+                  <Lightbulb className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="font-semibold text-sm">Genesis Block</div>
                     <div className="text-xs text-muted-foreground">The birth of Bitcoin in 2009</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Network className="h-5 w-5 text-complementary mt-0.5 flex-shrink-0" />
+                  <Network className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <div className="font-semibold text-sm">Global Impact</div>
                     <div className="text-xs text-muted-foreground">How Bitcoin changed finance forever</div>
@@ -135,7 +135,7 @@ export function EducationalSection() {
               </div>
 
               {/* CTA Button */}
-              <Button asChild variant="outline" className="w-full group-hover:shadow-md transition-shadow border-complementary/50 hover:bg-complementary/10 hover:text-complementary">
+              <Button asChild className="w-full group-hover:shadow-md transition-shadow">
                 <Link href="/history">
                   Explore History
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

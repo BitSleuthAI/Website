@@ -29,13 +29,13 @@ const glossaryTerms = [
     term: 'BIP32 (Hierarchical Deterministic Wallets)',
     definition: 'A standard for HD wallets that allows a single master seed to generate an entire tree of key pairs, enabling unlimited addresses from one backup.',
     href: '/glossary/bip32',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'BIP39 (Mnemonic Phrases)',
     definition: 'The standard for converting a random seed into a human-readable list of words (12-24 words) that represent your entire wallet and can restore all your bitcoin.',
     href: '/glossary/bip39',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'BIP44 (Multi-Account Hierarchy)',
@@ -59,13 +59,13 @@ const glossaryTerms = [
     term: 'Block',
     definition: 'A permanent record in the blockchain containing a batch of recent, confirmed transactions. A new block is added approximately every 10 minutes.',
     href: '/glossary/block',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'Blockchain',
     definition: 'A public, decentralized, and immutable ledger of every Bitcoin transaction ever made. It consists of a chronological chain of blocks linked together with cryptography.',
     href: '/glossary/blockchain',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'BTC',
@@ -89,13 +89,13 @@ const glossaryTerms = [
     term: 'CoinJoin',
     definition: 'A privacy-enhancing technique where multiple users combine their transactions into a single collaborative transaction, breaking the common input ownership heuristic.',
     href: '/glossary/coinjoin',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'Confirmation',
     definition: 'The act of a transaction being successfully verified by the network and included in a block on the blockchain. More confirmations mean greater security.',
     href: '/glossary/confirmation',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'CPFP (Child Pays for Parent)',
@@ -119,7 +119,7 @@ const glossaryTerms = [
     term: 'Descriptor Wallet',
     definition: 'A modern wallet implementation that uses output script descriptors to precisely define how to derive addresses and create spending conditions.',
     href: '/glossary/descriptor-wallet',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'Double Spend',
@@ -143,7 +143,7 @@ const glossaryTerms = [
     term: 'Hash Rate',
     definition: 'The total combined computational power being used to mine and process transactions on the Bitcoin network. A higher hash rate indicates a more secure network.',
     href: '/glossary/hash-rate',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'HTLC (Hashed Timelock Contract)',
@@ -155,13 +155,13 @@ const glossaryTerms = [
     term: 'Lightning Network',
     definition: 'A Layer 2 payment protocol built on Bitcoin that enables instant, low-cost transactions by moving them off the main blockchain using payment channels.',
     href: '/glossary/lightning-network',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'Mempool',
     definition: 'A waiting area where unconfirmed Bitcoin transactions are held before being included in a block. Each node maintains its own mempool.',
     href: '/glossary/mempool',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'Merkle Tree',
@@ -173,7 +173,7 @@ const glossaryTerms = [
     term: 'Mining',
     definition: 'The process of using powerful computers to solve complex puzzles, which confirms transactions, adds them to the blockchain, and creates new bitcoins.',
     href: '/glossary/mining',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'Miniscript',
@@ -192,25 +192,25 @@ const glossaryTerms = [
     definition:
       'A human-readable backup of your crypto wallet’s private key, usually made up of 12 to 24 randomly chosen words. Most cryptocurrency wallets, including BitSleuth Wallet, use BIP39-compatible passphrases for secure backup and recovery.',
     href: '/glossary/passphrase',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'PayJoin',
     definition: 'A privacy-enhancing transaction type where the receiver contributes their own UTXO as an additional input, breaking chain analysis assumptions.',
     href: '/glossary/payjoin',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'Private Key',
     definition: 'The secret, cryptographic key that proves ownership and allows you to spend bitcoins. It is generated from your passphrase and should never be handled directly.',
     href: '/glossary/private-key',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'PSBT (Partially Signed Bitcoin Transaction)',
     definition: 'A standardized format for Bitcoin transactions that allows multiple parties or devices to collaborate on creating and signing a transaction.',
     href: '/glossary/psbt',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'RBF (Replace-by-Fee)',
@@ -234,7 +234,7 @@ const glossaryTerms = [
     term: 'SegWit (Segregated Witness)',
     definition: 'A 2017 protocol upgrade that separates signature data from transaction data, increasing block capacity and fixing transaction malleability.',
     href: '/glossary/segwit',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'Sidechain',
@@ -252,7 +252,7 @@ const glossaryTerms = [
     term: 'Silent Payments',
     definition: 'A protocol that allows publishing a single static address that can receive unlimited payments, with each payment going to a unique on-chain address.',
     href: '/glossary/silent-payments',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'Splicing (Lightning)',
@@ -264,20 +264,20 @@ const glossaryTerms = [
     term: 'Taproot',
     definition: 'A major 2021 Bitcoin upgrade that introduces Schnorr signatures and enables complex Bitcoin scripts to appear identical to simple transactions.',
     href: '/glossary/taproot',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'Transaction Privacy',
     definition:
       'Understand the difference between pseudonymity and anonymity in Bitcoin, and learn about on-chain and IP address privacy considerations.',
     href: '/glossary/transaction-privacy',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
   {
     term: 'UTXO (Unspent Transaction Output)',
     definition: 'A discrete chunk of bitcoin that remains after a transaction and can be spent in future transactions, like digital bills or coins in your wallet.',
     href: '/glossary/utxo',
-    colorScheme: 'complementary',
+    colorScheme: 'primary',
   },
    {
     term: 'Wallet',
@@ -404,26 +404,16 @@ export default function GlossaryIndexPage() {
               <div className="space-y-6">
                 {filteredTerms.sort((a,b) => a.term.localeCompare(b.term)).map((item) => (
               <Link key={item.term} href={item.href} className="block group">
-                <Card className={`hover:bg-secondary/20 transition-colors shadow-glow ${
-                  item.colorScheme === 'complementary' 
-                    ? 'hover:border-complementary/50' 
-                    : 'hover:border-primary/50'
-                }`}>
+                <Card className="hover:bg-secondary/20 transition-colors shadow-glow hover:border-primary/50">
                   <CardContent className="p-6 flex items-center justify-between">
                     <div className="flex-1">
-                      <h2 className={`text-2xl font-bold group-hover:underline ${
-                        item.colorScheme === 'complementary' ? 'text-complementary' : 'text-primary'
-                      }`}>
+                      <h2 className="text-2xl font-bold group-hover:underline text-primary">
                         {item.term}
                       </h2>
                       <p className="text-muted-foreground mt-2 font-normal">{item.definition}</p>
                     </div>
                     <div className="flex-shrink-0 ml-4">
-                      <ChevronRight className={`h-6 w-6 text-muted-foreground transition-colors ${
-                        item.colorScheme === 'complementary' 
-                          ? 'group-hover:text-complementary' 
-                          : 'group-hover:text-primary'
-                      }`} />
+                      <ChevronRight className="h-6 w-6 text-muted-foreground transition-colors group-hover:text-primary" />
                     </div>
                   </CardContent>
                 </Card>
