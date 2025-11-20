@@ -8,7 +8,7 @@ import { Header } from '@/components/landing/Header';
 import { Card, CardContent } from '@/components/ui/card';
 
 import { AlertCircle } from 'lucide-react';
-import Link from 'next/link';
+
 
 import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
 import { TermsOfServiceModal } from '@/components/landing/TermsOfServiceModal';
