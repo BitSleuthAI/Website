@@ -11,7 +11,6 @@ import { Users, Globe } from 'lucide-react';
 import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
 import { TermsOfServiceModal } from '@/components/landing/TermsOfServiceModal';
 import { GlossaryPageWrapper } from '@/components/glossary/GlossaryPageWrapper';
-import Link from 'next/link';
 
 export default function P2PGlossaryPage() {
   const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | null>(null);
