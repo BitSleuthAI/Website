@@ -13,17 +13,17 @@
 ## Tech Stack
 
 ### Core Technologies
-- **Framework:** Next.js 15.5.2 (App Router)
+- **Framework:** Next.js 16.0.1 (App Router)
 - **Language:** TypeScript 5.x (strict mode enabled)
-- **Runtime:** React 18.3.1
+- **Runtime:** React 19.2.0
 - **Node.js:** 18+ (20+ recommended)
 
 ### UI & Styling
-- **CSS Framework:** Tailwind CSS 3.4.1
+- **CSS Framework:** Tailwind CSS 3.4.18
 - **Component Library:** shadcn/ui with Radix UI primitives
-- **Icons:** Lucide React
-- **Carousel:** Embla Carousel
-- **Animations:** tailwindcss-animate
+- **Icons:** Lucide React 0.475.0
+- **Carousel:** Embla Carousel 8.6.0
+- **Animations:** tailwindcss-animate 1.0.7
 
 ### Backend & Integration
 - **Hosting:** Firebase App Hosting
@@ -32,7 +32,7 @@
 - **Forms:** React Hook Form + Zod validation
 
 ### Development Tools
-- **Package Manager:** npm
+- **Package Manager:** npm 11.6.3
 - **Linter:** ESLint (Next.js config)
 - **Type Checking:** TypeScript compiler
 - **Build Tool:** Next.js with Turbopack
@@ -57,7 +57,10 @@
 │   │   ├── globals.css           # Global styles
 │   │   ├── analyzer/             # Analyzer product landing page
 │   │   ├── wallet/               # Wallet product landing page
-│   │   ├── glossary/             # Bitcoin terminology guide (15+ terms)
+│   │   │   └── coming-soon/      # Wallet coming soon preview page
+│   │   ├── learn/                # Bitcoin education and learning hub
+│   │   ├── history/              # Complete history of Bitcoin page
+│   │   ├── glossary/             # Bitcoin terminology guide (44 terms)
 │   │   ├── privacy-policy/       # Privacy policy page
 │   │   ├── terms-of-service/     # Terms of service page
 │   │   ├── company-information/  # Company info page
@@ -74,7 +77,7 @@
 │   │   │   ├── FeaturesSection.tsx
 │   │   │   ├── FaqSection.tsx
 │   │   │   ├── CookieConsent.tsx # GDPR-compliant cookie banner
-│   │   │   └── [27 total components]
+│   │   │   └── [29 total components]
 │   │   ├── ui/                   # shadcn/ui component primitives
 │   │   ├── ThemeToggle.tsx       # Dark/light mode switcher
 │   │   └── theme-provider.tsx    # Theme context provider
@@ -95,14 +98,29 @@
 ### Product Landing Pages
 - **Analyzer Page** (`/analyzer`): Bitcoin wallet analysis tool showcase
 - **Wallet Page** (`/wallet`): Privacy-focused Bitcoin wallet app
+- **Wallet Coming Soon** (`/wallet/coming-soon`): Preview page for upcoming wallet features
 - Interactive hero sections with address input
 - Feature showcases, FAQs, testimonials, pricing
 
-### Educational Glossary
-- **Route:** `/glossary` and `/glossary/[term]`
-- 15+ Bitcoin terminology entries
-- Individual detail pages for each term
-- SEO-optimized educational content
+### Educational Content
+- **Learn Hub** (`/learn`): Comprehensive Bitcoin education center covering fundamentals, getting started guides, and advanced topics
+- **History Page** (`/history`): Complete timeline of Bitcoin's evolution from creation to global impact
+- **Glossary** (`/glossary` and `/glossary/[term]`): 44 Bitcoin terminology entries with individual detail pages
+- SEO-optimized educational content with structured data
+- Internal linking and AI-friendly formatting
+
+**Complete Glossary Terms (44 total):**
+- **Basics:** address, bit, bitcoin, block, blockchain, btc, confirmation, cryptography, hash-rate, mining, private-key, signature, utxo, wallet
+- **Standards & Protocols:** bip32, bip39, bip44, p2p, segwit, taproot
+- **Transaction Features:** cltv, coin-selection, cpfp, csv, double-spend, dust-limit, fee-rate, psbt, rbf, scriptpubkey-scriptsig
+- **Privacy & Security:** coinjoin, payjoin, silent-payments, transaction-privacy
+- **Advanced Concepts:** descriptor-wallet, htlc, lightning-network, mempool, merkle-tree, miniscript, passphrase, schnorr-signature, sidechain, splicing
+
+### AI Training & Documentation
+- **AI Training Content** (`/ai-training-content`): Comprehensive platform documentation structured for AI system training and understanding
+- Detailed product information, feature sets, and technical specifications
+- Structured for optimal consumption by AI assistants and chatbots
+- Helps AI systems provide accurate information about BitSleuth products
 
 ### Privacy & Compliance
 - GDPR-compliant cookie consent system
@@ -112,10 +130,11 @@
 
 ### SEO Optimization
 - Custom metadata for each page
-- Dynamic sitemap generation
+- Dynamic sitemap generation with automatic glossary term detection
 - Robots.txt configuration
 - Open Graph and Twitter Card support
-- JSON-LD structured data
+- JSON-LD structured data for articles, breadcrumbs, and FAQs
+- AI-friendly content structure for SearchGPT, Perplexity, and other AI crawlers
 
 ### User Experience
 - Light/dark theme support with system preference detection
@@ -237,11 +256,15 @@ Set in Firebase console via `apphosting.prd.yaml`:
 | `/` | Homepage | Overview, hero, features |
 | `/analyzer` | Analyzer product page | Features, demo, pricing, FAQ |
 | `/wallet` | Wallet product page | Security, features, waitlist |
-| `/glossary` | Glossary index | Bitcoin terminology list |
-| `/glossary/[term]` | Term detail pages | Individual term explanations |
+| `/wallet/coming-soon` | Wallet preview page | Coming soon features and waitlist |
+| `/learn` | Bitcoin education hub | Fundamentals, getting started, advanced topics |
+| `/history` | Bitcoin history page | Complete timeline from 2008 to present |
+| `/glossary` | Glossary index | 44 Bitcoin terminology entries |
+| `/glossary/[term]` | Term detail pages | Individual term explanations with examples |
 | `/privacy-policy` | Privacy policy | GDPR compliance info |
 | `/terms-of-service` | Terms of service | Legal terms |
 | `/company-information` | Company info | About BitSleuth |
+| `/ai-training-content` | AI training documentation | Platform info for AI systems |
 | `/api/waitlist` | Waitlist API endpoint | Email collection |
 
 ---
@@ -349,9 +372,18 @@ firebase deploy --only hosting
 
 ### Adding a Glossary Term
 1. Create folder: `src/app/glossary/new-term/`
-2. Add `page.tsx` with term content
-3. Update glossary index page
-4. Add to sitemap configuration
+2. Add `page.tsx` with term content and structured data
+3. Use `GlossaryPageWrapper` component for consistency
+4. Sitemap automatically detects new terms (no manual update needed)
+5. Update glossary index page to include the new term in the list
+
+### Adding an Educational Page
+1. Create folder: `src/app/page-name/`
+2. Add `page.tsx` with educational content
+3. Add `metadata.ts` (if needed) for SEO optimization
+4. Include JSON-LD structured data for Article schema
+5. Add to sitemap in `src/app/sitemap.ts`
+6. Add navigation link in `Header.tsx` (if needed)
 
 ### Adding a shadcn/ui Component
 ```bash
@@ -566,7 +598,7 @@ Use conventional commits:
 
 ---
 
-**Last Updated:** November 2025  
-**Document Version:** 1.0  
+**Last Updated:** November 21, 2025  
+**Document Version:** 1.1  
 **Built with ❤️ by the BitSleuth Team**
 
