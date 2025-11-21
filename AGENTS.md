@@ -32,7 +32,7 @@
 - **Forms:** React Hook Form + Zod validation
 
 ### Development Tools
-- **Package Manager:** npm
+- **Package Manager:** npm 11.6.3
 - **Linter:** ESLint (Next.js config)
 - **Type Checking:** TypeScript compiler
 - **Build Tool:** Next.js with Turbopack
