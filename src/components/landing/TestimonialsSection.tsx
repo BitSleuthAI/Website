@@ -11,7 +11,7 @@ const testimonials = [
     author: "Early Adopter",
   },
   {
-    quote: "I use BitSleuth for every coinjoin review. It's an essential part of my workflow.",
+    quote: "I use BitSleuth for every CoinJoin review. It's an essential part of my workflow.",
     author: "Privacy Advocate",
   },
 ];
