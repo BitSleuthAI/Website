@@ -2,7 +2,7 @@
 
 > **Bitcoin Wallet Analysis & Privacy Tools**
 
-BitSleuth is a comprehensive Next.js 15 website serving as the primary marketing and educational hub for Bitcoin analysis tools. The platform features product landing pages for a Bitcoin wallet analyzer and Bitcoin wallet app, an extensive educational glossary, SEO optimization, and privacy-compliant analytics.
+BitSleuth is a comprehensive Next.js 16 website serving as the primary marketing and educational hub for Bitcoin analysis tools. The platform features product landing pages for a Bitcoin wallet analyzer and Bitcoin wallet app, an extensive educational glossary, SEO optimization, and privacy-compliant analytics.
 
 **🌐 Production:** [https://www.bitsleuth.ai](https://www.bitsleuth.ai)
 
@@ -19,7 +19,7 @@ BitSleuth is a comprehensive Next.js 15 website serving as the primary marketing
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 15 (App Router), React 18, TypeScript
+- **Framework**: Next.js 16 (App Router), React 19, TypeScript 5
 - **Styling**: Tailwind CSS, shadcn/ui, Radix primitives
 - **UX**: Embla Carousel, Lucide icons
 - **SEO**: App Router metadata routes (`robots.ts`, `sitemap.ts`)
