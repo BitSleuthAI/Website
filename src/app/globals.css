@@ -4,104 +4,82 @@
 
 @layer base {
   :root {
-    /* Light theme */
+    /* Light theme - Polished & Trustworthy */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 25 95% 53%;
+    
+    /* Vibrant Bitcoin Orange */
+    --primary: 27 96% 61%; /* #FD8B3B - Warmer, more vibrant orange */
     --primary-foreground: 0 0% 100%;
+    
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
+    
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    
+    --accent: 27 96% 96%; /* Very light orange tint for backgrounds */
+    --accent-foreground: 27 96% 40%;
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
+    
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 25 95% 53%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
+    --ring: 27 96% 61%;
+    
+    --radius: 0.75rem; /* Slightly more rounded for modern feel */
+
+    /* Chart colors */
+    --chart-1: 27 96% 61%;
+    --chart-2: 240 10% 20%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --chart-positive: 158 82% 42%;
-    --chart-negative: 350 89% 60%;
-    --chart-received: 330 100% 50%;
-    --chart-sent: 150 100% 40%;
-    --bitcoin-orange: 25 95% 53%;
-    --complementary: 205 90% 55%;
-    --complementary-foreground: 0 0% 100%;
-    --radius: 0.5rem;
-
-    /* Sidebar light */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 240 10% 3.9%;
-    --sidebar-primary: 25 95% 53%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 10% 3.9%;
-    --sidebar-border: 240 5.9% 90%;
-    --sidebar-ring: 25 95% 53%;
-
-    /* Heading gradient colors (light) */
-    --heading-start: hsl(25 95% 53%);
-    --heading-via: hsl(205 90% 55%);
-    --heading-end: hsl(240 10% 16%);
+    
+    /* Custom Brand Colors */
+    --bitcoin-orange: 27 96% 61%;
+    
+    /* Heading gradient - Orange to Dark */
+    --heading-start: hsl(27 96% 61%);
+    --heading-via: hsl(20 90% 55%);
+    --heading-end: hsl(240 10% 20%);
   }
 
   .dark {
-    /* Dark theme (previous defaults) */
+    /* Dark theme - Premium & Sleek */
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 240 10% 6%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 240 10% 6%;
     --popover-foreground: 0 0% 98%;
-    --primary: 25 95% 53%;
+    
+    --primary: 27 96% 61%;
     --primary-foreground: 0 0% 100%;
+    
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
+    
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
+    
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
+    
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 25 95% 53%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --chart-positive: 158 82% 42%;
-    --chart-negative: 350 89% 60%;
-    --chart-received: 330 100% 71%;
-    --chart-sent: 150 100% 71%;
-    --bitcoin-orange: 25 95% 53%;
-    --complementary: 205 85% 60%;
-    --complementary-foreground: 0 0% 100%;
-    --radius: 0.5rem;
-
-    /* Sidebar dark */
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 25 95% 53%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 14.9%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 25 95% 53%;
-
-    /* Heading gradient colors (dark) */
-    --heading-start: hsl(25 95% 53%);
-    --heading-via: hsl(205 85% 60%);
+    --ring: 27 96% 61%;
+    
+    --heading-start: hsl(27 96% 61%);
+    --heading-via: hsl(20 85% 60%);
     --heading-end: hsl(0 0% 98%);
   }
 }

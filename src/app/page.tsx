@@ -1,5 +1,3 @@
-
-// src/app/page.tsx
 "use client";
 
 import { useState } from 'react';
@@ -7,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { EnhancedHomeHeroSection } from '@/components/landing/EnhancedHomeHeroSection';
 import { EducationalSection } from '@/components/landing/EducationalSection';
 import { AboutSection } from '@/components/landing/AboutSection';
+import { TestimonialsSection } from '@/components/landing/TestimonialsSection';
 import { Footer } from '@/components/landing/Footer';
 import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
 import { TermsOfServiceModal } from '@/components/landing/TermsOfServiceModal';
@@ -24,14 +23,15 @@ export default function Home() {
       <main className="flex-1">
         <EnhancedHomeHeroSection />
         <EducationalSection />
+        <TestimonialsSection />
         <AboutSection />
       </main>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />
       <PrivacyPolicyModal isOpen={activeModal === 'privacy'} onOpenChange={closeModal} />
-      <TermsOfServiceModal 
-        isOpen={activeModal === 'terms'} 
+      <TermsOfServiceModal
+        isOpen={activeModal === 'terms'}
         onOpenChange={closeModal}
-        onPrivacyClick={openPrivacyModal} 
+        onPrivacyClick={openPrivacyModal}
       />
     </div>
   );

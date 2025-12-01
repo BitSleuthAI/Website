@@ -32,19 +32,19 @@ export function Header({ basePath = '' }: HeaderProps) {
   const showNavLinks = basePath === '/analyzer' || basePath === '/wallet';
 
   return (
-    <header className="edge-to-edge-section flex items-center shadow-sm sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50" style={{ 
+    <header className="edge-to-edge-section flex items-center shadow-sm sticky top-0 z-50 bg-gradient-to-b from-primary/10 via-background/95 to-background/95 backdrop-blur-md border-b border-border/40" style={{
       paddingTop: 'calc(1rem + env(safe-area-inset-top))',
       paddingBottom: '1rem',
       paddingLeft: 'max(1rem, env(safe-area-inset-left))',
       paddingRight: 'max(1rem, env(safe-area-inset-right))',
       minHeight: 'calc(4rem + env(safe-area-inset-top))',
-      height: 'calc(4rem + env(safe-area-inset-top))' // Fixed height to prevent layout shift
+      height: 'calc(4rem + env(safe-area-inset-top))'
     }}>
-      <Link href="/" className="flex items-center justify-center hover:opacity-80 transition-opacity">
-        <Search className="h-6 w-6 text-complementary" />
-        <span className="ml-2 font-bold text-lg">BitSleuth</span>
+      <Link href="/" className="flex items-center justify-center hover:opacity-90 transition-opacity">
+        <img src="/images/logo-icon.jpg" alt="BitSleuth Logo" className="h-10 w-10 rounded-xl shadow-sm" />
+        <span className="ml-3 font-bold text-xl tracking-tight text-foreground">BitSleuth</span>
       </Link>
-      <nav className="ml-auto hidden gap-6 sm:flex items-center">
+      <nav className="ml-auto hidden gap-8 sm:flex items-center">
         <ThemeToggle />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -52,11 +52,11 @@ export function Header({ basePath = '' }: HeaderProps) {
               Products <ChevronDown className="h-4 w-4 ml-1" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
+          <DropdownMenuContent align="end" className="w-56">
             <DropdownMenuItem asChild>
-              <Link href="/analyzer" className="w-full">
+              <Link href="/analyzer" className="w-full cursor-pointer">
                 <div className="flex items-start gap-3">
-                  <BarChart className="h-5 w-5 mt-1 text-complementary" />
+                  <BarChart className="h-5 w-5 mt-0.5 text-primary" />
                   <div>
                     <p className="font-semibold">Wallet Analyzer</p>
                     <p className="text-xs text-muted-foreground font-normal">AI-powered transaction analysis</p>
@@ -65,31 +65,31 @@ export function Header({ basePath = '' }: HeaderProps) {
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-               <Link href="/wallet" className="w-full">
-                 <div className="flex items-start gap-3">
-                    <Lock className="h-5 w-5 mt-1 text-complementary" />
-                    <div>
-                        <p className="font-semibold">Privacy Wallet</p>
-                        <p className="text-xs text-muted-foreground font-normal">Non-custodial, private BTC wallet</p>
-                    </div>
-                 </div>
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/learn" className="w-full">
+              <Link href="/wallet" className="w-full cursor-pointer">
                 <div className="flex items-start gap-3">
-                  <GraduationCap className="h-5 w-5 mt-1 text-complementary" />
+                  <Lock className="h-5 w-5 mt-0.5 text-primary" />
                   <div>
-                    <p className="font-semibold">Learning Hub</p>
-                    <p className="text-xs text-muted-foreground font-normal">Bitcoin Educational Learning Hub</p>
+                    <p className="font-semibold">Privacy Wallet</p>
+                    <p className="text-xs text-muted-foreground font-normal">Non-custodial, private BTC wallet</p>
                   </div>
                 </div>
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href="/history" className="w-full">
+              <Link href="/learn" className="w-full cursor-pointer">
                 <div className="flex items-start gap-3">
-                  <ScrollText className="h-5 w-5 mt-1 text-complementary" />
+                  <GraduationCap className="h-5 w-5 mt-0.5 text-primary" />
+                  <div>
+                    <p className="font-semibold">Learning Hub</p>
+                    <p className="text-xs text-muted-foreground font-normal">Bitcoin Educational Hub</p>
+                  </div>
+                </div>
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/history" className="w-full cursor-pointer">
+                <div className="flex items-start gap-3">
+                  <ScrollText className="h-5 w-5 mt-0.5 text-primary" />
                   <div>
                     <p className="font-semibold">Bitcoin History</p>
                     <p className="text-xs text-muted-foreground font-normal">History of Bitcoin</p>
@@ -110,36 +110,36 @@ export function Header({ basePath = '' }: HeaderProps) {
             {link.label}
           </Link>
         ))}
-        
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-             <Button className="bg-complementary hover:bg-complementary/90 text-complementary-foreground">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg shadow-primary/20">
               <Rocket className="mr-2 h-4 w-4" />
-              Launch
+              Launch App
               <ChevronDown className="h-4 w-4 ml-1" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent>
-              <DropdownMenuItem asChild>
-                <a href="https://app.bitsleuth.ai/" target="_blank" rel="noopener noreferrer" className="w-full">
-                  <div className="flex items-start gap-3">
-                    <BarChart className="h-5 w-5 mt-1 text-complementary" />
-                    <div>
-                      <p className="font-semibold">Wallet Analyzer</p>
-                    </div>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem asChild>
+              <a href="https://app.bitsleuth.ai/" target="_blank" rel="noopener noreferrer" className="w-full cursor-pointer">
+                <div className="flex items-start gap-3">
+                  <BarChart className="h-5 w-5 mt-0.5 text-primary" />
+                  <div>
+                    <p className="font-semibold">Wallet Analyzer</p>
                   </div>
-                </a>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/wallet/coming-soon" className="w-full">
-                  <div className="flex items-start gap-3">
-                      <Lock className="h-5 w-5 mt-1 text-complementary" />
-                      <div>
-                          <p className="font-semibold">Privacy Wallet</p>
-                      </div>
+                </div>
+              </a>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href="/wallet/coming-soon" className="w-full cursor-pointer">
+                <div className="flex items-start gap-3">
+                  <Lock className="h-5 w-5 mt-0.5 text-primary" />
+                  <div>
+                    <p className="font-semibold">Privacy Wallet</p>
                   </div>
-                </Link>
-              </DropdownMenuItem>
+                </div>
+              </Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
@@ -154,43 +154,43 @@ export function Header({ basePath = '' }: HeaderProps) {
         <SheetContent side="right">
           <nav className="grid gap-6 text-lg font-medium">
             <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
-              <Search className="h-6 w-6 text-complementary" />
-               <span className="ml-2 font-bold text-lg">BitSleuth</span>
+              <img src="/images/logo-icon.jpg" alt="BitSleuth Logo" className="h-8 w-8 rounded-lg" />
+              <span className="ml-2 font-bold text-lg">BitSleuth</span>
             </Link>
-            <Link href="/analyzer" className="text-muted-foreground hover:text-complementary font-medium" prefetch={false}>Wallet Analyzer</Link>
-            <Link href="/wallet" className="text-muted-foreground hover:text-complementary font-medium" prefetch={false}>Privacy Wallet</Link>
-            <Link href="/learn" className="text-muted-foreground hover:text-complementary font-medium" prefetch={false}>Learning Hub</Link>
-            <Link href="/history" className="text-muted-foreground hover:text-complementary font-medium" prefetch={false}>Bitcoin History</Link>
-            
+            <Link href="/analyzer" className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>Wallet Analyzer</Link>
+            <Link href="/wallet" className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>Privacy Wallet</Link>
+            <Link href="/learn" className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>Learning Hub</Link>
+            <Link href="/history" className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>Bitcoin History</Link>
+
             {showNavLinks && navLinks.map((link) => (
-               <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-complementary font-medium" prefetch={false}>{link.label}</Link>
+              <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>{link.label}</Link>
             ))}
-            
+
             <div className="mt-2">
               <ThemeToggle />
             </div>
 
-             <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button className="bg-complementary hover:bg-complementary/90 text-complementary-foreground">
-                    <Rocket className="mr-2 h-4 w-4" />
-                    Launch
-                    <ChevronDown className="h-4 w-4 ml-1" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                    <DropdownMenuItem asChild>
-                      <a href="https://app.bitsleuth.ai/" target="_blank" rel="noopener noreferrer" className="w-full font-medium">
-                        Wallet Analyzer
-                      </a>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/wallet/coming-soon" className="w-full font-medium">
-                        Privacy Wallet
-                      </Link>
-                    </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full justify-start">
+                  <Rocket className="mr-2 h-4 w-4" />
+                  Launch App
+                  <ChevronDown className="h-4 w-4 ml-auto" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-full">
+                <DropdownMenuItem asChild>
+                  <a href="https://app.bitsleuth.ai/" target="_blank" rel="noopener noreferrer" className="w-full font-medium">
+                    Wallet Analyzer
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/wallet/coming-soon" className="w-full font-medium">
+                    Privacy Wallet
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
         </SheetContent>
       </Sheet>
