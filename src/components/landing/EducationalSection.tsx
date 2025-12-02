@@ -75,6 +75,13 @@ export function EducationalSection() {
                     <div className="text-xs text-muted-foreground">Keys, wallets, and best practices</div>
                   </div>
                 </div>
+                <div className="flex items-start gap-3">
+                  <Zap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <div className="font-semibold text-sm">Getting Started</div>
+                    <div className="text-xs text-muted-foreground">How to acquire, store, and use Bitcoin</div>
+                  </div>
+                </div>
               </div>
 
               <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md">
@@ -88,6 +95,14 @@ export function EducationalSection() {
 
           {/* Bitcoin History Card */}
           <Card className="group bg-card border-border/50 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden flex flex-col h-full">
+            <div className="relative h-64 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
+              <img
+                src="/images/history.png"
+                alt="Bitcoin History"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
             <CardContent className="p-8 flex-1 flex flex-col">
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
@@ -128,7 +143,7 @@ export function EducationalSection() {
               </div>
 
               <div className="mt-auto">
-                <Button asChild variant="outline" className="w-full border-primary/20 hover:border-primary hover:text-primary hover:bg-primary/5">
+                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md">
                   <Link href="/history">
                     Explore History
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

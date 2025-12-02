@@ -22,7 +22,7 @@ export function ThemeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label="Toggle theme">
+        <Button variant="ghost" size="icon" aria-label="Toggle theme" suppressHydrationWarning>
           {mounted && resolvedTheme === "dark" ? (
             <Moon className="h-5 w-5" />
           ) : (

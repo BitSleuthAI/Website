@@ -176,7 +176,7 @@ export function generateArticleSchema(
       url: 'https://www.bitsleuth.ai',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.bitsleuth.ai/images/logo.png',
+        url: 'https://www.bitsleuth.ai/images/logo-icon.jpg',
       },
     },
     datePublished: '2024-01-01', // You can update this per term

@@ -32,7 +32,7 @@ export function Header({ basePath = '' }: HeaderProps) {
   const showNavLinks = basePath === '/analyzer' || basePath === '/wallet';
 
   return (
-    <header className="edge-to-edge-section flex items-center shadow-sm sticky top-0 z-50 bg-gradient-to-b from-primary/10 via-background/95 to-background/95 backdrop-blur-md border-b border-border/40" style={{
+    <header className="edge-to-edge-section flex items-center shadow-sm sticky top-0 z-50 bg-gradient-to-b from-primary/10 via-background/95 to-background/95 backdrop-blur-md border-b border-border/40" suppressHydrationWarning style={{
       paddingTop: 'calc(1rem + env(safe-area-inset-top))',
       paddingBottom: '1rem',
       paddingLeft: 'max(1rem, env(safe-area-inset-left))',
@@ -48,7 +48,7 @@ export function Header({ basePath = '' }: HeaderProps) {
         <ThemeToggle />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <Button variant="ghost" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" suppressHydrationWarning>
               Products <ChevronDown className="h-4 w-4 ml-1" />
             </Button>
           </DropdownMenuTrigger>
@@ -113,7 +113,7 @@ export function Header({ basePath = '' }: HeaderProps) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg shadow-primary/20">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg shadow-primary/20" suppressHydrationWarning>
               <Rocket className="mr-2 h-4 w-4" />
               Launch App
               <ChevronDown className="h-4 w-4 ml-1" />
@@ -146,7 +146,7 @@ export function Header({ basePath = '' }: HeaderProps) {
       </nav>
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="ml-auto sm:hidden">
+          <Button variant="outline" size="icon" className="ml-auto sm:hidden" suppressHydrationWarning>
             <Menu className="h-5 w-5" />
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
@@ -172,7 +172,7 @@ export function Header({ basePath = '' }: HeaderProps) {
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full justify-start">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full justify-start" suppressHydrationWarning>
                   <Rocket className="mr-2 h-4 w-4" />
                   Launch App
                   <ChevronDown className="h-4 w-4 ml-auto" />
