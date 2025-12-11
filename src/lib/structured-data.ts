@@ -345,7 +345,7 @@ export function generateLearningResourceSchema(
     publisher: {
       '@type': 'Organization',
       name: 'BitSleuth',
-      url: 'https://www.bitsleuth.ai',
+      url: BITSLEUTH_ORGANIZATION.url,
     },
     ...(meta.relatedTerms && meta.relatedTerms.length > 0 && {
       teaches: meta.relatedTerms.map((relatedTerm) => relatedTerm),
