@@ -29,17 +29,17 @@ export default function HTLCGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="htlc" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              What Is an HTLC (Hashed Timelock Contract)?
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is an HTLC <span className="text-primary">(Hashed Timelock Contract)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              A Hashed Timelock Contract (HTLC) is a type of Bitcoin script that enables conditional payments based on cryptographic proof and time constraints. HTLCs are the fundamental building block of the <Link href="/glossary/lightning-network" className="text-complementary hover:underline">Lightning Network</Link>, allowing trustless multi-hop payment routing.
+              A Hashed Timelock Contract (HTLC) is a type of Bitcoin script that enables conditional payments based on cryptographic proof and time constraints. HTLCs are the fundamental building block of the <Link href="/glossary/lightning-network" className="text-primary hover:underline">Lightning Network</Link>, allowing trustless multi-hop payment routing.
             </p>
 
-            <Card className="my-6 bg-secondary/30">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <Lock className="mr-2 h-6 w-6 text-complementary" />
+                    <Lock className="mr-2 h-6 w-6 text-primary" />
                     Two Spending Conditions
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -48,14 +48,14 @@ export default function HTLCGlossaryPage() {
               </CardContent>
             </Card>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
               How HTLCs Work
             </h2>
 
              <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Route className="mr-2 h-6 w-6 text-complementary" />
+                        <Route className="mr-2 h-6 w-6 text-primary" />
                         Payment Routing
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -64,17 +64,17 @@ export default function HTLCGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Clock className="mr-2 h-6 w-6 text-complementary" />
+                        <Clock className="mr-2 h-6 w-6 text-primary" />
                         Safety Guarantees
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      The timelock ensures that if a payment fails, funds aren't stuck forever. Using <Link href="/glossary/cltv" className="text-complementary hover:underline">CLTV</Link> and <Link href="/glossary/csv" className="text-complementary hover:underline">CSV</Link>, HTLCs provide strong guarantees that either the payment completes or funds return to the sender.
+                      The timelock ensures that if a payment fails, funds aren't stuck forever. Using <Link href="/glossary/cltv" className="text-primary hover:underline">CLTV</Link> and <Link href="/glossary/csv" className="text-primary hover:underline">CSV</Link>, HTLCs provide strong guarantees that either the payment completes or funds return to the sender.
                     </p>
                 </div>
             </div>
             
             <p className="text-muted-foreground mt-8 font-normal">
-             HTLCs combine <Link href="/glossary/cryptography" className="text-complementary hover:underline">cryptographic</Link> hash functions with Bitcoin's scripting capabilities to create trustless conditional payments. They're essential for Lightning's security model and enable features like atomic swaps between different cryptocurrencies.
+             HTLCs combine <Link href="/glossary/cryptography" className="text-primary hover:underline">cryptographic</Link> hash functions with Bitcoin's scripting capabilities to create trustless conditional payments. They're essential for Lightning's security model and enable features like atomic swaps between different cryptocurrencies.
             </p>
           </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

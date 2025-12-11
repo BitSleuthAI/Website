@@ -4,104 +4,85 @@
 
 @layer base {
   :root {
-    /* Light theme */
+    /* Light theme - Polished & Trustworthy */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 25 95% 53%;
+
+    /* Vibrant Bitcoin Orange */
+    --primary: 27 96% 61%;
+    /* #FD8B3B - Warmer, more vibrant orange */
     --primary-foreground: 0 0% 100%;
+
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
+
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+
+    --accent: 27 96% 96%;
+    /* Very light orange tint for backgrounds */
+    --accent-foreground: 27 96% 40%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
+
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 25 95% 53%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
+    --ring: 27 96% 61%;
+
+    --radius: 0.75rem;
+    /* Slightly more rounded for modern feel */
+
+    /* Chart colors */
+    --chart-1: 27 96% 61%;
+    --chart-2: 240 10% 20%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --chart-positive: 158 82% 42%;
-    --chart-negative: 350 89% 60%;
-    --chart-received: 330 100% 50%;
-    --chart-sent: 150 100% 40%;
-    --bitcoin-orange: 25 95% 53%;
-    --complementary: 205 90% 55%;
-    --complementary-foreground: 0 0% 100%;
-    --radius: 0.5rem;
 
-    /* Sidebar light */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 240 10% 3.9%;
-    --sidebar-primary: 25 95% 53%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 10% 3.9%;
-    --sidebar-border: 240 5.9% 90%;
-    --sidebar-ring: 25 95% 53%;
+    /* Custom Brand Colors */
+    --bitcoin-orange: 27 96% 61%;
 
-    /* Heading gradient colors (light) */
-    --heading-start: hsl(25 95% 53%);
-    --heading-via: hsl(205 90% 55%);
-    --heading-end: hsl(240 10% 16%);
+    /* Heading gradient - Orange to Dark */
+    --heading-start: hsl(27 96% 61%);
+    --heading-via: hsl(20 90% 55%);
+    --heading-end: hsl(240 10% 20%);
   }
 
   .dark {
-    /* Dark theme (previous defaults) */
+    /* Dark theme - Premium & Sleek */
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 240 10% 6%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 240 10% 6%;
     --popover-foreground: 0 0% 98%;
-    --primary: 25 95% 53%;
+
+    --primary: 27 96% 61%;
     --primary-foreground: 0 0% 100%;
+
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
+
     --muted: 240 3.7% 15.9%;
-    --muted-foreground: 0 0% 63.9%;
+    --muted-foreground: 240 5% 64.9%;
+
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
+
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 25 95% 53%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --chart-positive: 158 82% 42%;
-    --chart-negative: 350 89% 60%;
-    --chart-received: 330 100% 71%;
-    --chart-sent: 150 100% 71%;
-    --bitcoin-orange: 25 95% 53%;
-    --complementary: 205 85% 60%;
-    --complementary-foreground: 0 0% 100%;
-    --radius: 0.5rem;
+    --ring: 27 96% 61%;
 
-    /* Sidebar dark */
-    --sidebar-background: 0 0% 8%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 25 95% 53%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 14.9%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 25 95% 53%;
-
-    /* Heading gradient colors (dark) */
-    --heading-start: hsl(25 95% 53%);
-    --heading-via: hsl(205 85% 60%);
+    --heading-start: hsl(27 96% 61%);
+    --heading-via: hsl(20 85% 60%);
     --heading-end: hsl(0 0% 98%);
   }
 }
@@ -110,39 +91,48 @@
   * {
     border-color: hsl(var(--border));
   }
-  
+
   /* Reset default margins and ensure full viewport coverage */
-  html, body {
+  html,
+  body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    min-height: 100dvh; /* Dynamic viewport height for mobile */
+    min-height: 100dvh;
+    /* Dynamic viewport height for mobile */
     width: 100vw;
     overflow-x: hidden;
     position: relative;
   }
-  
+
   /* Modern hidden scrollbar approach - comprehensive */
   @media (min-width: 769px) {
+
     /* Hide scrollbar on html and body */
-    html, body {
+    html,
+    body {
       overflow-x: hidden;
-      scrollbar-width: none !important; /* Firefox */
-      -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+      scrollbar-width: none !important;
+      /* Firefox */
+      -ms-overflow-style: none !important;
+      /* Internet Explorer 10+ */
     }
-    
+
     /* Hide scrollbar on all elements */
     * {
-      scrollbar-width: none !important; /* Firefox */
-      -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+      scrollbar-width: none !important;
+      /* Firefox */
+      -ms-overflow-style: none !important;
+      /* Internet Explorer 10+ */
     }
-    
+
     *::-webkit-scrollbar {
-      display: none !important; /* WebKit browsers (Chrome, Safari, Edge) */
+      display: none !important;
+      /* WebKit browsers (Chrome, Safari, Edge) */
       width: 0 !important;
       height: 0 !important;
     }
-    
+
     /* Additional webkit scrollbar hiding */
     html::-webkit-scrollbar,
     body::-webkit-scrollbar,
@@ -151,26 +141,30 @@
       width: 0 !important;
       height: 0 !important;
     }
-    
+
     /* Smooth scrolling for modern feel */
     html {
       scroll-behavior: smooth;
     }
   }
-  
+
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-display: swap;
   }
-  
+
   /* Global scrollbar hiding for all screen sizes */
-  html, body, * {
-    scrollbar-width: none !important; /* Firefox */
-    -ms-overflow-style: none !important; /* Internet Explorer 10+ */
+  html,
+  body,
+  * {
+    scrollbar-width: none !important;
+    /* Firefox */
+    -ms-overflow-style: none !important;
+    /* Internet Explorer 10+ */
   }
-  
+
   html::-webkit-scrollbar,
   body::-webkit-scrollbar,
   *::-webkit-scrollbar {
@@ -178,7 +172,7 @@
     width: 0 !important;
     height: 0 !important;
   }
-  
+
   /* Ensure main content takes full width and height */
   main {
     width: 100%;
@@ -186,7 +180,7 @@
     min-height: 100dvh;
     position: relative;
   }
-  
+
   /* Full-width sections for edge-to-edge layout */
   .edge-to-edge-section {
     width: 100vw;
@@ -195,127 +189,133 @@
     padding-left: max(1rem, env(safe-area-inset-left));
     padding-right: max(1rem, env(safe-area-inset-right));
   }
-  
+
   /* Regular sections maintain normal width */
   section {
     width: 100%;
   }
-  
+
   /* Ensure all containers respect safe areas */
   .container {
     padding-left: max(1rem, env(safe-area-inset-left));
     padding-right: max(1rem, env(safe-area-inset-right));
   }
-  
+
   /* Safe area utility classes for edge elements */
   .safe-area-top {
     padding-top: env(safe-area-inset-top);
   }
-  
+
   .safe-area-bottom {
     padding-bottom: env(safe-area-inset-bottom);
   }
-  
+
   .safe-area-left {
     padding-left: env(safe-area-inset-left);
   }
-  
+
   .safe-area-right {
     padding-right: env(safe-area-inset-right);
   }
-  
+
   .safe-area-x {
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
-  
+
   .safe-area-y {
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
   }
-  
+
   .safe-area-all {
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
-  
+
   /* Mobile-specific optimizations */
   @media (max-width: 768px) {
-    html, body {
+
+    html,
+    body {
       min-height: 100vh;
       min-height: 100dvh;
       width: 100vw;
     }
-    
+
     section {
       width: 100vw;
       margin-left: 0;
       margin-right: 0;
     }
-    
+
     /* Ensure content doesn't get cut off on Android */
     body {
       -webkit-text-size-adjust: 100%;
       -webkit-tap-highlight-color: transparent;
     }
   }
-  
+
   /* Android-specific fixes */
   @supports (-webkit-appearance: none) {
-    html, body {
+
+    html,
+    body {
       min-height: 100vh;
       min-height: 100dvh;
       width: 100vw;
     }
   }
-  
+
   /* iOS-specific optimizations */
   @supports (-webkit-touch-callout: none) {
-    html, body {
+
+    html,
+    body {
       min-height: 100vh;
       min-height: 100dvh;
       width: 100vw;
     }
   }
-  
+
   /* Smooth transitions and prevent layout shifts */
   * {
     box-sizing: border-box;
   }
-  
+
   /* Prevent layout shifts from font loading */
   html {
     font-display: swap;
   }
-  
+
   /* Reserve space for fixed elements to prevent CLS */
   body {
     /* Remove padding-bottom as it can cause layout shifts */
   }
-  
+
   /* Prevent layout shifts from dynamic content */
   .card-container {
     min-height: 200px;
     contain: layout;
   }
-  
+
   /* Ensure consistent spacing for dynamic elements */
   .dynamic-content {
     contain: layout style;
   }
-  
+
   /* Add containment to main sections */
   section {
     contain: layout;
   }
-  
+
   /* Prevent layout shifts from animations */
   .animate-in {
     contain: layout;
   }
-  
+
   /* Ensure cookie banner doesn't cause layout shifts */
   .cookie-banner-container {
     position: fixed;
@@ -326,84 +326,87 @@
     transform: translateY(0);
     transition: transform 0.3s ease-out;
   }
-  
+
   /* Prevent layout shifts from dynamic content loading */
   .prevent-layout-shift {
     contain: layout style;
   }
-  
+
   /* Prevent layout shifts from images */
   img {
     max-width: 100%;
     height: auto;
   }
-  
+
   /* Touch manipulation for better mobile responsiveness */
   .touch-manipulation {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
   }
-  
+
   button,
   a,
   [role="button"] {
     -webkit-tap-highlight-color: transparent;
   }
-  
+
   /* Smooth transitions for theme changes - only for specific properties */
   * {
     transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   }
-  
+
   /* Prevent layout shifts during theme changes */
-  html, body {
-    transition: none; /* No transitions on root elements */
+  html,
+  body {
+    transition: none;
+    /* No transitions on root elements */
   }
-  
+
   /* Smooth animations for elements that appear/disappear */
   .animate-in {
     animation: slideInFromBottom 0.3s ease-out;
   }
-  
+
   @keyframes slideInFromBottom {
     from {
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   /* Ensure smooth scrolling and modern feel */
   html {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
   }
-  
+
   /* Prevent overscroll bounce on mobile */
   body {
     overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
   }
-  
+
   /* Force full screen coverage - extend behind device UI */
   html {
     background: hsl(var(--background));
   }
-  
+
   body {
     background: hsl(var(--background));
   }
-  
+
   /* Ensure full coverage on all devices */
   #__next {
     height: 100vh;
     height: 100dvh;
     width: 100vw;
   }
-  
+
   /* Extend content behind device UI */
   .full-screen-container {
     position: fixed;
@@ -416,55 +419,57 @@
     height: 100dvh;
     overflow: hidden;
   }
-  
+
   /* Modern edge-to-edge container */
   .edge-to-edge {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
   }
-  
-  
+
+
   /* Prevent content jump when scrollbar appears/disappears */
   .overflow-hidden {
     padding-right: 0 !important;
   }
-  
-  
+
+
   /* Ensure dropdowns and modals don't cause layout shifts */
   [data-radix-popper-content-wrapper] {
     z-index: 9999;
   }
-  
-  
-  
-  
-  
+
+
+
+
+
   /* Smooth animations for dropdowns */
   [data-state="open"] {
     animation: fadeIn 0.2s ease-out;
   }
-  
+
   [data-state="closed"] {
     animation: fadeOut 0.2s ease-in;
   }
-  
+
   @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(-4px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   @keyframes fadeOut {
     from {
       opacity: 1;
       transform: translateY(0);
     }
+
     to {
       opacity: 0;
       transform: translateY(-4px);
@@ -475,7 +480,8 @@
 /* Respect users who request higher contrast */
 @media (prefers-contrast: more) {
   :root {
-    --foreground: 240 10% 3%; /* darker text */
+    --foreground: 240 10% 3%;
+    /* darker text */
     --muted-foreground: 240 3.8% 35%;
     --border: 240 5.9% 80%;
     --input: 240 5.9% 80%;
@@ -486,23 +492,30 @@
 
 /* Reusable gradient text for titles */
 .text-gradient-title {
-  background-image: linear-gradient(
-    to right,
-    var(--heading-start),
-    var(--heading-via),
-    var(--heading-end)
-  );
+  background-image: linear-gradient(to right,
+      var(--heading-start),
+      var(--heading-via),
+      var(--heading-end));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+/* Primary gradient for consistent branding across the site */
+.text-gradient-primary {
+  background-image: linear-gradient(to right,
+      hsl(var(--primary)),
+      hsl(var(--primary)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Legacy class - redirects to primary for backwards compatibility */
 .text-gradient-complementary {
-  background-image: linear-gradient(
-    to right,
-    hsl(var(--complementary)),
-    hsl(var(--primary))
-  );
+  background-image: linear-gradient(to right,
+      hsl(var(--primary)),
+      hsl(var(--primary)));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -514,22 +527,27 @@
     opacity: 0;
     transform: translateY(-120%) scaleY(0.5);
   }
+
   15% {
     opacity: 0.8;
     transform: translateY(-20%) scaleY(1.2);
   }
+
   35% {
     opacity: 1;
     transform: translateY(30%) scaleY(0.8);
   }
+
   60% {
     opacity: 0.6;
     transform: translateY(80%) scaleY(1.1);
   }
+
   85% {
     opacity: 0.3;
     transform: translateY(120%) scaleY(0.6);
   }
+
   100% {
     opacity: 0;
     transform: translateY(150%) scaleY(0.3);
@@ -541,18 +559,22 @@
     opacity: 0;
     transform: translateY(-80%) scaleY(0.3);
   }
+
   25% {
     opacity: 0.9;
     transform: translateY(10%) scaleY(1.5);
   }
+
   45% {
     opacity: 0.7;
     transform: translateY(50%) scaleY(0.9);
   }
+
   70% {
     opacity: 0.4;
     transform: translateY(90%) scaleY(1.3);
   }
+
   100% {
     opacity: 0;
     transform: translateY(130%) scaleY(0.4);
@@ -564,18 +586,22 @@
     opacity: 0;
     transform: translateY(-150%) scaleY(0.8);
   }
+
   20% {
     opacity: 0.6;
     transform: translateY(-30%) scaleY(1.1);
   }
+
   50% {
     opacity: 1;
     transform: translateY(40%) scaleY(0.7);
   }
+
   75% {
     opacity: 0.5;
     transform: translateY(100%) scaleY(1.4);
   }
+
   100% {
     opacity: 0;
     transform: translateY(140%) scaleY(0.2);
@@ -587,18 +613,22 @@
     opacity: 0;
     transform: translateY(-100%) scaleY(0.4);
   }
+
   30% {
     opacity: 0.8;
     transform: translateY(20%) scaleY(1.3);
   }
+
   55% {
     opacity: 0.9;
     transform: translateY(60%) scaleY(0.6);
   }
+
   80% {
     opacity: 0.3;
     transform: translateY(110%) scaleY(1.2);
   }
+
   100% {
     opacity: 0;
     transform: translateY(160%) scaleY(0.5);
@@ -610,22 +640,27 @@
     opacity: 0;
     transform: translateY(-90%) scaleY(0.6);
   }
+
   18% {
     opacity: 0.7;
     transform: translateY(-10%) scaleY(1.4);
   }
+
   40% {
     opacity: 1;
     transform: translateY(35%) scaleY(0.8);
   }
+
   65% {
     opacity: 0.6;
     transform: translateY(75%) scaleY(1.1);
   }
+
   90% {
     opacity: 0.2;
     transform: translateY(125%) scaleY(0.7);
   }
+
   100% {
     opacity: 0;
     transform: translateY(155%) scaleY(0.3);
@@ -637,18 +672,22 @@
     opacity: 0;
     transform: translateY(-110%) scaleY(0.7);
   }
+
   22% {
     opacity: 0.9;
     transform: translateY(5%) scaleY(1.2);
   }
+
   48% {
     opacity: 0.8;
     transform: translateY(55%) scaleY(0.9);
   }
+
   72% {
     opacity: 0.4;
     transform: translateY(95%) scaleY(1.3);
   }
+
   100% {
     opacity: 0;
     transform: translateY(135%) scaleY(0.4);
@@ -660,18 +699,22 @@
     opacity: 0;
     transform: translateY(-130%) scaleY(0.5);
   }
+
   28% {
     opacity: 0.6;
     transform: translateY(-15%) scaleY(1.1);
   }
+
   52% {
     opacity: 1;
     transform: translateY(45%) scaleY(0.8);
   }
+
   78% {
     opacity: 0.5;
     transform: translateY(85%) scaleY(1.2);
   }
+
   100% {
     opacity: 0;
     transform: translateY(125%) scaleY(0.6);
@@ -684,18 +727,22 @@
     opacity: 0;
     transform: translateX(-120%) scaleX(0.3);
   }
+
   20% {
     opacity: 0.7;
     transform: translateX(-40%) scaleX(1.2);
   }
+
   45% {
     opacity: 1;
     transform: translateX(20%) scaleX(0.8);
   }
+
   70% {
     opacity: 0.6;
     transform: translateX(80%) scaleX(1.1);
   }
+
   100% {
     opacity: 0;
     transform: translateX(130%) scaleX(0.4);
@@ -707,18 +754,22 @@
     opacity: 0;
     transform: translateX(110%) scaleX(0.5);
   }
+
   25% {
     opacity: 0.8;
     transform: translateX(30%) scaleX(1.3);
   }
+
   50% {
     opacity: 0.9;
     transform: translateX(-20%) scaleX(0.7);
   }
+
   75% {
     opacity: 0.4;
     transform: translateX(-70%) scaleX(1.2);
   }
+
   100% {
     opacity: 0;
     transform: translateX(-120%) scaleX(0.3);
@@ -730,18 +781,22 @@
     opacity: 0;
     transform: translateX(-90%) scaleX(0.6);
   }
+
   30% {
     opacity: 0.6;
     transform: translateX(-20%) scaleX(1.1);
   }
+
   60% {
     opacity: 1;
     transform: translateX(50%) scaleX(0.9);
   }
+
   85% {
     opacity: 0.3;
     transform: translateX(100%) scaleX(1.4);
   }
+
   100% {
     opacity: 0;
     transform: translateX(140%) scaleX(0.2);
@@ -754,18 +809,22 @@
     opacity: 0;
     transform: translateX(-130%) translateY(-50%) rotate(15deg) scale(0.4);
   }
+
   20% {
     opacity: 0.7;
     transform: translateX(-60%) translateY(-20%) rotate(12deg) scale(1.2);
   }
+
   45% {
     opacity: 1;
     transform: translateX(10%) translateY(10%) rotate(8deg) scale(0.9);
   }
+
   70% {
     opacity: 0.6;
     transform: translateX(80%) translateY(40%) rotate(5deg) scale(1.1);
   }
+
   100% {
     opacity: 0;
     transform: translateX(140%) translateY(70%) rotate(2deg) scale(0.3);
@@ -777,18 +836,22 @@
     opacity: 0;
     transform: translateX(120%) translateY(-40%) rotate(-18deg) scale(0.5);
   }
+
   25% {
     opacity: 0.8;
     transform: translateX(50%) translateY(-10%) rotate(-15deg) scale(1.3);
   }
+
   50% {
     opacity: 0.9;
     transform: translateX(-20%) translateY(20%) rotate(-10deg) scale(0.8);
   }
+
   75% {
     opacity: 0.4;
     transform: translateX(-90%) translateY(50%) rotate(-5deg) scale(1.2);
   }
+
   100% {
     opacity: 0;
     transform: translateX(-150%) translateY(80%) rotate(-2deg) scale(0.4);
@@ -800,18 +863,22 @@
     opacity: 0;
     transform: translateX(-110%) translateY(30%) rotate(8deg) scale(0.6);
   }
+
   30% {
     opacity: 0.6;
     transform: translateX(-40%) translateY(10%) rotate(6deg) scale(1.1);
   }
+
   60% {
     opacity: 1;
     transform: translateX(30%) translateY(-20%) rotate(3deg) scale(0.9);
   }
+
   85% {
     opacity: 0.3;
     transform: translateX(100%) translateY(-50%) rotate(1deg) scale(1.4);
   }
+
   100% {
     opacity: 0;
     transform: translateX(130%) translateY(-70%) rotate(0deg) scale(0.2);
@@ -823,18 +890,22 @@
     opacity: 0;
     transform: translateX(100%) translateY(20%) rotate(-10deg) scale(0.7);
   }
+
   25% {
     opacity: 0.5;
     transform: translateX(30%) translateY(-5%) rotate(-8deg) scale(1.2);
   }
+
   55% {
     opacity: 0.8;
     transform: translateX(-40%) translateY(-30%) rotate(-5deg) scale(0.8);
   }
+
   80% {
     opacity: 0.4;
     transform: translateX(-110%) translateY(-60%) rotate(-2deg) scale(1.3);
   }
+
   100% {
     opacity: 0;
     transform: translateX(-140%) translateY(-80%) rotate(0deg) scale(0.3);

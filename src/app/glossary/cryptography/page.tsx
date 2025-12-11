@@ -30,17 +30,17 @@ export default function CryptographyGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="cryptography" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              What Is Cryptography?
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is <span className="text-primary">Cryptography</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              Cryptography is the mathematical foundation of the Bitcoin network. It's the science of secure communication, used to protect information, secure wallets, sign transactions, and ensure the overall integrity of the <Link href="/glossary/blockchain" className="text-complementary hover:underline">blockchain</Link>.
+              Cryptography is the mathematical foundation of the Bitcoin network. It's the science of secure communication, used to protect information, secure wallets, sign transactions, and ensure the overall integrity of the <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link>.
             </p>
 
-            <Card className="my-6 bg-secondary/30">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <ShieldCheck className="mr-2 h-6 w-6 text-complementary" />
+                    <ShieldCheck className="mr-2 h-6 w-6 text-primary" />
                     The Bedrock of Security
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -52,7 +52,7 @@ export default function CryptographyGlossaryPage() {
             <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <PenSquare className="mr-2 h-6 w-6 text-complementary" />
+                        <PenSquare className="mr-2 h-6 w-6 text-primary" />
                         Digital Signatures
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -61,16 +61,16 @@ export default function CryptographyGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <ShieldCheck className="mr-2 h-6 w-6 text-complementary" />
+                        <ShieldCheck className="mr-2 h-6 w-6 text-primary" />
                         Securing Your Wallet
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Cryptography is used to generate the pair of public and private keys that make up your Bitcoin <Link href="/glossary/wallet" className="text-complementary hover:underline">wallet</Link>. The public key creates receiving addresses, while the private key acts as your password.
+                      Cryptography is used to generate the pair of public and private keys that make up your Bitcoin <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link>. The public key creates receiving addresses, while the private key acts as your password.
                     </p>
                 </div>
             </div>
             
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
               Public Key Cryptography
             </h2>
             <p className="text-muted-foreground font-normal">

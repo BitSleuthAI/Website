@@ -116,7 +116,7 @@ export const learnStructuredData = {
           "name": "What is Bitcoin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without a central authority. It operates on a blockchain—a public ledger maintained by a distributed network of computers worldwide."
+            "text": "Bitcoin is a decentralized digital currency that enables peer-to-peer transactions without a central authority. It operates on a blockchain - a public ledger maintained by a distributed network of computers worldwide."
           }
         },
         {

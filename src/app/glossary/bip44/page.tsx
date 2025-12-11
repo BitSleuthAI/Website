@@ -29,17 +29,17 @@ export default function BIP44GlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="bip44" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              What Is BIP44 (Multi-Account Hierarchy)?
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is BIP44 <span className="text-primary">(Multi-Account Hierarchy)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              BIP44 (Bitcoin Improvement Proposal 44) extends <Link href="/glossary/bip32" className="text-complementary hover:underline">BIP32</Link> by defining a standard hierarchical structure for organizing multiple accounts and cryptocurrencies within a single <Link href="/glossary/wallet" className="text-complementary hover:underline">wallet</Link>. It provides a universal derivation path format that ensures compatibility across different wallet software.
+              BIP44 (Bitcoin Improvement Proposal 44) extends <Link href="/glossary/bip32" className="text-primary hover:underline">BIP32</Link> by defining a standard hierarchical structure for organizing multiple accounts and cryptocurrencies within a single <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link>. It provides a universal derivation path format that ensures compatibility across different wallet software.
             </p>
 
-            <Card className="my-6 bg-secondary/30">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <FolderTree className="mr-2 h-6 w-6 text-complementary" />
+                    <FolderTree className="mr-2 h-6 w-6 text-primary" />
                     Standard Derivation Path
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -48,23 +48,23 @@ export default function BIP44GlossaryPage() {
               </CardContent>
             </Card>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
               Key Benefits
             </h2>
 
              <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Wallet className="mr-2 h-6 w-6 text-complementary" />
+                        <Wallet className="mr-2 h-6 w-6 text-primary" />
                         Multiple Accounts
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      BIP44 lets you create separate accounts (like "savings", "spending", "business") all from one <Link href="/glossary/bip39" className="text-complementary hover:underline">mnemonic phrase</Link>, each with its own set of <Link href="/glossary/address" className="text-complementary hover:underline">addresses</Link>.
+                      BIP44 lets you create separate accounts (like "savings", "spending", "business") all from one <Link href="/glossary/bip39" className="text-primary hover:underline">mnemonic phrase</Link>, each with its own set of <Link href="/glossary/address" className="text-primary hover:underline">addresses</Link>.
                     </p>
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Shield className="mr-2 h-6 w-6 text-complementary" />
+                        <Shield className="mr-2 h-6 w-6 text-primary" />
                         Wallet Portability
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -74,7 +74,7 @@ export default function BIP44GlossaryPage() {
             </div>
             
             <p className="text-muted-foreground mt-8 font-normal">
-             BIP44 works in harmony with <Link href="/glossary/bip32" className="text-complementary hover:underline">BIP32</Link> and <Link href="/glossary/bip39" className="text-complementary hover:underline">BIP39</Link> to provide a complete, standardized wallet system. Modern wallets like <Link href="/glossary/descriptor-wallet" className="text-complementary hover:underline">descriptor wallets</Link> build upon these foundations with even more flexibility.
+             BIP44 works in harmony with <Link href="/glossary/bip32" className="text-primary hover:underline">BIP32</Link> and <Link href="/glossary/bip39" className="text-primary hover:underline">BIP39</Link> to provide a complete, standardized wallet system. Modern wallets like <Link href="/glossary/descriptor-wallet" className="text-primary hover:underline">descriptor wallets</Link> build upon these foundations with even more flexibility.
             </p>
           </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

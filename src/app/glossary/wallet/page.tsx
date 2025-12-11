@@ -30,26 +30,26 @@ export default function WalletGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="wallet" relatedTerms={relatedTerms}>
-        <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-          What Is a Bitcoin Wallet?
-        </h1>
+        <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is a Bitcoin <span className="text-primary">Wallet</span>?
+            </h1>
         <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-          A Bitcoin wallet is the software you use to interact with the Bitcoin network. It allows you to send, receive, and store your bitcoin securely. Contrary to its name, a wallet doesn't store your actual coins; instead, it holds your essential <Link href="/glossary/private-key" className="text-complementary hover:underline">private keys</Link>.
+          A Bitcoin wallet is the software you use to interact with the Bitcoin network. It allows you to send, receive, and store your bitcoin securely. Contrary to its name, a wallet doesn't store your actual coins; instead, it holds your essential <Link href="/glossary/private-key" className="text-primary hover:underline">private keys</Link>.
         </p>
 
-        <Card className="my-6 bg-secondary/30">
+        <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
           <CardContent className="p-4">
              <h3 className="text-xl font-bold flex items-center mb-2">
-                <KeyRound className="mr-2 h-6 w-6 text-complementary" />
+                <KeyRound className="mr-2 h-6 w-6 text-primary" />
                 Your Keys, Your Coins
             </h3>
             <p className="text-muted-foreground mt-2 font-normal">
-                The most important function of a wallet is to manage your <Link href="/glossary/private-key" className="text-complementary hover:underline">private keys</Link>. These keys are what give you ownership and control over your bitcoin. A "non-custodial" wallet, like the BitSleuth Wallet, ensures that only you ever have access to these keys.
+                The most important function of a wallet is to manage your <Link href="/glossary/private-key" className="text-primary hover:underline">private keys</Link>. These keys are what give you ownership and control over your bitcoin. A "non-custodial" wallet, like the BitSleuth Wallet, ensures that only you ever have access to these keys.
             </p>
           </CardContent>
         </Card>
 
-        <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+        <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
           Types of Wallets
         </h2>
         <p className="text-muted-foreground font-normal">
@@ -59,7 +59,7 @@ export default function WalletGlossaryPage() {
         <div className="mt-8 grid md:grid-cols-3 gap-8">
             <div>
                 <h3 className="text-xl font-bold flex items-center">
-                    <Smartphone className="mr-2 h-6 w-6 text-complementary" />
+                    <Smartphone className="mr-2 h-6 w-6 text-primary" />
                     Mobile
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -68,7 +68,7 @@ export default function WalletGlossaryPage() {
             </div>
             <div>
                 <h3 className="text-xl font-bold flex items-center">
-                    <Monitor className="mr-2 h-6 w-6 text-complementary" />
+                    <Monitor className="mr-2 h-6 w-6 text-primary" />
                     Desktop
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -77,7 +77,7 @@ export default function WalletGlossaryPage() {
             </div>
              <div>
                 <h3 className="text-xl font-bold flex items-center">
-                    <HardDrive className="mr-2 h-6 w-6 text-complementary" />
+                    <HardDrive className="mr-2 h-6 w-6 text-primary" />
                     Hardware
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -86,7 +86,7 @@ export default function WalletGlossaryPage() {
             </div>
         </div>
 
-        <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+        <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
           Hot vs. Cold Wallets
         </h2>
         <p className="text-muted-foreground font-normal">
@@ -96,7 +96,7 @@ export default function WalletGlossaryPage() {
          <div className="mt-8 grid md:grid-cols-2 gap-8">
             <div>
                 <h3 className="text-xl font-bold flex items-center">
-                    <Flame className="mr-2 h-6 w-6 text-complementary" />
+                    <Flame className="mr-2 h-6 w-6 text-primary" />
                     Hot Wallets
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -105,17 +105,17 @@ export default function WalletGlossaryPage() {
             </div>
             <div>
                 <h3 className="text-xl font-bold flex items-center">
-                    <Snowflake className="mr-2 h-6 w-6 text-complementary" />
+                    <Snowflake className="mr-2 h-6 w-6 text-primary" />
                     Cold Wallets
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
-                  A wallet where the <Link href="/glossary/private-key" className="text-complementary hover:underline">private keys</Link> are stored completely offline (e.g., a hardware wallet or paper wallet). They offer the highest level of security for long-term storage but are less convenient for transactions. Best for large amounts.
+                  A wallet where the <Link href="/glossary/private-key" className="text-primary hover:underline">private keys</Link> are stored completely offline (e.g., a hardware wallet or paper wallet). They offer the highest level of security for long-term storage but are less convenient for transactions. Best for large amounts.
                 </p>
             </div>
         </div>
 
         <p className="text-muted-foreground mt-8 font-normal">
-          Most modern wallets support <Link href="/glossary/bip39" className="text-complementary hover:underline">BIP39 mnemonic phrases</Link> for backup and recovery, making it easy to restore your wallet on any compatible device using your <Link href="/glossary/passphrase" className="text-complementary hover:underline">passphrase</Link>.
+          Most modern wallets support <Link href="/glossary/bip39" className="text-primary hover:underline">BIP39 mnemonic phrases</Link> for backup and recovery, making it easy to restore your wallet on any compatible device using your <Link href="/glossary/passphrase" className="text-primary hover:underline">passphrase</Link>.
         </p>
       </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

@@ -28,14 +28,14 @@ export default function BitGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="bit" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              What Is a Bit?
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is a <span className="text-primary">Bit</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A bit is a sub-unit of a bitcoin, created to make transacting with smaller amounts of BTC more user-friendly. Just as a dollar can be broken down into cents, a bitcoin can be divided into smaller units. A bit is one of these convenient units.
             </p>
 
-            <Card className="my-6 bg-secondary/30">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                 <p className="font-semibold mb-2">The relationship is straightforward:</p>
                 <code className="text-lg font-mono bg-background/50 p-2 rounded-md block break-all">
@@ -47,7 +47,7 @@ export default function BitGlossaryPage() {
             <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Coins className="mr-2 h-6 w-6 text-complementary" />
+                        <Coins className="mr-2 h-6 w-6 text-primary" />
                         Why Use Bits?
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -56,7 +56,7 @@ export default function BitGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Scale className="mr-2 h-6 w-6 text-complementary" />
+                        <Scale className="mr-2 h-6 w-6 text-primary" />
                         Bits vs. Satoshis
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -65,7 +65,7 @@ export default function BitGlossaryPage() {
                 </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
               In Practice
             </h2>
             <p className="text-muted-foreground font-normal">

@@ -29,33 +29,33 @@ export default function UTXOGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="utxo" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              What Is a UTXO (Unspent Transaction Output)?
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is a UTXO <span className="text-primary">(Unspent Transaction Output)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              A UTXO (Unspent Transaction Output) is a discrete chunk of bitcoin that remains after a transaction and can be spent in future transactions. Think of UTXOs as digital bills or coins in your <Link href="/glossary/wallet" className="text-complementary hover:underline">wallet</Link> - each one represents a specific amount of bitcoin that you own and can spend.
+              A UTXO (Unspent Transaction Output) is a discrete chunk of bitcoin that remains after a transaction and can be spent in future transactions. Think of UTXOs as digital bills or coins in your <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> - each one represents a specific amount of bitcoin that you own and can spend.
             </p>
 
-            <Card className="my-6 bg-secondary/30">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <Coins className="mr-2 h-6 w-6 text-complementary" />
+                    <Coins className="mr-2 h-6 w-6 text-primary" />
                     Bitcoin's Accounting Model
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
-                    Unlike traditional bank accounts with balances, Bitcoin tracks individual outputs from previous transactions. Your wallet balance is simply the sum of all UTXOs controlled by your <Link href="/glossary/private-key" className="text-complementary hover:underline">private keys</Link>.
+                    Unlike traditional bank accounts with balances, Bitcoin tracks individual outputs from previous transactions. Your wallet balance is simply the sum of all UTXOs controlled by your <Link href="/glossary/private-key" className="text-primary hover:underline">private keys</Link>.
                 </p>
               </CardContent>
             </Card>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
               How UTXOs Work
             </h2>
 
              <div className="mt-8 grid gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Receipt className="mr-2 h-6 w-6 text-complementary" />
+                        <Receipt className="mr-2 h-6 w-6 text-primary" />
                         Transaction Inputs & Outputs
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -64,17 +64,17 @@ export default function UTXOGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Wallet className="mr-2 h-6 w-6 text-complementary" />
+                        <Wallet className="mr-2 h-6 w-6 text-primary" />
                         Coin Selection
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Your wallet automatically selects which UTXOs to spend when creating a transaction through a process called <Link href="/glossary/coin-selection" className="text-complementary hover:underline">coin selection</Link>. This affects transaction size, fees, and privacy.
+                      Your wallet automatically selects which UTXOs to spend when creating a transaction through a process called <Link href="/glossary/coin-selection" className="text-primary hover:underline">coin selection</Link>. This affects transaction size, fees, and privacy.
                     </p>
                 </div>
             </div>
             
             <p className="text-muted-foreground mt-8 font-normal">
-             The UTXO model is fundamental to Bitcoin's design, providing strong security properties and enabling features like <Link href="/glossary/transaction-privacy" className="text-complementary hover:underline">transaction privacy</Link> techniques. Understanding UTXOs is essential for advanced Bitcoin usage and optimization.
+             The UTXO model is fundamental to Bitcoin's design, providing strong security properties and enabling features like <Link href="/glossary/transaction-privacy" className="text-primary hover:underline">transaction privacy</Link> techniques. Understanding UTXOs is essential for advanced Bitcoin usage and optimization.
             </p>
           </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

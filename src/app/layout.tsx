@@ -46,7 +46,7 @@ export default function RootLayout({
   }, [])
 
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5, user-scalable=yes" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -59,7 +59,7 @@ export default function RootLayout({
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="googlebot" content="index, follow" />
         <meta name="color-scheme" content="light dark" />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.bitsleuth.ai/" />
@@ -70,20 +70,20 @@ export default function RootLayout({
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="BitSleuth" />
         <meta property="og:locale" content="en_US" />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.bitsleuth.ai/" />
         <meta name="twitter:title" content="BitSleuth | AI-Powered Bitcoin Wallet Analysis & Privacy Wallet" />
         <meta name="twitter:description" content="Professional Bitcoin wallet analysis with AI-powered insights, transaction visualization, and OPSEC risk detection. Plus a privacy-first non-custodial wallet for secure Bitcoin storage." />
         <meta name="twitter:image" content="https://www.bitsleuth.ai/images/twitter-card.png" />
-        
+
         {/* Additional SEO */}
         <link rel="canonical" href="https://www.bitsleuth.ai/" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="apple-mobile-web-app-title" content="BitSleuth" />
-        
+
         {/* Structured Data */}
         <script
           type="application/ld+json"

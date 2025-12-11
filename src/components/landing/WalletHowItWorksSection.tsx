@@ -23,21 +23,20 @@ const steps = [
 
 export function WalletHowItWorksSection() {
   return (
-    <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 relative overflow-hidden">
-      <BackgroundBeams intensity="subtle" />
+    <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 relative overflow-hidden bg-background">
       <div className="container max-w-5xl mx-auto text-center relative z-10">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-4 text-gradient-complementary">Simple, Secure, Self-Custody</h2>
+          <h2 className="text-3xl font-bold mb-4 text-foreground">Simple, Secure, <span className="text-primary">Self-Custody</span></h2>
           <p className="text-lg text-muted-foreground font-normal">Managing your Bitcoin should be effortless - and safe.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {steps.map((step, idx) => (
-            <Card key={idx} className="bg-secondary/30 text-left shadow-glow">
-                <CardHeader>
-                    <CardTitle className="text-lg font-bold mb-2 text-complementary">{step.title}</CardTitle>
-                </CardHeader>
+            <Card key={idx} className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl text-left hover:shadow-2xl overflow-hidden group">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg font-bold mb-2 text-primary">{step.title}</CardTitle>
+              </CardHeader>
               <CardContent>
-                <p className="font-normal">{step.description}</p>
+                <p className="font-normal text-gray-400">{step.description}</p>
               </CardContent>
             </Card>
           ))}

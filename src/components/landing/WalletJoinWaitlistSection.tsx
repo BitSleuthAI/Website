@@ -12,7 +12,7 @@ export function WalletJoinWaitlistSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       toast({
         title: "Email required",
@@ -61,25 +61,25 @@ export function WalletJoinWaitlistSection() {
 
   return (
     <div className="text-center">
-      <h2 className="text-4xl font-bold mb-4 text-gradient-complementary">
-        Join the waitlist
+      <h2 className="text-4xl font-bold mb-4 text-foreground">
+        Join the <span className="text-primary">waitlist</span>
       </h2>
       <p className="text-lg text-muted-foreground font-normal mb-8">
         Receive all the latest news and updates, as well as early access to the beta.
       </p>
-      
+
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
         <Input
           type="email"
           placeholder="your@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full sm:flex-1 bg-card/50 border-border/50 text-foreground placeholder:text-muted-foreground focus:border-complementary focus:ring-primary"
+          className="w-full sm:flex-1 bg-background border-border/50 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary"
           disabled={isLoading}
         />
-        <Button 
-          type="submit" 
-          className="w-full sm:w-auto shadow-glow bg-complementary hover:bg-complementary/90 text-complementary-foreground"
+        <Button
+          type="submit"
+          className="w-full sm:w-auto shadow-none bg-primary hover:bg-primary/90 text-primary-foreground"
           disabled={isLoading}
         >
           {isLoading ? "Joining..." : "Join waitlist"}

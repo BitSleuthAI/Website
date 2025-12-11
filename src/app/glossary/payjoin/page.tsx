@@ -29,33 +29,33 @@ export default function PayJoinGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="payjoin" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              What Is PayJoin?
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is <span className="text-primary">PayJoin</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              PayJoin (also known as P2EP - Pay-to-Endpoint) is a privacy-enhancing Bitcoin transaction type where the receiver contributes one of their own <Link href="/glossary/utxo" className="text-complementary hover:underline">UTXOs</Link> as an additional input to a payment. This breaks the common input ownership heuristic while looking like a normal transaction on the <Link href="/glossary/blockchain" className="text-complementary hover:underline">blockchain</Link>.
+              PayJoin (also known as P2EP - Pay-to-Endpoint) is a privacy-enhancing Bitcoin transaction type where the receiver contributes one of their own <Link href="/glossary/utxo" className="text-primary hover:underline">UTXOs</Link> as an additional input to a payment. This breaks the common input ownership heuristic while looking like a normal transaction on the <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link>.
             </p>
 
-            <Card className="my-6 bg-secondary/30">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <Users className="mr-2 h-6 w-6 text-complementary" />
+                    <Users className="mr-2 h-6 w-6 text-primary" />
                     Two-Party Collaboration
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
-                    Unlike <Link href="/glossary/coinjoin" className="text-complementary hover:underline">CoinJoin</Link> which requires coordinating many participants, PayJoin only involves the sender and receiver. The receiver contributes an input to the payment transaction, making it impossible for observers to determine the actual payment amount.
+                    Unlike <Link href="/glossary/coinjoin" className="text-primary hover:underline">CoinJoin</Link> which requires coordinating many participants, PayJoin only involves the sender and receiver. The receiver contributes an input to the payment transaction, making it impossible for observers to determine the actual payment amount.
                 </p>
               </CardContent>
             </Card>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
               Advantages
             </h2>
 
              <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Eye className="mr-2 h-6 w-6 text-complementary" />
+                        <Eye className="mr-2 h-6 w-6 text-primary" />
                         Stealth Privacy
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -64,11 +64,11 @@ export default function PayJoinGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Zap className="mr-2 h-6 w-6 text-complementary" />
+                        <Zap className="mr-2 h-6 w-6 text-primary" />
                         UTXO Consolidation
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
-                      Receivers can use PayJoin to consolidate their own UTXOs while receiving payment, optimizing their <Link href="/glossary/wallet" className="text-complementary hover:underline">wallet</Link> efficiency. This turns a received payment into an opportunity for free UTXO management.
+                      Receivers can use PayJoin to consolidate their own UTXOs while receiving payment, optimizing their <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> efficiency. This turns a received payment into an opportunity for free UTXO management.
                     </p>
                 </div>
             </div>

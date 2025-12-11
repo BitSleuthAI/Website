@@ -15,11 +15,11 @@ const faqs = [
   },
   {
     question: "If I lose my passphrase, can BitSleuth recover it?",
-    answer: <>No. We do not store your passphrase or any personal data. It is your sole responsibility to back up your passphrase securely. Learn more about passphrases in our <Link href="/glossary/passphrase" className="text-complementary underline">glossary</Link>.</>,
+    answer: <>No. We do not store your passphrase or any personal data. It is your sole responsibility to back up your passphrase securely. Learn more about passphrases in our <Link href="/glossary/passphrase" className="text-primary underline">glossary</Link>.</>,
   },
   {
     question: "How does this wallet improve my privacy?",
-    answer: <>The wallet helps you avoid reusing addresses, which is a common privacy leak on the Bitcoin blockchain. By generating new addresses for receiving funds, it becomes much harder for others to link your transactions together. For more details, see our article on <Link href="/glossary/transaction-privacy" className="text-complementary underline">transaction privacy</Link>.</>,
+    answer: <>The wallet helps you avoid reusing addresses, which is a common privacy leak on the Bitcoin blockchain. By generating new addresses for receiving funds, it becomes much harder for others to link your transactions together. For more details, see our article on <Link href="/glossary/transaction-privacy" className="text-primary underline">transaction privacy</Link>.</>,
   },
   {
     question: "Is this wallet a good choice for beginners?",
@@ -27,17 +27,16 @@ const faqs = [
   },
   {
     question: "How can I get support?",
-    answer: <>For any questions or assistance, please contact our support team at <a href="mailto:support@bitsleuth.ai" className="text-complementary underline">support@bitsleuth.ai</a>.</>,
+    answer: <>For any questions or assistance, please contact our support team at <a href="mailto:support@bitsleuth.ai" className="text-primary underline">support@bitsleuth.ai</a>.</>,
   }
 ];
 
 export function WalletFaqSection() {
   return (
-    <section id="faq" className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-secondary/30 relative overflow-hidden">
-      <BackgroundBeams intensity="subtle" />
+    <section id="faq" className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
       <div className="container max-w-4xl mx-auto relative z-10">
-        <h2 className="text-3xl font-bold mb-10 text-center text-gradient-complementary">
-          Frequently Asked Questions
+        <h2 className="text-3xl font-bold mb-10 text-center text-foreground">
+          Frequently Asked <span className="text-primary">Questions</span>
         </h2>
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((item, idx) => (

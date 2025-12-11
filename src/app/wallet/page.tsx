@@ -12,8 +12,6 @@ import { WalletFeaturesSection } from '@/components/landing/WalletFeaturesSectio
 import { WalletSecuritySection } from '@/components/landing/WalletSecuritySection';
 import { WalletBuiltForBitcoinersSection } from '@/components/landing/WalletBuiltForBitcoinersSection';
 import { WalletSeamlessExperienceSection } from '@/components/landing/WalletSeamlessExperienceSection';
-import { WalletWaitlistSection } from '@/components/landing/WalletWaitlistSection';
-import { WalletCallToActionSection } from '@/components/landing/WalletCallToActionSection';
 import { WalletHowItWorksSection } from '@/components/landing/WalletHowItWorksSection';
 import { WalletFaqSection } from '@/components/landing/WalletFaqSection';
 import { WalletAboutSection } from '@/components/landing/WalletAboutSection';
@@ -34,26 +32,24 @@ export default function WalletPage() {
         }}
       />
       <div className="flex flex-col min-h-dvh bg-background overflow-x-hidden">
-      <Header basePath="/wallet" />
-      <main className="flex-1">
-        <WalletHeroSection />
-        <WalletFeaturesSection />
-        <WalletSecuritySection />
-        <WalletBuiltForBitcoinersSection />
-        <WalletSeamlessExperienceSection />
-        <WalletWaitlistSection />
-        <WalletHowItWorksSection />
-        <WalletFaqSection />
-        <WalletCallToActionSection />
-        <WalletAboutSection />
-      </main>
-      <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />
-      <PrivacyPolicyModal isOpen={activeModal === 'privacy'} onOpenChange={closeModal} />
-      <TermsOfServiceModal 
-        isOpen={activeModal === 'terms'} 
-        onOpenChange={closeModal}
-        onPrivacyClick={openPrivacyModal} 
-      />
+        <Header basePath="/wallet" />
+        <main className="flex-1">
+          <WalletHeroSection />
+          <WalletFeaturesSection />
+          <WalletSecuritySection />
+          <WalletBuiltForBitcoinersSection />
+          <WalletSeamlessExperienceSection />
+          <WalletHowItWorksSection />
+          <WalletFaqSection />
+          <WalletAboutSection />
+        </main>
+        <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />
+        <PrivacyPolicyModal isOpen={activeModal === 'privacy'} onOpenChange={closeModal} />
+        <TermsOfServiceModal
+          isOpen={activeModal === 'terms'}
+          onOpenChange={closeModal}
+          onPrivacyClick={openPrivacyModal}
+        />
       </div>
     </>
   );

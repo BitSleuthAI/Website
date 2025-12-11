@@ -28,16 +28,16 @@ export default function BtcGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="btc" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              What Is BTC?
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is <span className="text-primary">BTC</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               BTC is the ticker symbol and most common abbreviation for bitcoin, the unit of currency used on the Bitcoin network. It is used on exchanges and in financial contexts to represent the price and amount of bitcoin.
             </p>
-            <Card className="my-6 bg-secondary/30">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <Tag className="mr-2 h-6 w-6 text-complementary" />
+                    <Tag className="mr-2 h-6 w-6 text-primary" />
                     Usage
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">

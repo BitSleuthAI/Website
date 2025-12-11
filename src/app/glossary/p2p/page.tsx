@@ -29,17 +29,17 @@ export default function P2PGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="p2p" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              What Is P2P (Peer-to-Peer)?
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is P2P <span className="text-primary">(Peer-to-Peer)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               P2P stands for Peer-to-Peer, a type of network where participants interact directly with each other without needing a central intermediary or server. In the context of Bitcoin, it means users can transact directly with one another, anywhere in the world.
             </p>
 
-            <Card className="my-6 bg-secondary/30">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <Users className="mr-2 h-6 w-6 text-complementary" />
+                    <Users className="mr-2 h-6 w-6 text-primary" />
                     Direct Interaction
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -51,7 +51,7 @@ export default function P2PGlossaryPage() {
             <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Users className="mr-2 h-6 w-6 text-complementary" />
+                        <Users className="mr-2 h-6 w-6 text-primary" />
                         No Central Authority
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -60,7 +60,7 @@ export default function P2PGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Globe className="mr-2 h-6 w-6 text-complementary" />
+                        <Globe className="mr-2 h-6 w-6 text-primary" />
                         A Global Network
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -69,7 +69,7 @@ export default function P2PGlossaryPage() {
                 </div>
             </div>
             
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
               The Foundation of Decentralization
             </h2>
             <p className="text-muted-foreground font-normal">

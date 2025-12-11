@@ -2,7 +2,7 @@
 
 > **Bitcoin Wallet Analysis & Privacy Tools**
 
-BitSleuth is a comprehensive Next.js 16 website serving as the primary marketing and educational hub for Bitcoin analysis tools. The platform features product landing pages for a Bitcoin wallet analyzer and Bitcoin wallet app, an extensive educational glossary, SEO optimization, and privacy-compliant analytics.
+BitSleuth is a comprehensive Next.js 16 website that serves as the primary marketing and educational hub for Bitcoin analysis tools. The platform includes product landing pages for a Bitcoin wallet analyzer and Bitcoin wallet app, as well as an extensive educational glossary, SEO optimization, and privacy-compliant analytics.
 
 **🌐 Production:** [https://www.bitsleuth.ai](https://www.bitsleuth.ai)
 
@@ -39,7 +39,7 @@ BitSleuth is a comprehensive Next.js 16 website serving as the primary marketing
 
 1. **Clone and Install:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/your-org/bitsleuth-website.git
    cd Website
    npm install
    ```
@@ -191,7 +191,7 @@ npm run build
 
 ## 🤝 Contributing
 
-We welcome contributions to the BitSleuth Website! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on:
+We welcome contributions to the BitSleuth Website! Please read our [CONTRIBUTING.md](docs/CONTRIBUTING.md) for detailed guidelines on:
 
 - 📚 **Documentation Organization**: All markdown documentation files must be stored in the `docs/` folder
 - 🚀 Getting started with development
@@ -210,7 +210,7 @@ We welcome contributions to the BitSleuth Website! Please read our [CONTRIBUTING
 
 **Documentation Files**: All markdown documentation files (e.g., `.md` files) should be stored in the `docs/` folder for consistency and easy discovery
 
-For complete guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+For complete guidelines, see [CONTRIBUTING.md](docs/CONTRIBUTING.md).
 
 ---
 

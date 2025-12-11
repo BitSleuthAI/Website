@@ -80,7 +80,7 @@ export const historyStructuredData = {
         "name": "BitSleuth",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.bitsleuth.ai/logo.png"
+          "url": "https://www.bitsleuth.ai/images/logo-icon.jpg"
         }
       },
       "datePublished": "2025-01-19",

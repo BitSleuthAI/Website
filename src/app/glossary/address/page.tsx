@@ -14,19 +14,19 @@ import { GlossaryPageWrapper } from '@/components/glossary/GlossaryPageWrapper';
 
 const addressFormats = [
   {
-    icon: <Bitcoin className="h-6 w-6 text-complementary" />,
+    icon: <Bitcoin className="h-6 w-6 text-primary" />,
     title: 'Taproot (P2TR)',
     prefix: 'Starts with "bc1p"...',
     description: 'The newest and most advanced address format, offering enhanced privacy, security, and lower transaction fees. It is ideal for complex transactions.',
   },
   {
-    icon: <CheckCircle className="h-6 w-6 text-complementary" />,
+    icon: <CheckCircle className="h-6 w-6 text-primary" />,
     title: 'Native SegWit (P2WPKH)',
     prefix: 'Starts with "bc1q"...',
     description: 'A popular and efficient format that offers lower fees than Legacy addresses. Widely supported by modern wallets and services.',
   },
   {
-    icon: <Shield className="h-6 w-6 text-complementary" />,
+    icon: <Shield className="h-6 w-6 text-primary" />,
     title: 'Legacy (P2PKH)',
     prefix: 'Starts with "1"...',
     description: 'The original Bitcoin address format. It has the highest transaction fees and is less efficient, but is compatible with all wallets and services.',
@@ -51,8 +51,8 @@ export default function AddressGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="address" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              What Is a Bitcoin Address?
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is a Bitcoin <span className="text-primary">Address</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A Bitcoin address is like a virtual mailbox for your cryptocurrency. It is a unique
@@ -61,7 +61,7 @@ export default function AddressGlossaryPage() {
               blockchain.
             </p>
 
-            <Card className="my-6 bg-secondary/30">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                 <p className="font-semibold mb-2">Example of a Native SegWit Address (P2WPKH format):</p>
                 <code className="text-lg font-mono bg-background/50 p-2 rounded-md block break-all">
@@ -73,7 +73,7 @@ export default function AddressGlossaryPage() {
             <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <KeyRound className="mr-2 h-6 w-6 text-complementary" />
+                        <KeyRound className="mr-2 h-6 w-6 text-primary" />
                         Public vs. Private Keys
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -82,7 +82,7 @@ export default function AddressGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Globe className="mr-2 h-6 w-6 text-complementary" />
+                        <Globe className="mr-2 h-6 w-6 text-primary" />
                         Privacy and Security
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -91,7 +91,7 @@ export default function AddressGlossaryPage() {
                 </div>
             </div>
 
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
               Common Address Formats
             </h2>
             <p className="text-muted-foreground font-normal">
@@ -99,7 +99,7 @@ export default function AddressGlossaryPage() {
             </p>
             <div className="mt-8 grid gap-6">
                 {addressFormats.map((format) => (
-                    <Card key={format.title} className="bg-card/50 shadow-glow">
+                    <Card key={format.title} className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl shadow-glow">
                         <CardHeader className="flex flex-row items-start gap-4 p-4">
                             {format.icon}
                             <div className="flex-grow">
@@ -112,9 +112,9 @@ export default function AddressGlossaryPage() {
                         </CardContent>
                     </Card>
                 ))}
-                <Card className="bg-card/50 shadow-glow">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl shadow-glow">
                     <CardHeader className="flex flex-row items-start gap-4 p-4">
-                       <Shield className="h-6 w-6 text-complementary" />
+                       <Shield className="h-6 w-6 text-primary" />
                        <div className="flex-grow">
                            <CardTitle className="font-bold text-xl">Nested SegWit &amp; Script (P2SH)</CardTitle>
                            <CardDescription className="font-medium">Starts with "3"...</CardDescription>

@@ -29,13 +29,13 @@ export default function TransactionPrivacyGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="transaction-privacy" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              Understanding Bitcoin Anonymity
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              Understanding Bitcoin <span className="text-primary">Anonymity</span>
             </h1>
             
             <div className="mt-8">
-              <h2 className="text-2xl font-bold flex items-center text-gradient-complementary">
-                <Fingerprint className="mr-3 h-7 w-7 text-complementary" />
+              <h2 className="text-2xl font-bold flex items-center text-foreground">
+                <Fingerprint className="mr-3 h-7 w-7 text-primary" />
                 On-Chain Privacy
               </h2>
               <p className="text-muted-foreground mt-4 font-normal">
@@ -47,8 +47,8 @@ export default function TransactionPrivacyGlossaryPage() {
             </div>
 
             <div className="mt-12">
-              <h2 className="text-2xl font-bold flex items-center text-gradient-complementary">
-                <ShieldCheck className="mr-3 h-7 w-7 text-complementary" />
+              <h2 className="text-2xl font-bold flex items-center text-foreground">
+                <ShieldCheck className="mr-3 h-7 w-7 text-primary" />
                 IP Address Privacy
               </h2>
               <p className="text-muted-foreground mt-4 font-normal">

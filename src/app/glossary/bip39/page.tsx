@@ -29,17 +29,17 @@ export default function BIP39GlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="bip39" relatedTerms={relatedTerms}>
-        <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-          What Is BIP39 (Mnemonic Phrases)?
-        </h1>
+        <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is BIP39 <span className="text-primary">(Mnemonic Phrases)</span>?
+            </h1>
         <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-          BIP39 (Bitcoin Improvement Proposal 39) is the standard for converting a random seed into a human-readable list of words, known as a mnemonic phrase or <Link href="/glossary/passphrase" className="text-complementary hover:underline">passphrase</Link>. These 12, 18, or 24 words represent your entire <Link href="/glossary/wallet" className="text-complementary hover:underline">wallet</Link> and can restore all your bitcoin.
+          BIP39 (Bitcoin Improvement Proposal 39) is the standard for converting a random seed into a human-readable list of words, known as a mnemonic phrase or <Link href="/glossary/passphrase" className="text-primary hover:underline">passphrase</Link>. These 12, 18, or 24 words represent your entire <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> and can restore all your bitcoin.
         </p>
 
-        <Card className="my-6 bg-secondary/30">
+        <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
           <CardContent className="p-4">
              <h3 className="text-xl font-bold flex items-center mb-2">
-                <FileText className="mr-2 h-6 w-6 text-complementary" />
+                <FileText className="mr-2 h-6 w-6 text-primary" />
                 Example Mnemonic Phrase
             </h3>
             <p className="text-muted-foreground mt-2 font-normal">
@@ -48,14 +48,14 @@ export default function BIP39GlossaryPage() {
           </CardContent>
         </Card>
 
-        <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+        <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
           Key Characteristics
         </h2>
 
          <div className="mt-8 grid md:grid-cols-2 gap-8">
             <div>
                 <h3 className="text-xl font-bold flex items-center">
-                    <Eye className="mr-2 h-6 w-6 text-complementary" />
+                    <Eye className="mr-2 h-6 w-6 text-primary" />
                     Human-Friendly Backup
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -64,7 +64,7 @@ export default function BIP39GlossaryPage() {
             </div>
             <div>
                 <h3 className="text-xl font-bold flex items-center">
-                    <Shield className="mr-2 h-6 w-6 text-complementary" />
+                    <Shield className="mr-2 h-6 w-6 text-primary" />
                     Strong Security
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -74,7 +74,7 @@ export default function BIP39GlossaryPage() {
         </div>
         
         <p className="text-muted-foreground mt-8 font-normal">
-         BIP39 works seamlessly with <Link href="/glossary/bip32" className="text-complementary hover:underline">BIP32</Link> (HD wallets) to create a complete wallet recovery system. Your mnemonic phrase is converted into the master seed that generates all your <Link href="/glossary/private-key" className="text-complementary hover:underline">private keys</Link> via BIP32's hierarchical derivation.
+         BIP39 works seamlessly with <Link href="/glossary/bip32" className="text-primary hover:underline">BIP32</Link> (HD wallets) to create a complete wallet recovery system. Your mnemonic phrase is converted into the master seed that generates all your <Link href="/glossary/private-key" className="text-primary hover:underline">private keys</Link> via BIP32's hierarchical derivation.
         </p>
       </GlossaryPageWrapper>
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />

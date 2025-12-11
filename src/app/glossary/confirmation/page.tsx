@@ -30,17 +30,17 @@ export default function ConfirmationGlossaryPage() {
     <div className="flex flex-col min-h-dvh bg-background">
       <Header />
       <GlossaryPageWrapper termSlug="confirmation" relatedTerms={relatedTerms}>
-            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-gradient-complementary">
-              What Is a Confirmation?
+            <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
+              What Is a <span className="text-primary">Confirmation</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
-              A confirmation means that a Bitcoin transaction has been successfully verified by the network and included in a <Link href="/glossary/block" className="text-complementary hover:underline">block</Link> on the blockchain. Each new block that is added after your transaction's block counts as an additional confirmation.
+              A confirmation means that a Bitcoin transaction has been successfully verified by the network and included in a <Link href="/glossary/block" className="text-primary hover:underline">block</Link> on the blockchain. Each new block that is added after your transaction's block counts as an additional confirmation.
             </p>
 
-            <Card className="my-6 bg-secondary/30">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
-                    <ShieldCheck className="mr-2 h-6 w-6 text-complementary" />
+                    <ShieldCheck className="mr-2 h-6 w-6 text-primary" />
                     How It Works
                 </h3>
                 <p className="text-muted-foreground mt-2 font-normal">
@@ -52,7 +52,7 @@ export default function ConfirmationGlossaryPage() {
             <div className="mt-8 grid md:grid-cols-2 gap-8">
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <Clock className="mr-2 h-6 w-6 text-complementary" />
+                        <Clock className="mr-2 h-6 w-6 text-primary" />
                         Why Wait for More?
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -61,7 +61,7 @@ export default function ConfirmationGlossaryPage() {
                 </div>
                 <div>
                     <h3 className="text-xl font-bold flex items-center">
-                        <LinkIcon className="mr-2 h-6 w-6 text-complementary" />
+                        <LinkIcon className="mr-2 h-6 w-6 text-primary" />
                         Secure and Irreversible
                     </h3>
                     <p className="text-muted-foreground mt-2 font-normal">
@@ -70,7 +70,7 @@ export default function ConfirmationGlossaryPage() {
                 </div>
             </div>
             
-            <h2 className="text-3xl font-bold mt-12 mb-4 text-gradient-complementary">
+            <h2 className="text-3xl font-bold mt-12 mb-4 text-foreground">
               Confirmations in Practice
             </h2>
             <p className="text-muted-foreground font-normal">
