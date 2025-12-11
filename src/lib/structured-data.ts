@@ -26,7 +26,6 @@ function getGlossaryTermUrl(term: string): string {
 }
 
 // Use string literal type directly
-const GLOSSARY_SCHEMA_CONTEXT: 'https://schema.org' = 'https://schema.org';
 
 type DefinedTermSchema = {
   '@context': 'https://schema.org';
