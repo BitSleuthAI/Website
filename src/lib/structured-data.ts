@@ -186,7 +186,7 @@ export function generateArticleSchema(
   return {
     '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@type': 'Article',
-    headline: meta.title,
+    datePublished: meta.datePublished,
     description: meta.description,
     author: {
       '@type': 'Organization',
