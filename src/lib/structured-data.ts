@@ -258,7 +258,7 @@ export function generateFAQSchema(
   questions: Array<{ question: string; answer: string }>
 ): FAQPageSchema {
   return {
-    '@context': 'https://schema.org',
+    '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@type': 'FAQPage',
     mainEntity: questions.map((q) => ({
       '@type': 'Question',
