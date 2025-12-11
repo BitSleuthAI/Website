@@ -111,7 +111,7 @@ type GlossaryCollectionSchema = {
 };
 
 type LearningResourceSchema = {
-  '@context': GlossarySchemaContext;
+  '@context': 'https://schema.org';
   '@type': 'LearningResource';
   name: string;
   description: string;
@@ -129,11 +129,15 @@ type LearningResourceSchema = {
     name: string;
     url: string;
   };
-  teaches?: string[];
+  teaches?: Array<{
+    '@type': 'DefinedTerm';
+    name: string;
+    url: string;
+  }>;
 };
 
 type CombinedGlossarySchema = {
-  '@context': GlossarySchemaContext;
+  '@context': 'https://schema.org';
   '@graph': [
     DefinedTermSchema,
     ArticleSchema,
@@ -253,7 +257,7 @@ export function generateBreadcrumbSchema(
  */
 
 type FAQPageSchema = {
-  '@context': GlossarySchemaContext;
+  '@context': 'https://schema.org';
   '@type': 'FAQPage';
   mainEntity: Array<{
     '@type': 'Question';
