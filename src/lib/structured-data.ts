@@ -25,8 +25,8 @@ function getGlossaryTermUrl(term: string): string {
   return `${GLOSSARY_BASE_URL}/${term}`;
 }
 
-// Use string literal type directly
-const GLOSSARY_SCHEMA_CONTEXT: 'https://schema.org' = 'https://schema.org';
+// Shared constant for Schema.org context
+const GLOSSARY_SCHEMA_CONTEXT = 'https://schema.org' as const;
 
 type DefinedTermSchema = {
   '@context': 'https://schema.org';
@@ -276,29 +276,40 @@ export function generateFAQSchema(
   if (!Array.isArray(questions)) {
     return null;
   }
-  // Only include valid question objects
-  const validQuestions = questions.filter(
-    (q) =>
+  // Only include valid question objects – single pass
+  const mainEntity = questions.reduce<Array<{
+    '@type': 'Question';
+    name: string;
+    acceptedAnswer: {
+      '@type': 'Answer';
+      text: string;
+    };
+  }>>((acc, q) => {
+    if (
       q &&
       typeof q.question === 'string' &&
       q.question.trim().length > 0 &&
       typeof q.answer === 'string' &&
       q.answer.trim().length > 0
-  );
-  if (validQuestions.length === 0) {
+    ) {
+      acc.push({
+        '@type': 'Question',
+        name: q.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: q.answer,
+        },
+      });
+    }
+    return acc;
+  }, []);
+  if (mainEntity.length === 0) {
     return null;
   }
   return {
     '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@type': 'FAQPage',
-    mainEntity: validQuestions.map((q) => ({
-      '@type': 'Question',
-      name: q.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: q.answer,
-      },
-    })),
+    mainEntity,
   };
 }
 
@@ -359,7 +370,7 @@ export function generateLearningResourceSchema(
       url: BITSLEUTH_ORGANIZATION.url,
     },
     ...(meta.relatedTerms && meta.relatedTerms.length > 0 && {
-      teaches: meta.relatedTerms.map(relatedTerm => ({
+      teaches: meta.relatedTerms.map((relatedTerm) => ({
         '@type': 'DefinedTerm',
         name: relatedTerm,
         url: getGlossaryTermUrl(relatedTerm),
