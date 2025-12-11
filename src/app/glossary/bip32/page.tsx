@@ -31,7 +31,7 @@ export default function BIP32GlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="bip32" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is BIP32 (Hierarchical Deterministic Wallets)?
+              What Is BIP32 <span className="text-primary">(Hierarchical Deterministic Wallets)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               BIP32 (Bitcoin Improvement Proposal 32) defines the standard for Hierarchical Deterministic (HD) wallets. It allows a single master seed to generate an entire tree of key pairs, enabling users to create unlimited <Link href="/glossary/address" className="text-primary hover:underline">addresses</Link> from one backup while maintaining organization.

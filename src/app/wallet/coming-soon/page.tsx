@@ -27,7 +27,7 @@ export default function ComingSoonPage() {
 
   const handleWaitlistSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       toast({
         title: "Email required",
@@ -83,21 +83,21 @@ export default function ComingSoonPage() {
           <BackgroundBeams />
           <div className="container max-w-4xl mx-auto relative z-10">
             <div className="text-center space-y-6">
-              <div className="inline-flex items-center gap-2 bg-complementary/10 text-complementary px-4 py-2 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
                 <Clock className="h-4 w-4" />
                 Coming Soon
               </div>
-              
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-gradient-complementary">
-                BitSleuth Wallet
+
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                <span className="text-foreground">BitSleuth</span> <span className="text-primary">Wallet</span>
               </h1>
-              
+
               <p className="text-lg text-muted-foreground md:text-xl font-normal max-w-3xl mx-auto">
                 Your privacy-first Bitcoin wallet is in development. Get ready for a secure, non-custodial experience that puts you in complete control of your Bitcoin.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-complementary hover:bg-complementary/90">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 shadow-none">
                   <Link href="/wallet">
                     <Shield className="mr-2 h-5 w-5" />
                     Learn More
@@ -119,16 +119,16 @@ export default function ComingSoonPage() {
           <BackgroundBeams intensity="subtle" />
           <div className="container max-w-6xl mx-auto relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-gradient-complementary">What to Expect</h2>
+              <h2 className="text-3xl font-bold mb-4"><span className="text-foreground">What to</span> <span className="text-primary">Expect</span></h2>
               <p className="text-lg text-muted-foreground font-normal">
                 BitSleuth Wallet will be the most privacy-focused Bitcoin wallet available
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="bg-card/50 hover:border-complementary/50 transition-colors shadow-glow p-6 text-center">
+              <Card className="bg-card/50 hover:border-primary/50 transition-colors shadow-none p-6 text-center">
                 <CardHeader className="p-2">
-                  <Lock className="h-12 w-12 text-complementary mx-auto" />
+                  <Lock className="h-12 w-12 text-primary mx-auto" />
                 </CardHeader>
                 <CardContent className="p-2">
                   <CardTitle className="font-bold text-xl mb-2">Non-Custodial</CardTitle>
@@ -138,9 +138,9 @@ export default function ComingSoonPage() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-card/50 hover:border-complementary/50 transition-colors shadow-glow p-6 text-center">
+              <Card className="bg-card/50 hover:border-primary/50 transition-colors shadow-none p-6 text-center">
                 <CardHeader className="p-2">
-                  <Shield className="h-12 w-12 text-complementary mx-auto" />
+                  <Shield className="h-12 w-12 text-primary mx-auto" />
                 </CardHeader>
                 <CardContent className="p-2">
                   <CardTitle className="font-bold text-xl mb-2">Privacy-First</CardTitle>
@@ -150,9 +150,9 @@ export default function ComingSoonPage() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-card/50 hover:border-complementary/50 transition-colors shadow-glow p-6 text-center">
+              <Card className="bg-card/50 hover:border-primary/50 transition-colors shadow-none p-6 text-center">
                 <CardHeader className="p-2">
-                  <Smartphone className="h-12 w-12 text-complementary mx-auto" />
+                  <Smartphone className="h-12 w-12 text-primary mx-auto" />
                 </CardHeader>
                 <CardContent className="p-2">
                   <CardTitle className="font-bold text-xl mb-2">Mobile Native</CardTitle>
@@ -166,26 +166,26 @@ export default function ComingSoonPage() {
         </section>
 
         {/* Waitlist Section */}
-        <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-complementary/10 relative overflow-hidden">
+        <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-primary/10 relative overflow-hidden">
           <BackgroundBeams />
           <div className="container max-w-4xl mx-auto relative z-10">
             <div className="text-center space-y-8">
-              <h2 className="text-3xl font-bold text-gradient-complementary">Be the First to Know</h2>
+              <h2 className="text-3xl font-bold"><span className="text-foreground">Be the First to</span> <span className="text-primary">Know</span></h2>
               <p className="text-lg text-muted-foreground font-normal max-w-2xl mx-auto">
                 Join our waitlist to get early access to BitSleuth Wallet and exclusive updates on our development progress.
               </p>
-              
-              <Card className="max-w-2xl mx-auto bg-card/80 backdrop-blur-sm border-border/50 shadow-glow">
+
+              <Card className="max-w-2xl mx-auto bg-card/80 backdrop-blur-sm border-border/50 shadow-none">
                 <CardContent className="p-8">
                   <div className="space-y-6">
                     <div className="text-center">
-                      <Mail className="h-12 w-12 text-complementary mx-auto mb-4" />
+                      <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
                       <h3 className="text-2xl font-bold mb-2">Join the Waitlist</h3>
                       <p className="text-muted-foreground">
                         Get notified when BitSleuth Wallet launches
                       </p>
                     </div>
-                    
+
                     <form onSubmit={handleWaitlistSubmit} className="space-y-4">
                       <div className="flex gap-2">
                         <Input
@@ -193,15 +193,15 @@ export default function ComingSoonPage() {
                           placeholder="Enter your email address"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className="flex-1 bg-background text-foreground placeholder:text-muted-foreground focus:border-complementary focus:ring-primary"
+                          className="flex-1 bg-background text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary"
                           disabled={isLoading}
                         />
-                        <Button type="submit" className="px-8" disabled={isLoading}>
+                        <Button type="submit" className="px-8 shadow-none" disabled={isLoading}>
                           <Download className="mr-2 h-4 w-4" />
                           {isLoading ? "Joining..." : "Join"}
                         </Button>
                       </div>
-                      
+
                       <p className="text-xs text-muted-foreground text-center">
                         We respect your privacy. No spam, just updates about BitSleuth Wallet.
                       </p>
@@ -218,15 +218,15 @@ export default function ComingSoonPage() {
           <BackgroundBeams intensity="subtle" />
           <div className="container max-w-4xl mx-auto relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-gradient-complementary">Development Timeline</h2>
+              <h2 className="text-3xl font-bold mb-4"><span className="text-foreground">Development</span> <span className="text-primary">Timeline</span></h2>
               <p className="text-lg text-muted-foreground font-normal">
                 Follow our progress as we build the future of Bitcoin privacy
               </p>
             </div>
-            
+
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-complementary rounded-full flex items-center justify-center text-complementary-foreground font-bold text-sm">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">
                   <Check className="h-4 w-4" />
                 </div>
                 <div>
@@ -236,9 +236,9 @@ export default function ComingSoonPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-complementary rounded-full flex items-center justify-center text-complementary-foreground font-bold text-sm">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">
                   <Check className="h-4 w-4" />
                 </div>
                 <div>
@@ -248,9 +248,9 @@ export default function ComingSoonPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-complementary rounded-full flex items-center justify-center text-complementary-foreground font-bold text-sm">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">
                   <Check className="h-4 w-4" />
                 </div>
                 <div>
@@ -260,9 +260,9 @@ export default function ComingSoonPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-complementary rounded-full flex items-center justify-center text-complementary-foreground font-bold text-sm">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">
                   <Check className="h-4 w-4" />
                 </div>
                 <div className="w-full">
@@ -270,29 +270,29 @@ export default function ComingSoonPage() {
                   <p className="text-muted-foreground mb-4">
                     Limited beta release for early adopters and security testing.
                   </p>
-                  
+
                   <div className="space-y-3">
                     <p className="text-sm font-medium text-foreground mb-3">
                       Want to participate in the iOS or Android beta testing? Help us test and improve BitSleuth Wallet!
                     </p>
-                    
+
                     <div className="grid gap-3 sm:grid-cols-2">
                       {/* iOS TestFlight Card */}
-                      <Card className="bg-card/50 hover:border-complementary/50 transition-all hover:shadow-glow">
+                      <Card className="bg-card/50 hover:border-primary/50 transition-all shadow-none">
                         <CardContent className="p-4">
                           <div className="flex items-start gap-3">
-                            <div className="flex-shrink-0 w-10 h-10 bg-complementary/10 rounded-lg flex items-center justify-center">
-                              <Smartphone className="h-5 w-5 text-complementary" />
+                            <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                              <Smartphone className="h-5 w-5 text-primary" />
                             </div>
                             <div className="flex-1 min-w-0">
                               <h4 className="font-semibold text-sm mb-1">iOS Beta</h4>
                               <p className="text-xs text-muted-foreground mb-2">
                                 Install TestFlight on your iPhone, then join:
                               </p>
-                              <Button 
-                                asChild 
-                                size="sm" 
-                                className="w-full text-xs h-8"
+                              <Button
+                                asChild
+                                size="sm"
+                                className="w-full text-xs h-8 shadow-none"
                               >
                                 <a
                                   href={TESTFLIGHT_BETA_URL}
@@ -309,21 +309,21 @@ export default function ComingSoonPage() {
                       </Card>
 
                       {/* Android Google Play Card */}
-                      <Card className="bg-card/50 hover:border-complementary/50 transition-all hover:shadow-glow">
+                      <Card className="bg-card/50 hover:border-primary/50 transition-all shadow-none">
                         <CardContent className="p-4">
                           <div className="flex items-start gap-3">
-                            <div className="flex-shrink-0 w-10 h-10 bg-complementary/10 rounded-lg flex items-center justify-center">
-                              <Smartphone className="h-5 w-5 text-complementary" />
+                            <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                              <Smartphone className="h-5 w-5 text-primary" />
                             </div>
                             <div className="flex-1 min-w-0">
                               <h4 className="font-semibold text-sm mb-1">Android Beta</h4>
                               <p className="text-xs text-muted-foreground mb-2">
                                 Download directly from Google Play Store:
                               </p>
-                              <Button 
-                                asChild 
-                                size="sm" 
-                                className="w-full text-xs h-8"
+                              <Button
+                                asChild
+                                size="sm"
+                                className="w-full text-xs h-8 shadow-none"
                               >
                                 <a
                                   href={GOOGLE_PLAY_BETA_URL}
@@ -346,13 +346,13 @@ export default function ComingSoonPage() {
           </div>
         </section>
       </main>
-      
+
       <Footer onPrivacyClick={openPrivacyModal} onTermsClick={openTermsModal} />
       <PrivacyPolicyModal isOpen={activeModal === 'privacy'} onOpenChange={closeModal} />
-      <TermsOfServiceModal 
-        isOpen={activeModal === 'terms'} 
+      <TermsOfServiceModal
+        isOpen={activeModal === 'terms'}
         onOpenChange={closeModal}
-        onPrivacyClick={openPrivacyModal} 
+        onPrivacyClick={openPrivacyModal}
       />
     </div>
   );

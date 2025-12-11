@@ -32,7 +32,7 @@ export default function BlockchainGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="blockchain" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Blockchain?
+              What Is a <span className="text-primary">Blockchain</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
              The blockchain is a public ledger of every Bitcoin transaction ever made. It's essentially a digital record book, shared and validated by a global network of computers, ensuring that it remains secure and transparent.

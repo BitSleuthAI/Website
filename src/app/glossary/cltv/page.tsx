@@ -30,7 +30,7 @@ export default function CLTVGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="cltv" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is CLTV (CheckLockTimeVerify)?
+              What Is CLTV <span className="text-primary">(CheckLockTimeVerify)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               CLTV (CheckLockTimeVerify) is a Bitcoin script opcode (BIP 65) that prevents a <Link href="/glossary/utxo" className="text-primary hover:underline">UTXO</Link> from being spent until a specific block height or Unix timestamp is reached. It enables time-locked transactions, ensuring funds remain locked until a predetermined future date.

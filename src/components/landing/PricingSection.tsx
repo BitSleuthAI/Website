@@ -50,7 +50,7 @@ export function PricingSection() {
                 <Badge variant="secondary" className="absolute top-4 right-4 text-xs font-bold py-1 px-3 z-10 blur-none bg-primary/20 text-primary border-primary/20">COMING SOON</Badge>
               )}
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-white">{plan.title}</CardTitle>
+                <CardTitle className="text-2xl font-bold text-foreground">{plan.title}</CardTitle>
                 <p className="text-3xl text-primary font-bold">{plan.price}</p>
                 <CardDescription className="font-normal text-gray-400">{plan.desc}</CardDescription>
               </CardHeader>
@@ -58,7 +58,7 @@ export function PricingSection() {
                 <ul className="space-y-2 mb-8 flex-grow font-medium text-gray-300">
                   {plan.features.map(feature => <li key={feature} className="flex items-center gap-2"><span className="text-primary">✅</span><span>{feature}</span></li>)}
                 </ul>
-                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md">
+                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-none">
                   {plan.href ? <a href={plan.href}>{plan.cta}</a> : <span>{plan.cta}</span>}
                 </Button>
               </CardContent>

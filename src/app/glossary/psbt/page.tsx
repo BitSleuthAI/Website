@@ -30,7 +30,7 @@ export default function PSBTGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="psbt" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a PSBT (Partially Signed Bitcoin Transaction)?
+              What Is a PSBT <span className="text-primary">(Partially Signed Bitcoin Transaction)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A PSBT (Partially Signed Bitcoin Transaction) is a standardized format (BIP 174) for Bitcoin transactions that allows multiple parties or devices to collaborate on creating and signing a transaction. It's particularly useful for multi-signature wallets, hardware wallets, and complex transaction workflows.

@@ -79,7 +79,7 @@ export function WalletJoinWaitlistSection() {
         />
         <Button
           type="submit"
-          className="w-full sm:w-auto shadow-lg shadow-primary/20 bg-primary hover:bg-primary/90 text-primary-foreground"
+          className="w-full sm:w-auto shadow-none bg-primary hover:bg-primary/90 text-primary-foreground"
           disabled={isLoading}
         >
           {isLoading ? "Joining..." : "Join waitlist"}

@@ -30,7 +30,7 @@ export default function MerkleTreeGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="merkle-tree" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Merkle Tree?
+              What Is a Merkle <span className="text-primary">Tree</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A Merkle tree is a cryptographic data structure used in Bitcoin to efficiently summarize and verify all transactions in a <Link href="/glossary/block" className="text-primary hover:underline">block</Link>. It organizes transaction data into a tree of hashes, with the "Merkle root" at the top representing all transactions in the block.

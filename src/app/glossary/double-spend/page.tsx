@@ -31,7 +31,7 @@ export default function DoubleSpendGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="double-spend" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Double Spend?
+              What Is a Double <span className="text-primary">Spend</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A double spend is a type of attack where the same digital currency is sent to two different recipients. Before Bitcoin, this was the fundamental problem that prevented the creation of a reliable peer-to-peer digital cash system. Bitcoin was designed specifically to solve this issue.

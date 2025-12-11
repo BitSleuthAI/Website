@@ -30,7 +30,7 @@ export default function SchnorrSignatureGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="schnorr-signature" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Are Schnorr Signatures?
+              What Are Schnorr <span className="text-primary">Signatures</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Schnorr signatures are a type of digital <Link href="/glossary/signature" className="text-primary hover:underline">signature</Link> scheme that Bitcoin adopted with the <Link href="/glossary/taproot" className="text-primary hover:underline">Taproot</Link> upgrade. They offer key advantages over the original ECDSA signatures: signature aggregation, batch verification, and improved privacy for complex scripts.

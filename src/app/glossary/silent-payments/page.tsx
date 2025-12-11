@@ -29,7 +29,7 @@ export default function SilentPaymentsGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="silent-payments" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Are Silent Payments?
+              What Are Silent <span className="text-primary">Payments</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Silent Payments (BIP 352) is a protocol that allows users to publish a single, static <Link href="/glossary/address" className="text-primary hover:underline">address</Link> that can receive unlimited payments, with each payment going to a unique on-chain address. This dramatically improves <Link href="/glossary/transaction-privacy" className="text-primary hover:underline">privacy</Link> without requiring interactive communication.

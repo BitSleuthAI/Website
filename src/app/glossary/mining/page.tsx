@@ -31,8 +31,8 @@ export default function MiningGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="mining" relatedTerms={relatedTerms}>
         <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-          What Is Mining?
-        </h1>
+              What Is <span className="text-primary">Mining</span>?
+            </h1>
         <p itemProp="description" className="text-lg text-muted-foreground font-normal">
          Mining is the engine that powers the Bitcoin network. It's a competitive process where individuals and companies use powerful computers to solve complex mathematical puzzles. This essential work both secures the network and creates new bitcoins.
         </p>

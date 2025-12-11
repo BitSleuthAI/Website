@@ -28,7 +28,7 @@ export function HomeHeroSection() {
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-6 pt-4 max-w-4xl mx-auto">
-            <Card className="group text-left bg-card/80 backdrop-blur-sm border-2 border-border/50 hover:border-complementary/70 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] min-h-[200px]">
+            <Card className="group text-left bg-card/80 backdrop-blur-sm border-2 border-border/50 hover:border-complementary/70 hover:shadow-none hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] min-h-[200px]">
                 <CardHeader className="flex flex-row items-center gap-4 pb-4">
                     <div className="p-2 rounded-lg bg-complementary/10 group-hover:bg-complementary/20 transition-colors">
                       <BarChart className="h-8 w-8 text-complementary"/>
@@ -39,12 +39,12 @@ export function HomeHeroSection() {
                     <CardDescription className="mb-6 font-normal text-base leading-relaxed">
                        For analysts & investigators. Visualize transactions, trace fund flows, and detect OPSEC risks with AI-powered insights.
                     </CardDescription>
-                    <Button asChild className="w-full group-hover:shadow-md transition-shadow">
+                    <Button asChild className="w-full group-hover:shadow-none transition-shadow">
                         <Link href="/analyzer">Explore Analyzer</Link>
                     </Button>
                 </CardContent>
             </Card>
-            <Card className="group text-left bg-card/80 backdrop-blur-sm border-2 border-border/50 hover:border-complementary/70 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] min-h-[200px]">
+            <Card className="group text-left bg-card/80 backdrop-blur-sm border-2 border-border/50 hover:border-complementary/70 hover:shadow-none hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] min-h-[200px]">
                 <CardHeader className="flex flex-row items-center gap-4 pb-4">
                     <div className="p-2 rounded-lg bg-complementary/10 group-hover:bg-complementary/20 transition-colors">
                       <ShieldCheck className="h-8 w-8 text-complementary"/>
@@ -55,7 +55,7 @@ export function HomeHeroSection() {
                     <CardDescription className="mb-6 font-normal text-base leading-relaxed">
                         For privacy-conscious holders. A secure, non-custodial wallet built to minimize address reuse and on-chain exposure.
                     </CardDescription>
-                    <Button asChild className="w-full group-hover:shadow-md transition-shadow">
+                    <Button asChild className="w-full group-hover:shadow-none transition-shadow">
                         <Link href="/wallet">Explore Wallet</Link>
                     </Button>
                 </CardContent>

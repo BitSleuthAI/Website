@@ -29,7 +29,7 @@ export default function BitGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="bit" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Bit?
+              What Is a <span className="text-primary">Bit</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A bit is a sub-unit of a bitcoin, created to make transacting with smaller amounts of BTC more user-friendly. Just as a dollar can be broken down into cents, a bitcoin can be divided into smaller units. A bit is one of these convenient units.

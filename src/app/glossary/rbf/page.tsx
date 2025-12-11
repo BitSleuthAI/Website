@@ -30,7 +30,7 @@ export default function RBFGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="rbf" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is RBF (Replace-by-Fee)?
+              What Is RBF <span className="text-primary">(Replace-by-Fee)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Replace-by-Fee (RBF) is a Bitcoin protocol feature that allows an unconfirmed transaction to be replaced with a new version that pays a higher fee. This gives users flexibility to adjust fees if their transaction gets stuck in the <Link href="/glossary/mempool" className="text-primary hover:underline">mempool</Link> during periods of network congestion.

@@ -48,7 +48,7 @@ export function WalletSecuritySection() {
                     {feature.icon}
                   </div>
                 </div>
-                <CardTitle className="font-bold text-lg text-white">{feature.title}</CardTitle>
+                <CardTitle className="font-bold text-lg text-foreground">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent className="p-6 pt-0">
                 <CardDescription className="font-normal text-center text-gray-400 leading-relaxed">{feature.description}</CardDescription>

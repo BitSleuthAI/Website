@@ -29,7 +29,7 @@ export default function SplicingGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="splicing" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is Splicing (Lightning)?
+              What Is <span className="text-primary">Splicing</span> (Lightning)?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Splicing is a <Link href="/glossary/lightning-network" className="text-primary hover:underline">Lightning Network</Link> feature that allows users to add or remove funds from a payment channel without closing it. This enables dynamic channel capacity management while keeping channels open and operational.

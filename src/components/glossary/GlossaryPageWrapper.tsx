@@ -164,7 +164,7 @@ export function GlossaryPageWrapper({ termSlug, children, relatedTerms }: Glossa
           {meta.quickFacts && meta.quickFacts.length > 0 && (
             <Card className="my-8 bg-[#1a1a1a] border-none shadow-xl border-primary/20 not-prose">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold flex items-center mb-4 text-white">
+                <h3 className="text-xl font-bold flex items-center mb-4 text-foreground">
                   <FileText className="mr-2 h-6 w-6 text-primary" />
                   Quick Facts
                 </h3>

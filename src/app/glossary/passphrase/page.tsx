@@ -33,7 +33,7 @@ export default function PassphraseGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="passphrase" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Passphrase? Understanding Your Wallet&apos;s Most Important Security Feature
+              What Is a <span className="text-primary">Passphrase</span>? Understanding Your Wallet&apos;s Most Important Security Feature
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A cryptocurrency passphrase is a secure, human-readable backup of your wallet&apos;s

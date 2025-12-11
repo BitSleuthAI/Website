@@ -30,8 +30,8 @@ export default function BIP39GlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="bip39" relatedTerms={relatedTerms}>
         <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-          What Is BIP39 (Mnemonic Phrases)?
-        </h1>
+              What Is BIP39 <span className="text-primary">(Mnemonic Phrases)</span>?
+            </h1>
         <p itemProp="description" className="text-lg text-muted-foreground font-normal">
           BIP39 (Bitcoin Improvement Proposal 39) is the standard for converting a random seed into a human-readable list of words, known as a mnemonic phrase or <Link href="/glossary/passphrase" className="text-primary hover:underline">passphrase</Link>. These 12, 18, or 24 words represent your entire <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> and can restore all your bitcoin.
         </p>

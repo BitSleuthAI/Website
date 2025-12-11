@@ -96,7 +96,7 @@ export function BackgroundBeams({ className, children, intensity = "medium" }: B
         {randomValues.verticalPositions.map((position, index) => (
           <div
             key={`vertical-${index}`}
-            className="absolute top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-primary/50 to-transparent shadow-lg shadow-primary/20"
+            className="absolute top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-primary/50 to-transparent shadow-none"
             style={{
               left: `${position}%`,
               animation: `beam-${(index % 7) + 1} ${randomValues.durations[index]}s ease-in-out infinite`,
@@ -110,7 +110,7 @@ export function BackgroundBeams({ className, children, intensity = "medium" }: B
         {randomValues.horizontalPositions.map((position, index) => (
           <div
             key={`horizontal-${index}`}
-            className="absolute left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent shadow-lg shadow-primary/15"
+            className="absolute left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent shadow-none shadow-primary/15"
             style={{
               top: `${position}%`,
               animation: `beam-horizontal-${(index % 3) + 1} ${randomValues.durations[index + 7]}s ease-in-out infinite`,
@@ -125,7 +125,7 @@ export function BackgroundBeams({ className, children, intensity = "medium" }: B
           {randomValues.diagonalRotations.map((rotation, index) => (
             <div
               key={`diagonal-${index}`}
-              className="absolute left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/25 to-transparent shadow-lg shadow-primary/15"
+              className="absolute left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/25 to-transparent shadow-none shadow-primary/15"
               style={{
                 top: `${20 + index * 20}%`,
                 transform: `rotate(${rotation}deg)`,
@@ -141,7 +141,7 @@ export function BackgroundBeams({ className, children, intensity = "medium" }: B
         {randomValues.radialPositions.map((position, index) => (
           <div
             key={`radial-${index}`}
-            className="absolute bg-primary/40 rounded-full animate-pulse shadow-lg shadow-primary/30"
+            className="absolute bg-primary/40 rounded-full animate-pulse shadow-none"
             style={{
               top: `${position.top}%`,
               left: `${position.left}%`,

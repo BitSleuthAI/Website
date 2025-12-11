@@ -60,14 +60,14 @@ export function TestimonialsSection() {
                 }`}
             >
               <CardContent className="p-8 flex flex-col h-full">
-                <div className="h-12 w-12 bg-primary rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-primary/30">
-                  <Quote className="h-6 w-6 text-white fill-white" />
+                <div className="h-12 w-12 bg-primary rounded-lg flex items-center justify-center mb-6 shadow-none">
+                  <Quote className="h-6 w-6 text-foreground fill-white" />
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed mb-8 flex-1 font-medium">
                   "{testimonial.content}"
                 </p>
                 <div className="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100">
-                  <Avatar className="h-12 w-12 border-2 border-white shadow-md">
+                  <Avatar className="h-12 w-12 border-2 border-white shadow-none">
                     <AvatarFallback className="bg-gray-100 text-gray-600 font-bold">
                       {testimonial.initials}
                     </AvatarFallback>

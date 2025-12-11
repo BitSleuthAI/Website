@@ -30,7 +30,7 @@ export default function MempoolGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="mempool" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is the Mempool?
+              What Is the <span className="text-primary">Mempool</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               The mempool (memory pool) is a waiting area where unconfirmed Bitcoin transactions are held before being included in a <Link href="/glossary/block" className="text-primary hover:underline">block</Link>. Each node maintains its own mempool, creating a distributed staging area for pending transactions across the network.

@@ -9,7 +9,7 @@ interface FooterProps {
 
 export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
   return (
-    <footer className="edge-to-edge-section flex flex-col gap-6 py-12 shrink-0 border-t bg-[#111111] text-white" style={{
+    <footer className="edge-to-edge-section flex flex-col gap-6 py-12 shrink-0 border-t bg-muted text-foreground" style={{
       paddingBottom: 'max(2rem, env(safe-area-inset-bottom))',
       paddingLeft: 'max(1rem, env(safe-area-inset-left))',
       paddingRight: 'max(1rem, env(safe-area-inset-right))'
@@ -27,13 +27,13 @@ export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row gap-4 items-center justify-between">
+        <div className="border-t border-border pt-8 flex flex-col sm:flex-row gap-4 items-center justify-between">
           <p className="text-sm text-gray-400 font-normal">&copy; {new Date().getFullYear()} BitSleuth. All rights reserved.</p>
 
           <nav className="flex flex-wrap gap-6 justify-center sm:justify-end">
             <Link
               href="/glossary"
-              className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-white font-medium transition-colors"
+              className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-foreground font-medium transition-colors"
               prefetch={false}
             >
               Glossary
@@ -42,19 +42,19 @@ export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
               href="https://primal.net/p/nprofile1qqs9lrs07tqjg4vkvdh0sn4dkv8v38xddmz87tm2c2rkx7s8jsr426gdz006n"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-white font-medium transition-colors"
+              className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-foreground font-medium transition-colors"
             >
               Nostr
             </a>
-            <button onClick={onTermsClick} className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-white font-medium transition-colors">
+            <button onClick={onTermsClick} className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-foreground font-medium transition-colors">
               Terms of Service
             </button>
-            <button onClick={onPrivacyClick} className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-white font-medium transition-colors">
+            <button onClick={onPrivacyClick} className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-foreground font-medium transition-colors">
               Privacy Policy
             </button>
             <Link
               href="/company-information"
-              className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-white font-medium transition-colors"
+              className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-foreground font-medium transition-colors"
               prefetch={false}
             >
               Company Information

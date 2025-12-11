@@ -29,7 +29,7 @@ export default function SidechainGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="sidechain" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Sidechain?
+              What Is a <span className="text-primary">Sidechain</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A sidechain is a separate blockchain that runs in parallel to Bitcoin's main chain (mainchain), connected through a two-way peg that allows bitcoin to be transferred between chains. Sidechains enable new features and experimentation without affecting Bitcoin's core protocol.

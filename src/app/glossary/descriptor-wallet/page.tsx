@@ -30,7 +30,7 @@ export default function DescriptorWalletGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="descriptor-wallet" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Descriptor Wallet?
+              What Is a Descriptor <span className="text-primary">Wallet</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A descriptor wallet is a modern Bitcoin <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> implementation that uses output script descriptors to precisely define how to derive addresses and create spending conditions. It provides a more flexible and explicit alternative to traditional <Link href="/glossary/bip32" className="text-primary hover:underline">BIP32</Link>/<Link href="/glossary/bip44" className="text-primary hover:underline">BIP44</Link> wallets.

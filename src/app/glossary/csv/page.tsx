@@ -30,7 +30,7 @@ export default function CSVGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="csv" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is CSV (CheckSequenceVerify)?
+              What Is CSV <span className="text-primary">(CheckSequenceVerify)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               CSV (CheckSequenceVerify) is a Bitcoin script opcode (BIP 112) that enforces relative timelocks, requiring a certain number of blocks to be mined after a <Link href="/glossary/utxo" className="text-primary hover:underline">UTXO</Link> is created before it can be spent. Unlike <Link href="/glossary/cltv" className="text-primary hover:underline">CLTV</Link>'s absolute timelocks, CSV's delays are relative to when the UTXO was confirmed.

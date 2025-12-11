@@ -30,7 +30,7 @@ export default function LightningNetworkGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="lightning-network" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is the Lightning Network?
+              What Is the Lightning <span className="text-primary">Network</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               The Lightning Network is a Layer 2 payment protocol built on top of Bitcoin that enables instant, low-cost transactions by moving them off the main <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link>. It uses payment channels and multi-hop routing to allow users to transact without waiting for block confirmations.

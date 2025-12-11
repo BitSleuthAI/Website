@@ -31,7 +31,7 @@ export default function FeeRateGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="fee-rate" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is Fee Rate (sat/vB)?
+              What Is Fee Rate <span className="text-primary">(sat/vB)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Fee rate, measured in satoshis per virtual byte (sat/vB), represents how much you're paying per unit of transaction data. It's the primary metric miners use to prioritize transactions from the <Link href="/glossary/mempool" className="text-primary hover:underline">mempool</Link> when building blocks.

@@ -30,7 +30,7 @@ export default function TransactionPrivacyGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="transaction-privacy" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              Understanding Bitcoin Anonymity
+              Understanding Bitcoin <span className="text-primary">Anonymity</span>
             </h1>
             
             <div className="mt-8">

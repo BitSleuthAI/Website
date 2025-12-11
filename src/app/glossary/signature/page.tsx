@@ -31,7 +31,7 @@ export default function SignatureGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="signature" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Digital Signature?
+              What Is a Digital <span className="text-primary">Signature</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               In Bitcoin, a digital signature is a mathematical proof that a transaction has been authorized by the owner of the funds. It is created using a <Link href="/glossary/private-key" className="text-primary hover:underline">private key</Link> and is included in every transaction broadcast to the network.

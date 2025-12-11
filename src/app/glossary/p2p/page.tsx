@@ -30,7 +30,7 @@ export default function P2PGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="p2p" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is P2P (Peer-to-Peer)?
+              What Is P2P <span className="text-primary">(Peer-to-Peer)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               P2P stands for Peer-to-Peer, a type of network where participants interact directly with each other without needing a central intermediary or server. In the context of Bitcoin, it means users can transact directly with one another, anywhere in the world.

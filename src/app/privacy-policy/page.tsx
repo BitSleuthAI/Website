@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
             </Link>
           </Button>
           <div className="prose prose-invert max-w-none text-muted-foreground">
-            <h1 className="text-4xl font-bold mb-4 text-gradient-complementary">Privacy Policy</h1>
+            <h1 className="text-4xl font-bold mb-4 text-primary">Privacy Policy</h1>
             <p className="text-sm font-medium">Effective Date: 15 September 2025</p>
             <p className="font-normal">
               Welcome to BitSleuth. We are committed to protecting your privacy and ensuring that
@@ -43,7 +43,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="font-normal">
               This Privacy Policy applies to all services provided by BitSleuth, including our
-              public website (<a href="https://www.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-complementary hover:underline">www.bitsleuth.ai</a>), our analytics platform (<a href="https://app.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-complementary hover:underline">app.bitsleuth.ai</a>), and
+              public website (<a href="https://www.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.bitsleuth.ai</a>), our analytics platform (<a href="https://app.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">app.bitsleuth.ai</a>), and
               our privacy-focused wallet iOS and Android app.
             </p>
             <p className="font-normal">
@@ -51,16 +51,16 @@ export default function PrivacyPolicyPage() {
               Policy.
             </p>
 
-            <h3 className="text-xl font-bold text-gradient-complementary">1. Who We Are</h3>
+            <h3 className="text-xl font-bold text-primary">1. Who We Are</h3>
             <p className="font-normal">
               BitSleuth is a technology company focused on Bitcoin analytics and wallet services. We
               operate with a privacy-first mindset, especially within our wallet platform.
             </p>
 
-            <h3 className="text-xl font-bold text-complementary">2. What Data We Collect</h3>
+            <h3 className="text-xl font-bold text-primary">2. What Data We Collect</h3>
             <p className="font-normal">We collect limited data to support our services:</p>
             <p className="font-semibold">
-              <strong>On <a href="https://www.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-complementary hover:underline">www.bitsleuth.ai</a> and <a href="https://app.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-complementary hover:underline">app.bitsleuth.ai</a>:</strong>
+              <strong>On <a href="https://www.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.bitsleuth.ai</a> and <a href="https://app.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">app.bitsleuth.ai</a>:</strong>
             </p>
             <ul className="list-disc pl-6 font-normal">
               <li>Usage data via Google Analytics (e.g. page visits, time spent, browser type, IP address).</li>
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
               </li>
             </ul>
 
-            <h3 className="text-xl font-bold text-complementary">3. How We Use Your Information</h3>
+            <h3 className="text-xl font-bold text-primary">3. How We Use Your Information</h3>
             <p className="font-normal">We only use your information for the following purposes:</p>
             <ul className="list-disc pl-6 font-normal">
               <li>To understand how our website and analytics app are used.</li>
@@ -90,16 +90,16 @@ export default function PrivacyPolicyPage() {
               <li>Collect payment data or use third-party crypto exchange services.</li>
             </ul>
 
-            <h3 className="text-xl font-bold text-gradient-complementary">4. Cookies</h3>
+            <h3 className="text-xl font-bold text-primary">4. Cookies</h3>
             <p className="font-normal">
-              We use cookies solely for analytics purposes on <a href="https://www.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-complementary hover:underline">www.bitsleuth.ai</a> and <a href="https://app.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-complementary hover:underline">app.bitsleuth.ai</a>. These help us understand how users interact with our site so we can
+              We use cookies solely for analytics purposes on <a href="https://www.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.bitsleuth.ai</a> and <a href="https://app.bitsleuth.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">app.bitsleuth.ai</a>. These help us understand how users interact with our site so we can
               improve it.
             </p>
             <p className="font-normal">
               You can opt out of Google Analytics tracking by using Google’s opt-out browser add-on.
             </p>
 
-            <h3 className="text-xl font-bold text-gradient-complementary">5. Data Storage and Retention</h3>
+            <h3 className="text-xl font-bold text-primary">5. Data Storage and Retention</h3>
             <p className="font-normal">
               Google Analytics data is stored securely by Google and retained in accordance with
               their policies.
@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="font-normal">We do not store or retain personal data from Wallet App.</p>
 
-            <h3 className="text-xl font-bold text-complementary">6. Your Rights</h3>
+            <h3 className="text-xl font-bold text-primary">6. Your Rights</h3>
             <p className="font-normal">
               Depending on your location, you may have rights under applicable data protection laws,
               such as:
@@ -124,32 +124,32 @@ export default function PrivacyPolicyPage() {
               To make a request or ask questions, contact us at{' '}
               <a
                 href="mailto:hello@bitsleuth.ai"
-                className="text-complementary hover:underline"
+                className="text-primary hover:underline"
               >
                 hello@bitsleuth.ai
               </a>
             </p>
 
-            <h3 className="text-xl font-bold text-gradient-complementary">7. Data Security</h3>
+            <h3 className="text-xl font-bold text-primary">7. Data Security</h3>
             <p className="font-normal">
               We take appropriate technical and organisational measures to protect any personal data
               we do hold. However, no internet transmission is ever 100% secure, so we cannot
               guarantee absolute security.
             </p>
 
-            <h3 className="text-xl font-bold text-gradient-complementary">8. Changes to This Policy</h3>
+            <h3 className="text-xl font-bold text-primary">8. Changes to This Policy</h3>
             <p className="font-normal">
               We may update this Privacy Policy from time to time. Any changes will be posted on
               our site, and the updated policy will be here.
             </p>
             <p className="font-normal">We encourage you to check this page periodically.</p>
 
-            <h3 className="text-xl font-bold text-gradient-complementary">9. Contact Us</h3>
+            <h3 className="text-xl font-bold text-primary">9. Contact Us</h3>
             <p className="font-normal">
               If you have any questions or concerns about this Privacy Policy, please get in touch
               at:
               <br />
-              <a href="mailto:hello@bitsleuth.ai" className="text-complementary hover:underline">
+              <a href="mailto:hello@bitsleuth.ai" className="text-primary hover:underline">
                 hello@bitsleuth.ai
               </a>
             </p>

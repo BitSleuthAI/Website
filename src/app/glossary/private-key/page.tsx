@@ -32,7 +32,7 @@ export default function PrivateKeyGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="private-key" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Private Key?
+              What Is a Private <span className="text-primary">Key</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A private key is the secret, cryptographic key that proves your ownership of bitcoins and gives you the ability to spend them. It is the single most important piece of information you need to protect in your Bitcoin <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link>.

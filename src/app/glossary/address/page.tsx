@@ -52,7 +52,7 @@ export default function AddressGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="address" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Bitcoin Address?
+              What Is a Bitcoin <span className="text-primary">Address</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A Bitcoin address is like a virtual mailbox for your cryptocurrency. It is a unique

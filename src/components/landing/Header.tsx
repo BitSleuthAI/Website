@@ -113,7 +113,7 @@ export function Header({ basePath = '' }: HeaderProps) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-lg shadow-primary/20" suppressHydrationWarning>
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-none" suppressHydrationWarning>
               <Rocket className="mr-2 h-4 w-4" />
               Launch App
               <ChevronDown className="h-4 w-4 ml-1" />

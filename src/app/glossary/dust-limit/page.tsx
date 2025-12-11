@@ -30,7 +30,7 @@ export default function DustLimitGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="dust-limit" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is the Dust Limit?
+              What Is the Dust <span className="text-primary">Limit</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               The dust limit is the minimum amount of bitcoin that makes economic sense to transact. A <Link href="/glossary/utxo" className="text-primary hover:underline">UTXO</Link> is considered "dust" if its value is so small that it would cost more in transaction fees to spend it than it's actually worth.

@@ -31,7 +31,7 @@ export default function CryptographyGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="cryptography" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is Cryptography?
+              What Is <span className="text-primary">Cryptography</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Cryptography is the mathematical foundation of the Bitcoin network. It's the science of secure communication, used to protect information, secure wallets, sign transactions, and ensure the overall integrity of the <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link>.

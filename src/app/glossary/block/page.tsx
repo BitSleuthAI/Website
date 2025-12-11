@@ -32,7 +32,7 @@ export default function BlockGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="block" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Block?
+              What Is a <span className="text-primary">Block</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Think of a block as a page in a digital ledger. It's a permanent record that contains a batch of recent, confirmed Bitcoin transactions. New blocks are added to the end of the <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link> in chronological order.

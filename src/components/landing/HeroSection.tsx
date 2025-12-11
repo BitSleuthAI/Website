@@ -50,7 +50,7 @@ export function HeroSection() {
                 onKeyDown={handleKeyDown}
               />
             </div>
-            <Button size="lg" className="w-full sm:w-auto shadow-lg shadow-primary/20 bg-primary hover:bg-primary/90 text-primary-foreground" onClick={handleAnalyze}>
+            <Button size="lg" className="w-full sm:w-auto shadow-none bg-primary hover:bg-primary/90 text-primary-foreground" onClick={handleAnalyze}>
               <Search className="mr-2 h-5 w-5" />
               Analyze Wallet
             </Button>

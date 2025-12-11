@@ -30,7 +30,7 @@ export default function SegWitGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="segwit" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is SegWit (Segregated Witness)?
+              What Is SegWit <span className="text-primary">(Segregated Witness)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Segregated Witness (SegWit) is a protocol upgrade activated in 2017 that fundamentally changed how transaction data is stored in Bitcoin blocks. It separates (segregates) the digital signature data (witness) from the transaction data, allowing more transactions to fit in each block.

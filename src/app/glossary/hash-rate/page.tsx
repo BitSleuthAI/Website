@@ -31,7 +31,7 @@ export default function HashRateGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="hash-rate" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is Hash Rate?
+              What Is <span className="text-primary">Hash Rate</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               The hash rate is a crucial measure of the Bitcoin network's health and security. It represents the total combined computational power that miners are dedicating to solving the next block and processing transactions.

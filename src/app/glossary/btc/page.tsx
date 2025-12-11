@@ -29,7 +29,7 @@ export default function BtcGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="btc" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is BTC?
+              What Is <span className="text-primary">BTC</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               BTC is the ticker symbol and most common abbreviation for bitcoin, the unit of currency used on the Bitcoin network. It is used on exchanges and in financial contexts to represent the price and amount of bitcoin.

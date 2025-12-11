@@ -30,7 +30,7 @@ export default function UTXOGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="utxo" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a UTXO (Unspent Transaction Output)?
+              What Is a UTXO <span className="text-primary">(Unspent Transaction Output)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A UTXO (Unspent Transaction Output) is a discrete chunk of bitcoin that remains after a transaction and can be spent in future transactions. Think of UTXOs as digital bills or coins in your <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> - each one represents a specific amount of bitcoin that you own and can spend.

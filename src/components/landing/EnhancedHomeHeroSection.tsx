@@ -87,13 +87,13 @@ export function EnhancedHomeHeroSection() {
                 <div className="p-3 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
                   <BarChart className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl font-bold text-white">Wallet Analyzer</CardTitle>
+                <CardTitle className="text-2xl font-bold text-foreground">Wallet Analyzer</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="mb-8 font-normal text-base leading-relaxed text-gray-300">
                   For analysts & investigators. Visualize transactions, trace fund flows, and detect OPSEC risks with AI-powered insights.
                 </CardDescription>
-                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg shadow-primary/30 rounded-xl h-12 transition-all group-hover:shadow-xl">
+                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-foreground font-semibold shadow-none rounded-xl h-12 transition-all group-hover:shadow-xl">
                   <Link href="/analyzer">Explore Analyzer</Link>
                 </Button>
               </CardContent>
@@ -104,13 +104,13 @@ export function EnhancedHomeHeroSection() {
                 <div className="p-3 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
                   <ShieldCheck className="h-8 w-8 text-primary" />
                 </div>
-                <CardTitle className="text-2xl font-bold text-white">Privacy Wallet</CardTitle>
+                <CardTitle className="text-2xl font-bold text-foreground">Privacy Wallet</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="mb-8 font-normal text-base leading-relaxed text-gray-300">
                   For privacy-conscious holders. A secure, non-custodial wallet built to minimize address reuse and on-chain exposure.
                 </CardDescription>
-                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg shadow-primary/30 rounded-xl h-12 transition-all group-hover:shadow-xl">
+                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-foreground font-semibold shadow-none rounded-xl h-12 transition-all group-hover:shadow-xl">
                   <Link href="/wallet">Explore Wallet</Link>
                 </Button>
               </CardContent>

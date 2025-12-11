@@ -30,7 +30,7 @@ export default function ScriptPubKeyScriptSigGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="scriptpubkey-scriptsig" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Are ScriptPubKey and ScriptSig?
+              What Are ScriptPubKey and <span className="text-primary">ScriptSig</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               ScriptPubKey and ScriptSig are the two halves of Bitcoin's programmable transaction system. ScriptPubKey (locking script) defines the conditions required to spend a <Link href="/glossary/utxo" className="text-primary hover:underline">UTXO</Link>, while ScriptSig (unlocking script) provides the data needed to satisfy those conditions.

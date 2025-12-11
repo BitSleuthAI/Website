@@ -31,7 +31,7 @@ export default function ConfirmationGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="confirmation" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is a Confirmation?
+              What Is a <span className="text-primary">Confirmation</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A confirmation means that a Bitcoin transaction has been successfully verified by the network and included in a <Link href="/glossary/block" className="text-primary hover:underline">block</Link> on the blockchain. Each new block that is added after your transaction's block counts as an additional confirmation.

@@ -31,8 +31,8 @@ export default function WalletGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="wallet" relatedTerms={relatedTerms}>
         <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-          What Is a Bitcoin Wallet?
-        </h1>
+              What Is a Bitcoin <span className="text-primary">Wallet</span>?
+            </h1>
         <p itemProp="description" className="text-lg text-muted-foreground font-normal">
           A Bitcoin wallet is the software you use to interact with the Bitcoin network. It allows you to send, receive, and store your bitcoin securely. Contrary to its name, a wallet doesn't store your actual coins; instead, it holds your essential <Link href="/glossary/private-key" className="text-primary hover:underline">private keys</Link>.
         </p>

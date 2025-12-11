@@ -31,8 +31,8 @@ export default function BitcoinGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="bitcoin" relatedTerms={relatedTerms}>
         <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-          What Is Bitcoin?
-        </h1>
+              What Is <span className="text-primary">Bitcoin</span>?
+            </h1>
         <p itemProp="description" className="text-lg text-muted-foreground font-normal">
           Bitcoin is a groundbreaking decentralized digital currency that enables peer-to-peer transactions across the internet without the need for a central authority like a bank or government. It is both a currency and a technology protocol.
         </p>

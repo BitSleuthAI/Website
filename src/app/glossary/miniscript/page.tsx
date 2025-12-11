@@ -30,7 +30,7 @@ export default function MiniscriptGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="miniscript" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is Miniscript?
+              What Is <span className="text-primary">Miniscript</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Miniscript is a language for writing Bitcoin Scripts in a structured way that makes them easier to write, analyze, and verify. It acts as a higher-level abstraction over raw Bitcoin Script, enabling safer and more composable spending conditions while maintaining compatibility with the Bitcoin protocol.

@@ -30,7 +30,7 @@ export default function TaprootGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="taproot" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is Taproot?
+              What Is <span className="text-primary">Taproot</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Taproot is a major Bitcoin protocol upgrade activated in November 2021 that enhances privacy, efficiency, and smart contract flexibility. It introduces <Link href="/glossary/schnorr-signature" className="text-primary hover:underline">Schnorr signatures</Link> and enables more complex Bitcoin scripts to appear identical to simple transactions on the blockchain.

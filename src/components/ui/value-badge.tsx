@@ -21,7 +21,7 @@ export function ValueBadge({ icon: Icon, text, variant = "orange", className }: 
   return (
     <div className={cn(
       "flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300",
-      "hover:scale-105 hover:shadow-lg",
+      "hover:scale-105 hover:shadow-none",
       variantStyles[variant],
       className
     )}>

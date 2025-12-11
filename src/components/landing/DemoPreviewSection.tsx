@@ -12,7 +12,7 @@ export function DemoPreviewSection() {
           <p className="text-lg text-muted-foreground font-normal">Experience the power of BitSleuth with our live demo or explore a real Bitcoin wallet analysis.</p>
         </div>
         <div className="flex justify-center gap-4 mb-8">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-none">
             <a href="https://app.bitsleuth.ai/">Try Live App</a>
           </Button>
           <Button asChild variant="outline" size="lg" className="hover:border-primary hover:text-primary">

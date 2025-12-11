@@ -84,7 +84,7 @@ export function EducationalSection() {
                 </div>
               </div>
 
-              <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md">
+              <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-none">
                 <Link href="/learn">
                   Start Learning
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -143,7 +143,7 @@ export function EducationalSection() {
               </div>
 
               <div className="mt-auto">
-                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md">
+                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-none">
                   <Link href="/history">
                     Explore History
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -175,7 +175,7 @@ export function EducationalSection() {
                   <span className="text-sm px-4 py-1.5 rounded-full bg-background border border-border font-medium text-primary">+ 15 more</span>
                 </div>
               </div>
-              <Button asChild size="lg" className="shrink-0 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20">
+              <Button asChild size="lg" className="shrink-0 bg-primary hover:bg-primary/90 text-primary-foreground shadow-none">
                 <Link href="/glossary">
                   Browse Glossary
                   <ArrowRight className="ml-2 h-4 w-4" />

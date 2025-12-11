@@ -30,7 +30,7 @@ export default function CoinSelectionGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="coin-selection" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is Coin Selection?
+              What Is Coin <span className="text-primary">Selection</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Coin selection is the process by which a Bitcoin <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> chooses which <Link href="/glossary/utxo" className="text-primary hover:underline">UTXOs</Link> to spend when creating a transaction. Different selection algorithms optimize for various goals like minimizing fees, enhancing privacy, or reducing future wallet complexity.

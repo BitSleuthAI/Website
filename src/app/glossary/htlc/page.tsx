@@ -30,7 +30,7 @@ export default function HTLCGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="htlc" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is an HTLC (Hashed Timelock Contract)?
+              What Is an HTLC <span className="text-primary">(Hashed Timelock Contract)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               A Hashed Timelock Contract (HTLC) is a type of Bitcoin script that enables conditional payments based on cryptographic proof and time constraints. HTLCs are the fundamental building block of the <Link href="/glossary/lightning-network" className="text-primary hover:underline">Lightning Network</Link>, allowing trustless multi-hop payment routing.

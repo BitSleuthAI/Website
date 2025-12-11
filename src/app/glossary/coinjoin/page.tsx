@@ -30,7 +30,7 @@ export default function CoinJoinGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="coinjoin" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is CoinJoin?
+              What Is <span className="text-primary">CoinJoin</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               CoinJoin is a privacy-enhancing technique where multiple Bitcoin users combine their transactions into a single collaborative transaction. This breaks the common input ownership heuristic, making it difficult for observers to determine which inputs fund which outputs, thereby improving <Link href="/glossary/transaction-privacy" className="text-primary hover:underline">transaction privacy</Link>.

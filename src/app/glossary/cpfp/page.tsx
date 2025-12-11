@@ -30,7 +30,7 @@ export default function CPFPGlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="cpfp" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is CPFP (Child Pays for Parent)?
+              What Is CPFP <span className="text-primary">(Child Pays for Parent)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               Child Pays for Parent (CPFP) is a fee bumping technique where a recipient creates a new transaction (child) that spends an unconfirmed transaction (parent) with a high enough fee to incentivize miners to include both transactions together. This allows recipients to accelerate stuck transactions.

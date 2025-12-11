@@ -30,7 +30,7 @@ export default function BIP44GlossaryPage() {
       <Header />
       <GlossaryPageWrapper termSlug="bip44" relatedTerms={relatedTerms}>
             <h1 itemProp="headline" className="text-4xl font-bold mb-4 text-foreground">
-              What Is BIP44 (Multi-Account Hierarchy)?
+              What Is BIP44 <span className="text-primary">(Multi-Account Hierarchy)</span>?
             </h1>
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               BIP44 (Bitcoin Improvement Proposal 44) extends <Link href="/glossary/bip32" className="text-primary hover:underline">BIP32</Link> by defining a standard hierarchical structure for organizing multiple accounts and cryptocurrencies within a single <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link>. It provides a universal derivation path format that ensures compatibility across different wallet software.
