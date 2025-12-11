@@ -342,7 +342,7 @@ export function generateCombinedGlossarySchema(
   meta: GlossaryTermMeta,
 ): CombinedGlossarySchema {
   return {
-    '@context': 'https://schema.org',
+    '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@graph': [
       generateDefinedTermSchema(term, meta),
       generateArticleSchema(term, meta),
