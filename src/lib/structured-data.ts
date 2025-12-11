@@ -209,7 +209,7 @@ export function generateArticleSchema(
     keywords: meta.keywords.join(', '),
     url: getGlossaryTermUrl(term),
     inLanguage: 'en-US',
-    ...(meta.relatedTerms?.length > 0 && {
+    ...(meta.relatedTerms && meta.relatedTerms.length > 0 && {
       mentions: meta.relatedTerms.map((relatedTerm) => ({
         '@type': 'DefinedTerm',
         name: relatedTerm,
