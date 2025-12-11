@@ -354,7 +354,7 @@ export function generateLearningResourceSchema(
     },
     publisher: {
       '@type': 'Organization',
-      name: 'BitSleuth',
+      name: BITSLEUTH_ORGANIZATION.name,
       url: BITSLEUTH_ORGANIZATION.url,
     },
     ...(meta.relatedTerms && meta.relatedTerms.length > 0 && {
