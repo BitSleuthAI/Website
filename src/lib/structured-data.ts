@@ -7,6 +7,9 @@
 import { type GlossaryTermMeta } from './glossary-metadata';
 
 
+// Extracted base organization URL for maintainability
+const BITSLEUTH_ORGANIZATION.url = 'https://www.bitsleuth.ai';
+
 // Extracted base glossary URL for maintainability
 const GLOSSARY_BASE_URL = 'https://www.bitsleuth.ai/glossary';
 
