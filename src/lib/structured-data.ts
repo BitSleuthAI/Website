@@ -25,11 +25,11 @@ function getGlossaryTermUrl(term: string): string {
   return `${GLOSSARY_BASE_URL}/${term}`;
 }
 
-type GlossarySchemaContext = 'https://schema.org';
-const GLOSSARY_SCHEMA_CONTEXT: GlossarySchemaContext = 'https://schema.org';
+// Use string literal type directly
+const GLOSSARY_SCHEMA_CONTEXT: 'https://schema.org' = 'https://schema.org';
 
 type DefinedTermSchema = {
-  '@context': GlossarySchemaContext;
+  '@context': 'https://schema.org';
   '@type': 'DefinedTerm';
   name: string;
   description: string;
@@ -48,7 +48,7 @@ type DefinedTermSchema = {
 };
 
 type ArticleSchema = {
-  '@context': GlossarySchemaContext;
+  '@context': 'https://schema.org';
   '@type': 'Article';
   headline: string;
   description: string;
@@ -80,7 +80,7 @@ type ArticleSchema = {
 };
 
 type BreadcrumbSchema = {
-  '@context': GlossarySchemaContext;
+  '@context': 'https://schema.org';
   '@type': 'BreadcrumbList';
   itemListElement: Array<{
     '@type': 'ListItem';
@@ -91,7 +91,7 @@ type BreadcrumbSchema = {
 };
 
 type GlossaryCollectionSchema = {
-  '@context': GlossarySchemaContext;
+  '@context': 'https://schema.org';
   '@type': 'CollectionPage';
   name: string;
   description: string;
@@ -111,7 +111,7 @@ type GlossaryCollectionSchema = {
 };
 
 type LearningResourceSchema = {
-  '@context': GlossarySchemaContext;
+  '@context': 'https://schema.org';
   '@type': 'LearningResource';
   name: string;
   description: string;
@@ -129,11 +129,15 @@ type LearningResourceSchema = {
     name: string;
     url: string;
   };
-  teaches?: string[];
+  teaches?: Array<{
+    '@type': 'DefinedTerm';
+    name: string;
+    url: string;
+  }>;
 };
 
 type CombinedGlossarySchema = {
-  '@context': GlossarySchemaContext;
+  '@context': 'https://schema.org';
   '@graph': [
     DefinedTermSchema,
     ArticleSchema,
@@ -253,7 +257,7 @@ export function generateBreadcrumbSchema(
  */
 
 type FAQPageSchema = {
-  '@context': GlossarySchemaContext;
+  '@context': 'https://schema.org';
   '@type': 'FAQPage';
   mainEntity: Array<{
     '@type': 'Question';
@@ -355,7 +359,11 @@ export function generateLearningResourceSchema(
       url: BITSLEUTH_ORGANIZATION.url,
     },
     ...(meta.relatedTerms && meta.relatedTerms.length > 0 && {
-      teaches: meta.relatedTerms,
+      teaches: meta.relatedTerms.map(slug => ({
+        '@type': 'DefinedTerm',
+        name: slug,
+        url: getGlossaryTermUrl(slug),
+      })),
     }),
   };
 }
