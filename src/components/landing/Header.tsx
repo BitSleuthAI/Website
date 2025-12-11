@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, Search, ChevronDown, BarChart, Lock, Rocket, GraduationCap, ScrollText } from "lucide-react";
+import { Menu, ChevronDown, BarChart, Lock, Rocket, GraduationCap, ScrollText } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 interface HeaderProps {
