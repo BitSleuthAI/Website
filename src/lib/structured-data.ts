@@ -241,13 +241,13 @@ export function generateBreadcrumbSchema(
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.bitsleuth.ai',
+        item: BITSLEUTH_ORGANIZATION.url,
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Bitcoin Glossary',
-        item: 'https://www.bitsleuth.ai/glossary',
+        item: GLOSSARY_BASE_URL,
       },
       {
         '@type': 'ListItem',
@@ -307,7 +307,7 @@ export function generateGlossaryCollectionSchema(
     name: 'Bitcoin Glossary',
     description:
       'Comprehensive Bitcoin and cryptocurrency terminology. Learn about blockchain technology, wallet security, privacy, mining, and more.',
-    url: 'https://www.bitsleuth.ai/glossary',
+    url: GLOSSARY_BASE_URL,
     about: {
       '@type': 'Thing',
       name: 'Bitcoin',
@@ -318,7 +318,7 @@ export function generateGlossaryCollectionSchema(
     isPartOf: {
       '@type': 'WebSite',
       name: 'BitSleuth',
-      url: 'https://www.bitsleuth.ai',
+      url: BITSLEUTH_ORGANIZATION.url,
     },
   };
 }
@@ -348,7 +348,7 @@ export function generateLearningResourceSchema(
     publisher: {
       '@type': 'Organization',
       name: 'BitSleuth',
-      url: 'https://www.bitsleuth.ai',
+      url: BITSLEUTH_ORGANIZATION.url,
     },
     ...(meta.relatedTerms && meta.relatedTerms.length > 0 && {
       teaches: meta.relatedTerms.map((relatedTerm) => relatedTerm),
