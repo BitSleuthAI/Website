@@ -304,7 +304,7 @@ export function generateGlossaryCollectionSchema(
     name: 'Bitcoin Glossary',
     description:
       'Comprehensive Bitcoin and cryptocurrency terminology. Learn about blockchain technology, wallet security, privacy, mining, and more.',
-    url: 'https://www.bitsleuth.ai/glossary',
+    url: GLOSSARY_BASE_URL,
     about: {
       '@type': 'Thing',
       name: 'Bitcoin',
