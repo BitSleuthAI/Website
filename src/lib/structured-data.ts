@@ -271,6 +271,19 @@ type FAQPageSchema = {
   }>;
 };
 
+/**
+ * Validate that an object is a valid FAQ question object with non-empty string 'question' and 'answer'.
+ */
+function isValidQuestionObject(q: { question?: unknown; answer?: unknown }): q is { question: string; answer: string } {
+  return (
+    !!q &&
+    typeof q.question === 'string' &&
+    q.question.trim().length > 0 &&
+    typeof q.answer === 'string' &&
+    q.answer.trim().length > 0
+  );
+}
+
 export function generateFAQSchema(
   questions: Array<{ question: string; answer: string }>
 ): FAQPageSchema | null {
@@ -287,13 +300,7 @@ export function generateFAQSchema(
       text: string;
     };
   }>>((acc, q) => {
-    if (
-      q &&
-      typeof q.question === 'string' &&
-      q.question.trim().length > 0 &&
-      typeof q.answer === 'string' &&
-      q.answer.trim().length > 0
-    ) {
+    if (isValidQuestionObject(q)) {
       acc.push({
         '@type': 'Question',
         name: q.question,
