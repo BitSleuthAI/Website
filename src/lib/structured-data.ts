@@ -186,7 +186,7 @@ export function generateArticleSchema(
         url: BITSLEUTH_LOGO_URL,
       },
     },
-    datePublished: meta.datePublished || new Date().toISOString().split('T')[0], // Defaults to today if not provided
+    datePublished: new Date().toISOString().split('T')[0],
     dateModified: meta.lastModified || new Date().toISOString().split('T')[0],
     articleSection: meta.category,
     keywords: meta.keywords.join(', '),
