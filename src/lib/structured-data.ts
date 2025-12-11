@@ -20,6 +20,14 @@ function getGlossaryTermUrl(term: string): string {
   return `${GLOSSARY_BASE_URL}/${term}`;
 }
 
+
+/**
+ * Return the glossary term URL for a given term slug.
+ */
+function getGlossaryTermUrl(term: string): string {
+  return `${GLOSSARY_BASE_URL}/${term}`;
+}
+
 /**
  * Return the current date in YYYY-MM-DD format (ISO 8601 date string).
  * Used as a fallback for datePublished when not provided.
@@ -149,7 +157,7 @@ type CombinedGlossarySchema = {
  * Generate DefinedTerm schema for a glossary term
  * This helps AI engines understand glossary entries as educational definitions
  */
-export function generateDefinedTermSchema(
+    url: getGlossaryTermUrl(term),
   term: string,
   meta: GlossaryTermMeta,
 ): DefinedTermSchema {
