@@ -168,7 +168,7 @@ export function generateArticleSchema(
   meta: GlossaryTermMeta,
 ): ArticleSchema {
   return {
-    '@context': 'https://schema.org',
+    '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@type': 'Article',
     headline: meta.title,
     description: meta.description,
