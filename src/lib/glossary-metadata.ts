@@ -9,7 +9,7 @@ export interface GlossaryTermMeta {
   title: string;
   description: string;
   keywords: string[];
-  category: string;
+  category?: string;
   relatedTerms?: string[];
   quickFacts?: string[];
   datePublished?: string;

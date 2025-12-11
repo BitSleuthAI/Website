@@ -5,6 +5,7 @@ import {
   generateCombinedGlossarySchema,
   generateDefinedTermSchema,
   generateGlossaryCollectionSchema,
+  generateFAQSchema,
 } from './structured-data';
 import { type GlossaryTermMeta } from './glossary-metadata';
 
@@ -72,7 +73,7 @@ describe('structured-data generators', () => {
     expect(collection.numberOfItems).toBe(TEST_COLLECTION_ITEM_COUNT);
   });
 
-  it('uses fallback date when datePublished is not provided', () => {
+  it('datePublished is undefined when not provided in metadata', () => {
     const metaWithoutDate: GlossaryTermMeta = {
       title: 'Term Without Date',
       description: 'A term without a publication date.',
@@ -82,9 +83,92 @@ describe('structured-data generators', () => {
     const term = 'no-date-term';
     const article = generateArticleSchema(term, metaWithoutDate);
 
-    expect(article.datePublished).toBeDefined();
-    expect(typeof article.datePublished).toBe('string');
-    // Should be in YYYY-MM-DD format
-    expect(article.datePublished).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(article.datePublished).toBeUndefined();
+  });
+
+  it('omits articleSection when category is not provided', () => {
+    const metaWithoutCategory: GlossaryTermMeta = {
+      title: 'Term Without Category',
+      description: 'A term without a category.',
+      keywords: ['test'],
+      datePublished: '2024-01-01',
+    };
+    const term = 'no-category-term';
+    const article = generateArticleSchema(term, metaWithoutCategory);
+
+    expect(article.articleSection).toBeUndefined();
+  });
+
+  it('includes articleSection when category is provided', () => {
+    const term = 'with-category';
+    const article = generateArticleSchema(term, sampleMeta);
+
+    expect(article.articleSection).toBe(sampleMeta.category);
+  });
+
+  describe('generateFAQSchema', () => {
+    it('generates valid FAQ schema for valid questions', () => {
+      const questions = [
+        { question: 'What is Bitcoin?', answer: 'Bitcoin is a cryptocurrency.' },
+        { question: 'How does it work?', answer: 'It uses blockchain technology.' },
+      ];
+      const faq = generateFAQSchema(questions);
+
+      expect(faq).not.toBeNull();
+      expect(faq?.['@type']).toBe('FAQPage');
+      expect(faq?.mainEntity).toHaveLength(2);
+      expect(faq?.mainEntity[0]['@type']).toBe('Question');
+      expect(faq?.mainEntity[0].name).toBe('What is Bitcoin?');
+    });
+
+    it('returns null for empty array', () => {
+      const faq = generateFAQSchema([]);
+      expect(faq).toBeNull();
+    });
+
+    it('returns null for non-array input', () => {
+      const faq = generateFAQSchema(null as unknown as Array<{ question: string; answer: string }>);
+      expect(faq).toBeNull();
+    });
+
+    it('filters out invalid question objects', () => {
+      const questions = [
+        { question: 'Valid question?', answer: 'Valid answer.' },
+        { question: '', answer: 'Empty question.' },
+        { question: 'No answer?', answer: '' },
+        { question: '  ', answer: 'Whitespace question.' },
+        null as unknown as { question: string; answer: string },
+        { question: 'Another valid?', answer: 'Another valid answer.' },
+      ];
+      const faq = generateFAQSchema(questions);
+
+      expect(faq).not.toBeNull();
+      expect(faq?.mainEntity).toHaveLength(2);
+      expect(faq?.mainEntity[0].name).toBe('Valid question?');
+      expect(faq?.mainEntity[1].name).toBe('Another valid?');
+    });
+
+    it('returns null when all questions are invalid', () => {
+      const questions = [
+        { question: '', answer: 'Empty question.' },
+        { question: 'No answer?', answer: '' },
+        null as unknown as { question: string; answer: string },
+      ];
+      const faq = generateFAQSchema(questions);
+      expect(faq).toBeNull();
+    });
+
+    it('validates question and answer are strings', () => {
+      const questions = [
+        { question: 123 as unknown as string, answer: 'Answer' },
+        { question: 'Question', answer: 456 as unknown as string },
+        { question: 'Valid?', answer: 'Valid.' },
+      ];
+      const faq = generateFAQSchema(questions);
+
+      expect(faq).not.toBeNull();
+      expect(faq?.mainEntity).toHaveLength(1);
+      expect(faq?.mainEntity[0].name).toBe('Valid?');
+    });
   });
 });

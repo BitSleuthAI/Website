@@ -25,14 +25,6 @@ function getGlossaryTermUrl(term: string): string {
   return `${GLOSSARY_BASE_URL}/${term}`;
 }
 
-/**
- * Return the current date in YYYY-MM-DD format (ISO 8601 date string).
- * Used as a fallback for datePublished when not provided.
- */
-function getCurrentDateString(): string {
-  return new Date().toISOString().split('T')[0];
-}
-
 type GlossarySchemaContext = 'https://schema.org';
 const GLOSSARY_SCHEMA_CONTEXT: GlossarySchemaContext = 'https://schema.org';
 
@@ -74,7 +66,7 @@ type ArticleSchema = {
       url: string;
     };
   };
-  datePublished: string;
+  datePublished?: string;
   dateModified?: string;
   articleSection?: string;
   keywords: string;
@@ -205,9 +197,9 @@ export function generateArticleSchema(
         url: BITSLEUTH_LOGO_URL,
       },
     },
-    datePublished: meta.datePublished || getCurrentDateString(),
+    datePublished: meta.datePublished,
     ...(meta.lastModified ? { dateModified: meta.lastModified } : {}),
-    articleSection: meta.category,
+    ...(meta.category ? { articleSection: meta.category } : {}),
     keywords: meta.keywords.join(', '),
     url: getGlossaryTermUrl(term),
     inLanguage: 'en-US',
@@ -275,11 +267,30 @@ type FAQPageSchema = {
 
 export function generateFAQSchema(
   questions: Array<{ question: string; answer: string }>
-): FAQPageSchema {
+): FAQPageSchema | null {
+  // Validate that questions is a non-empty array of valid question objects
+  if (
+    !Array.isArray(questions) ||
+    questions.length === 0
+  ) {
+    return null;
+  }
+  // Only include valid question objects
+  const validQuestions = questions.filter(
+    (q) =>
+      q &&
+      typeof q.question === 'string' &&
+      q.question.trim().length > 0 &&
+      typeof q.answer === 'string' &&
+      q.answer.trim().length > 0
+  );
+  if (validQuestions.length === 0) {
+    return null;
+  }
   return {
     '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@type': 'FAQPage',
-    mainEntity: questions.map((q) => ({
+    mainEntity: validQuestions.map((q) => ({
       '@type': 'Question',
       name: q.question,
       acceptedAnswer: {
@@ -347,7 +358,7 @@ export function generateLearningResourceSchema(
       url: BITSLEUTH_ORGANIZATION.url,
     },
     ...(meta.relatedTerms && meta.relatedTerms.length > 0 && {
-      teaches: meta.relatedTerms.map((relatedTerm) => relatedTerm),
+      teaches: meta.relatedTerms,
     }),
   };
 }
