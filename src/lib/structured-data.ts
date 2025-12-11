@@ -309,7 +309,7 @@ export function generateLearningResourceSchema(
   meta: GlossaryTermMeta,
 ): LearningResourceSchema {
   return {
-    '@context': 'https://schema.org',
+    '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@type': 'LearningResource',
     name: meta.title,
     description: meta.description,
