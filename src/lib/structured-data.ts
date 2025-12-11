@@ -244,7 +244,7 @@ export function generateBreadcrumbSchema(
         '@type': 'ListItem',
         position: 2,
         name: 'Bitcoin Glossary',
-        item: 'https://www.bitsleuth.ai/glossary',
+        item: GLOSSARY_BASE_URL,
       },
       {
         '@type': 'ListItem',
