@@ -211,7 +211,7 @@ export function generateBreadcrumbSchema(
   termTitle: string,
 ): BreadcrumbSchema {
   return {
-    '@context': 'https://schema.org',
+    '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@type': 'BreadcrumbList',
     itemListElement: [
       {
