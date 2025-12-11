@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Bot, Home, BookOpen, Shield, Wallet, GraduationCap } from 'lucide-react';
+import { ArrowLeft, Bot, BookOpen, Shield, Wallet, GraduationCap } from 'lucide-react';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
