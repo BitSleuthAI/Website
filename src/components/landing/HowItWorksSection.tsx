@@ -30,12 +30,12 @@ export function HowItWorksSection() {
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {steps.map((step, idx) => (
-            <Card key={idx} className="bg-[#1a1a1a] border-none shadow-xl text-left hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            <Card key={idx} className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl text-left hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <CardHeader>
                 <CardTitle className="text-lg font-bold mb-2 text-primary">{step.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="font-normal text-gray-300">{step.description}</p>
+                <p className="font-normal text-muted-foreground">{step.description}</p>
               </CardContent>
             </Card>
           ))}

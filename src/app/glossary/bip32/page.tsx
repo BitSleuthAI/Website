@@ -37,7 +37,7 @@ export default function BIP32GlossaryPage() {
               BIP32 (Bitcoin Improvement Proposal 32) defines the standard for Hierarchical Deterministic (HD) wallets. It allows a single master seed to generate an entire tree of key pairs, enabling users to create unlimited <Link href="/glossary/address" className="text-primary hover:underline">addresses</Link> from one backup while maintaining organization.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Shield className="mr-2 h-6 w-6 text-primary" />

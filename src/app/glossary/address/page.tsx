@@ -61,7 +61,7 @@ export default function AddressGlossaryPage() {
               blockchain.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                 <p className="font-semibold mb-2">Example of a Native SegWit Address (P2WPKH format):</p>
                 <code className="text-lg font-mono bg-background/50 p-2 rounded-md block break-all">
@@ -99,7 +99,7 @@ export default function AddressGlossaryPage() {
             </p>
             <div className="mt-8 grid gap-6">
                 {addressFormats.map((format) => (
-                    <Card key={format.title} className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl shadow-glow">
+                    <Card key={format.title} className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl shadow-glow">
                         <CardHeader className="flex flex-row items-start gap-4 p-4">
                             {format.icon}
                             <div className="flex-grow">
@@ -112,7 +112,7 @@ export default function AddressGlossaryPage() {
                         </CardContent>
                     </Card>
                 ))}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl shadow-glow">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl shadow-glow">
                     <CardHeader className="flex flex-row items-start gap-4 p-4">
                        <Shield className="h-6 w-6 text-primary" />
                        <div className="flex-grow">

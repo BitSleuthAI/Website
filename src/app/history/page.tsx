@@ -120,7 +120,7 @@ export default function HistoryPage() {
               </div>
 
               <div className="space-y-8">
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <p className="text-lg text-gray-400">
@@ -167,7 +167,7 @@ export default function HistoryPage() {
               </div>
 
               <div className="space-y-8">
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-3 mb-4">
@@ -233,7 +233,7 @@ export default function HistoryPage() {
               </div>
 
               <div className="space-y-8">
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-3 mb-4">
@@ -301,7 +301,7 @@ export default function HistoryPage() {
               </div>
 
               <div className="space-y-8">
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-3 mb-4">
@@ -355,7 +355,7 @@ export default function HistoryPage() {
 
               <div className="space-y-8">
                 {/* Blockchain */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -377,7 +377,7 @@ export default function HistoryPage() {
                 </Card>
 
                 {/* Proof-of-Work */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -399,7 +399,7 @@ export default function HistoryPage() {
                 </Card>
 
                 {/* Digital Signatures */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -416,7 +416,7 @@ export default function HistoryPage() {
                 </Card>
 
                 {/* Incentive System */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -446,7 +446,7 @@ export default function HistoryPage() {
               </div>
 
               <div className="space-y-8">
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-3 mb-4">
@@ -502,7 +502,7 @@ export default function HistoryPage() {
               </div>
 
               <div className="space-y-8">
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-3 mb-4">
@@ -566,7 +566,7 @@ export default function HistoryPage() {
               </div>
 
               <div className="space-y-8">
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div className="flex items-center gap-3 mb-4">
@@ -635,7 +635,7 @@ export default function HistoryPage() {
           <section className="py-16 md:py-20 lg:py-24 relative overflow-hidden">
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-4xl mx-auto px-4 md:px-6 relative z-10">
-              <Card className="bg-[#1a1a1a] border-none shadow-xl">
+              <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl">
                 <CardContent className="p-8 md:p-12">
                   <div className="text-center space-y-6">
                     <h2 className="text-3xl font-bold sm:text-4xl text-foreground">

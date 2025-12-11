@@ -37,7 +37,7 @@ export default function HashRateGlossaryPage() {
               The hash rate is a crucial measure of the Bitcoin network's health and security. It represents the total combined computational power that miners are dedicating to solving the next block and processing transactions.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Cpu className="mr-2 h-6 w-6 text-primary" />

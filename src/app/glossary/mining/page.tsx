@@ -37,7 +37,7 @@ export default function MiningGlossaryPage() {
          Mining is the engine that powers the Bitcoin network. It's a competitive process where individuals and companies use powerful computers to solve complex mathematical puzzles. This essential work both secures the network and creates new bitcoins.
         </p>
 
-        <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+        <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
           <CardContent className="p-4">
              <h3 className="text-xl font-bold flex items-center mb-2">
                 <Cpu className="mr-2 h-6 w-6 text-primary" />

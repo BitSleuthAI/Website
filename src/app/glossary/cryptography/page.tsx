@@ -37,7 +37,7 @@ export default function CryptographyGlossaryPage() {
               Cryptography is the mathematical foundation of the Bitcoin network. It's the science of secure communication, used to protect information, secure wallets, sign transactions, and ensure the overall integrity of the <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link>.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <ShieldCheck className="mr-2 h-6 w-6 text-primary" />

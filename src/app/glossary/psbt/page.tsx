@@ -36,7 +36,7 @@ export default function PSBTGlossaryPage() {
               A PSBT (Partially Signed Bitcoin Transaction) is a standardized format (BIP 174) for Bitcoin transactions that allows multiple parties or devices to collaborate on creating and signing a transaction. It's particularly useful for multi-signature wallets, hardware wallets, and complex transaction workflows.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Workflow className="mr-2 h-6 w-6 text-primary" />

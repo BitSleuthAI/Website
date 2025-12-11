@@ -34,7 +34,7 @@ export default function BtcGlossaryPage() {
             <p itemProp="description" className="text-lg text-muted-foreground font-normal">
               BTC is the ticker symbol and most common abbreviation for bitcoin, the unit of currency used on the Bitcoin network. It is used on exchanges and in financial contexts to represent the price and amount of bitcoin.
             </p>
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Tag className="mr-2 h-6 w-6 text-primary" />

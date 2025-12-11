@@ -37,7 +37,7 @@ export default function SignatureGlossaryPage() {
               In Bitcoin, a digital signature is a mathematical proof that a transaction has been authorized by the owner of the funds. It is created using a <Link href="/glossary/private-key" className="text-primary hover:underline">private key</Link> and is included in every transaction broadcast to the network.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <PenSquare className="mr-2 h-6 w-6 text-primary" />

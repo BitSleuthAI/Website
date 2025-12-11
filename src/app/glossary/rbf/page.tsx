@@ -36,7 +36,7 @@ export default function RBFGlossaryPage() {
               Replace-by-Fee (RBF) is a Bitcoin protocol feature that allows an unconfirmed transaction to be replaced with a new version that pays a higher fee. This gives users flexibility to adjust fees if their transaction gets stuck in the <Link href="/glossary/mempool" className="text-primary hover:underline">mempool</Link> during periods of network congestion.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <RefreshCw className="mr-2 h-6 w-6 text-primary" />

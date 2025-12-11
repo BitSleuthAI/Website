@@ -37,7 +37,7 @@ export default function DoubleSpendGlossaryPage() {
               A double spend is a type of attack where the same digital currency is sent to two different recipients. Before Bitcoin, this was the fundamental problem that prevented the creation of a reliable peer-to-peer digital cash system. Bitcoin was designed specifically to solve this issue.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Copy className="mr-2 h-6 w-6 text-primary" />

@@ -37,7 +37,7 @@ export default function NotFound() {
           <div className="container max-w-5xl mx-auto px-4 md:px-6 relative z-10">
             <div className="space-y-8">
               {/* Main 404 Card */}
-              <Card className="bg-[#1a1a1a] border-none shadow-xl">
+              <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl">
                 <CardContent className="p-10 md:p-16">
                   <div className="text-center space-y-8">
                     <div className="mx-auto flex justify-center">
@@ -74,7 +74,7 @@ export default function NotFound() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {quickLinks.map((link) => (
                     <Link key={link.href} href={link.href} className="group">
-                      <Card className="bg-[#1a1a1a] border-none shadow-none hover:shadow-xl transition-all duration-300 h-full">
+                      <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-none hover:shadow-xl transition-all duration-300 h-full">
                         <CardContent className="p-6 flex flex-col items-center gap-3">
                           <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
                             <link.icon className="h-8 w-8 text-primary" />

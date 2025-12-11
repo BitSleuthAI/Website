@@ -82,7 +82,7 @@ export function EnhancedHomeHeroSection() {
       <section className="py-12 md:py-24 bg-background relative overflow-hidden">
         <div className="container max-w-6xl mx-auto px-4 md:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="group text-left bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full overflow-hidden">
+            <Card className="group text-left bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full overflow-hidden">
               <CardHeader className="flex flex-row items-center gap-4 pb-4">
                 <div className="p-3 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
                   <BarChart className="h-8 w-8 text-primary" />
@@ -90,7 +90,7 @@ export function EnhancedHomeHeroSection() {
                 <CardTitle className="text-2xl font-bold text-foreground">Wallet Analyzer</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="mb-8 font-normal text-base leading-relaxed text-gray-300">
+                <CardDescription className="mb-8 font-normal text-base leading-relaxed text-muted-foreground">
                   For analysts & investigators. Visualize transactions, trace fund flows, and detect OPSEC risks with AI-powered insights.
                 </CardDescription>
                 <Button asChild className="w-full bg-primary hover:bg-primary/90 text-foreground font-semibold shadow-none rounded-xl h-12 transition-all group-hover:shadow-xl">
@@ -99,7 +99,7 @@ export function EnhancedHomeHeroSection() {
               </CardContent>
             </Card>
 
-            <Card className="group text-left bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full overflow-hidden">
+            <Card className="group text-left bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full overflow-hidden">
               <CardHeader className="flex flex-row items-center gap-4 pb-4">
                 <div className="p-3 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
                   <ShieldCheck className="h-8 w-8 text-primary" />
@@ -107,7 +107,7 @@ export function EnhancedHomeHeroSection() {
                 <CardTitle className="text-2xl font-bold text-foreground">Privacy Wallet</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="mb-8 font-normal text-base leading-relaxed text-gray-300">
+                <CardDescription className="mb-8 font-normal text-base leading-relaxed text-muted-foreground">
                   For privacy-conscious holders. A secure, non-custodial wallet built to minimize address reuse and on-chain exposure.
                 </CardDescription>
                 <Button asChild className="w-full bg-primary hover:bg-primary/90 text-foreground font-semibold shadow-none rounded-xl h-12 transition-all group-hover:shadow-xl">

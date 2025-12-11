@@ -35,7 +35,7 @@ export default function SplicingGlossaryPage() {
               Splicing is a <Link href="/glossary/lightning-network" className="text-primary hover:underline">Lightning Network</Link> feature that allows users to add or remove funds from a payment channel without closing it. This enables dynamic channel capacity management while keeping channels open and operational.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Zap className="mr-2 h-6 w-6 text-primary" />

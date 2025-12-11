@@ -37,7 +37,7 @@ export default function FeeRateGlossaryPage() {
               Fee rate, measured in satoshis per virtual byte (sat/vB), represents how much you're paying per unit of transaction data. It's the primary metric miners use to prioritize transactions from the <Link href="/glossary/mempool" className="text-primary hover:underline">mempool</Link> when building blocks.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Scale className="mr-2 h-6 w-6 text-primary" />

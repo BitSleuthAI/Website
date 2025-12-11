@@ -35,7 +35,7 @@ export default function BitGlossaryPage() {
               A bit is a sub-unit of a bitcoin, created to make transacting with smaller amounts of BTC more user-friendly. Just as a dollar can be broken down into cents, a bitcoin can be divided into smaller units. A bit is one of these convenient units.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                 <p className="font-semibold mb-2">The relationship is straightforward:</p>
                 <code className="text-lg font-mono bg-background/50 p-2 rounded-md block break-all">

@@ -36,7 +36,7 @@ export default function LightningNetworkGlossaryPage() {
               The Lightning Network is a Layer 2 payment protocol built on top of Bitcoin that enables instant, low-cost transactions by moving them off the main <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link>. It uses payment channels and multi-hop routing to allow users to transact without waiting for block confirmations.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Network className="mr-2 h-6 w-6 text-primary" />

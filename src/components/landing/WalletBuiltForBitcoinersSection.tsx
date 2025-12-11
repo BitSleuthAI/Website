@@ -35,7 +35,7 @@ export function WalletBuiltForBitcoinersSection() {
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {bitcoinerFeatures.map((feature, idx) => (
-            <Card key={idx} className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden">
+            <Card key={idx} className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden">
               <CardHeader className="flex flex-col items-center text-center p-6">
                 <div className="p-3 mb-4 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
                   <div className="text-primary [&>svg]:h-6 [&>svg]:w-6">

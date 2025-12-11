@@ -36,7 +36,7 @@ export default function DustLimitGlossaryPage() {
               The dust limit is the minimum amount of bitcoin that makes economic sense to transact. A <Link href="/glossary/utxo" className="text-primary hover:underline">UTXO</Link> is considered "dust" if its value is so small that it would cost more in transaction fees to spend it than it's actually worth.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <AlertTriangle className="mr-2 h-6 w-6 text-primary" />

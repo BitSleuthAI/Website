@@ -128,7 +128,7 @@ export default function LearnPage() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-8 mb-12">
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 rounded-lg bg-primary/10">
@@ -148,7 +148,7 @@ export default function LearnPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 rounded-lg bg-primary/10">
@@ -169,7 +169,7 @@ export default function LearnPage() {
                 </Card>
               </div>
 
-              <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+              <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <FileText className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
@@ -209,7 +209,7 @@ export default function LearnPage() {
 
               <div className="space-y-8">
                 {/* Transactions */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -246,7 +246,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Mining and Consensus */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -275,7 +275,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Decentralization */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -306,7 +306,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Cryptography */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -354,7 +354,7 @@ export default function LearnPage() {
 
               <div className="space-y-8">
                 {/* Cryptocurrency Exchanges */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -395,7 +395,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Peer-to-Peer and Other Methods */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -438,7 +438,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Important Considerations */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
                       <Shield className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
@@ -485,7 +485,7 @@ export default function LearnPage() {
 
               <div className="space-y-8">
                 {/* Storing Bitcoin */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -533,7 +533,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Sending and Receiving */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -596,7 +596,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Spending Bitcoin */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -639,7 +639,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Best Practices */}
-                <Card className="bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
                       <Shield className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
@@ -738,7 +738,7 @@ export default function LearnPage() {
                   },
                 ].map((concept) => (
                   <Link key={concept.slug} href={`/glossary/${concept.slug}`} className="group">
-                    <Card className="h-full bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl group transition-all duration-300">
+                    <Card className="h-full bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl group transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-3 mb-3">
                           <div className="p-2 rounded-lg transition-colors bg-primary/10 group-hover:bg-primary/20">
@@ -776,7 +776,7 @@ export default function LearnPage() {
           <section className="py-16 md:py-20 lg:py-24 bg-background relative overflow-hidden">
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-4xl mx-auto px-4 md:px-6 relative z-10">
-              <Card className="bg-[#1a1a1a] border-none shadow-xl">
+              <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl">
                 <CardContent className="p-8 md:p-12">
                   <div className="text-center space-y-6">
                     <h2 className="text-3xl font-bold sm:text-4xl text-foreground">

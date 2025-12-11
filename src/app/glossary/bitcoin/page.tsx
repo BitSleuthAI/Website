@@ -37,7 +37,7 @@ export default function BitcoinGlossaryPage() {
           Bitcoin is a groundbreaking decentralized digital currency that enables peer-to-peer transactions across the internet without the need for a central authority like a bank or government. It is both a currency and a technology protocol.
         </p>
 
-        <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+        <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
           <CardContent className="p-4 grid md:grid-cols-2 gap-4">
             <div>
                 <h3 className="text-xl font-bold flex items-center mb-2">

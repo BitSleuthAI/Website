@@ -36,7 +36,7 @@ export default function CoinSelectionGlossaryPage() {
               Coin selection is the process by which a Bitcoin <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> chooses which <Link href="/glossary/utxo" className="text-primary hover:underline">UTXOs</Link> to spend when creating a transaction. Different selection algorithms optimize for various goals like minimizing fees, enhancing privacy, or reducing future wallet complexity.
             </p>
 
-            <Card className="my-6 bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Wallet className="mr-2 h-6 w-6 text-primary" />

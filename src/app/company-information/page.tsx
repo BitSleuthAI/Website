@@ -48,7 +48,7 @@ export default function CompanyInformationPage() {
 
             <div className="space-y-8">
               {/* Legal Entity Card */}
-              <div className="bg-[#1a1a1a] rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
+              <div className="bg-gray-100 dark:bg-[#1a1a1a] rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <Building2 className="h-6 w-6 text-primary" />
@@ -68,7 +68,7 @@ export default function CompanyInformationPage() {
               </div>
 
               {/* Company Details Card */}
-              <div className="bg-[#1a1a1a] rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
+              <div className="bg-gray-100 dark:bg-[#1a1a1a] rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <FileText className="h-6 w-6 text-primary" />
@@ -92,7 +92,7 @@ export default function CompanyInformationPage() {
               </div>
 
               {/* Contact Information Card */}
-              <div className="bg-[#1a1a1a] rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
+              <div className="bg-gray-100 dark:bg-[#1a1a1a] rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <Mail className="h-6 w-6 text-primary" />
