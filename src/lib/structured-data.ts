@@ -25,7 +25,8 @@ function getGlossaryTermUrl(term: string): string {
   return `${GLOSSARY_BASE_URL}/${term}`;
 }
 
-// Use string literal type directly
+// Shared constant for Schema.org context
+const GLOSSARY_SCHEMA_CONTEXT = 'https://schema.org' as const;
 
 type DefinedTermSchema = {
   '@context': 'https://schema.org';
