@@ -380,26 +380,35 @@ type SanitizedQuestionObject = {
   answer: string;
 };
 
-function normalizeQuestionObject(
-  item: unknown,
-): SanitizedQuestionObject | null {
+/**
+ * Checks if the input is an object with non-empty string "question" and "answer" properties (not trimmed).
+ * @param {unknown} item
+ * @returns {boolean}
+ */
+function isValidQuestionObject(item: unknown): item is { question: string; answer: string } {
   if (typeof item !== 'object' || item === null) {
-    return null;
+    return false;
   }
-
   const obj = item as Record<string, unknown>;
+  return (
+    typeof obj.question === 'string' &&
+    typeof obj.answer === 'string' &&
+    obj.question.length > 0 &&
+    obj.answer.length > 0
+  );
+}
 
-  if (typeof obj.question !== 'string' || typeof obj.answer !== 'string') {
-    return null;
-  }
-
+/**
+ * Returns a new object with "question" and "answer" fields trimmed.
+ * Assumes valid input: object with string "question" and "answer" fields.
+ * @param obj - Object with string "question" and "answer" properties.
+ * @returns SanitizedQuestionObject
+ */
+function normalizeQuestionObject(
+  obj: { question: string; answer: string },
+): SanitizedQuestionObject {
   const question = obj.question.trim();
   const answer = obj.answer.trim();
-
-  if (!question || !answer) {
-    return null;
-  }
-
   return { question, answer };
 }
 
