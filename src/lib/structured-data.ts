@@ -406,7 +406,6 @@ function normalizeQuestionObject(
 }
 
 
-
 export function generateFAQSchema(
   questions: Array<{ question: string; answer: string }>
 ): FAQPageSchema | null {
