@@ -14,11 +14,16 @@ const GLOSSARY_NAME = 'Bitcoin Glossary';
 // Shared constant for BitSleuth logo URL
 const BITSLEUTH_LOGO_URL = 'https://www.bitsleuth.ai/images/logo.png';
 
+// Shared constant for LearningResource type 'Definition'
+const LEARNING_RESOURCE_TYPE_DEFINITION = 'Definition';
 // Shared constant for BitSleuth organization details
 const BITSLEUTH_ORGANIZATION = {
   name: 'BitSleuth',
   url: 'https://www.bitsleuth.ai',
 };
+
+// Shared constant for educational level
+const GLOSSARY_EDUCATIONAL_LEVEL = 'Beginner to Advanced';
 
 /**
  * Return the glossary term URL for a given term slug.
@@ -258,20 +263,7 @@ export function generateBreadcrumbSchema(
  * This can appear as rich snippets in search results
  */
 
-type FAQPageSchema = {
-  '@context': 'https://schema.org';
-  '@type': 'FAQPage';
-  mainEntity: Array<{
-    '@type': 'Question';
-    name: string;
-    acceptedAnswer: {
-      '@type': 'Answer';
-      text: string;
-    };
-  }>;
-};
-
-type FAQSchemaQuestion = {
+type QuestionSchema = {
   '@type': 'Question';
   name: string;
   acceptedAnswer: {
@@ -280,16 +272,23 @@ type FAQSchemaQuestion = {
   };
 };
 
+type FAQPageSchema = {
+  '@context': 'https://schema.org';
+  '@type': 'FAQPage';
+  mainEntity: Array<QuestionSchema>;
+};
+
 /**
  * Validate that an object is a valid FAQ question object with non-empty string 'question' and 'answer'.
  */
-function isValidQuestionObject(item: { question?: unknown; answer?: unknown }): item is { question: string; answer: string } {
+function isValidQuestionObject(item: unknown): item is { question: string; answer: string } {
   return (
-    item != null &&
-    typeof item.question === 'string' &&
-    item.question.trim().length > 0 &&
-    typeof item.answer === 'string' &&
-    item.answer.trim().length > 0
+    typeof item === 'object' &&
+    item !== null &&
+    typeof (item as any).question === 'string' &&
+    (item as any).question.trim().length > 0 &&
+    typeof (item as any).answer === 'string' &&
+    (item as any).answer.trim().length > 0
   );
 }
 
@@ -301,19 +300,16 @@ export function generateFAQSchema(
     return null;
   }
   // Only include valid question objects – single pass
-  const mainEntity = questions.reduce<Array<FAQSchemaQuestion>>((acc, question) => {
-    if (isValidQuestionObject(question)) {
-      acc.push({
-        '@type': 'Question',
-        name: question.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: question.answer,
-        },
-      });
-    }
-    return acc;
-  }, []);
+  const mainEntity = questions
+    .filter(isValidQuestionObject)
+    .map<QuestionSchema>((question) => ({
+      '@type': 'Question',
+      name: question.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: question.answer,
+      },
+    }));
   if (mainEntity.length === 0) {
     return null;
   }
@@ -368,8 +364,8 @@ export function generateLearningResourceSchema(
     description: meta.description,
     url: getGlossaryTermUrl(term),
     inLanguage: 'en-US',
-    learningResourceType: 'Definition',
-    educationalLevel: 'Beginner to Advanced',
+    learningResourceType: LEARNING_RESOURCE_TYPE_DEFINITION,
+    educationalLevel: GLOSSARY_EDUCATIONAL_LEVEL,
     keywords: meta.keywords.join(', '),
     about: {
       '@type': 'Thing',
