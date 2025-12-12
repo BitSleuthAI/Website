@@ -11,6 +11,9 @@ const GLOSSARY_BASE_URL = 'https://www.bitsleuth.ai/glossary';
 // Shared constant for glossary name
 const GLOSSARY_NAME = 'Bitcoin Glossary';
 
+// Shared constant for the about topic
+const ABOUT_TOPIC = 'Bitcoin';
+
 // Shared constant for BitSleuth logo URL
 const BITSLEUTH_LOGO_URL = 'https://www.bitsleuth.ai/images/logo.png';
 
@@ -24,6 +27,50 @@ const BITSLEUTH_ORGANIZATION = {
 
 // Shared constant for educational level
 const GLOSSARY_EDUCATIONAL_LEVEL = 'Beginner to Advanced';
+
+/**
+ * Maps related term slugs to an array of DefinedTerm schema objects.
+ * @param relatedTerms - Array of term slugs to be mapped to DefinedTerm objects
+ * @returns Array of DefinedTerm objects, or empty array if no terms provided
+ */
+function mapRelatedTermsToDefinedTerms(relatedTerms?: string[]) {
+  if (!relatedTerms || relatedTerms.length === 0) {
+    return [];
+  }
+  return relatedTerms.map((relatedTerm) => ({
+    '@type': 'DefinedTerm' as const,
+    name: relatedTerm,
+    url: getGlossaryTermUrl(relatedTerm),
+  }));
+}
+
+/**
+ * Returns a LearningResource 'teaches' property object with related terms as DefinedTerm schemas.
+ * Used for structured data to indicate what concepts the educational content teaches.
+ * @param relatedTerms - Array of term slugs to be mapped to DefinedTerm objects
+ * @returns Object with 'teaches' array if terms exist, empty object otherwise
+ */
+function getRelatedTermsTeachesProperty(relatedTerms?: string[]) {
+  const definedTerms = mapRelatedTermsToDefinedTerms(relatedTerms);
+  if (definedTerms.length === 0) {
+    return {};
+  }
+  return { teaches: definedTerms };
+}
+
+/**
+ * Returns an Article 'mentions' property object with related terms as DefinedTerm schemas.
+ * Used for structured data to indicate what terms are mentioned in the article.
+ * @param relatedTerms - Array of term slugs to be mapped to DefinedTerm objects
+ * @returns Object with 'mentions' array if terms exist, empty object otherwise
+ */
+function getRelatedTermsMentionsProperty(relatedTerms?: string[]) {
+  const definedTerms = mapRelatedTermsToDefinedTerms(relatedTerms);
+  if (definedTerms.length === 0) {
+    return {};
+  }
+  return { mentions: definedTerms };
+}
 
 /**
  * Return the glossary term URL for a given term slug.
@@ -214,13 +261,7 @@ export function generateArticleSchema(
     keywords: meta.keywords.join(', '),
     url: getGlossaryTermUrl(term),
     inLanguage: 'en-US',
-    ...(meta.relatedTerms && meta.relatedTerms.length > 0 && {
-      mentions: meta.relatedTerms.map((relatedTerm) => ({
-        '@type': 'DefinedTerm',
-        name: relatedTerm,
-        url: getGlossaryTermUrl(relatedTerm),
-      })),
-    }),
+    ...getRelatedTermsMentionsProperty(meta.relatedTerms),
   };
 }
 
@@ -349,7 +390,7 @@ export function generateGlossaryCollectionSchema(
     url: GLOSSARY_BASE_URL,
     about: {
       '@type': 'Thing',
-      name: 'Bitcoin',
+      name: ABOUT_TOPIC,
       description: 'Cryptocurrency and blockchain technology',
     },
     numberOfItems: termCount,
@@ -382,20 +423,14 @@ export function generateLearningResourceSchema(
     keywords: meta.keywords.join(', '),
     about: {
       '@type': 'Thing',
-      name: 'Bitcoin',
+      name: ABOUT_TOPIC,
     },
     publisher: {
       '@type': 'Organization',
       name: BITSLEUTH_ORGANIZATION.name,
       url: BITSLEUTH_ORGANIZATION.url,
     },
-    ...(meta.relatedTerms && meta.relatedTerms.length > 0 && {
-      teaches: meta.relatedTerms.map((relatedTerm) => ({
-        '@type': 'DefinedTerm',
-        name: relatedTerm,
-        url: getGlossaryTermUrl(relatedTerm),
-      })),
-    }),
+    ...getRelatedTermsTeachesProperty(meta.relatedTerms),
   };
 }
 
