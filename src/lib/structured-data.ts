@@ -29,11 +29,6 @@ const BITSLEUTH_ORGANIZATION = {
 const GLOSSARY_EDUCATIONAL_LEVEL = 'Beginner to Advanced';
 
 /**
- * Maps related term slugs to an array of DefinedTerm schema objects.
- * @param relatedTerms - Array of term slugs to be mapped to DefinedTerm objects
- * @returns Array of DefinedTerm objects, or empty array if no terms provided
- */
-/**
  * Normalizes an array of related term slugs by trimming whitespace and filtering out empty strings.
  * @param relatedTerms - Optional array of term slugs to normalize.
  * @returns Array of normalized, non-empty, trimmed term slugs.
@@ -48,6 +43,11 @@ function normalizeRelatedTerms(relatedTerms?: string[]) {
     .filter((term) => term.length > 0);
 }
 
+/**
+ * Maps related term slugs to an array of DefinedTerm schema objects.
+ * @param relatedTerms - Array of term slugs to be mapped to DefinedTerm objects
+ * @returns Array of DefinedTerm objects, or empty array if no terms provided
+ */
 function mapRelatedTermsToDefinedTerms(relatedTerms?: string[]) {
   const normalizedTerms = normalizeRelatedTerms(relatedTerms);
 
@@ -405,11 +405,7 @@ function normalizeQuestionObject(
   return { question, answer };
 }
 
-function isSanitizedQuestionObject(
-  item: SanitizedQuestionObject | null,
-): item is SanitizedQuestionObject {
-  return item !== null;
-}
+
 
 export function generateFAQSchema(
   questions: Array<{ question: string; answer: string }>
@@ -420,7 +416,15 @@ export function generateFAQSchema(
   }
   // First, normalize and filter questions (first pass)
   // Then, map each normalized question to its schema object (second pass)
+  // Only include objects with both 'question' and 'answer' as strings
   const normalized = questions
+    .filter(
+      (q) =>
+        typeof q.question === "string" &&
+        typeof q.answer === "string" &&
+        q.question.trim().length > 0 &&
+        q.answer.trim().length > 0
+    )
     .map(normalizeQuestionObject);
   if (normalized.length === 0) {
     return null;
