@@ -63,18 +63,18 @@ type RelatedTermsProperty = Partial<
   Record<RelatedTermsPropertyKey, ReturnType<typeof mapRelatedTermsToDefinedTerms>>
 >;
 
-function getRelatedTermsProperty(
-  propertyKey: RelatedTermsPropertyKey,
-  relatedTerms?: string[],
-): RelatedTermsProperty {
-  const definedTerms = mapRelatedTermsToDefinedTerms(relatedTerms);
+// inlined getRelatedTermsProperty (was unused helper)
 
-  if (definedTerms.length === 0) {
-    return {};
-  }
 
-  return { [propertyKey]: definedTerms };
-}
+
+
+
+
+
+
+
+
+
 
 /**
  * Returns a LearningResource 'teaches' property object with related terms as DefinedTerm schemas.
@@ -83,7 +83,11 @@ function getRelatedTermsProperty(
  * @returns Object with 'teaches' array if terms exist, empty object otherwise
  */
 function getRelatedTermsTeachesProperty(relatedTerms?: string[]) {
-  return getRelatedTermsProperty('teaches', relatedTerms);
+  const definedTerms = mapRelatedTermsToDefinedTerms(relatedTerms);
+  if (definedTerms.length === 0) {
+    return {};
+  }
+  return { teaches: definedTerms };
 }
 
 /**
