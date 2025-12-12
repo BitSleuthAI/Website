@@ -362,7 +362,11 @@ type FAQPageSchema = {
 };
 
 /**
- * Validate that an object is a valid FAQ question object with non-empty string 'question' and 'answer'.
+ * Validates whether the input is an object representing a FAQ question,
+ * with non-empty string 'question' and 'answer' properties.
+ *
+ * @param {unknown} item - The item to validate as a FAQ question object.
+ * @returns {SanitizedQuestionObject | null} A sanitized question object if valid, otherwise null.
  */
 
 // Represents an object with non-empty string "question" and "answer" properties.
