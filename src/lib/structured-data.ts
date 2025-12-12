@@ -33,6 +33,11 @@ const GLOSSARY_EDUCATIONAL_LEVEL = 'Beginner to Advanced';
  * @param relatedTerms - Array of term slugs to be mapped to DefinedTerm objects
  * @returns Array of DefinedTerm objects, or empty array if no terms provided
  */
+/**
+ * Normalizes an array of related term slugs by trimming whitespace and filtering out empty strings.
+ * @param relatedTerms - Optional array of term slugs to normalize.
+ * @returns Array of normalized, non-empty, trimmed term slugs.
+ */
 function normalizeRelatedTerms(relatedTerms?: string[]) {
   if (!Array.isArray(relatedTerms)) {
     return [];
@@ -110,6 +115,11 @@ function getGlossaryTermUrl(term: string): string {
 // Shared constant for Schema.org context
 const GLOSSARY_SCHEMA_CONTEXT = 'https://schema.org' as const;
 
+/**
+ * Converts a kebab-case or snake_case slug into Title Case (capitalized words separated by spaces).
+ * @param slug - The slug string (e.g., 'bitcoin-block-size' or 'bitcoin_block_size').
+ * @returns The Title Case version of the slug (e.g., 'Bitcoin Block Size').
+ */
 function formatSlugToTitle(slug: string): string {
   if (typeof slug !== 'string' || slug.trim().length === 0) {
     return '';
@@ -411,8 +421,7 @@ export function generateFAQSchema(
   // First, normalize and filter questions (first pass)
   // Then, map each normalized question to its schema object (second pass)
   const normalized = questions
-    .map(normalizeQuestionObject)
-    .filter(isSanitizedQuestionObject);
+    .map(normalizeQuestionObject);
   if (normalized.length === 0) {
     return null;
   }
