@@ -389,8 +389,6 @@ type SanitizedQuestionObject = {
   question: string;
   answer: string;
 };
-
-
 /**
  * Returns a new object with "question" and "answer" fields trimmed.
  * Assumes valid input: object with string "question" and "answer" fields.
@@ -405,8 +403,6 @@ function normalizeQuestionObject(
   return { question, answer };
 }
 
-
-
 export function generateFAQSchema(
   questions: Array<{ question: string; answer: string }>
 ): FAQPageSchema | null {
@@ -420,8 +416,8 @@ export function generateFAQSchema(
   const normalized = questions
     .filter(
       (q) =>
-        typeof q.question === "string" &&
-        typeof q.answer === "string" &&
+        typeof q.question === 'string' &&
+        typeof q.answer === 'string' &&
         q.question.trim().length > 0 &&
         q.answer.trim().length > 0
     )
