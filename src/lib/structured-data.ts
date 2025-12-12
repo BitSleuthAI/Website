@@ -240,7 +240,7 @@ export function generateBreadcrumbSchema(
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Bitcoin Glossary',
+        name: GLOSSARY_NAME,
         item: GLOSSARY_BASE_URL,
       },
       {
@@ -274,13 +274,13 @@ type FAQPageSchema = {
 /**
  * Validate that an object is a valid FAQ question object with non-empty string 'question' and 'answer'.
  */
-function isValidQuestionObject(q: { question?: unknown; answer?: unknown }): q is { question: string; answer: string } {
+function isValidQuestionObject(questionItem: { question?: unknown; answer?: unknown }): questionItem is { question: string; answer: string } {
   return (
-    !!q &&
-    typeof q.question === 'string' &&
-    q.question.trim().length > 0 &&
-    typeof q.answer === 'string' &&
-    q.answer.trim().length > 0
+    !!questionItem &&
+    typeof questionItem.question === 'string' &&
+    questionItem.question.trim().length > 0 &&
+    typeof questionItem.answer === 'string' &&
+    questionItem.answer.trim().length > 0
   );
 }
 
@@ -299,14 +299,14 @@ export function generateFAQSchema(
       '@type': 'Answer';
       text: string;
     };
-  }>>((acc, q) => {
-    if (isValidQuestionObject(q)) {
+  }>>((acc, question) => {
+    if (isValidQuestionObject(question)) {
       acc.push({
         '@type': 'Question',
-        name: q.question,
+        name: question.question,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: q.answer,
+          text: question.answer,
         },
       });
     }
@@ -332,7 +332,7 @@ export function generateGlossaryCollectionSchema(
   return {
     '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@type': 'CollectionPage',
-    name: 'Bitcoin Glossary',
+    name: GLOSSARY_NAME,
     description:
       'Comprehensive Bitcoin and cryptocurrency terminology. Learn about blockchain technology, wallet security, privacy, mining, and more.',
     url: GLOSSARY_BASE_URL,
@@ -345,7 +345,7 @@ export function generateGlossaryCollectionSchema(
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'BitSleuth',
+      name: BITSLEUTH_ORGANIZATION.name,
       url: BITSLEUTH_ORGANIZATION.url,
     },
   };
