@@ -271,16 +271,25 @@ type FAQPageSchema = {
   }>;
 };
 
+type FAQSchemaQuestion = {
+  '@type': 'Question';
+  name: string;
+  acceptedAnswer: {
+    '@type': 'Answer';
+    text: string;
+  };
+};
+
 /**
  * Validate that an object is a valid FAQ question object with non-empty string 'question' and 'answer'.
  */
-function isValidQuestionObject(questionItem: { question?: unknown; answer?: unknown }): questionItem is { question: string; answer: string } {
+function isValidQuestionObject(item: { question?: unknown; answer?: unknown }): item is { question: string; answer: string } {
   return (
-    !!questionItem &&
-    typeof questionItem.question === 'string' &&
-    questionItem.question.trim().length > 0 &&
-    typeof questionItem.answer === 'string' &&
-    questionItem.answer.trim().length > 0
+    item != null &&
+    typeof item.question === 'string' &&
+    item.question.trim().length > 0 &&
+    typeof item.answer === 'string' &&
+    item.answer.trim().length > 0
   );
 }
 
@@ -292,14 +301,7 @@ export function generateFAQSchema(
     return null;
   }
   // Only include valid question objects – single pass
-  const mainEntity = questions.reduce<Array<{
-    '@type': 'Question';
-    name: string;
-    acceptedAnswer: {
-      '@type': 'Answer';
-      text: string;
-    };
-  }>>((acc, question) => {
+  const mainEntity = questions.reduce<Array<FAQSchemaQuestion>>((acc, question) => {
     if (isValidQuestionObject(question)) {
       acc.push({
         '@type': 'Question',
