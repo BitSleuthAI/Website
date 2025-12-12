@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**BitSleuth Website** is a comprehensive Next.js 15 marketing website for www.bitsleuth.ai, serving as the primary hub for Bitcoin wallet analysis and privacy tools. The platform features multi-product landing pages, an educational glossary, SEO optimization, and privacy-compliant analytics.
+**BitSleuth Website** is a comprehensive Next.js 16 marketing website for www.bitsleuth.ai, serving as the primary hub for Bitcoin wallet analysis and privacy tools. The platform features multi-product landing pages, an educational glossary, SEO optimization, and privacy-compliant analytics.
 
 **Primary Purpose:** Drive user acquisition and conversion for BitSleuth's Bitcoin wallet analyzer and wallet app through educational content and compelling product showcases.
 
@@ -32,7 +32,7 @@
 - **Forms:** React Hook Form + Zod validation
 
 ### Development Tools
-- **Package Manager:** npm 11.6.3
+- **Package Manager:** npm 11.7.0
 - **Linter:** ESLint (Next.js config)
 - **Type Checking:** TypeScript compiler
 - **Build Tool:** Next.js with Turbopack
@@ -223,7 +223,7 @@ import { cn } from '@/lib/utils'
 ```
 
 ### Best Practices
-- ✅ Use server components by default (Next.js 15)
+- ✅ Use server components by default (Next.js 16)
 - ✅ Add `"use client"` only when needed (hooks, events)
 - ✅ No `console.log` in production code
 - ✅ Accessibility: proper ARIA labels, keyboard navigation
@@ -549,7 +549,7 @@ npm install
 - **.github/copilot-instructions.md:** AI assistant guidelines
 
 ### External Resources
-- [Next.js 15 Documentation](https://nextjs.org/docs)
+- [Next.js 16 Documentation](https://nextjs.org/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [shadcn/ui Components](https://ui.shadcn.com/)
 - [Radix UI Primitives](https://www.radix-ui.com/)

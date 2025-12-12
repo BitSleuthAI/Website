@@ -33,15 +33,47 @@ const GLOSSARY_EDUCATIONAL_LEVEL = 'Beginner to Advanced';
  * @param relatedTerms - Array of term slugs to be mapped to DefinedTerm objects
  * @returns Array of DefinedTerm objects, or empty array if no terms provided
  */
-function mapRelatedTermsToDefinedTerms(relatedTerms?: string[]) {
-  if (!relatedTerms || relatedTerms.length === 0) {
+function normalizeRelatedTerms(relatedTerms?: string[]) {
+  if (!Array.isArray(relatedTerms)) {
     return [];
   }
-  return relatedTerms.map((relatedTerm) => ({
+
+  return relatedTerms
+    .map((term) => (typeof term === 'string' ? term.trim() : ''))
+    .filter((term) => term.length > 0);
+}
+
+function mapRelatedTermsToDefinedTerms(relatedTerms?: string[]) {
+  const normalizedTerms = normalizeRelatedTerms(relatedTerms);
+
+  if (normalizedTerms.length === 0) {
+    return [];
+  }
+
+  return normalizedTerms.map((relatedTerm) => ({
     '@type': 'DefinedTerm' as const,
-    name: relatedTerm,
+    name: formatSlugToTitle(relatedTerm),
     url: getGlossaryTermUrl(relatedTerm),
   }));
+}
+
+type RelatedTermsPropertyKey = 'teaches' | 'mentions';
+
+type RelatedTermsProperty = Partial<
+  Record<RelatedTermsPropertyKey, ReturnType<typeof mapRelatedTermsToDefinedTerms>>
+>;
+
+function getRelatedTermsProperty(
+  propertyKey: RelatedTermsPropertyKey,
+  relatedTerms?: string[],
+): RelatedTermsProperty {
+  const definedTerms = mapRelatedTermsToDefinedTerms(relatedTerms);
+
+  if (definedTerms.length === 0) {
+    return {};
+  }
+
+  return { [propertyKey]: definedTerms };
 }
 
 /**
@@ -51,11 +83,7 @@ function mapRelatedTermsToDefinedTerms(relatedTerms?: string[]) {
  * @returns Object with 'teaches' array if terms exist, empty object otherwise
  */
 function getRelatedTermsTeachesProperty(relatedTerms?: string[]) {
-  const definedTerms = mapRelatedTermsToDefinedTerms(relatedTerms);
-  if (definedTerms.length === 0) {
-    return {};
-  }
-  return { teaches: definedTerms };
+  return getRelatedTermsProperty('teaches', relatedTerms);
 }
 
 /**
@@ -65,11 +93,7 @@ function getRelatedTermsTeachesProperty(relatedTerms?: string[]) {
  * @returns Object with 'mentions' array if terms exist, empty object otherwise
  */
 function getRelatedTermsMentionsProperty(relatedTerms?: string[]) {
-  const definedTerms = mapRelatedTermsToDefinedTerms(relatedTerms);
-  if (definedTerms.length === 0) {
-    return {};
-  }
-  return { mentions: definedTerms };
+  return getRelatedTermsProperty('mentions', relatedTerms);
 }
 
 /**
@@ -81,6 +105,16 @@ function getGlossaryTermUrl(term: string): string {
 
 // Shared constant for Schema.org context
 const GLOSSARY_SCHEMA_CONTEXT = 'https://schema.org' as const;
+
+function formatSlugToTitle(slug: string): string {
+  const formatted = slug
+    .split(/[-_]/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+
+  return formatted.length > 0 ? formatted : slug;
+}
 
 type DefinedTermSchema = {
   '@context': 'https://schema.org';
@@ -324,26 +358,32 @@ type FAQPageSchema = {
  */
 
 // Represents an object with non-empty string "question" and "answer" properties.
-type NonEmptyQuestionObject = {
+type SanitizedQuestionObject = {
   question: string;
   answer: string;
 };
 
-function isValidQuestionObject(item: unknown): item is NonEmptyQuestionObject {
+function normalizeQuestionObject(
+  item: unknown,
+): SanitizedQuestionObject | null {
   if (typeof item !== 'object' || item === null) {
-    return false;
+    return null;
   }
-  
+
   const obj = item as Record<string, unknown>;
-  
-  return (
-    'question' in obj &&
-    typeof obj.question === 'string' &&
-    obj.question.trim().length > 0 &&
-    'answer' in obj &&
-    typeof obj.answer === 'string' &&
-    obj.answer.trim().length > 0
-  );
+
+  if (typeof obj.question !== 'string' || typeof obj.answer !== 'string') {
+    return null;
+  }
+
+  const question = obj.question.trim();
+  const answer = obj.answer.trim();
+
+  if (!question || !answer) {
+    return null;
+  }
+
+  return { question, answer };
 }
 
 export function generateFAQSchema(
@@ -354,16 +394,24 @@ export function generateFAQSchema(
     return null;
   }
   // Only include valid question objects – single pass
-  const mainEntity = questions
-    .filter(isValidQuestionObject)
-    .map<QuestionSchema>((question) => ({
+  const mainEntity = questions.reduce<QuestionSchema[]>((acc, question) => {
+    const normalizedQuestion = normalizeQuestionObject(question);
+
+    if (!normalizedQuestion) {
+      return acc;
+    }
+
+    acc.push({
       '@type': 'Question',
-      name: question.question,
+      name: normalizedQuestion.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: question.answer,
+        text: normalizedQuestion.answer,
       },
-    }));
+    });
+
+    return acc;
+  }, []);
   if (mainEntity.length === 0) {
     return null;
   }
