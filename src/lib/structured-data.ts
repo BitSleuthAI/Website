@@ -111,7 +111,11 @@ function getRelatedTermsMentionsProperty(relatedTerms?: string[]) {
  * Return the glossary term URL for a given term slug.
  */
 function getGlossaryTermUrl(term: string): string {
-  return `${GLOSSARY_BASE_URL}/${term}`;
+  if (typeof term !== 'string' || term.trim().length === 0) {
+    throw new Error('Invalid glossary term slug: must be a non-empty string');
+  }
+  // encodeURIComponent ensures URL safety of the term slug
+  return `${GLOSSARY_BASE_URL}/${encodeURIComponent(term)}`;
 }
 
 // Shared constant for Schema.org context
