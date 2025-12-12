@@ -110,6 +110,11 @@ function getGlossaryTermUrl(term: string): string {
 // Shared constant for Schema.org context
 const GLOSSARY_SCHEMA_CONTEXT = 'https://schema.org' as const;
 
+/**
+ * Converts a kebab-case or snake_case slug into Title Case (capitalized words separated by spaces).
+ * @param slug - The slug string (e.g., 'bitcoin-block-size' or 'bitcoin_block_size').
+ * @returns The Title Case version of the slug (e.g., 'Bitcoin Block Size').
+ */
 function formatSlugToTitle(slug: string): string {
   if (typeof slug !== 'string' || slug.trim().length === 0) {
     return '';
