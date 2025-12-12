@@ -285,10 +285,12 @@ function isValidQuestionObject(item: unknown): item is { question: string; answe
   return (
     typeof item === 'object' &&
     item !== null &&
-    typeof (item as any).question === 'string' &&
-    (item as any).question.trim().length > 0 &&
-    typeof (item as any).answer === 'string' &&
-    (item as any).answer.trim().length > 0
+    'question' in item &&
+    typeof (item as Record<string, unknown>).question === 'string' &&
+    (item as Record<string, unknown>).question.trim().length > 0 &&
+    'answer' in item &&
+    typeof (item as Record<string, unknown>).answer === 'string' &&
+    (item as Record<string, unknown>).answer.trim().length > 0
   );
 }
 
