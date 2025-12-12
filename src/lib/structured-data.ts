@@ -76,7 +76,6 @@ function getRelatedTermsProperty(
   return { [key]: definedTerms };
 }
 
-
 /**
  * Returns a LearningResource 'teaches' property object with related terms as DefinedTerm schemas.
  * Used for structured data to indicate what concepts the educational content teaches.
@@ -345,6 +344,12 @@ export function generateBreadcrumbSchema(
  * Generate FAQPage schema for pages with common questions
  * This can appear as rich snippets in search results
  */
+/**
+ * Generate an FAQPage schema (JSON-LD) from an array of question/answer pairs.
+ *
+ * @param questions - An array of objects, each containing a "question" string and an "answer" string.
+ * @returns The FAQPageSchema object compatible with schema.org's FAQPage specification.
+ */
 
 type QuestionSchema = {
   '@type': 'Question';
@@ -362,7 +367,11 @@ type FAQPageSchema = {
 };
 
 /**
- * Validate that an object is a valid FAQ question object with non-empty string 'question' and 'answer'.
+ * Validates whether the input is an object representing a FAQ question,
+ * with non-empty string 'question' and 'answer' properties.
+ *
+ * @param {unknown} item - The item to validate as a FAQ question object.
+ * @returns {SanitizedQuestionObject | null} A sanitized question object if valid, otherwise null.
  */
 
 // Represents an object with non-empty string "question" and "answer" properties.
@@ -407,7 +416,7 @@ export function generateFAQSchema(
   if (!Array.isArray(questions)) {
     return null;
   }
-  // Only include valid question objects – single pass
+  // Only include valid question objects - single pass
   // First, normalize and filter questions
   const normalized = questions
     .map(normalizeQuestionObject)
