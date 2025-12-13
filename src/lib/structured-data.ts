@@ -72,12 +72,6 @@ function normalizeRelatedTerms(relatedTerms?: string[]): string[] {
     .filter((term) => term.length > 0);
 }
 
-type DefinedTermObject = {
-  '@type': 'DefinedTerm';
-  name: string;
-  url: string;
-};
-
 /**
  * Maps related term slugs to an array of DefinedTerm schema objects.
  * @param relatedTerms - Array of term slugs to be mapped to DefinedTerm objects
@@ -139,6 +133,16 @@ function getRelatedTermsMentionsProperty(relatedTerms?: string[]): RelatedTermsP
 // Shared constant for Schema.org context
 const GLOSSARY_SCHEMA_CONTEXT = 'https://schema.org' as const;
 
+/**
+ * Represents a DefinedTerm object used in Schema.org structured data.
+ * Used in mentions, teaches, and other relationship properties.
+ */
+type DefinedTermObject = {
+  '@type': 'DefinedTerm';
+  name: string;
+  url: string;
+};
+
 type DefinedTermSchema = {
   '@context': 'https://schema.org';
   '@type': 'DefinedTerm';
@@ -183,11 +187,7 @@ type ArticleSchema = {
   keywords: string;
   url: string;
   inLanguage: string;
-  mentions?: Array<{
-    '@type': 'DefinedTerm';
-    name: string;
-    url: string;
-  }>;
+  mentions?: Array<DefinedTermObject>;
 };
 
 type BreadcrumbSchema = {
@@ -240,11 +240,7 @@ type LearningResourceSchema = {
     name: string;
     url: string;
   };
-  teaches?: Array<{
-    '@type': 'DefinedTerm';
-    name: string;
-    url: string;
-  }>;
+  teaches?: Array<DefinedTermObject>;
 };
 
 type CombinedGlossarySchema = {
@@ -295,7 +291,7 @@ export function generateArticleSchema(
   term: string,
   meta: GlossaryTermMeta,
 ): ArticleSchema {
-  const baseSchema: ArticleSchema = {
+  return {
     '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@type': 'Article',
     headline: meta.title,
@@ -312,24 +308,14 @@ export function generateArticleSchema(
         url: BITSLEUTH_LOGO_URL,
       },
     },
+    ...(meta.datePublished ? { datePublished: meta.datePublished } : {}),
+    ...(meta.lastModified ? { dateModified: meta.lastModified } : {}),
+    ...(meta.category ? { articleSection: meta.category } : {}),
     keywords: meta.keywords.join(', '),
     url: getGlossaryTermUrl(term),
     inLanguage: 'en-US',
     ...getRelatedTermsMentionsProperty(meta.relatedTerms),
   };
-
-  // Add optional properties only if they exist
-  if (meta.datePublished) {
-    baseSchema.datePublished = meta.datePublished;
-  }
-  if (meta.lastModified) {
-    baseSchema.dateModified = meta.lastModified;
-  }
-  if (meta.category) {
-    baseSchema.articleSection = meta.category;
-  }
-
-  return baseSchema;
 }
 
 /**
