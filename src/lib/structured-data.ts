@@ -406,6 +406,23 @@ function normalizeQuestionObject(
   return { question, answer };
 }
 
+/**
+ * Check if an object is a valid FAQ entry and return the normalized version, or null.
+ */
+function validateAndNormalizeFAQEntry(q: { question: any; answer: any }): SanitizedQuestionObject | null {
+  if (
+    typeof q.question === 'string' &&
+    typeof q.answer === 'string'
+  ) {
+    const question = q.question.trim();
+    const answer = q.answer.trim();
+    if (question.length > 0 && answer.length > 0) {
+      return { question, answer };
+    }
+  }
+  return null;
+}
+
 export function generateFAQSchema(
   questions: Array<{ question: string; answer: string }>
 ): FAQPageSchema | null {
@@ -413,20 +430,11 @@ export function generateFAQSchema(
   if (!Array.isArray(questions)) {
     return null;
   }
-  // Filter out invalid question objects and normalize the remaining ones,
-  // then map them into the required schema objects in a single chained operation.
-  // Only include objects with both 'question' and 'answer' as strings
-  const normalized = questions.reduce<SanitizedQuestionObject[]>((acc, q) => {
-    if (
-      typeof q.question === 'string' &&
-      typeof q.answer === 'string' &&
-      q.question.trim().length > 0 &&
-      q.answer.trim().length > 0
-    ) {
-      acc.push(normalizeQuestionObject(q));
-    }
-    return acc;
-  }, []);
+  // Normalize and filter valid question entries
+  const normalized: SanitizedQuestionObject[] = questions
+    .map(validateAndNormalizeFAQEntry)
+    .filter((q): q is SanitizedQuestionObject => q !== null);
+
   if (normalized.length === 0) {
     return null;
   }
