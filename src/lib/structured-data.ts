@@ -390,9 +390,7 @@ function validateAndNormalizeFAQEntry(q: unknown): SanitizedQuestionObject | nul
   if (!q || typeof q !== 'object') {
     return null;
   }
-  
   const obj = q as Record<string, unknown>;
-  
   if (
     typeof obj.question === 'string' &&
     typeof obj.answer === 'string'
