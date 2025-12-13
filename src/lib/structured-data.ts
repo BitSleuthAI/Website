@@ -375,37 +375,28 @@ type FAQPageSchema = {
 
 
 /**
-
-
-// Represents an object with non-empty string "question" and "answer" properties.
+ * Represents an object with non-empty string "question" and "answer" properties.
+ */
 type SanitizedQuestionObject = {
   question: string;
   answer: string;
 };
-/**
- * Returns a new object with "question" and "answer" fields trimmed.
- * Assumes valid input: object with string "question" and "answer" fields.
- * @param obj - Object with string "question" and "answer" properties.
- * @returns SanitizedQuestionObject
- */
-function normalizeQuestionObject(
-  obj: { question: string; answer: string },
-): SanitizedQuestionObject {
-  const question = obj.question.trim();
-  const answer = obj.answer.trim();
-  return { question, answer };
-}
 
 /**
  * Check if an object is a valid FAQ entry and return the normalized version, or null.
  */
-function validateAndNormalizeFAQEntry(q: { question: any; answer: any }): SanitizedQuestionObject | null {
+function validateAndNormalizeFAQEntry(q: unknown): SanitizedQuestionObject | null {
+  // Check if q is a non-null object first
+  if (!q || typeof q !== 'object') {
+    return null;
+  }
+  const obj = q as Record<string, unknown>;
   if (
-    typeof q.question === 'string' &&
-    typeof q.answer === 'string'
+    typeof obj.question === 'string' &&
+    typeof obj.answer === 'string'
   ) {
-    const question = q.question.trim();
-    const answer = q.answer.trim();
+    const question = obj.question.trim();
+    const answer = obj.answer.trim();
     if (question.length > 0 && answer.length > 0) {
       return { question, answer };
     }
