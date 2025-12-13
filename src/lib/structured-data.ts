@@ -385,21 +385,7 @@ type FAQPageSchema = {
  * Checks if the item is a valid FAQ question object with non-empty string 'question' and 'answer' fields.
  * Returns sanitized question object if valid, otherwise null.
  */
-function validateFaqQuestionObject(item: unknown): SanitizedQuestionObject | null {
-  if (
-    typeof item === 'object' &&
-    item !== null &&
-    typeof (item as any).question === 'string' &&
-    typeof (item as any).answer === 'string'
-  ) {
-    const question = (item as any).question.trim();
-    const answer = (item as any).answer.trim();
-    if (question.length > 0 && answer.length > 0) {
-      return { question, answer };
-    }
-  }
-  return null;
-}
+
 
 // Represents an object with non-empty string "question" and "answer" properties.
 type SanitizedQuestionObject = {
