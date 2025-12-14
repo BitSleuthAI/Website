@@ -177,14 +177,11 @@ export interface CombinedGlossarySchema {
  * @throws Error if the slug is invalid.
  */
 function getGlossaryTermUrl(term: string): string {
-  // Strictly allow only a-z, A-Z, 0-9, hyphens, underscores, dots, tildes
-  const STRICT_SLUG_REGEX = /^[A-Za-z0-9._~-]+$/;
-  
   if (!term?.trim()) {
     throw new Error('Invalid glossary term slug: must be a non-empty string');
   }
 
-  if (!STRICT_SLUG_REGEX.test(term)) {
+  if (!VALID_SLUG_PATTERN.test(term)) {
     throw new Error(
       `Invalid characters in term slug. Allowed: ${ALLOWED_SLUG_CHARACTERS_DESCRIPTION}.`
     );
