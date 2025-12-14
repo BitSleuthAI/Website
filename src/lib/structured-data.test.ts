@@ -104,4 +104,53 @@ describe('structured-data generators', () => {
 
     expect(article.articleSection).toBe(sampleMeta.category);
   });
+
+  it('does not double-encode URL in DefinedTerm schema', () => {
+    const term = 'bitcoin-mining';
+    const definedTerm = generateDefinedTermSchema(term, sampleMeta);
+
+    // Should be properly encoded once, not double-encoded
+    expect(definedTerm.url).toBe('https://www.bitsleuth.ai/glossary/bitcoin-mining');
+    expect(definedTerm.url).not.toContain('%252D'); // Should not contain double-encoded hyphen
+  });
+
+  it('accepts terms with dots and tildes in the slug', () => {
+    const termWithDot = 'v0.1.0';
+    const termWithTilde = 'feature~1';
+
+    // These should not throw errors
+    expect(() => generateDefinedTermSchema(termWithDot, sampleMeta)).not.toThrow();
+    expect(() => generateDefinedTermSchema(termWithTilde, sampleMeta)).not.toThrow();
+  });
+
+  it('throws error for non-string related terms', () => {
+    const metaWithInvalidRelatedTerms: GlossaryTermMeta = {
+      title: 'Test Term',
+      description: 'Test description',
+      keywords: ['test'],
+      relatedTerms: ['valid-term', 123 as any, 'another-term'],
+    };
+
+    // Should throw error for non-string value in relatedTerms
+    expect(() => generateArticleSchema('test', metaWithInvalidRelatedTerms)).toThrow(
+      'Invalid related term at index 1: expected string, got number'
+    );
+  });
+
+  it('uses GLOSSARY_DESCRIPTION constant in DefinedTerm schema', () => {
+    const term = 'test-term';
+    const definedTerm = generateDefinedTermSchema(term, sampleMeta);
+
+    expect(definedTerm.inDefinedTermSet.description).toBe(
+      'Comprehensive Bitcoin and cryptocurrency terminology'
+    );
+  });
+
+  it('uses GLOSSARY_COLLECTION_DESCRIPTION constant in CollectionPage schema', () => {
+    const collection = generateGlossaryCollectionSchema(TEST_COLLECTION_ITEM_COUNT);
+
+    expect(collection.description).toBe(
+      'Comprehensive Bitcoin and cryptocurrency terminology. Learn about blockchain technology, wallet security, privacy, mining, and more.'
+    );
+  });
 });
