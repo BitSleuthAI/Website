@@ -30,6 +30,7 @@ const CONFIG = {
       'Comprehensive Bitcoin and cryptocurrency terminology. Learn about blockchain technology, wallet security, privacy, mining, and more.',
     educationalLevel: 'Beginner to Advanced',
     aboutTopic: 'Bitcoin',
+    aboutDescription: 'Cryptocurrency and blockchain technology',
   },
   schema: {
     context: 'https://schema.org' as const,
@@ -51,7 +52,6 @@ type SchemaContext = typeof CONFIG.schema.context;
 
 interface BaseSchema {
   '@context': SchemaContext;
-  '@type': string;
 }
 
 interface DefinedTermSet {
@@ -344,7 +344,7 @@ export function generateGlossaryCollectionSchema(
     about: {
       '@type': 'Thing',
       name: CONFIG.glossary.aboutTopic,
-      description: 'Cryptocurrency and blockchain technology',
+      description: CONFIG.glossary.aboutDescription,
     },
     numberOfItems: termCount,
     inLanguage: CONFIG.schema.inLanguage,
