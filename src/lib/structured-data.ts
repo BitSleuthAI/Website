@@ -10,6 +10,10 @@ import { type GlossaryTermMeta } from './glossary-metadata';
 const GLOSSARY_BASE_URL = 'https://www.bitsleuth.ai/glossary';
 // Shared constant for glossary name
 const GLOSSARY_NAME = 'Bitcoin Glossary';
+// Shared constant for glossary description
+const GLOSSARY_DESCRIPTION = 'Comprehensive Bitcoin and cryptocurrency terminology';
+// Shared constant for glossary collection description
+const GLOSSARY_COLLECTION_DESCRIPTION = 'Comprehensive Bitcoin and cryptocurrency terminology. Learn about blockchain technology, wallet security, privacy, mining, and more.';
 
 // Shared constant for the about topic
 const ABOUT_TOPIC = 'Bitcoin';
@@ -37,9 +41,9 @@ function getGlossaryTermUrl(term: string): string {
   if (typeof term !== 'string' || term.trim().length === 0) {
     throw new Error('Invalid glossary term slug: must be a non-empty string');
   }
-  // Ensure the slug contains only safe characters (alphanumeric, dash, underscore)
-  if (!/^[a-zA-Z0-9_-]+$/.test(term)) {
-    throw new Error('Glossary term slug contains invalid characters. Only alphanumeric characters, hyphens, and underscores are allowed.');
+  // Ensure the slug contains only safe characters (alphanumeric, dash, underscore, dot, tilde)
+  if (!/^[a-zA-Z0-9_.~-]+$/.test(term)) {
+    throw new Error('Glossary term slug contains invalid characters. Only alphanumerics, hyphens, underscores, dots, and tildes are allowed.');
   }
   // encodeURIComponent ensures URL safety of the term slug
   return `${GLOSSARY_BASE_URL}/${encodeURIComponent(term)}`;
@@ -72,7 +76,12 @@ function normalizeRelatedTerms(relatedTerms?: string[]): string[] {
   }
 
   return relatedTerms
-    .map((term) => (typeof term === 'string' ? term.trim() : ''))
+    .map((term, idx) => {
+      if (typeof term !== 'string') {
+        throw new Error(`Invalid related term at index ${idx}: expected string, got ${typeof term}`);
+      }
+      return term.trim();
+    })
     .filter((term) => term.length > 0);
 }
 
@@ -286,10 +295,10 @@ export function generateDefinedTermSchema(
       '@type': 'DefinedTermSet',
       '@id': GLOSSARY_BASE_URL,
       name: GLOSSARY_NAME,
-      description: 'Comprehensive Bitcoin and cryptocurrency terminology',
+      description: GLOSSARY_DESCRIPTION,
     },
     termCode: term,
-    url: getGlossaryTermUrl(encodeURIComponent(term)),
+    url: getGlossaryTermUrl(term),
     ...(meta.category && {
       about: {
         '@type': 'Thing',
@@ -379,8 +388,7 @@ export function generateGlossaryCollectionSchema(
     '@context': GLOSSARY_SCHEMA_CONTEXT,
     '@type': 'CollectionPage',
     name: GLOSSARY_NAME,
-    description:
-      'Comprehensive Bitcoin and cryptocurrency terminology. Learn about blockchain technology, wallet security, privacy, mining, and more.',
+    description: GLOSSARY_COLLECTION_DESCRIPTION,
     url: GLOSSARY_BASE_URL,
     about: {
       '@type': 'Thing',
