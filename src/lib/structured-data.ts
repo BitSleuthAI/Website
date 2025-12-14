@@ -37,6 +37,10 @@ function getGlossaryTermUrl(term: string): string {
   if (typeof term !== 'string' || term.trim().length === 0) {
     throw new Error('Invalid glossary term slug: must be a non-empty string');
   }
+  // Ensure the slug contains only safe characters (alphanumeric, dash, underscore)
+  if (!/^[a-zA-Z0-9_-]+$/.test(term)) {
+    throw new Error('Glossary term slug contains invalid characters. Only alphanumeric characters, hyphens, and underscores are allowed.');
+  }
   // encodeURIComponent ensures URL safety of the term slug
   return `${GLOSSARY_BASE_URL}/${encodeURIComponent(term)}`;
 }
