@@ -15,6 +15,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function EnhancedHomeHeroSection() {
   return (
@@ -68,10 +69,11 @@ export function EnhancedHomeHeroSection() {
             {/* Right side - Cinematic Image */}
             <div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 animate-in fade-in duration-1000 slide-in-from-right-8">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay z-10" />
-              <img
+              <Image
                 src="/images/hero.png"
                 alt="Global Bitcoin Culture"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
           </div>
