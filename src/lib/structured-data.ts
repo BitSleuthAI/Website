@@ -15,6 +15,9 @@ const GLOSSARY_DESCRIPTION = 'Comprehensive Bitcoin and cryptocurrency terminolo
 // Shared constant for glossary collection description
 const GLOSSARY_COLLECTION_DESCRIPTION = 'Comprehensive Bitcoin and cryptocurrency terminology. Learn about blockchain technology, wallet security, privacy, mining, and more.';
 
+// Regular expression for validating glossary term slugs (alphanumerics, hyphens, underscores, dots, tildes)
+const VALID_SLUG_PATTERN = /^[a-zA-Z0-9_.~-]+$/;
+
 // Shared constant for the about topic
 const ABOUT_TOPIC = 'Bitcoin';
 
@@ -42,8 +45,8 @@ function getGlossaryTermUrl(term: string): string {
     throw new Error('Invalid glossary term slug: must be a non-empty string');
   }
   // Ensure the slug contains only safe characters (alphanumeric, dash, underscore, dot, tilde)
-  if (!/^[a-zA-Z0-9_.~-]+$/.test(term)) {
-    throw new Error('Glossary term slug contains invalid characters. Only alphanumerics, hyphens, underscores, dots, and tildes are allowed.');
+  if (!VALID_SLUG_PATTERN.test(term)) {
+    throw new Error('Invalid characters in term slug. Allowed: alphanumerics, hyphens, underscores, dots, tildes.');
   }
   // encodeURIComponent ensures URL safety of the term slug
   return `${GLOSSARY_BASE_URL}/${encodeURIComponent(term)}`;
@@ -75,14 +78,16 @@ function normalizeRelatedTerms(relatedTerms?: string[]): string[] {
     return [];
   }
 
-  return relatedTerms
-    .map((term, idx) => {
-      if (typeof term !== 'string') {
-        throw new Error(`Invalid related term at index ${idx}: expected string, got ${typeof term}`);
-      }
-      return term.trim();
-    })
-    .filter((term) => term.length > 0);
+  return relatedTerms.reduce<string[]>((acc, term, index) => {
+    if (typeof term !== 'string') {
+      throw new Error(`Invalid related term at index ${index}: expected string, got ${typeof term}`);
+    }
+    const trimmed = term.trim();
+    if (trimmed.length > 0) {
+      acc.push(trimmed);
+    }
+    return acc;
+  }, []);
 }
 
 /**
