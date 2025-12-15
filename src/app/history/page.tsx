@@ -9,6 +9,7 @@ import { BackgroundBeams } from '@/components/ui/background-beams';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
   BookOpen,
@@ -79,31 +80,45 @@ export default function HistoryPage() {
             <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
             <BackgroundBeams intensity="subtle" className="opacity-30" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-              <div className="space-y-6 text-center">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
-                  <BookOpen className="mr-2 h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium text-primary">Bitcoin History</span>
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6 text-center lg:text-left">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4">
+                    <BookOpen className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium text-primary">Bitcoin History</span>
+                  </div>
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-foreground pb-2">
+                    The History of <span className="text-primary">Bitcoin</span>
+                  </h1>
+                  <p className="text-xl text-muted-foreground md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto lg:mx-0">
+                    From a revolutionary whitepaper to the world&apos;s first decentralized digital currency
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                      <Link href="#when-created">
+                        Explore Bitcoin&apos;s Origins
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Link>
+                    </Button>
+                    <Button size="lg" variant="outline" asChild className="border-primary/20 hover:bg-primary/10 hover:text-primary">
+                      <a href="/documents/bitcoin.pdf" target="_blank" rel="noopener noreferrer">
+                        <FileText className="mr-2 h-5 w-5" />
+                        Read the Whitepaper
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
                 </div>
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-foreground pb-2">
-                  The History of <span className="text-primary">Bitcoin</span>
-                </h1>
-                <p className="text-xl text-muted-foreground md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto">
-                  From a revolutionary whitepaper to the world&apos;s first decentralized digital currency
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                    <Link href="#when-created">
-                      Explore Bitcoin&apos;s Origins
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                  </Button>
-                  <Button size="lg" variant="outline" asChild className="border-primary/20 hover:bg-primary/10 hover:text-primary">
-                    <a href="/documents/bitcoin.pdf" target="_blank" rel="noopener noreferrer">
-                      <FileText className="mr-2 h-5 w-5" />
-                      Read the Whitepaper
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
+                <div className="hidden lg:block relative">
+                  <div className="relative w-full aspect-square max-w-[500px] mx-auto">
+                    <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full" />
+                    <Image
+                      src="/images/history/hero.png"
+                      alt="Bitcoin History Evolution"
+                      fill
+                      className="object-contain relative z-10 drop-shadow-2xl"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -119,39 +134,52 @@ export default function HistoryPage() {
                 </h2>
               </div>
 
-              <div className="space-y-8">
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
-                  <CardContent className="p-8">
-                    <div className="space-y-6">
-                      <p className="text-lg text-gray-400">
-                        Bitcoin&apos;s journey began on <span className="font-semibold text-foreground">October 31, 2008</span>, when an individual or group using the pseudonym <span className="font-semibold text-foreground">Satoshi Nakamoto</span> published a groundbreaking whitepaper to a cryptography mailing list. The paper, titled <span className="italic">&quot;Bitcoin: A Peer-to-Peer Electronic Cash System,&quot;</span> outlined a revolutionary vision for digital money.
-                      </p>
-                      <p className="text-lg text-gray-400">
-                        However, Bitcoin truly came to life on <span className="font-semibold text-foreground">January 3, 2009</span>, when Satoshi mined the first block of the Bitcoin <Link href="/glossary/blockchain" className="text-primary hover:underline font-semibold">blockchain</Link> - known as the <span className="font-semibold text-foreground">Genesis Block</span> or Block 0. This historic moment marked the birth of the world&apos;s first decentralized digital currency.
-                      </p>
-                      <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
-                        <h3 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
-                          <Calendar className="h-5 w-5 text-primary" />
-                          Key Timeline
-                        </h3>
-                        <div className="space-y-3">
-                          <div className="flex items-start gap-3">
-                            <div className="min-w-[140px] font-semibold text-foreground">October 31, 2008</div>
-                            <div className="text-gray-400">Bitcoin whitepaper published by Satoshi Nakamoto</div>
-                          </div>
-                          <div className="flex items-start gap-3">
-                            <div className="min-w-[140px] font-semibold text-foreground">January 3, 2009</div>
-                            <div className="text-gray-400">Genesis Block mined, Bitcoin network launches</div>
-                          </div>
-                          <div className="flex items-start gap-3">
-                            <div className="min-w-[140px] font-semibold text-foreground">January 12, 2009</div>
-                            <div className="text-gray-400">First Bitcoin transaction (Satoshi to Hal Finney)</div>
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                    <CardContent className="p-8">
+                      <div className="space-y-6">
+                        <p className="text-lg text-gray-400">
+                          Bitcoin&apos;s journey began on <span className="font-semibold text-foreground">October 31, 2008</span>, when an individual or group using the pseudonym <span className="font-semibold text-foreground">Satoshi Nakamoto</span> published a groundbreaking whitepaper to a cryptography mailing list. The paper, titled <span className="italic">&quot;Bitcoin: A Peer-to-Peer Electronic Cash System,&quot;</span> outlined a revolutionary vision for digital money.
+                        </p>
+                        <p className="text-lg text-gray-400">
+                          However, Bitcoin truly came to life on <span className="font-semibold text-foreground">January 3, 2009</span>, when Satoshi mined the first block of the Bitcoin <Link href="/glossary/blockchain" className="text-primary hover:underline font-semibold">blockchain</Link> - known as the <span className="font-semibold text-foreground">Genesis Block</span> or Block 0. This historic moment marked the birth of the world&apos;s first decentralized digital currency.
+                        </p>
+                        <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
+                          <h3 className="text-xl font-bold mb-3 flex items-center gap-2 text-foreground">
+                            <Calendar className="h-5 w-5 text-primary" />
+                            Key Timeline
+                          </h3>
+                          <div className="space-y-3">
+                            <div className="flex items-start gap-3">
+                              <div className="min-w-[140px] font-semibold text-foreground">October 31, 2008</div>
+                              <div className="text-gray-400">Bitcoin whitepaper published by Satoshi Nakamoto</div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                              <div className="min-w-[140px] font-semibold text-foreground">January 3, 2009</div>
+                              <div className="text-gray-400">Genesis Block mined, Bitcoin network launches</div>
+                            </div>
+                            <div className="flex items-start gap-3">
+                              <div className="min-w-[140px] font-semibold text-foreground">January 12, 2009</div>
+                              <div className="text-gray-400">First Bitcoin transaction (Satoshi to Hal Finney)</div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="relative order-first lg:order-last">
+                  <div className="relative w-full aspect-square max-w-[500px] mx-auto">
+                    <div className="absolute inset-0 bg-primary/10 blur-[80px] rounded-full" />
+                    <Image
+                      src="/images/history/genesis.png"
+                      alt="Bitcoin Genesis Block 2009"
+                      fill
+                      className="object-contain relative z-10 drop-shadow-2xl rounded-2xl"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -166,55 +194,68 @@ export default function HistoryPage() {
                 </h2>
               </div>
 
-              <div className="space-y-8">
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
-                  <CardContent className="p-8">
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="p-3 rounded-lg bg-primary/10">
-                          <User className="h-8 w-8 text-primary" />
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="relative">
+                  <div className="relative w-full aspect-square max-w-[500px] mx-auto">
+                    <div className="absolute inset-0 bg-primary/10 blur-[80px] rounded-full" />
+                    <Image
+                      src="/images/history/satoshi.png"
+                      alt="Mystery of Satoshi Nakamoto"
+                      fill
+                      className="object-contain relative z-10 drop-shadow-2xl rounded-2xl"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-8">
+                  <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                    <CardContent className="p-8">
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="p-3 rounded-lg bg-primary/10">
+                            <User className="h-8 w-8 text-primary" />
+                          </div>
+                          <h3 className="text-2xl font-bold text-foreground">Satoshi Nakamoto</h3>
                         </div>
-                        <h3 className="text-2xl font-bold text-foreground">Satoshi Nakamoto</h3>
-                      </div>
-                      <p className="text-lg text-gray-400">
-                        Bitcoin was created by an individual or group using the pseudonym <span className="font-semibold text-foreground">Satoshi Nakamoto</span>. Despite extensive investigations by journalists, researchers, and cryptographers, Satoshi&apos;s true identity remains one of technology&apos;s greatest mysteries.
-                      </p>
-                      <p className="text-lg text-gray-400">
-                        What we know about Satoshi comes from their writings and code contributions between 2008 and 2011. They were clearly a brilliant cryptographer and programmer with deep knowledge of economics, computer science, and distributed systems. Their communications suggested fluency in British English, though this could have been intentional misdirection.
-                      </p>
-                      <div className="bg-secondary/30 p-6 rounded-lg border border-border">
-                        <h3 className="text-xl font-bold mb-4 text-foreground">Satoshi&apos;s Contributions</h3>
-                        <ul className="space-y-3 text-gray-400">
-                          <li className="flex items-start">
-                            <span className="text-primary mr-2 mt-1">•</span>
-                            <span><strong className="text-foreground">Published the Bitcoin whitepaper</strong> outlining the technical and economic framework</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="text-primary mr-2 mt-1">•</span>
-                            <span><strong className="text-foreground">Wrote the initial Bitcoin software</strong> implementing the protocol</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="text-primary mr-2 mt-1">•</span>
-                            <span><strong className="text-foreground">Mined the first blocks</strong> and conducted the first transaction</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="text-primary mr-2 mt-1">•</span>
-                            <span><strong className="text-foreground">Collaborated with early developers</strong> to improve the protocol</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="text-primary mr-2 mt-1">•</span>
-                            <span><strong className="text-foreground">Gradually handed over control</strong> to the community before disappearing in 2011</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
-                        <p className="text-gray-400">
-                          <strong className="text-foreground">The Mystery Persists:</strong> Satoshi is believed to possess approximately 1 million bitcoin, yet these coins have never been moved. Their decision to remain anonymous and step away from the project was intentional - ensuring Bitcoin would be truly decentralized, owned by no one and everyone simultaneously.
+                        <p className="text-lg text-gray-400">
+                          Bitcoin was created by an individual or group using the pseudonym <span className="font-semibold text-foreground">Satoshi Nakamoto</span>. Despite extensive investigations by journalists, researchers, and cryptographers, Satoshi&apos;s true identity remains one of technology&apos;s greatest mysteries.
                         </p>
+                        <p className="text-lg text-gray-400">
+                          What we know about Satoshi comes from their writings and code contributions between 2008 and 2011. They were clearly a brilliant cryptographer and programmer with deep knowledge of economics, computer science, and distributed systems. Their communications suggested fluency in British English, though this could have been intentional misdirection.
+                        </p>
+                        <div className="bg-secondary/30 p-6 rounded-lg border border-border">
+                          <h3 className="text-xl font-bold mb-4 text-foreground">Satoshi&apos;s Contributions</h3>
+                          <ul className="space-y-3 text-gray-400">
+                            <li className="flex items-start">
+                              <span className="text-primary mr-2 mt-1">•</span>
+                              <span><strong className="text-foreground">Published the Bitcoin whitepaper</strong> outlining the technical and economic framework</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-primary mr-2 mt-1">•</span>
+                              <span><strong className="text-foreground">Wrote the initial Bitcoin software</strong> implementing the protocol</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-primary mr-2 mt-1">•</span>
+                              <span><strong className="text-foreground">Mined the first blocks</strong> and conducted the first transaction</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-primary mr-2 mt-1">•</span>
+                              <span><strong className="text-foreground">Collaborated with early developers</strong> to improve the protocol</span>
+                            </li>
+                            <li className="flex items-start">
+                              <span className="text-primary mr-2 mt-1">•</span>
+                              <span><strong className="text-foreground">Gradually handed over control</strong> to the community before disappearing in 2011</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
+                          <p className="text-gray-400">
+                            <strong className="text-foreground">The Mystery Persists:</strong> Satoshi is believed to possess approximately 1 million bitcoin, yet these coins have never been moved. Their decision to remain anonymous and step away from the project was intentional - ensuring Bitcoin would be truly decentralized, owned by no one and everyone simultaneously.
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
             </div>
           </section>
@@ -445,48 +486,61 @@ export default function HistoryPage() {
                 </h2>
               </div>
 
-              <div className="space-y-8">
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
-                  <CardContent className="p-8">
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="p-3 rounded-lg bg-primary/10">
-                          <Globe className="h-8 w-8 text-primary" />
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                    <CardContent className="p-8">
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="p-3 rounded-lg bg-primary/10">
+                            <Globe className="h-8 w-8 text-primary" />
+                          </div>
+                          <h3 className="text-2xl font-bold text-foreground">Global Impact</h3>
                         </div>
-                        <h3 className="text-2xl font-bold text-foreground">Global Impact</h3>
+                        <p className="text-lg text-gray-400">
+                          The Bitcoin whitepaper&apos;s impact extends far beyond cryptocurrency. It inspired an entire industry and demonstrated that decentralized systems could solve real-world problems without traditional institutional frameworks.
+                        </p>
+                        <div className="grid sm:grid-cols-2 gap-6">
+                          <div className="bg-secondary/30 p-6 rounded-lg border border-border">
+                            <h3 className="text-xl font-bold mb-3 text-foreground">Financial Innovation</h3>
+                            <p className="text-sm text-gray-400">
+                              Bitcoin challenged traditional banking by demonstrating that money could exist and function without central banks. It inspired thousands of alternative cryptocurrencies and blockchain projects, each exploring different aspects of decentralization.
+                            </p>
+                          </div>
+                          <div className="bg-secondary/30 p-6 rounded-lg border border-border">
+                            <h3 className="text-xl font-bold mb-3 text-foreground">Academic Research</h3>
+                            <p className="text-sm text-gray-400">
+                              The whitepaper sparked extensive academic research in distributed systems, cryptography, game theory, and economics. Universities worldwide now offer courses on blockchain technology and cryptocurrencies.
+                            </p>
+                          </div>
+                          <div className="bg-secondary/30 p-6 rounded-lg border border-border">
+                            <h3 className="text-xl font-bold mb-3 text-foreground">Technological Impact</h3>
+                            <p className="text-sm text-gray-400">
+                              Beyond finance, Bitcoin&apos;s blockchain concept inspired applications in supply chain management, digital identity, voting systems, and more. The idea of trustless, decentralized record-keeping has broad implications.
+                            </p>
+                          </div>
+                          <div className="bg-secondary/30 p-6 rounded-lg border border-border">
+                            <h3 className="text-xl font-bold mb-3 text-foreground">Global Adoption</h3>
+                            <p className="text-sm text-gray-400">
+                              From individuals seeking financial sovereignty to institutions incorporating Bitcoin into their strategies, the whitepaper&apos;s vision continues to gain traction worldwide, particularly in regions with unstable currencies.
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <p className="text-lg text-gray-400">
-                        The Bitcoin whitepaper&apos;s impact extends far beyond cryptocurrency. It inspired an entire industry and demonstrated that decentralized systems could solve real-world problems without traditional institutional frameworks.
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-6">
-                        <div className="bg-secondary/30 p-6 rounded-lg border border-border">
-                          <h3 className="text-xl font-bold mb-3 text-foreground">Financial Innovation</h3>
-                          <p className="text-sm text-gray-400">
-                            Bitcoin challenged traditional banking by demonstrating that money could exist and function without central banks. It inspired thousands of alternative cryptocurrencies and blockchain projects, each exploring different aspects of decentralization.
-                          </p>
-                        </div>
-                        <div className="bg-secondary/30 p-6 rounded-lg border border-border">
-                          <h3 className="text-xl font-bold mb-3 text-foreground">Academic Research</h3>
-                          <p className="text-sm text-gray-400">
-                            The whitepaper sparked extensive academic research in distributed systems, cryptography, game theory, and economics. Universities worldwide now offer courses on blockchain technology and cryptocurrencies.
-                          </p>
-                        </div>
-                        <div className="bg-secondary/30 p-6 rounded-lg border border-border">
-                          <h3 className="text-xl font-bold mb-3 text-foreground">Technological Impact</h3>
-                          <p className="text-sm text-gray-400">
-                            Beyond finance, Bitcoin&apos;s blockchain concept inspired applications in supply chain management, digital identity, voting systems, and more. The idea of trustless, decentralized record-keeping has broad implications.
-                          </p>
-                        </div>
-                        <div className="bg-secondary/30 p-6 rounded-lg border border-border">
-                          <h3 className="text-xl font-bold mb-3 text-foreground">Global Adoption</h3>
-                          <p className="text-sm text-gray-400">
-                            From individuals seeking financial sovereignty to institutions incorporating Bitcoin into their strategies, the whitepaper&apos;s vision continues to gain traction worldwide, particularly in regions with unstable currencies.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </div>
+                <div className="relative order-first lg:order-last">
+                  <div className="relative w-full aspect-square max-w-[500px] mx-auto">
+                    <div className="absolute inset-0 bg-primary/10 blur-[80px] rounded-full" />
+                    <Image
+                      src="/images/history/network.png"
+                      alt="Global Bitcoin Network"
+                      fill
+                      className="object-contain relative z-10 drop-shadow-2xl rounded-2xl"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </section>

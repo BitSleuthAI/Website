@@ -1,5 +1,6 @@
 // src/app/learn/page.tsx
 "use client";
+import Image from 'next/image';
 
 import { useState } from 'react';
 import { Header } from '@/components/landing/Header';
@@ -107,6 +108,16 @@ export default function LearnPage() {
                     </a>
                   </Button>
                 </div>
+                <div className="relative w-full max-w-4xl mx-auto mt-12 aspect-[21/9] rounded-xl overflow-hidden shadow-2xl border border-primary/20">
+                  <Image
+                    src="/images/learn_hero_illustration.png"
+                    alt="Bitcoin Education Hero Illustration"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+                </div>
               </div>
             </div>
           </section>
@@ -142,7 +153,16 @@ export default function LearnPage() {
                     <p className="text-gray-400 mb-4">
                       The <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link> serves as a public ledger, recording every transaction in an immutable chain of blocks. This transparency allows anyone to verify transactions while maintaining user privacy through cryptographic addresses.
                     </p>
+                    <div className="relative w-full aspect-video rounded-lg overflow-hidden my-4 border border-primary/10 shadow-lg">
+                      <Image
+                        src="/images/bitcoin_network_illustration.png"
+                        alt="Bitcoin Network Decentralization Illustration"
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
                     <p className="text-gray-400">
+
                       With no single point of control or failure, Bitcoin operates 24/7/365 across borders, enabling anyone with internet access to participate in the global economy.
                     </p>
                   </CardContent>
@@ -162,6 +182,15 @@ export default function LearnPage() {
                     <p className="text-gray-400 mb-4">
                       With a fixed supply cap of 21 million bitcoins, it's designed to be scarce and deflationary by nature - no government or entity can print more. This predictable supply makes Bitcoin fundamentally different from traditional currencies that can be inflated at will.
                     </p>
+                    <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
+                      <Image
+                        src="/images/bitcoin_currency_illustration.png"
+                        alt="Bitcoin Currency Scarcity Illustration"
+                        fill
+                        className="object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+
                     <p className="text-gray-400">
                       Bitcoin offers fast, borderless transactions with lower fees than traditional international transfers, operating independently of banking hours or geographic restrictions.
                     </p>
@@ -257,6 +286,14 @@ export default function LearnPage() {
                         <p className="text-gray-400 mb-4">
                           <Link href="/glossary/mining" className="text-primary hover:underline">Mining</Link> is the process of adding new transactions to the blockchain. Miners compete to solve complex mathematical puzzles, and the winner gets to add the next <Link href="/glossary/block" className="text-primary hover:underline">block</Link> of transactions.
                         </p>
+                        <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
+                          <Image
+                            src="/images/mining_security_illustration.png"
+                            alt="Bitcoin Mining and Security Illustration"
+                            fill
+                            className="object-cover hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
                         <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                           <h4 className="font-semibold mb-2 flex items-center gap-2">
                             <TrendingUp className="h-5 w-5 text-primary" />
