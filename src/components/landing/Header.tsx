@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   DropdownMenu,
@@ -41,7 +42,7 @@ export function Header({ basePath = '' }: HeaderProps) {
       height: 'calc(4rem + env(safe-area-inset-top))'
     }}>
       <Link href="/" className="flex items-center justify-center hover:opacity-90 transition-opacity">
-        <img src="/images/logo-icon.jpg" alt="BitSleuth Logo" className="h-10 w-10 rounded-xl shadow-sm" />
+        <Image src="/images/logo-icon.jpg" alt="BitSleuth Logo" width={40} height={40} className="rounded-xl shadow-sm" />
         <span className="ml-3 font-bold text-xl tracking-tight text-foreground">BitSleuth</span>
       </Link>
       <nav className="ml-auto hidden gap-8 sm:flex items-center">
@@ -154,7 +155,7 @@ export function Header({ basePath = '' }: HeaderProps) {
         <SheetContent side="right">
           <nav className="grid gap-6 text-lg font-medium">
             <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
-              <img src="/images/logo-icon.jpg" alt="BitSleuth Logo" className="h-8 w-8 rounded-lg" />
+              <Image src="/images/logo-icon.jpg" alt="BitSleuth Logo" width={32} height={32} className="rounded-lg" />
               <span className="ml-2 font-bold text-lg">BitSleuth</span>
             </Link>
             <Link href="/analyzer" className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>Wallet Analyzer</Link>

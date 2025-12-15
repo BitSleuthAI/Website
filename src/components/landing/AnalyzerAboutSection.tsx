@@ -1,5 +1,6 @@
 // src/components/landing/AnalyzerAboutSection.tsx
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import Image from "next/image";
 import { ValueBadge } from "@/components/ui/value-badge";
 import { Bitcoin, Shield, Blocks } from "lucide-react";
 
@@ -13,10 +14,11 @@ export function AnalyzerAboutSection() {
           <div className="relative order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/5 aspect-[4/3]">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent mix-blend-overlay z-10" />
-              <img
+              <Image
                 src="/images/analyzer-about.png"
                 alt="BitSleuth Analytics Visualization"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             {/* Decorative elements */}

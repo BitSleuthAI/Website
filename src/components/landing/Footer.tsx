@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ValueBadge } from '@/components/ui/value-badge';
 import { Bitcoin, Heart } from 'lucide-react';
 
@@ -17,7 +18,7 @@ export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
           <div className="flex items-center gap-2">
-            <img src="/images/logo-icon.jpg" alt="BitSleuth Logo" className="h-8 w-8 rounded-lg grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all" />
+            <Image src="/images/logo-icon.jpg" alt="BitSleuth Logo" width={32} height={32} className="rounded-lg grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all" />
             <span className="font-bold text-lg text-muted-foreground">BitSleuth</span>
           </div>
 

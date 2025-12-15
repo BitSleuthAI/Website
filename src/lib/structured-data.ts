@@ -57,113 +57,113 @@ const VALID_SLUG_PATTERN = /^[a-zA-Z0-9_.~-]+$/;
 type SchemaContext = typeof CONFIG.schema.context;
 
 interface BaseSchema {
-  '@context': SchemaContext;
+  readonly '@context': SchemaContext;
 }
 
 interface DefinedTermSet {
-  '@type': 'DefinedTermSet';
-  '@id': string;
-  name: string;
-  description: string;
+  readonly '@type': 'DefinedTermSet';
+  readonly '@id': string;
+  readonly name: string;
+  readonly description: string;
 }
 
 interface OrganizationSchema {
-  '@type': 'Organization';
-  name: string;
-  url: string;
-  logo?: {
-    '@type': 'ImageObject';
-    url: string;
+  readonly '@type': 'Organization';
+  readonly name: string;
+  readonly url: string;
+  readonly logo?: {
+    readonly '@type': 'ImageObject';
+    readonly url: string;
   };
 }
 
 interface ThingSchema {
-  '@type': 'Thing';
-  name: string;
-  description?: string;
-  url?: string;
+  readonly '@type': 'Thing';
+  readonly name: string;
+  readonly description?: string;
+  readonly url?: string;
 }
 
 interface DefinedTermObject {
-  '@type': 'DefinedTerm';
-  name: string;
-  url: string;
+  readonly '@type': 'DefinedTerm';
+  readonly name: string;
+  readonly url: string;
 }
 
 export interface DefinedTermSchema extends BaseSchema {
-  '@type': 'DefinedTerm';
-  name: string;
-  description: string;
-  inDefinedTermSet: DefinedTermSet;
-  termCode: string;
-  url: string;
-  about?: ThingSchema;
+  readonly '@type': 'DefinedTerm';
+  readonly name: string;
+  readonly description: string;
+  readonly inDefinedTermSet: DefinedTermSet;
+  readonly termCode: string;
+  readonly url: string;
+  readonly about?: ThingSchema;
 }
 
 export interface ArticleSchema extends BaseSchema {
-  '@type': 'Article';
-  headline: string;
-  description: string;
-  author: OrganizationSchema;
-  publisher: OrganizationSchema;
-  datePublished?: string;
-  dateModified?: string;
-  articleSection?: string;
-  keywords: string;
-  url: string;
-  inLanguage: string;
-  mentions?: DefinedTermObject[];
+  readonly '@type': 'Article';
+  readonly headline: string;
+  readonly description: string;
+  readonly author: OrganizationSchema;
+  readonly publisher: OrganizationSchema;
+  readonly datePublished?: string;
+  readonly dateModified?: string;
+  readonly articleSection?: string;
+  readonly keywords: string;
+  readonly url: string;
+  readonly inLanguage: string;
+  readonly mentions?: ReadonlyArray<DefinedTermObject>;
 }
 
 export interface BreadcrumbListSchema extends BaseSchema {
-  '@type': 'BreadcrumbList';
-  itemListElement: Array<{
-    '@type': 'ListItem';
-    position: number;
-    name: string;
-    item: string;
+  readonly '@type': 'BreadcrumbList';
+  readonly itemListElement: ReadonlyArray<{
+    readonly '@type': 'ListItem';
+    readonly position: number;
+    readonly name: string;
+    readonly item: string;
   }>;
 }
 
 interface WebSiteSchema {
-  '@type': 'WebSite';
-  name: string;
-  url: string;
+  readonly '@type': 'WebSite';
+  readonly name: string;
+  readonly url: string;
 }
 
 export interface CollectionPageSchema extends BaseSchema {
-  '@type': 'CollectionPage';
-  name: string;
-  description: string;
-  url: string;
-  about: ThingSchema;
-  numberOfItems: number;
-  inLanguage: string;
-  isPartOf: WebSiteSchema;
+  readonly '@type': 'CollectionPage';
+  readonly name: string;
+  readonly description: string;
+  readonly url: string;
+  readonly about: ThingSchema;
+  readonly numberOfItems: number;
+  readonly inLanguage: string;
+  readonly isPartOf: WebSiteSchema;
 }
 
 export interface LearningResourceSchema extends BaseSchema {
-  '@type': 'LearningResource';
-  name: string;
-  description: string;
-  url: string;
-  inLanguage: string;
-  learningResourceType: string;
-  educationalLevel: string;
-  keywords: string;
-  about: ThingSchema;
-  publisher: OrganizationSchema;
-  teaches?: DefinedTermObject[];
+  readonly '@type': 'LearningResource';
+  readonly name: string;
+  readonly description: string;
+  readonly url: string;
+  readonly inLanguage: string;
+  readonly learningResourceType: string;
+  readonly educationalLevel: string;
+  readonly keywords: string;
+  readonly about: ThingSchema;
+  readonly publisher: OrganizationSchema;
+  readonly teaches?: ReadonlyArray<DefinedTermObject>;
 }
 
 export interface CombinedGlossarySchema {
-  '@context': SchemaContext;
-  '@graph': [
-    DefinedTermSchema,
-    ArticleSchema,
-    BreadcrumbListSchema,
-    LearningResourceSchema,
-  ];
+  readonly '@context': SchemaContext;
+  readonly '@graph': ReadonlyArray<
+    | DefinedTermSchema
+    | ArticleSchema
+    | BreadcrumbListSchema
+    | LearningResourceSchema
+  >;
 }
 
 // ============================================================================
@@ -181,6 +181,7 @@ function getGlossaryTermUrl(term: string): string {
     throw new Error('Invalid glossary term slug: must be a non-empty string');
   }
 
+  // Strictly validate input before using encodeURIComponent to prevent injection attacks
   if (!VALID_SLUG_PATTERN.test(term)) {
     throw new Error(
       `Invalid characters in term slug. Allowed: ${ALLOWED_SLUG_CHARACTERS_DESCRIPTION}.`
@@ -215,19 +216,17 @@ function mapRelatedTermsToDefinedTerms(
     return [];
   }
 
-  return relatedTerms
-    .filter((term) => {
-      const trimmed = term.trim();
-      return trimmed && VALID_SLUG_PATTERN.test(trimmed);
-    })
-    .map((term) => {
-      const trimmedTerm = term.trim();
-      return {
+  return relatedTerms.reduce<DefinedTermObject[]>((acc, term) => {
+    const trimmedTerm = term.trim();
+    if (trimmedTerm && VALID_SLUG_PATTERN.test(trimmedTerm)) {
+      acc.push({
         '@type': 'DefinedTerm',
         name: formatSlugToTitle(trimmedTerm),
         url: getGlossaryTermUrl(trimmedTerm),
-      };
-    });
+      });
+    }
+    return acc;
+  }, []);
 }
 
 // ============================================================================

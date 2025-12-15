@@ -63,4 +63,46 @@ describe('structured-data', () => {
     const schema = generateArticleSchema(term, metaNoRelated);
     expect(schema.mentions).toBeUndefined();
   });
+
+  it('filters out invalid slugs from related terms', () => {
+    const metaWithInvalidTerms = {
+      ...mockMeta,
+      relatedTerms: ['valid-term', 'invalid/term', '', '  ', 'another-valid', 'bad?term'],
+    };
+    const schema = generateArticleSchema(term, metaWithInvalidTerms);
+    expect(schema.mentions).toHaveLength(2); // Only 'valid-term' and 'another-valid'
+    expect(schema.mentions![0].name).toBe('Valid Term');
+    expect(schema.mentions![1].name).toBe('Another Valid');
+  });
+
+  it('handles terms with whitespace correctly', () => {
+    const metaWithWhitespace = {
+      ...mockMeta,
+      relatedTerms: ['  trimmed-term  ', 'another-term', '   '],
+    };
+    const schema = generateArticleSchema(term, metaWithWhitespace);
+    expect(schema.mentions).toHaveLength(2);
+    expect(schema.mentions![0].name).toBe('Trimmed Term');
+  });
+
+  it('rejects slugs with dangerous characters', () => {
+    const dangerousMeta = { ...mockMeta };
+    
+    // Test various dangerous patterns that should be rejected
+    expect(() => generateDefinedTermSchema('../etc/passwd', dangerousMeta)).toThrow('Invalid characters in term slug');
+    expect(() => generateDefinedTermSchema('term<script>', dangerousMeta)).toThrow('Invalid characters in term slug');
+    expect(() => generateDefinedTermSchema('term?query=1', dangerousMeta)).toThrow('Invalid characters in term slug');
+    expect(() => generateDefinedTermSchema('term#hash', dangerousMeta)).toThrow('Invalid characters in term slug');
+  });
+
+  it('accepts valid slug characters', () => {
+    const validMeta = { ...mockMeta };
+    
+    // These should all work without throwing
+    expect(() => generateDefinedTermSchema('valid-term', validMeta)).not.toThrow();
+    expect(() => generateDefinedTermSchema('valid_term', validMeta)).not.toThrow();
+    expect(() => generateDefinedTermSchema('valid.term', validMeta)).not.toThrow();
+    expect(() => generateDefinedTermSchema('valid~term', validMeta)).not.toThrow();
+    expect(() => generateDefinedTermSchema('ValidTerm123', validMeta)).not.toThrow();
+  });
 });

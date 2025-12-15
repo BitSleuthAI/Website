@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   BookOpen,
@@ -38,10 +39,11 @@ export function EducationalSection() {
           <Card className="group bg-card border-border/50 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden flex flex-col h-full">
             <div className="relative h-64 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
-              <img
+              <Image
                 src="/images/educational.png"
                 alt="Bitcoin Education"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <CardContent className="p-8 flex-1 flex flex-col">
@@ -96,10 +98,11 @@ export function EducationalSection() {
           <Card className="group bg-card border-border/50 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden flex flex-col h-full">
             <div className="relative h-64 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
-              <img
+              <Image
                 src="/images/history.png"
                 alt="Bitcoin History"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <CardContent className="p-8 flex-1 flex flex-col">
