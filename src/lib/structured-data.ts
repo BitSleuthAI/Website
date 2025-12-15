@@ -53,8 +53,8 @@ const CONFIG = {
 // - allowedChars: Letters (a-z, A-Z), digits (0-9), '_', '-', '~', '.'
 // - edgeChars: Allowed at start/end — as above but *excluding* period ('.')
 //   (period is only allowed in the middle)
-const ALLOWED_CHARS = 'a-zA-Z0-9_\\-~\\.'; // all allowed characters
-const EDGE_CHARS = 'a-zA-Z0-9_\\-~';        // allowed at start/end (excluding period)
+const ALLOWED_CHARS = 'a-zA-Z0-9_.~-'; // all allowed characters
+const EDGE_CHARS = 'a-zA-Z0-9_~-';     // allowed at start/end (excluding period)
 
 // Explanation:
 // ^                      : Start of string
@@ -193,18 +193,19 @@ export interface CombinedGlossarySchema {
  * @throws Error if the slug is invalid.
  */
 function getGlossaryTermUrl(term: string): string {
-  if (!term.trim()) {
+  const trimmedTerm = term.trim();
+  if (!trimmedTerm) {
     throw new Error('Invalid glossary term slug: must be a non-empty string');
   }
 
   // Strictly validate input before using encodeURIComponent to prevent injection attacks
-  if (!VALID_SLUG_PATTERN.test(term)) {
+  if (!VALID_SLUG_PATTERN.test(trimmedTerm)) {
     throw new Error(
       `Invalid characters in term slug. Allowed: ${ALLOWED_SLUG_CHARACTERS_DESCRIPTION}.`
     );
   }
 
-  return `${CONFIG.glossary.baseUrl}/${term}`;
+  return `${CONFIG.glossary.baseUrl}/${trimmedTerm}`;
 }
 
 /**
