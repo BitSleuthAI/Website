@@ -49,7 +49,22 @@ const CONFIG = {
 //   - Tilde (~): URL-safe, occasionally used for personal pages or disambiguation.
 // Excludes characters such as slash (/), question mark (?), hash (#), and others that could interfere with URL parsing, routing, or introduce security issues.
 // Only these restricted characters are allowed to reduce the risk of path traversal, ambiguous URLs, or other potential security/file-system issues.
-const VALID_SLUG_PATTERN = /^[a-zA-Z0-9_~-](?:[a-zA-Z0-9_.~-]*[a-zA-Z0-9_~-])?$/;
+// Regex components for validating glossary term slugs:
+// - allowedChars: Letters (a-z, A-Z), digits (0-9), '_', '-', '~', '.'
+// - edgeChars: Allowed at start/end — as above but *excluding* period ('.')
+//   (period is only allowed in the middle)
+const ALLOWED_CHARS = 'a-zA-Z0-9_\\-~\\.'; // all allowed characters
+const EDGE_CHARS = 'a-zA-Z0-9_\\-~';        // allowed at start/end (excluding period)
+
+// Explanation:
+// ^                      : Start of string
+// [EDGE_CHARS]           : First char (cannot be '.')
+// (?:[ALLOWED_CHARS]*    : Zero or more allowed chars (including '.')
+//   [EDGE_CHARS])?       : If more than one char, last must not be '.' (cannot end with period)
+// $                      : End of string
+const VALID_SLUG_PATTERN = new RegExp(
+  `^[${EDGE_CHARS}](?:[${ALLOWED_CHARS}]*[${EDGE_CHARS}])?$`
+);
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -239,7 +254,7 @@ export function generateDefinedTermSchema(
   term: string,
   meta: GlossaryTermMeta
 ): DefinedTermSchema {
-  const definedTerm: Record<string, unknown> = {
+  const definedTerm: DefinedTermSchema = {
     '@context': CONFIG.schema.context,
     '@type': 'DefinedTerm',
     name: meta.title,
@@ -252,14 +267,16 @@ export function generateDefinedTermSchema(
     },
     termCode: term,
     url: getGlossaryTermUrl(term),
+    ...(meta.category
+      ? {
+          about: {
+            '@type': 'Thing',
+            name: meta.category,
+          },
+        }
+      : {}),
   };
-  if (meta.category) {
-    definedTerm.about = {
-      '@type': 'Thing',
-      name: meta.category,
-    };
-  }
-  return definedTerm as unknown as DefinedTermSchema;
+  return definedTerm;
 }
 
 /**
