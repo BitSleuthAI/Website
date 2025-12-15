@@ -87,7 +87,7 @@ export default function LearnPage() {
                   <BookOpen className="mr-2 h-4 w-4 text-primary" />
                   <span className="text-sm font-medium text-primary">Educational Learning Hub</span>
                 </div>
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-foreground pb-2">
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-foreground pb-2" aria-label="How Bitcoin Works">
                   How <span className="text-primary">Bitcoin</span> Works
                 </h1>
                 <p className="text-xl text-muted-foreground md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto">
@@ -376,7 +376,7 @@ export default function LearnPage() {
             </div>
           </section>
 
-          {/* How to Get <span className="text-primary">Bitcoin</span> Section */}
+          {/* How to Get Bitcoin Section */}
           <section className="py-16 md:py-20 lg:py-24 relative overflow-hidden">
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
@@ -507,7 +507,7 @@ export default function LearnPage() {
             </div>
           </section>
 
-          {/* How to Use <span className="text-primary">Bitcoin</span> Section */}
+          {/* How to Use Bitcoin Section */}
           <section className="py-16 md:py-20 lg:py-24 bg-background relative overflow-hidden">
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
@@ -721,7 +721,7 @@ export default function LearnPage() {
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold sm:text-4xl mb-4 text-foreground">
+                <h2 className="text-3xl font-bold sm:text-4xl mb-4 text-foreground" aria-label="Key Bitcoin Concepts">
                   Key <span className="text-primary">Bitcoin</span> Concepts
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

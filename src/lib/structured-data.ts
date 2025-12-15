@@ -41,14 +41,15 @@ const CONFIG = {
 
 // Regular expression for validating glossary term slugs
 // Allows only letters (a-z, A-Z), digits (0-9), underscore (_), period (.), tilde (~), and hyphen (-).
+// Restricts period (.) so it CANNOT occur as the first or last character.
 // Rationale:
 //   - Alphanumerics (a-z, A-Z, 0-9): universally safe and readable in URLs.
 //   - Hyphen (-) and underscore (_): commonly used for separating words for readability.
-//   - Period (.): sometimes used for names or version numbers, but safe as not at the start; not ambiguous in slugs.
+//   - Period (.): sometimes used for names or version numbers, but restricting it from the start/end avoids ambiguity with file extensions.
 //   - Tilde (~): URL-safe, occasionally used for personal pages or disambiguation.
 // Excludes characters such as slash (/), question mark (?), hash (#), and others that could interfere with URL parsing, routing, or introduce security issues.
 // Only these restricted characters are allowed to reduce the risk of path traversal, ambiguous URLs, or other potential security/file-system issues.
-const VALID_SLUG_PATTERN = /^[a-zA-Z0-9_.~-]+$/;
+const VALID_SLUG_PATTERN = /^[a-zA-Z0-9_~-](?:[a-zA-Z0-9_.~-]*[a-zA-Z0-9_~-])?$/;
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -177,7 +178,7 @@ export interface CombinedGlossarySchema {
  * @throws Error if the slug is invalid.
  */
 function getGlossaryTermUrl(term: string): string {
-  if (!term?.trim()) {
+  if (!term.trim()) {
     throw new Error('Invalid glossary term slug: must be a non-empty string');
   }
 
@@ -188,7 +189,7 @@ function getGlossaryTermUrl(term: string): string {
     );
   }
 
-  return `${CONFIG.glossary.baseUrl}/${encodeURIComponent(term)}`;
+  return `${CONFIG.glossary.baseUrl}/${term}`;
 }
 
 /**
@@ -216,17 +217,14 @@ function mapRelatedTermsToDefinedTerms(
     return [];
   }
 
-  return relatedTerms.reduce<DefinedTermObject[]>((acc, term) => {
-    const trimmedTerm = term.trim();
-    if (trimmedTerm && VALID_SLUG_PATTERN.test(trimmedTerm)) {
-      acc.push({
-        '@type': 'DefinedTerm',
-        name: formatSlugToTitle(trimmedTerm),
-        url: getGlossaryTermUrl(trimmedTerm),
-      });
-    }
-    return acc;
-  }, []);
+  return relatedTerms
+    .map((term) => term.trim())
+    .filter((trimmedTerm) => trimmedTerm && VALID_SLUG_PATTERN.test(trimmedTerm))
+    .map((trimmedTerm) => ({
+      '@type': 'DefinedTerm',
+      name: formatSlugToTitle(trimmedTerm),
+      url: getGlossaryTermUrl(trimmedTerm),
+    }));
 }
 
 // ============================================================================
@@ -241,7 +239,7 @@ export function generateDefinedTermSchema(
   term: string,
   meta: GlossaryTermMeta
 ): DefinedTermSchema {
-  return {
+  const definedTerm: Record<string, unknown> = {
     '@context': CONFIG.schema.context,
     '@type': 'DefinedTerm',
     name: meta.title,
@@ -254,13 +252,14 @@ export function generateDefinedTermSchema(
     },
     termCode: term,
     url: getGlossaryTermUrl(term),
-    ...(meta.category && {
-      about: {
-        '@type': 'Thing',
-        name: meta.category,
-      },
-    }),
   };
+  if (meta.category) {
+    definedTerm.about = {
+      '@type': 'Thing',
+      name: meta.category,
+    };
+  }
+  return definedTerm as unknown as DefinedTermSchema;
 }
 
 /**
