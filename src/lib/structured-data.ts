@@ -216,8 +216,8 @@ function sanitizeForLog(input: string): string {
   // Remove non-printable ASCII except newline and tab, and escape other dangerous chars
   const safe = input
     .replace(/[^\x20-\x7E\n\t]/g, '_')
-    .replace(/[\r\n\t]/g, ' ')   // flatten newlines/tabs to spaces
-    .replace(/'/g, "'");         // avoid breaking quoted error messages
+    .replace(/[\r\n\t]/g, ' ')   // flatten carriage returns/newlines/tabs to spaces
+    .replace(/'/g, "'");         // normalize quotes to avoid breaking quoted error messages
   // Truncate and indicate with ellipsis if too long
   return safe.length > 30 ? safe.slice(0, 27) + '...' : safe;
 }
