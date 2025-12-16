@@ -29,14 +29,21 @@ function sanitizeForLogGeneral(
   if (flattenWhitespace) {
     // Replace all \r, \n, \t with ' '
     sanitized = sanitized.replace(/[\r\n\t]+/g, ' ');
+    if (replaceNonPrintable) {
+      // All newlines/tabs are now spaces, so just filter for printable ASCII (space to ~)
+      sanitized = sanitized.replace(/[^\x20-\x7E]/g, '_');
+    } else {
+      sanitized = sanitized.replace(/[\x00-\x1F\x7F]/g, '');
+    }
   } else {
     // Only replace \r (CR) with ''
     sanitized = sanitized.replace(/\r/g, '');
-  }
-  if (replaceNonPrintable) {
-    sanitized = sanitized.replace(/[^\x20-\x7E\n\t]/g, '_'); // For short log, keep \n/\t if wanted
-  } else {
-    sanitized = sanitized.replace(/[\x00-\x1F\x7F]/g, ''); // Remove control chars
+    if (replaceNonPrintable) {
+      // Allow \n and \t to survive
+      sanitized = sanitized.replace(/[^\x20-\x7E\n\t]/g, '_'); // For logs where linebreaks/tabs are wanted
+    } else {
+      sanitized = sanitized.replace(/[\x00-\x1F\x7F]/g, '');
+    }
   }
   if (sanitized.length > maxLength) {
     sanitized = sanitized.slice(0, maxLength - 3) + '...';
@@ -255,18 +262,15 @@ export interface CombinedGlossarySchema {
 // ============================================================================
 
 /**
- * Sanitizes a string for safe logging: replaces control characters and truncates to 30 chars.
+ * Sanitizes a string for safe logging: replaces non-printable ASCII characters with "_",
+ * flattens whitespace (replacing linebreaks and tabs with spaces), and truncates to 30 characters.
  *
- * Security: This sanitization prevents log injection attacks and ensures that
- * control characters (such as newlines, tabs, and non-printable ASCII) cannot
- * disrupt, obscure, or forge log messages. By cleansing potentially untrusted input,
- * this helps protect log integrity and aids in reliable log analysis.
+ * Security: Prevents log injection attacks and ensures that control/non-printable characters
+ * (such as newlines, tabs, and non-printable ASCII) cannot disrupt or forge log messages,
+ * helping protect log integrity and aiding in analysis.
  *
  * @param input - The string to sanitize for logs.
- * @returns A sanitized, truncated string safe for error messages/logs.
- */
-/**
- * Short version: replaces non-printable ASCII with _, flattens whitespace, truncates to 30 chars.
+ * @returns A sanitized string: flattened, non-printable chars replaced, and truncated to 30 chars.
  */
 function sanitizeForLogShort(input: string): string {
   // Equivalent to previous logic: replace non-printable with _, flatten, max 30 characters.
@@ -350,12 +354,11 @@ function mapRelatedTermsToDefinedTerms(
   for (const term of relatedTerms) {
     const trimmedTerm = term.trim();
     if (!trimmedTerm) {
-      invalidTerms.push(trimmedTerm);
       continue;
     }
     let isValid: boolean;
     if (slugValidationCache.has(trimmedTerm)) {
-      isValid = slugValidationCache.get(trimmedTerm) ?? false;
+      isValid = slugValidationCache.get(trimmedTerm)!;
     } else {
       isValid = VALID_SLUG_PATTERN.test(trimmedTerm);
       slugValidationCache.set(trimmedTerm, isValid);
@@ -372,7 +375,7 @@ function mapRelatedTermsToDefinedTerms(
   }
 
   if (invalidTerms.length > 0) {
-    const invalidTermList = invalidTerms.join(', ');
+    const invalidTermList = sanitizeForLog(invalidTerms.join(', '), 500);
     const fullInputList = sanitizeForLog(relatedTerms.join(', '), 500);
     logWarning(
       `[mapRelatedTermsToDefinedTerms] Invalid related term slugs filtered: [${invalidTermList}]. Full input: [${fullInputList}]`
