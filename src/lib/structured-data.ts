@@ -202,12 +202,12 @@ function getGlossaryTermUrl(term: string): string {
   if (!VALID_SLUG_PATTERN.test(trimmedTerm)) {
     // Identify invalid characters for debugging
     const invalidChars = Array.from(trimmedTerm).filter(
-      (ch) => !ch.match(/[a-zA-Z0-9\-_.~]/)
+      (ch) => !ch.match(/[a-zA-Z0-9_.~-]/)
     );
     throw new Error(
       `Invalid characters in term slug '${trimmedTerm}'.`
       + (invalidChars.length
-        ? ` Invalid character(s): "${invalidChars.join('')}."`
+        ? ` Invalid character(s): "${invalidChars.join('')}"`
         : '')
       + ` Allowed: ${ALLOWED_SLUG_CHARACTERS_DESCRIPTION}.`
     );
