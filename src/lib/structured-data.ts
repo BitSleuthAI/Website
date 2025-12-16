@@ -201,6 +201,20 @@ export interface CombinedGlossarySchema {
 // ============================================================================
 
 /**
+ * Returns an error message with any invalid characters found in the slug, or an empty string.
+ * @param term - The term slug to check.
+ * @returns Message indicating which characters are invalid, or empty string.
+ */
+function getInvalidCharactersMessage(term: string): string {
+  const invalidChars = Array.from(term).filter(
+    (ch) => !ALLOWED_SLUG_CHAR_RE.test(ch)
+  );
+  return invalidChars.length
+    ? ` Invalid character(s): "${invalidChars.join('')}"`
+    : '';
+}
+
+/**
  * Return the glossary term URL for a given term slug.
  * @param term - The term slug to convert to a URL.
  * @returns The full URL for the glossary term.
@@ -217,14 +231,7 @@ function getGlossaryTermUrl(term: string): string {
     // Identify invalid characters for debugging
     throw new Error(
       `Invalid characters in term slug '${trimmedTerm}'.`
-      + (() => {
-          const invalidChars = Array.from(trimmedTerm).filter(
-            (ch) => !ALLOWED_SLUG_CHAR_RE.test(ch)
-          );
-          return invalidChars.length
-            ? ` Invalid character(s): "${invalidChars.join('')}"`
-            : '';
-        })()
+      + getInvalidCharactersMessage(trimmedTerm)
       + ` Allowed: ${ALLOWED_SLUG_CHARACTERS_DESCRIPTION}.`
     );
   }
@@ -240,11 +247,10 @@ function getGlossaryTermUrl(term: string): string {
 function formatSlugToTitle(slug: string): string {
   if (!slug?.trim()) return '';
 
-  return slug
-    .split(/[-_]/)
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ');
+  const words = slug.split(/[-_]/);
+  const filteredWords = words.filter(Boolean);
+  const capitalizedWords = filteredWords.map((part) => part.charAt(0).toUpperCase() + part.slice(1));
+  return capitalizedWords.join(' ');
 }
 
 /**
@@ -274,10 +280,10 @@ function mapRelatedTermsToDefinedTerms(
   }
 
   if (invalidTerms.length > 0) {
+    const invalidTermList = invalidTerms.join(', ');
+    const fullInputList = relatedTerms.join(', ');
     logWarning(
-      `[mapRelatedTermsToDefinedTerms] Invalid related term slugs filtered: [${invalidTerms.join(
-        ', '
-      )}]. Full input: [${relatedTerms.join(', ')}]`
+      `[mapRelatedTermsToDefinedTerms] Invalid related term slugs filtered: [${invalidTermList}]. Full input: [${fullInputList}]`
     );
   }
 
@@ -287,6 +293,22 @@ function mapRelatedTermsToDefinedTerms(
 // ============================================================================
 // SCHEMA GENERATORS
 // ============================================================================
+
+/**
+ * Creates an optional 'about' section for a schema based on the category.
+ * @param category - The category name, if provided.
+ * @returns An object with the 'about' property if category exists, otherwise an empty object.
+ */
+function createAboutSection(category?: string): { about?: ThingSchema } {
+  return category
+    ? {
+        about: {
+          '@type': 'Thing',
+          name: category,
+        },
+      }
+    : {};
+}
 
 /**
  * Generate DefinedTerm schema for a glossary term.
@@ -309,14 +331,7 @@ export function generateDefinedTermSchema(
     },
     termCode: term,
     url: getGlossaryTermUrl(term),
-    ...(meta.category
-      ? {
-          about: {
-            '@type': 'Thing',
-            name: meta.category,
-          },
-        }
-      : {}),
+    ...createAboutSection(meta.category),
   };
   return definedTerm;
 }
