@@ -227,14 +227,14 @@ function sanitizeForLog(input: string): string {
  * @returns Message indicating which characters are invalid, or empty string.
  */
 function getInvalidCharactersMessage(term: string): string {
-  let invalidChars = '';
+  const invalidChars: string[] = [];
   for (const ch of term) {
     if (!ALLOWED_SLUG_CHAR_RE.test(ch)) {
-      invalidChars += ch;
+      invalidChars.push(ch);
     }
   }
   return invalidChars.length
-    ? ` Invalid character(s): "${invalidChars}"`
+    ? ` Invalid character(s): "${invalidChars.join('')}"`
     : '';
 }
 
