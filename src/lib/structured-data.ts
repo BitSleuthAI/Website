@@ -6,6 +6,17 @@
 
 import { type GlossaryTermMeta } from './glossary-metadata';
 
+
+// Only log warnings in non-production environments
+function logWarning(message: string): void {
+  if (
+    typeof process !== 'undefined' &&
+    process.env &&
+    process.env.NODE_ENV !== 'production'
+  ) {
+    console.warn(message);
+  }
+}
 // ============================================================================
 // CONFIGURATION & CONSTANTS
 // ============================================================================
@@ -15,6 +26,9 @@ const BASE_URL = 'https://www.bitsleuth.ai';
 // Allowed: alphanumerics, hyphens, underscores, dots, tildes
 const ALLOWED_SLUG_CHARACTERS_DESCRIPTION =
   'alphanumerics, hyphens, underscores, dots, tildes';
+
+// Precompiled regex for a single allowed character in a slug
+const ALLOWED_SLUG_CHAR_RE = /^[a-zA-Z0-9_.~-]$/;
 
 const CONFIG = {
   organization: {
@@ -201,14 +215,16 @@ function getGlossaryTermUrl(term: string): string {
   // Strictly validate input before using encodeURIComponent to prevent injection attacks
   if (!VALID_SLUG_PATTERN.test(trimmedTerm)) {
     // Identify invalid characters for debugging
-    const invalidChars = Array.from(trimmedTerm).filter(
-      (ch) => !ch.match(/[a-zA-Z0-9_.~-]/)
-    );
     throw new Error(
       `Invalid characters in term slug '${trimmedTerm}'.`
-      + (invalidChars.length
-        ? ` Invalid character(s): "${invalidChars.join('')}"`
-        : '')
+      + (() => {
+          const invalidChars = Array.from(trimmedTerm).filter(
+            (ch) => !ALLOWED_SLUG_CHAR_RE.test(ch)
+          );
+          return invalidChars.length
+            ? ` Invalid character(s): "${invalidChars.join('')}"`
+            : '';
+        })()
       + ` Allowed: ${ALLOWED_SLUG_CHARACTERS_DESCRIPTION}.`
     );
   }
@@ -241,24 +257,31 @@ function mapRelatedTermsToDefinedTerms(
     return [];
   }
 
-  const trimmedTerms = relatedTerms.map((term) => term.trim());
-  const invalidTerms = trimmedTerms.filter(
-    (trimmedTerm) => !trimmedTerm || !VALID_SLUG_PATTERN.test(trimmedTerm)
-  );
+  const invalidTerms: string[] = [];
+  const definedTermObjects: DefinedTermObject[] = [];
+
+  for (const term of relatedTerms) {
+    const trimmedTerm = term.trim();
+    if (!trimmedTerm || !VALID_SLUG_PATTERN.test(trimmedTerm)) {
+      invalidTerms.push(trimmedTerm);
+      continue;
+    }
+    definedTermObjects.push({
+      '@type': 'DefinedTerm',
+      name: formatSlugToTitle(trimmedTerm),
+      url: getGlossaryTermUrl(trimmedTerm),
+    });
+  }
+
   if (invalidTerms.length > 0) {
-    console.warn(
+    logWarning(
       `[mapRelatedTermsToDefinedTerms] Invalid related term slugs filtered: [${invalidTerms.join(
         ', '
       )}]. Full input: [${relatedTerms.join(', ')}]`
     );
   }
-  return trimmedTerms
-    .filter((trimmedTerm) => trimmedTerm && VALID_SLUG_PATTERN.test(trimmedTerm))
-    .map((trimmedTerm) => ({
-      '@type': 'DefinedTerm',
-      name: formatSlugToTitle(trimmedTerm),
-      url: getGlossaryTermUrl(trimmedTerm),
-    }));
+
+  return definedTermObjects;
 }
 
 // ============================================================================
