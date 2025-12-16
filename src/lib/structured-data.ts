@@ -6,7 +6,6 @@
 
 import { type GlossaryTermMeta } from './glossary-metadata';
 
-
 // Internal logger abstraction; can be replaced with robust logging as needed
 const logger = {
   warn: (message: string) => {
