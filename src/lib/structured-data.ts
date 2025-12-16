@@ -215,6 +215,7 @@ export interface CombinedGlossarySchema {
 function sanitizeForLog(input: string): string {
   // Remove non-printable ASCII except newline and tab, and escape other dangerous chars
   const safe = input
+    // [^\x20-\x7E\n\t]: matches all non-printable ASCII except newline (\n) and tab (\t). (\x20-\x7E is space through tilde)
     .replace(/[^\x20-\x7E\n\t]/g, '_')
     .replace(/[\r\n\t]/g, ' ');  // flatten carriage returns/newlines/tabs to spaces
   // Truncate and indicate with ellipsis if too long
