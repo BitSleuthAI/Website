@@ -48,7 +48,7 @@ export default function DownloadPage() {
             img.src = src;
         });
 
-        // Fallback timeout to ensure redirect happens even if images take too long
+        // Fallback timeout to ensure redirect happens even if images take too long loading
         const timeoutId = setTimeout(() => {
             setImagesLoaded(true);
         }, 2000); // 2 second timeout
