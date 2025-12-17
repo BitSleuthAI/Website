@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
-import { MoveLeft } from "lucide-react"; // Changed icons
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { PrivacyPolicyModal } from '@/components/landing/PrivacyPolicyModal';
 import { TermsOfServiceModal } from '@/components/landing/TermsOfServiceModal';
@@ -99,7 +99,7 @@ export default function DownloadPage() {
                     <div className="pt-8">
                         <Button asChild size="lg" className="gap-2 bg-primary hover:bg-primary/90 text-white border-none shadow-md">
                             <Link href="/">
-                                <MoveLeft className="h-4 w-4" /> Return to Website
+                                <ArrowLeft className="mr-2 h-5 w-5" /> Return to Home
                             </Link>
                         </Button>
                     </div>
