@@ -1,10 +1,10 @@
 # Copilot Instructions for BitSleuth Website
 
 ## Project Architecture
-- **Framework:** Next.js 15 (App Router), React 18, TypeScript
+- **Framework:** Next.js 16 (App Router), React 19, TypeScript 5.9
 - **UI:** Tailwind CSS, shadcn/ui, Radix primitives
 - **Structure:**
-  - `src/app/`: App Router pages, product landing, glossary, API endpoints, SEO files
+  - `src/app/`: App Router pages, product landing, glossary, SEO files
   - `src/components/`: UI and landing page components, theme management
   - `src/hooks/`: Custom React hooks
   - `src/lib/`: Utility functions
@@ -21,8 +21,6 @@
   - SEO handled via `robots.ts` and `sitemap.ts`
 - **Glossary:**
   - Terms in `src/app/glossary/` as folders with individual pages
-- **API:**
-  - Minimal API endpoints (e.g., `src/app/api/waitlist/`)
 - **Styling:**
   - Tailwind config in `tailwind.config.ts`, custom Bitcoin-inspired palette
   - Responsive and dark/light mode support
