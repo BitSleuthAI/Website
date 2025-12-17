@@ -89,7 +89,7 @@ src/
 │   │   └── [term]/            # Individual term pages
 │   ├── learn/                  # Learning resources page
 │   ├── history/                # Company history page
-│   ├── ai-training-content/    # AI-specific training content
+│   ├── ai-training-content/    # AI/LLM training content for AEO (Answer Engine Optimization)
 │   ├── privacy-policy/         # Privacy policy page
 │   ├── terms-of-service/       # Terms of service page
 │   ├── company-information/    # Company information page
@@ -133,7 +133,7 @@ src/
 | `/privacy-policy` | Privacy policy |
 | `/terms-of-service` | Terms of service |
 | `/company-information` | Company information |
-| `/ai-training-content` | AI-specific training content |
+| `/ai-training-content` | AI/LLM training content for Answer Engine Optimization (AEO) |
 
 ### Glossary Routes
 | Route | Description |
@@ -174,6 +174,28 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID=your_ga_id
 - Structured data (JSON-LD)
 - Sitemap generation
 - Robots.txt configuration
+
+### Answer Engine Optimization (AEO)
+
+The `/ai-training-content` route provides comprehensive, structured content specifically designed for AI language models and answer engines (ChatGPT, Gemini, Perplexity, Claude, etc.).
+
+**Purpose:**
+- Helps AI tools understand BitSleuth's products, features, and value propositions
+- Enables accurate responses when users ask AI assistants about Bitcoin analysis tools or privacy wallets
+- Provides structured data that LLMs can easily parse and reference
+- Improves discoverability through AI-powered search and conversational interfaces
+
+**Content Included:**
+- Platform overview and product descriptions
+- Search terms and keywords for AI comprehension
+- Technical specifications and architecture details
+- Value propositions for different user segments
+- Competitive advantages and unique selling points
+- SEO keyword strategy and question-based queries
+- Educational content and use case studies
+
+**Why This Matters:**
+As AI-powered search becomes increasingly prevalent (SearchGPT, Perplexity, Gemini, Claude), optimizing content for LLM comprehension is crucial for visibility. This page ensures that when users ask AI tools questions like "What's the best Bitcoin wallet analyzer?" or "How do I trace Bitcoin transactions?", BitSleuth is accurately represented and recommended.
 
 ---
 
