@@ -25,10 +25,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/wallet/coming-soon`,
+      url: `${baseUrl}/wallet/download`,
       lastModified: new Date(),
-      changeFrequency: 'daily' as const,
-      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/learn`,
@@ -77,7 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dynamically read all glossary terms from the filesystem
   const glossaryPath = path.join(process.cwd(), 'src', 'app', 'glossary');
   let glossaryTerms: string[] = [];
-  
+
   try {
     const entries = fs.readdirSync(glossaryPath, { withFileTypes: true });
     glossaryTerms = entries

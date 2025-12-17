@@ -132,7 +132,7 @@ export function Header({ basePath = '' }: HeaderProps) {
               </a>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href="/wallet/coming-soon" className="w-full cursor-pointer">
+              <Link href="/wallet/download" className="w-full cursor-pointer">
                 <div className="flex items-start gap-3">
                   <Lock className="h-5 w-5 mt-0.5 text-primary" />
                   <div>
@@ -141,6 +141,7 @@ export function Header({ basePath = '' }: HeaderProps) {
                 </div>
               </Link>
             </DropdownMenuItem>
+
           </DropdownMenuContent>
         </DropdownMenu>
 
@@ -186,10 +187,11 @@ export function Header({ basePath = '' }: HeaderProps) {
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/wallet/coming-soon" className="w-full font-medium">
+                  <Link href="/wallet/download" className="w-full font-medium">
                     Privacy Wallet
                   </Link>
                 </DropdownMenuItem>
+
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
