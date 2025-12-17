@@ -89,7 +89,10 @@ When creating new documentation (guides, specifications, strategies, etc.), alwa
    ```bash
    npm run typecheck  # Check TypeScript types
    npm run lint       # Run ESLint
+   npm run test       # Run Vitest tests
    npm run build      # Ensure production build works
+   # Or run all checks at once:
+   npm run ci         # Full CI pipeline (lint + typecheck + test + build)
    ```
 
 4. **Commit Your Changes:**
@@ -145,6 +148,23 @@ When creating new documentation (guides, specifications, strategies, etc.), alwa
 
 ## 🧪 Testing
 
+### Automated Testing
+
+The project uses **Vitest** for unit and integration testing.
+
+```bash
+npm run test        # Run all tests
+npm run typecheck   # TypeScript type checking
+npm run lint        # ESLint code quality checks
+npm run ci          # Full CI pipeline (lint + typecheck + test + build)
+```
+
+**Writing Tests:**
+- Place test files next to the code they test (e.g., `utils.ts` → `utils.test.ts`)
+- Use descriptive test names that explain what is being tested
+- Follow existing test patterns in `/src/lib/` for examples
+- Ensure tests are deterministic and don't depend on external services
+
 ### Manual Testing Checklist
 
 Before submitting a pull request, verify:
@@ -158,6 +178,7 @@ Before submitting a pull request, verify:
 - [ ] No console errors or warnings in browser
 - [ ] TypeScript type checking passes (`npm run typecheck`)
 - [ ] ESLint passes (`npm run lint`)
+- [ ] All automated tests pass (`npm run test`)
 - [ ] Production build succeeds (`npm run build`)
 
 ### Performance Testing

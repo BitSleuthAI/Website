@@ -2,14 +2,14 @@
 
 > **Bitcoin Wallet Analysis & Privacy Tools**
 
-BitSleuth is a comprehensive Next.js 16 website that serves as the primary marketing and educational hub for Bitcoin analysis tools. The platform includes product landing pages for a Bitcoin wallet analyzer and Bitcoin wallet app, as well as an extensive educational glossary, SEO optimization, and privacy-compliant analytics.
+BitSleuth is a comprehensive Next.js 16.0 website that serves as the primary marketing and educational hub for Bitcoin analysis tools. The platform includes product landing pages for a Bitcoin wallet analyzer and Bitcoin wallet app, as well as an extensive educational glossary, SEO optimization, and privacy-compliant analytics.
 
 **🌐 Production:** [https://www.bitsleuth.ai](https://www.bitsleuth.ai)
 
 ## ✨ Key Features
 
 - **🎯 Multi-Product Landing Pages**: Dedicated pages for BitSleuth Analyzer (`/analyzer`) and BitSleuth Wallet (`/wallet`) with comprehensive feature showcases
-- **📚 Educational Glossary**: Interactive Bitcoin terminology guide with 15+ terms and detailed explanations
+- **📚 Educational Glossary**: Interactive Bitcoin terminology guide with 44 terms and detailed explanations
 - **🔍 SEO Optimized**: Custom robots.txt, sitemap, and metadata for maximum search engine visibility
 - **🍪 Privacy Compliant**: Cookie consent system with Google Analytics gating
 - **🎨 Modern UI**: Tailwind CSS + shadcn/ui + Radix primitives with light/dark theme support
@@ -19,7 +19,7 @@ BitSleuth is a comprehensive Next.js 16 website that serves as the primary marke
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 16 (App Router), React 19, TypeScript 5
+- **Framework**: Next.js 16.0.10 (App Router), React 19.2, TypeScript 5.9
 - **Styling**: Tailwind CSS, shadcn/ui, Radix primitives
 - **UX**: Embla Carousel, Lucide icons
 - **SEO**: App Router metadata routes (`robots.ts`, `sitemap.ts`)
@@ -39,15 +39,15 @@ BitSleuth is a comprehensive Next.js 16 website that serves as the primary marke
 
 1. **Clone and Install:**
    ```bash
-   git clone https://github.com/your-org/bitsleuth-website.git
+   git clone https://github.com/BitSleuthAI/Website.git
    cd Website
    npm install
    ```
 
-2. **Environment Setup:**
+2. **Environment Setup (Optional):**
    ```bash
-   cp .env.example .env.local
-   # Add your environment variables
+   # Create .env.local if you need to configure environment variables
+   # See Configuration section below for available variables
    ```
 
 3. **Start Development Server:**
@@ -58,11 +58,13 @@ BitSleuth is a comprehensive Next.js 16 website that serves as the primary marke
 
 4. **Available Scripts:**
    ```bash
-   npm run dev          # Development server with Turbopack
+   npm run dev          # Development server with Turbopack (port 9002)
    npm run build        # Production build
    npm run start        # Production server
    npm run lint         # ESLint checking
    npm run typecheck    # TypeScript type checking
+   npm run test         # Run Vitest tests
+   npm run ci           # Full CI pipeline (lint + typecheck + test + build)
    ```
 
 ### Code Quality
@@ -77,38 +79,78 @@ BitSleuth is a comprehensive Next.js 16 website that serves as the primary marke
 
 ```
 src/
-├── app/                    # Next.js App Router
-│   ├── page.tsx           # Homepage
-│   ├── analyzer/          # Analyzer product page
-│   ├── wallet/            # Wallet product page
-│   ├── glossary/          # Educational glossary
-│   ├── api/waitlist/      # Waitlist signup API endpoint
-│   ├── layout.tsx         # Root layout
-│   ├── robots.ts          # SEO robots.txt
-│   ├── sitemap.ts         # SEO sitemap
-│   └── actions.ts         # Server actions
+├── app/                         # Next.js App Router
+│   ├── page.tsx                # Homepage
+│   ├── analyzer/               # Analyzer product page
+│   ├── wallet/                 # Wallet product page
+│   │   └── download/           # Wallet download page
+│   ├── glossary/               # Educational glossary (44 terms)
+│   │   ├── page.tsx           # Glossary index
+│   │   └── [term]/            # Individual term pages
+│   ├── learn/                  # Learning resources page
+│   ├── history/                # Company history page
+│   ├── ai-training-content/    # AI-specific training content
+│   ├── privacy-policy/         # Privacy policy page
+│   ├── terms-of-service/       # Terms of service page
+│   ├── company-information/    # Company information page
+│   ├── layout.tsx              # Root layout
+│   ├── robots.ts               # SEO robots.txt
+│   ├── sitemap.ts              # SEO sitemap
+│   ├── actions.ts              # Server actions
+│   └── globals.css             # Global styles
 ├── components/
-│   ├── landing/           # Landing page components
-│   ├── ui/                # shadcn/ui components
-│   └── theme-provider.tsx # Theme management
-├── hooks/                 # Custom React hooks
-└── lib/                   # Utility functions
+│   ├── landing/                # Landing page components (27 components)
+│   ├── glossary/               # Glossary-specific components
+│   ├── ui/                     # shadcn/ui components (40+ components)
+│   ├── theme-provider.tsx      # Theme management
+│   └── ThemeToggle.tsx         # Theme toggle component
+├── hooks/                      # Custom React hooks
+│   ├── use-mobile.tsx          # Mobile detection hook
+│   └── use-toast.ts            # Toast notifications hook
+├── lib/                        # Utility functions
+│   ├── utils.ts                # General utilities
+│   ├── glossary-metadata.ts    # Glossary metadata helpers
+│   ├── structured-data.ts      # SEO structured data
+│   └── rate-limit.ts           # Rate limiting utilities
+└── public/                     # Static assets
+    ├── images/                 # Image assets
+    └── documents/              # Document assets
 ```
 
 ---
 
 ## 🎯 Available Routes
 
+### Main Pages
 | Route | Description |
 |-------|-------------|
 | `/` | Homepage with overview |
 | `/analyzer` | Bitcoin wallet analyzer product page |
 | `/wallet` | Bitcoin wallet app product page |
-| `/glossary` | Bitcoin terminology index |
-| `/glossary/[term]` | Individual glossary term pages |
+| `/wallet/download` | Wallet download page |
+| `/learn` | Learning resources and educational content |
+| `/history` | Company history and background |
 | `/privacy-policy` | Privacy policy |
 | `/terms-of-service` | Terms of service |
 | `/company-information` | Company information |
+| `/ai-training-content` | AI-specific training content |
+
+### Glossary Routes
+| Route | Description |
+|-------|-------------|
+| `/glossary` | Bitcoin terminology index with 44 terms |
+| `/glossary/[term]` | Individual glossary term pages |
+
+**Available glossary terms:**
+- Basic Concepts: `address`, `bitcoin`, `btc`, `bit`, `wallet`, `private-key`, `signature`, `cryptography`
+- Blockchain: `blockchain`, `block`, `mining`, `hash-rate`, `mempool`, `confirmation`, `utxo`
+- Transactions: `transaction-privacy`, `psbt`, `rbf`, `cpfp`, `double-spend`, `dust-limit`, `fee-rate`, `coin-selection`
+- Bitcoin Improvement Proposals: `bip32`, `bip39`, `bip44`
+- Privacy & Security: `coinjoin`, `payjoin`, `silent-payments`, `passphrase`
+- Script & Locking: `scriptpubkey-scriptsig`, `csv`, `cltv`, `htlc`, `miniscript`
+- Advanced Features: `segwit`, `taproot`, `schnorr-signature`, `descriptor-wallet`
+- Layer 2: `lightning-network`, `sidechain`, `splicing`
+- Network: `p2p`, `merkle-tree`
 
 ---
 
@@ -137,19 +179,37 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID=your_ga_id
 
 ## 🧪 Testing
 
+### Automated Testing
+The project uses **Vitest** for unit and integration testing.
+
+```bash
+npm run test        # Run all tests
+npm run typecheck   # TypeScript type checking
+npm run lint        # ESLint code quality checks
+npm run ci          # Full CI pipeline (lint + typecheck + test + build)
+```
+
+**Current Test Coverage:**
+- `/src/lib/structured-data.test.ts` - SEO structured data generation
+- `/src/lib/rate-limit.test.ts` - Rate limiting utilities
+
 ### Manual Testing Checklist
-- [ ] All routes load correctly
-- [ ] Responsive design on mobile/tablet/desktop
-- [ ] Dark/light theme toggle works
-- [ ] Cookie consent banner functions
-- [ ] Analytics tracking (with consent)
-- [ ] SEO metadata displays correctly
+Before deploying, verify:
+- [ ] All routes load correctly (homepage, analyzer, wallet, glossary, etc.)
+- [ ] Responsive design on mobile/tablet/desktop viewports
+- [ ] Dark/light theme toggle functions properly
+- [ ] Cookie consent banner displays and functions correctly
+- [ ] Analytics tracking works (with proper consent gating)
+- [ ] SEO metadata displays correctly (check page source)
+- [ ] All glossary terms are accessible and load properly
+- [ ] Navigation between pages works smoothly
 
 ### Performance Testing
-- Lighthouse scores
-- Core Web Vitals
-- Image optimization
-- Bundle size analysis
+Use the following tools to ensure optimal performance:
+- **Lighthouse**: Run audits for performance, accessibility, best practices, and SEO
+- **Core Web Vitals**: Monitor LCP, FID, and CLS metrics
+- **Image Optimization**: Verify all images are optimized and properly sized
+- **Bundle Size Analysis**: Check JavaScript bundle sizes remain optimal
 
 ---
 
@@ -191,7 +251,7 @@ npm run build
 
 ## 🤝 Contributing
 
-We welcome contributions to the BitSleuth Website! Please read our [CONTRIBUTING.md](docs/CONTRIBUTING.md) for detailed guidelines on:
+We welcome contributions to the BitSleuth Website! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on:
 
 - 📚 **Documentation Organization**: All markdown documentation files must be stored in the `docs/` folder
 - 🚀 Getting started with development
@@ -210,7 +270,7 @@ We welcome contributions to the BitSleuth Website! Please read our [CONTRIBUTING
 
 **Documentation Files**: All markdown documentation files (e.g., `.md` files) should be stored in the `docs/` folder for consistency and easy discovery
 
-For complete guidelines, see [CONTRIBUTING.md](docs/CONTRIBUTING.md).
+For complete guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
@@ -221,11 +281,13 @@ For complete guidelines, see [CONTRIBUTING.md](docs/CONTRIBUTING.md).
 
 ### Active Documentation
 Current, relevant documentation for development:
-- **PRD**: `docs/PRD.md` - Product Requirements Document
-- **Implementation History**: `docs/IMPLEMENTATION_HISTORY.md` - Consolidated history of completed work and current state
-- **SEO Strategy**: `docs/SEO_STRATEGY.md` - SEO optimization guide and ongoing strategy
-- **MCP Server**: `docs/MCP_SERVER.md` - Model Context Protocol server configuration
-- **Visual Recommendations**: `docs/todo.md` - UI/UX improvement suggestions
+- **Contributing Guidelines**: [`CONTRIBUTING.md`](CONTRIBUTING.md) - How to contribute to the project (located in root)
+- **Product Requirements**: [`docs/PRD.md`](docs/PRD.md) - Product Requirements Document with objectives and roadmap
+- **Implementation History**: [`docs/IMPLEMENTATION_HISTORY.md`](docs/IMPLEMENTATION_HISTORY.md) - Consolidated history of completed work and current state
+- **SEO Strategy**: [`docs/SEO_STRATEGY.md`](docs/SEO_STRATEGY.md) - SEO optimization guide and ongoing strategy
+- **MCP Server**: [`docs/MCP_SERVER.md`](docs/MCP_SERVER.md) - Model Context Protocol server configuration for AI agents
+- **Security**: [`docs/SECURITY_AUDIT.md`](docs/SECURITY_AUDIT.md) and [`docs/SECURITY_IMPROVEMENTS.md`](docs/SECURITY_IMPROVEMENTS.md) - Security documentation
+- **Visual Recommendations**: [`docs/todo.md`](docs/todo.md) - UI/UX improvement suggestions and future enhancements
 
 ### Historical Documentation
 Completed implementations are documented in `docs/archive/` for reference:
