@@ -13,8 +13,8 @@
 ## Tech Stack
 
 ### Core Technologies
-- **Framework:** Next.js 16.0.1 (App Router)
-- **Language:** TypeScript 5.x (strict mode enabled)
+- **Framework:** Next.js 16.0.10 (App Router)
+- **Language:** TypeScript 5.9.3 (strict mode enabled)
 - **Runtime:** React 19.2.0
 - **Node.js:** 18+ (20+ recommended)
 
@@ -28,7 +28,6 @@
 ### Backend & Integration
 - **Hosting:** Firebase App Hosting
 - **Analytics:** Google Analytics 4 (consent-gated)
-- **Database:** Google Sheets API for waitlist management
 - **Forms:** React Hook Form + Zod validation
 
 ### Development Tools
@@ -57,7 +56,7 @@
 │   │   ├── globals.css           # Global styles
 │   │   ├── analyzer/             # Analyzer product landing page
 │   │   ├── wallet/               # Wallet product landing page
-│   │   │   └── coming-soon/      # Wallet coming soon preview page
+│   │   │   └── download/         # Wallet download page
 │   │   ├── learn/                # Bitcoin education and learning hub
 │   │   ├── history/              # Complete history of Bitcoin page
 │   │   ├── glossary/             # Bitcoin terminology guide (44 terms)
@@ -98,7 +97,7 @@
 ### Product Landing Pages
 - **Analyzer Page** (`/analyzer`): Bitcoin wallet analysis tool showcase
 - **Wallet Page** (`/wallet`): Privacy-focused Bitcoin wallet app
-- **Wallet Coming Soon** (`/wallet/coming-soon`): Preview page for upcoming wallet features
+- **Wallet Download** (`/wallet/download`): Wallet download page
 - Interactive hero sections with address input
 - Feature showcases, FAQs, testimonials, pricing
 
@@ -243,9 +242,6 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID=your_ga_measurement_id
 ### Production Variables (Firebase App Hosting)
 Set in Firebase console via `apphosting.prd.yaml`:
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID` - Google Analytics tracking
-- `GOOGLE_SHEETS_ID_FEEDBACK` - Feedback form storage
-- `GOOGLE_SHEETS_CLIENT_EMAIL` - Sheets API auth
-- `GOOGLE_SHEETS_PRIVATE_KEY` - Sheets API private key
 
 ---
 
@@ -256,7 +252,7 @@ Set in Firebase console via `apphosting.prd.yaml`:
 | `/` | Homepage | Overview, hero, features |
 | `/analyzer` | Analyzer product page | Features, demo, pricing, FAQ |
 | `/wallet` | Wallet product page | Security, features, waitlist |
-| `/wallet/coming-soon` | Wallet preview page | Coming soon features and waitlist |
+| `/wallet/download` | Wallet download page | Download information and links |
 | `/learn` | Bitcoin education hub | Fundamentals, getting started, advanced topics |
 | `/history` | Bitcoin history page | Complete timeline from 2008 to present |
 | `/glossary` | Glossary index | 44 Bitcoin terminology entries |
@@ -487,11 +483,6 @@ npm install
 ### BitSleuth App Integration
 - Analyzer redirects to: `https://app.bitsleuth.ai/address/{address}`
 - Seamless handoff from marketing site to analysis tool
-
-### Google Sheets API
-- Waitlist email collection via `/api/waitlist`
-- Requires service account credentials
-- Configured in Firebase App Hosting
 
 ### Firebase App Hosting
 - Automated deployment pipeline
