@@ -607,7 +607,7 @@ export function generateLearningResourceSchema(
 
 /**
  * Generate combined schema with multiple types.
- * Provides maximum context to AI search engines.
+ * Provides maximum context to AI search engines like ChatGPT.
  */
 export function generateCombinedGlossarySchema(
   term: string,
