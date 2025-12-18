@@ -13,9 +13,13 @@ Based on my analysis of your BitSleuth website, I can see it's a well-structured
 ### **🎨 Design & Aesthetics**
 
 1. **Enhanced Color Palette**
-   - Your purple primary color (#8B5CF6) works well, but consider adding Bitcoin-inspired accent colors
-   - Add subtle orange/gold accents (#F7931A) for Bitcoin references
-   - Consider a secondary color for wallet features (green for security, blue for privacy)
+   - Primary color is vibrant Bitcoin orange (#FD8B3B / hsl(27 96% 61%)) - warmer, more vibrant orange that strongly represents Bitcoin
+   - Color scheme features Bitcoin-inspired gradients from orange to dark for headings and emphasis
+   - Secondary colors use neutral grays for backgrounds and cards, maintaining focus on the orange brand color
+   - Consider expanding palette with complementary accent colors if needed:
+     - Subtle gold/amber tones for additional Bitcoin references
+     - Green for security/success indicators
+     - Blue for privacy/trust signals
 
 2. **Typography Improvements**
    - The gradient text titles are great, but consider adding more visual hierarchy
