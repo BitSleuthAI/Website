@@ -61,10 +61,12 @@ export default function DownloadPage() {
         if (!imagesLoaded) return;
 
         // Smart redirection for mobile devices
-        const userAgent =
-          navigator.userAgent ||
-          navigator.vendor ||
-          (typeof window !== "undefined" && "opera" in window ? String((window as any).opera) : '');
+        const operaUserAgent =
+          typeof window !== "undefined" && "opera" in window
+            ? String((window as Window & { opera?: unknown }).opera ?? '')
+            : '';
+
+        const userAgent = navigator.userAgent || navigator.vendor || operaUserAgent;
 
         // iOS detection
         if (/iPad|iPhone|iPod/.test(userAgent)) {

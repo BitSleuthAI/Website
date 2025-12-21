@@ -23,6 +23,18 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         headers: [
           {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "img-src 'self' data: https:",
+              "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com",
+              "font-src 'self' data: https://fonts.gstatic.com",
+              "frame-ancestors 'self'",
+            ].join('; '),
+          },
+          {
             key: 'X-DNS-Prefetch-Control',
             value: 'on'
           },

@@ -33,9 +33,6 @@ export async function handleContactSubmit(
         };
     }
     
-    // Simulate sending email
-    console.log("Contact Form Submitted:");
-    console.log(validatedFields.data);
-
+    // Simulate sending email without logging sensitive user data
     return { message: "Your message has been sent successfully!" };
 }
