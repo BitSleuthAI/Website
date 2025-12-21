@@ -7,7 +7,7 @@
 import { type GlossaryTermMeta } from './glossary-metadata';
 
 // Define allowed slug separators RegExp (hyphen, underscore, period) for universal use.
-const SLUG_SEPARATOR_RE = /[-_.]/;
+const SLUG_SEPARATOR_REGEX = /[-_.]/;
 
 // Sanitizes strings for safe logging by escaping linebreaks and truncating.
 /**
@@ -129,9 +129,9 @@ function describeAllowedSlugChars(chars: string): string {
   let working = chars;
 
   // Regex for x-y, but not escaped hyphens
-  const rangeRe = /([a-zA-Z0-9])-([a-zA-Z0-9])/g;
+  const RANGE_REGEX = /([a-zA-Z0-9])-([a-zA-Z0-9])/g;
   let match;
-  while ((match = rangeRe.exec(chars)) !== null) {
+  while ((match = RANGE_REGEX.exec(chars)) !== null) {
     const start = match[1], end = match[2];
     ranges.push({start, end});
     // Remove only this found range, to leave any literal hyphens
@@ -159,7 +159,7 @@ function describeAllowedSlugChars(chars: string): string {
 const ALLOWED_SLUG_CHARACTERS_DESCRIPTION = describeAllowedSlugChars(ALLOWED_CHARS);
 
 // Precompiled regex for a single allowed character in a slug
-const ALLOWED_SLUG_CHAR_RE = new RegExp(`^[${ALLOWED_CHARS}]$`);
+const ALLOWED_SLUG_CHAR_REGEX = new RegExp(`^[${ALLOWED_CHARS}]$`);
 
 const CONFIG = {
   organization: {
@@ -377,7 +377,7 @@ function getGlossaryTermUrl(term: string): string {
     // Identify invalid characters in a single loop for debugging
     const invalidChars: string[] = [];
     for (const ch of trimmedTerm) {
-      if (!ALLOWED_SLUG_CHAR_RE.test(ch)) {
+      if (!ALLOWED_SLUG_CHAR_REGEX.test(ch)) {
         invalidChars.push(ch);
       }
     }
@@ -399,21 +399,28 @@ function getGlossaryTermUrl(term: string): string {
  * @returns The Title Case version of the slug.
  */
 function formatSlugToTitle(slug: string): string {
-  if (!slug?.trim()) return '';
+  const trimmedSlug = slug?.trim();
+  if (!trimmedSlug) return '';
 
-  // Check if slug contains separators
-  const hasSeparator = SLUG_SEPARATOR_RE.test(slug);
+  const len = trimmedSlug.length;
+
+  // For very short slugs, avoid regex checks and just use length/digit heuristics.
+  // This also treats common acronyms like "btc", "utxo", "p2p" as uppercase.
+  if (len <= 4 || /\d/.test(trimmedSlug)) {
+    return trimmedSlug.toUpperCase();
+  }
+
+  // Check if slug contains separators for longer slugs
+  const hasSeparator = SLUG_SEPARATOR_REGEX.test(trimmedSlug);
   
-  // If it's a single word (no separators) and either:
-  // 1. Contains a digit (bip32, bip39, etc.), OR
-  // 2. Is 4 characters or less (p2p, btc, utxo, etc.)
-  // Then uppercase the entire slug (it's likely an acronym)
-  if (!hasSeparator && (slug.length <= 4 || /\d/.test(slug))) {
-    return slug.toUpperCase();
+  // If it's a single word (no separators) that's not an acronym candidate,
+  // return it in Title Case.
+  if (!hasSeparator) {
+    return trimmedSlug.charAt(0).toUpperCase() + trimmedSlug.slice(1).toLowerCase();
   }
 
   // Otherwise, split by separators and apply proper Title Case
-  const words = slug.split(SLUG_SEPARATOR_RE);
+  const words = trimmedSlug.split(SLUG_SEPARATOR_REGEX);
   const filteredWords = words.filter(Boolean);
   const titleCaseWords = filteredWords.map((part) => {
     return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
