@@ -1,11 +1,11 @@
 ---
-Title: Visual Recommendations for BitSleuth Website
+Title: Todo: Visual Recommendations for BitSleuth Website
 Author: BitSleuth Team
 Created: 2025-01-01
 Version: 1.0
 Status: Draft
 ---
-# Visual Recommendations for BitSleuth Website
+# Todo: Visual Recommendations for BitSleuth Website
 
 ## Conversation Summary
 
@@ -20,7 +20,9 @@ Based on my analysis of your BitSleuth website, I can see it's a well-structured
 ### **🎨 Design & Aesthetics**
 
 1. **Enhanced Color Palette**
-   - Primary color is vibrant Bitcoin orange (#FD8B3B / hsl(27 96% 61%)) - warmer, more vibrant orange that strongly represents Bitcoin. When used for text or key UI elements, ensure it achieves at least a WCAG 2.1 AA contrast ratio (4.5:1 for normal text, 3:1 for large text and UI components) against its background.
+   - Primary color is vibrant Bitcoin orange – a warmer, more vibrant orange that strongly represents Bitcoin. 
+     Hex: `#FD8B3B`, HSL: `hsl(27 96% 61%)`. 
+     When used for text or key UI elements, ensure it achieves at least a WCAG 2.1 AA contrast ratio (4.5:1 for normal text, 3:1 for large text and UI components) against its background.
    - Color scheme features Bitcoin-inspired gradients from orange to dark for headings and emphasis
    - Secondary colors use neutral grays for backgrounds and cards, maintaining focus on the orange brand color
    - Consider expanding palette with complementary accent colors if needed:
@@ -107,13 +109,13 @@ Based on my analysis of your BitSleuth website, I can see it's a well-structured
 
 Here are some immediate, high-impact improvements you could prioritize first:
 
-1. **Add Bitcoin-themed icons** throughout the site  
+1. **Add Bitcoin-themed icons** throughout the site
    - Impact: High (stronger branding and clearer visual language)  
    - Effort: Low–Medium (swap existing generic icons where they already exist)
-2. **Include a live demo or sample analysis on the homepage**  
+2. **Include a live demo or sample analysis on the homepage**
    - Impact: Very High (lets users experience value immediately)  
    - Effort: Medium (reuse existing analyzer flow with prefilled sample data)
-3. **Add testimonials and usage metrics** from users or security experts  
+3. **Add testimonials and usage metrics** from users or security experts
    - Impact: Very High (boosts trust and credibility)  
    - Effort: Low (start with a few quotes and basic metrics)
 4. **Implement clearer hover/focus states** for interactive elements  

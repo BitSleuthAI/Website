@@ -64,16 +64,19 @@ function sanitizeForLog(input: string, maxLength = 1000): string {
 const slugValidationCache: Map<string, boolean> = new Map();
 
 // Internal logger abstraction; can be replaced with robust logging as needed
+// Internal warn logger function (can be replaced for production)
+function defaultWarnLogger(message: string) {
+  if (
+    typeof process !== 'undefined' &&
+    process.env &&
+    process.env.NODE_ENV !== 'production'
+  ) {
+    console.warn(message);
+  }
+}
+
 const logger = {
-  warn: (message: string) => {
-    if (
-      typeof process !== 'undefined' &&
-      process.env &&
-      process.env.NODE_ENV !== 'production'
-    ) {
-      console.warn(message);
-    }
-  },
+  warn: defaultWarnLogger,
 };
 
 // Only log warnings in non-production environments using internal logger
@@ -92,41 +95,46 @@ const EDGE_CHARS = 'a-zA-Z0-9_~-';     // allowed at start/end (excluding period
 
 // Description of allowed characters (derived from the constants above)
 // Parse the character class string and generate a human-readable description
+/**
+ * Describes allowed slug characters from a character-class string (e.g., 'a-zA-Z0-9_.~-').
+ * This function is generic: it will correctly handle any combination of ranges or literals,
+ * but will not interpret POSIX character classes, regex escapes, or multi-char symbols.
+ * @param chars Character-class string, e.g. 'a-zA-Z0-9_.~-'
+ * @returns Human-readable description of allowed characters
+ */
 function describeAllowedSlugChars(chars: string): string {
-  // For the expected format 'a-zA-Z0-9_.~-', parse character ranges and individual chars
-  // This implementation is tailored to the specific ALLOWED_CHARS format used in this module
+  // Find all x-y ranges, e.g. 'a-z', '0-9'
   const parts: string[] = [];
-  
-  // Match character ranges like 'a-z', 'A-Z', '0-9'
-  // Use a more specific pattern that handles the known format
-  const rangeMatches = chars.match(/([a-zA-Z0-9])-([a-zA-Z0-9])/g);
-  if (rangeMatches) {
-    for (const range of rangeMatches) {
-      const [start, end] = range.split('-');
-      if (start === 'a' && end === 'z') parts.push('lowercase letters (a-z)');
-      else if (start === 'A' && end === 'Z') parts.push('uppercase letters (A-Z)');
-      else if (start === '0' && end === '9') parts.push('digits (0-9)');
-      else parts.push(`range (${range})`);
-    }
+  const ranges: Array<{start: string, end: string}> = [];
+  let working = chars;
+
+  // Regex for x-y, but not escaped hyphens
+  const rangeRe = /([a-zA-Z0-9])-([a-zA-Z0-9])/g;
+  let match;
+  while ((match = rangeRe.exec(chars)) !== null) {
+    const start = match[1], end = match[2];
+    ranges.push({start, end});
+    // Remove only this found range, to leave any literal hyphens
+    working = working.replace(match[0], '');
   }
-  
-  // Match individual special characters (non-range characters)
-  // Remove ranges first, then check for remaining individual chars
-  let remaining = chars;
-  if (rangeMatches) {
-    rangeMatches.forEach(range => {
-      remaining = remaining.replace(range, '');
-    });
+  // Describe ranges
+  for (const r of ranges) {
+    if (r.start === 'a' && r.end === 'z') parts.push('lowercase letters (a-z)');
+    else if (r.start === 'A' && r.end === 'Z') parts.push('uppercase letters (A-Z)');
+    else if (r.start === '0' && r.end === '9') parts.push('digits (0-9)');
+    else parts.push(`range (${r.start}-${r.end})`);
   }
-  
-  // Check for common special characters that appear in ALLOWED_CHARS
-  if (remaining.includes('_')) parts.push('underscore (_)');
-  if (remaining.includes('.')) parts.push('period (.)');
-  if (remaining.includes('~')) parts.push('tilde (~)');
-  // Note: hyphen at end of char class (after other chars) is treated as literal
-  if (remaining.includes('-')) parts.push('hyphen (-)');
-  
-  return `Allowed characters: ${chars} (${parts.join(', ')})`;
+  // Each remaining character is a literal allowed char
+  for (const ch of working) {
+    if (ch === '_') parts.push('underscore (_)');
+    else if (ch === '.') parts.push('period (.)');
+    else if (ch === '~') parts.push('tilde (~)');
+    else if (ch === '-') parts.push('hyphen (-)');
+    else parts.push(`'${ch}'`);
+  }
+  // Combine parts, avoiding repeated entries
+  const uniqueParts = Array.from(new Set(parts));
+  return `Allowed characters: ${chars} (${uniqueParts.join(', ')})`;
 }
 const ALLOWED_SLUG_CHARACTERS_DESCRIPTION = describeAllowedSlugChars(ALLOWED_CHARS);
 
@@ -312,7 +320,7 @@ export interface CombinedGlossarySchema {
  * @param input - The string to sanitize for logs.
  * @returns A sanitized string: flattened, non-printable chars replaced, and truncated to 30 chars.
  */
-function sanitizeForLogGeneral30(input: string): string {
+function sanitizeForLogPreview(input: string): string {
   // Equivalent to previous logic: replace non-printable with _, flatten, max 30 characters.
   return sanitizeForLogGeneral(input, {
     maxLength: 30,
@@ -354,7 +362,7 @@ function getGlossaryTermUrl(term: string): string {
       }
     }
     throw new Error(
-      `Invalid characters in term slug '${sanitizeForLogGeneral30(trimmedTerm)}'.`
+      `Invalid characters in term slug '${sanitizeForLogPreview(trimmedTerm)}'.`
       + getInvalidCharactersMessage(invalidChars)
       + ` Allowed: ${ALLOWED_SLUG_CHARACTERS_DESCRIPTION}.`
     );

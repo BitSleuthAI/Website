@@ -61,20 +61,15 @@ export default function DownloadPage() {
         if (!imagesLoaded) return;
 
         // Smart redirection for mobile devices
-        const operaUserAgent =
-          typeof window !== "undefined" && "opera" in window
-            ? String((window as Window & { opera?: unknown }).opera ?? '')
-            : '';
-
-        const userAgent = navigator.userAgent || navigator.vendor || operaUserAgent;
+        const userAgent = navigator.userAgent || navigator.vendor || '';
 
         // iOS detection
         if (/iPad|iPhone|iPod/.test(userAgent)) {
-            window.open(APP_STORE_LINK, "_blank");
+            window.open(APP_STORE_LINK, "_blank", "noopener,noreferrer");
         }
         // Android detection
         else if (/android/i.test(userAgent)) {
-            window.open(PLAY_STORE_LINK, "_blank");
+            window.open(PLAY_STORE_LINK, "_blank", "noopener,noreferrer");
         }
     }, [imagesLoaded]);
 
@@ -111,12 +106,12 @@ export default function DownloadPage() {
                             <img
                                 src="/images/app-store-black.png"
                                 alt="Download on the App Store"
-                                className="h-[64px] w-auto block dark:hidden"
+                                className="h-[64px] w-auto block dark:hidden rounded-lg"
                             />
                             <img
                                 src="/images/app-store-white.png"
                                 alt="Download on the App Store"
-                                className="h-[64px] w-auto hidden dark:block"
+                                className="h-[64px] w-auto hidden dark:block rounded-lg"
                             />
                         </a>
 
@@ -130,7 +125,7 @@ export default function DownloadPage() {
                             <img
                                 src="/images/google-play-black.png"
                                 alt="Get it on Google Play"
-                                className="h-[64px] w-auto block dark:hidden"
+                                className="h-[64px] w-auto block dark:hidden rounded-lg"
                             />
                             <img
                                 src="/images/google-play-white.png"
