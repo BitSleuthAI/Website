@@ -117,15 +117,18 @@ While these documents contain valuable information about past implementations, k
 
 ## For Current Implementation Details
 
-See the consolidated **`../IMPLEMENTATION_HISTORY.md`** document, which provides:
-- Summary of all completed work
-- Current state of each implementation
-- Maintenance guidelines
-- Where to find code in the repository
+See these active documentation files:
+- **`../PROJECT_SUMMARY.md`** - **Comprehensive overview of the entire project** (recommended starting point)
+- **`../IMPLEMENTATION_HISTORY.md`** - Consolidated implementation summary with:
+  - Summary of all completed work
+  - Current state of each implementation
+  - Maintenance guidelines
+  - Where to find code in the repository
 
 ## For Active Documentation
 
 Return to the main `docs/` folder for:
+- `PROJECT_SUMMARY.md` - **Complete project overview** (start here!)
 - `PRD.md` - Product Requirements Document
 - `SEO_STRATEGY.md` - Ongoing SEO strategy
 - `MCP_SERVER.md` - Development tool configuration

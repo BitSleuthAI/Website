@@ -304,6 +304,7 @@ For complete guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Active Documentation
 Current, relevant documentation for development:
+- **Project Summary**: [`docs/PROJECT_SUMMARY.md`](docs/PROJECT_SUMMARY.md) - **Comprehensive overview of the entire project** (start here!)
 - **Contributing Guidelines**: [`CONTRIBUTING.md`](CONTRIBUTING.md) - How to contribute to the project (located in root)
 - **Product Requirements**: [`docs/PRD.md`](docs/PRD.md) - Product Requirements Document with objectives and roadmap
 - **Implementation History**: [`docs/IMPLEMENTATION_HISTORY.md`](docs/IMPLEMENTATION_HISTORY.md) - Consolidated history of completed work and current state
