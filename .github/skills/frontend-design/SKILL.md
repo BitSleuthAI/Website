@@ -1,41 +1,106 @@
 ---
 name: frontend-design
-description: Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.
+description: Create distinctive, production-grade frontend interfaces with exceptional design quality for the BitSleuth marketing website. Use this skill when building web components, pages, or applications. Generates polished, trustworthy code that reflects Bitcoin analysis tools' precision and professionalism.
 ---
 
-This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
+This skill guides creation of world-class, production-grade frontend interfaces for BitSleuth's marketing website. Build real working code with exceptional attention to aesthetic details, performance, and conversion optimization.
 
 The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
 
+## BitSleuth Brand Identity
+
+Before coding, understand BitSleuth's core brand attributes:
+- **Mission**: Empower Bitcoin users with privacy-focused analysis tools and education
+- **Audience**: Bitcoin analysts, investigators, compliance professionals, privacy-conscious users, and Bitcoin newcomers seeking education
+- **Brand Pillars**: Trustworthy, professional, educational, privacy-first, technically precise
+- **Visual Identity**: Bitcoin Orange (#FD8B3B / `hsl(27 96% 61%)`), sleek dark mode, polished light mode
+- **Tech Stack**: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS, shadcn/ui, Radix primitives
+
 ## Design Thinking
 
-Before coding, understand the context and commit to a BOLD aesthetic direction:
-- **Purpose**: What problem does this interface solve? Who uses it?
-- **Tone**: Pick an extreme: brutally minimal, maximalist chaos, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian, etc. There are so many flavors to choose from. Use these for inspiration but design one that is true to the aesthetic direction.
-- **Constraints**: Technical requirements (framework, performance, accessibility).
-- **Differentiation**: What makes this UNFORGETTABLE? What's the one thing someone will remember?
+Before coding, understand the context and align with BitSleuth's professional aesthetic:
+- **Purpose**: What problem does this interface solve? How does it serve Bitcoin analysts, investigators, or learners?
+- **Tone**: Professional yet approachable. Trustworthy precision with warmth. Educational without condescension. Privacy-focused without paranoia.
+- **Constraints**: Must work with Next.js 16 App Router, Tailwind CSS, shadcn/ui components, and Radix primitives. Mobile-first, accessible, performant.
+- **Differentiation**: What makes this memorable and conversion-focused? How does it build trust and authority in Bitcoin analysis?
 
-**CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work - the key is intentionality, not intensity.
+**CRITICAL**: BitSleuth demands **second-to-none frontend design**. Every pixel, interaction, and animation must reflect the precision expected from Bitcoin analysis tools. This is not generic marketing—this is professional-grade design that converts visitors into users.
 
-Then implement working code (HTML/CSS/JS, React, Vue, etc.) that is:
-- Production-grade and functional
-- Visually striking and memorable
-- Cohesive with a clear aesthetic point-of-view
-- Meticulously refined in every detail
+Then implement working code that is:
+- Production-grade, type-safe TypeScript with Next.js 16 App Router
+- Visually polished with BitSleuth's brand identity
+- Conversion-optimized for user acquisition
+- Accessible (WCAG 2.1 AA minimum) with Radix primitives
+- Performance-focused (Core Web Vitals optimized)
+- Mobile-first and responsive across all devices
 
-## Frontend Aesthetics Guidelines
+## Frontend Design Standards
 
-Focus on:
-- **Typography**: Choose fonts that are beautiful, unique, and interesting. Avoid generic fonts like Arial and Inter; opt instead for distinctive choices that elevate the frontend's aesthetics; unexpected, characterful font choices. Pair a distinctive display font with a refined body font.
-- **Color & Theme**: Commit to a cohesive aesthetic. Use CSS variables for consistency. Dominant colors with sharp accents outperform timid, evenly-distributed palettes.
-- **Motion**: Use animations for effects and micro-interactions. Prioritize CSS-only solutions for HTML. Use Motion library for React when available. Focus on high-impact moments: one well-orchestrated page load with staggered reveals (animation-delay) creates more delight than scattered micro-interactions. Use scroll-triggering and hover states that surprise.
-- **Spatial Composition**: Unexpected layouts. Asymmetry. Overlap. Diagonal flow. Grid-breaking elements. Generous negative space OR controlled density.
-- **Backgrounds & Visual Details**: Create atmosphere and depth rather than defaulting to solid colors. Add contextual effects and textures that match the overall aesthetic. Apply creative forms like gradient meshes, noise textures, geometric patterns, layered transparencies, dramatic shadows, decorative borders, custom cursors, and grain overlays.
+### Typography
+- **Primary Font**: Inter (already configured as `--font-inter`)
+- **Hierarchy**: Clear distinction between headings, body, and UI text
+- **Gradient Headings**: Use BitSleuth's heading gradient (`--heading-start`, `--heading-via`, `--heading-end`) for impactful headlines
+- **Readability**: Optimal line-height (1.6 for body), letter-spacing, and contrast ratios
+- **Code/Monospace**: Reserve for Bitcoin addresses, transaction IDs, and technical data
 
-NEVER use generic AI-generated aesthetics like overused font families (Inter, Roboto, Arial, system fonts), cliched color schemes (particularly purple gradients on white backgrounds), predictable layouts and component patterns, and cookie-cutter design that lacks context-specific character.
+### Color & Theme
+- **Bitcoin Orange**: Primary brand color `hsl(27 96% 61%)` for CTAs, highlights, and brand moments
+- **Light Theme**: Clean, professional with subtle orange accents. Background `hsl(0 0% 100%)`, foreground `hsl(240 10% 3.9%)`
+- **Dark Theme**: Premium, sleek with glowing orange accents. Background `hsl(240 10% 3.9%)`, foreground `hsl(0 0% 98%)`
+- **CSS Variables**: Always use semantic tokens (`--primary`, `--background`, `--foreground`) for theme consistency
+- **Accent Usage**: Use complementary colors sparingly—Bitcoin Orange should dominate as the brand anchor
 
-Interpret creatively and make unexpected choices that feel genuinely designed for the context. No design should be the same. Vary between light and dark themes, different fonts, different aesthetics. NEVER converge on common choices (Space Grotesk, for example) across generations.
+### Motion & Interaction
+- **Purposeful Animations**: Every animation should enhance UX, not distract. Beam animations (already configured) for hero sections.
+- **Micro-interactions**: Subtle hover states, focus rings (using `--ring`), and transitions (200-300ms) for professional feel
+- **Page Transitions**: Smooth, staggered reveals for landing page sections (use `animation-delay`)
+- **Performance**: CSS-only animations preferred. Use `will-change` sparingly. Respect `prefers-reduced-motion`
+- **Call-to-Action**: Animated buttons with glow effects (`shadow-glow`) to draw attention without being garish
 
-**IMPORTANT**: Match implementation complexity to the aesthetic vision. Maximalist designs need elaborate code with extensive animations and effects. Minimalist or refined designs need restraint, precision, and careful attention to spacing, typography, and subtle details. Elegance comes from executing the vision well.
+### Layout & Composition
+- **Mobile-First**: Design for 320px+ viewports first, enhance for tablet (768px) and desktop (1024px+)
+- **Grid Systems**: Use Tailwind's grid/flex utilities. Container max-width `1400px` (2xl breakpoint)
+- **Whitespace**: Generous spacing for clarity. Use Tailwind's spacing scale (p-4, p-8, p-16) consistently
+- **Component Structure**: shadcn/ui components for UI primitives (buttons, cards, inputs). Radix for accessible interactions (dropdowns, dialogs, tooltips)
+- **Visual Hierarchy**: Clear F-pattern or Z-pattern layouts that guide users to conversion points
 
-Remember: AI Agents are capable of extraordinary creative work. Don't hold back, show what can truly be created when thinking outside the box and committing fully to a distinctive vision.
+### Components & Patterns
+- **shadcn/ui**: Leverage existing 40+ components (Button, Card, Dialog, Form, etc.) for consistency
+- **Radix Primitives**: Use for accessible dropdowns, tooltips, accordions, tabs
+- **Custom Components**: Build in `/src/components/landing/` for marketing sections
+- **Reusability**: DRY principles—create composable, reusable components with TypeScript props
+- **Form Handling**: React Hook Form + Zod validation for robust form UX
+
+### Backgrounds & Visual Details
+- **Gradient Meshes**: Subtle orange-to-dark gradients for hero sections
+- **Glass Effects**: Use backdrop-blur with subtle opacity for modern card overlays
+- **Shadows**: Elevation with shadow-sm, shadow-md, shadow-lg. Glow effects (`shadow-glow`) for CTAs
+- **Borders**: Consistent `border` color token. Rounded corners using `--radius` (0.75rem)
+- **Icons**: Lucide icons (475+ available) for consistency. Use 20px-24px sizes for UI, 32px+ for features
+
+### SEO & Performance
+- **Semantic HTML**: Proper heading hierarchy (h1 → h2 → h3), landmarks (nav, main, footer)
+- **Image Optimization**: Next.js Image component with proper alt text, lazy loading, modern formats (WebP/AVIF)
+- **Core Web Vitals**: LCP < 2.5s, FID < 100ms, CLS < 0.1. Use `priority` for above-fold images
+- **Metadata**: Always include proper meta tags, Open Graph, and Twitter Cards for sharing
+
+## Quality Standards
+
+**Second-to-none design means:**
+- ✅ Zero TypeScript errors (`npm run typecheck` passes)
+- ✅ Zero ESLint warnings (`npm run lint` passes)
+- ✅ Mobile-first responsive design (320px to 2560px viewports)
+- ✅ Accessible (keyboard navigation, screen readers, WCAG 2.1 AA)
+- ✅ Performant (optimized images, minimal JS, efficient CSS)
+- ✅ Conversion-focused (clear CTAs, trust signals, social proof)
+- ✅ Brand-consistent (Bitcoin Orange, Inter font, CSS variables)
+- ✅ Production-ready (no console logs, no placeholder content)
+
+**NEVER:**
+- ❌ Generic "startup" aesthetics (purple gradients, bland layouts)
+- ❌ Accessibility violations (poor contrast, missing focus states, no keyboard support)
+- ❌ Performance sins (unoptimized images, massive bundles, layout shifts)
+- ❌ Brand inconsistencies (off-brand colors, wrong fonts, mismatched tone)
+- ❌ Sloppy code (any/unknown types, inline styles instead of Tailwind, missing error handling)
+
+Remember: BitSleuth is a professional Bitcoin analysis platform. Design must reflect the precision, trustworthiness, and expertise users expect from their analysis tools. Every component should inspire confidence and drive conversions.
