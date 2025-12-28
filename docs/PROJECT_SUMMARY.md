@@ -64,6 +64,7 @@ BitSleuth is a comprehensive Next.js 16 website serving as the primary marketing
 - **ESLint:** Code quality and linting
 - **TypeScript Strict Mode:** Type safety enforcement
 - **MCP Server:** AI coding agent integration
+- **Tailwind CSS Language Server:** IDE IntelliSense and autocomplete for Tailwind classes
 
 ### Deployment & Hosting
 - **Firebase App Hosting:** Production and staging environments

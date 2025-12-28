@@ -74,6 +74,13 @@ BitSleuth is a comprehensive Next.js 16.0 website that serves as the primary mar
 - **Prettier**: Code formatting (via ESLint)
 - **Husky**: Pre-commit hooks (if configured)
 
+### IDE Setup (VSCode)
+For the best development experience with Tailwind CSS:
+- The project includes `.vscode/settings.json` with Tailwind CSS IntelliSense configuration
+- Recommended extensions are listed in `.vscode/extensions.json`
+- VSCode will automatically prompt you to install recommended extensions
+- The Tailwind CSS language server is included as a dev dependency for better autocomplete and validation
+
 ---
 
 ## 📁 Project Structure
@@ -310,6 +317,7 @@ Current, relevant documentation for development:
 - **Implementation History**: [`docs/IMPLEMENTATION_HISTORY.md`](docs/IMPLEMENTATION_HISTORY.md) - Consolidated history of completed work and current state
 - **SEO Strategy**: [`docs/SEO_STRATEGY.md`](docs/SEO_STRATEGY.md) - SEO optimization guide and ongoing strategy
 - **MCP Server**: [`docs/MCP_SERVER.md`](docs/MCP_SERVER.md) - Model Context Protocol server configuration for AI agents
+- **Tailwind Language Server**: [`docs/TAILWIND_LANGUAGE_SERVER.md`](docs/TAILWIND_LANGUAGE_SERVER.md) - Tailwind CSS IntelliSense setup and usage
 - **Security**: [`docs/SECURITY_AUDIT.md`](docs/SECURITY_AUDIT.md) and [`docs/SECURITY_IMPROVEMENTS.md`](docs/SECURITY_IMPROVEMENTS.md) - Security documentation
 - **Visual Recommendations**: [`docs/todo.md`](docs/todo.md) - UI/UX improvement suggestions and future enhancements
 
