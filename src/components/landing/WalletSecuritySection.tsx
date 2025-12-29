@@ -9,19 +9,16 @@ const securityFeatures = [
     icon: <Key />,
     title: 'Client-Side Keys',
     description: 'Your secret recovery phrase (mnemonic) is generated and stored only on your device. We never have access to your keys or your funds.',
-    colorScheme: 'complementary',
   },
   {
     icon: <Lock />,
     title: 'PIN-Protected Encryption',
     description: 'Your recovery phrase is secured with strong AES encryption, protected by a PIN that only you know.',
-    colorScheme: 'complementary',
   },
   {
     icon: <Fingerprint />,
     title: 'Advanced Two-Factor Authentication (2FA)',
     description: 'Add an extra layer of security with passkeys, using your device\'s biometrics or a hardware security key.',
-    colorScheme: 'complementary',
   },
 ];
 
