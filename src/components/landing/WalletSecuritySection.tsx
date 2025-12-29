@@ -18,7 +18,7 @@ const securityFeatures = [
   {
     icon: <Fingerprint />,
     title: 'Advanced Two-Factor Authentication (2FA)',
-    description: 'Add an extra layer of security with passkeys, using your device\'s biometrics or a hardware security key.',
+    description: "Add an extra layer of security with passkeys, using your device's biometrics or a hardware security key.",
   },
 ];
 
@@ -38,7 +38,7 @@ export function WalletSecuritySection() {
           {securityFeatures.map((feature) => (
             <Card
               key={feature.title}
-              className="bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden"
+              className="bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden motion-reduce:transform-none motion-reduce:transition-none"
             >
               <CardHeader className="flex flex-col items-center text-center p-6">
                 <div className="p-3 mb-4 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
