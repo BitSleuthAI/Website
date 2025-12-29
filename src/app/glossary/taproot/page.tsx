@@ -36,7 +36,7 @@ export default function TaprootGlossaryPage() {
               Taproot is a major Bitcoin protocol upgrade activated in November 2021 that enhances privacy, efficiency, and smart contract flexibility. It introduces <Link href="/glossary/schnorr-signature" className="text-primary hover:underline">Schnorr signatures</Link> and enables more complex Bitcoin scripts to appear identical to simple transactions on the blockchain.
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Lock className="mr-2 h-6 w-6 text-primary" />

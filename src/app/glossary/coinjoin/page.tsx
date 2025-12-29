@@ -36,7 +36,7 @@ export default function CoinJoinGlossaryPage() {
               CoinJoin is a privacy-enhancing technique where multiple Bitcoin users combine their transactions into a single collaborative transaction. This breaks the common input ownership heuristic, making it difficult for observers to determine which inputs fund which outputs, thereby improving <Link href="/glossary/transaction-privacy" className="text-primary hover:underline">transaction privacy</Link>.
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Shuffle className="mr-2 h-6 w-6 text-primary" />

@@ -36,7 +36,7 @@ export default function SegWitGlossaryPage() {
               Segregated Witness (SegWit) is a protocol upgrade activated in 2017 that fundamentally changed how transaction data is stored in Bitcoin blocks. It separates (segregates) the digital signature data (witness) from the transaction data, allowing more transactions to fit in each block.
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Shield className="mr-2 h-6 w-6 text-primary" />

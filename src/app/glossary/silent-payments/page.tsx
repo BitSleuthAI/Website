@@ -35,7 +35,7 @@ export default function SilentPaymentsGlossaryPage() {
               Silent Payments (BIP 352) is a protocol that allows users to publish a single, static <Link href="/glossary/address" className="text-primary hover:underline">address</Link> that can receive unlimited payments, with each payment going to a unique on-chain address. This dramatically improves <Link href="/glossary/transaction-privacy" className="text-primary hover:underline">privacy</Link> without requiring interactive communication.
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Eye className="mr-2 h-6 w-6 text-primary" />

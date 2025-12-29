@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Quote } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -41,7 +42,8 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="py-20 md:py-32 bg-background relative overflow-hidden">
+    <section className="py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-6xl mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
@@ -56,7 +58,7 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <Card
               key={testimonial.id}
-              className={`bg-white border-none shadow-xl shadow-black/5 transition-all duration-500 hover:-translate-y-1 ${index === activeIndex ? 'ring-2 ring-primary/20 scale-105 md:scale-100' : 'opacity-90 hover:opacity-100'
+              className={`bg-white border-none shadow-xl shadow-black/5 transition-all duration-500 hover:-translate-y-2 ${index === activeIndex ? 'ring-2 ring-primary/20 scale-105 md:scale-100' : 'opacity-90 hover:opacity-100'
                 }`}
             >
               <CardContent className="p-8 flex flex-col h-full">

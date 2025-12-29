@@ -2,6 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const plans = [
   {
@@ -33,6 +34,7 @@ const plans = [
 export function PricingSection() {
   return (
     <section id="pricing" className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-6xl mx-auto text-center relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Pricing <span className="text-primary">Plans</span></h2>
@@ -42,7 +44,7 @@ export function PricingSection() {
           {plans.map((plan, idx) => (
             <Card
               key={idx}
-              className={`relative flex flex-col text-left overflow-hidden shadow-xl bg-gray-100 dark:bg-[#1a1a1a] border-none hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 ${plan.comingSoon ? 'blur-sm pointer-events-none opacity-70' : ''
+              className={`relative flex flex-col text-left overflow-hidden shadow-xl bg-card border-none hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ${plan.comingSoon ? 'blur-sm pointer-events-none opacity-70' : ''
                 }`}
             >
               {plan.comingSoon && (

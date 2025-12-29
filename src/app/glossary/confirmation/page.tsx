@@ -37,7 +37,7 @@ export default function ConfirmationGlossaryPage() {
               A confirmation means that a Bitcoin transaction has been successfully verified by the network and included in a <Link href="/glossary/block" className="text-primary hover:underline">block</Link> on the blockchain. Each new block that is added after your transaction's block counts as an additional confirmation.
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <ShieldCheck className="mr-2 h-6 w-6 text-primary" />

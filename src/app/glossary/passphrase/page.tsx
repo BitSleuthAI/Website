@@ -50,7 +50,7 @@ export default function PassphraseGlossaryPage() {
               ).
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                 <p className="font-semibold mb-2">Example passphrase:</p>
                 <code className="text-lg font-mono bg-background/50 p-2 rounded-md">

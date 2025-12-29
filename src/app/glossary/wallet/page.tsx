@@ -37,7 +37,7 @@ export default function WalletGlossaryPage() {
           A Bitcoin wallet is the software you use to interact with the Bitcoin network. It allows you to send, receive, and store your bitcoin securely. Contrary to its name, a wallet doesn't store your actual coins; instead, it holds your essential <Link href="/glossary/private-key" className="text-primary hover:underline">private keys</Link>.
         </p>
 
-        <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+        <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
           <CardContent className="p-4">
              <h3 className="text-xl font-bold flex items-center mb-2">
                 <KeyRound className="mr-2 h-6 w-6 text-primary" />

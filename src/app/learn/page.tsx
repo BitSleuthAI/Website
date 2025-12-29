@@ -139,7 +139,7 @@ export default function LearnPage() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-8 mb-12">
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 rounded-lg bg-primary/10">
@@ -147,10 +147,10 @@ export default function LearnPage() {
                       </div>
                       <h3 className="text-2xl font-bold text-foreground">The Network</h3>
                     </div>
-                    <p className="text-gray-400 mb-4">
+                    <p className="text-muted-foreground mb-4">
                       Bitcoin (with capital 'B') refers to the entire network and protocol. It's a decentralized system running on thousands of computers worldwide, maintained by a global community of miners, developers, and users.
                     </p>
-                    <p className="text-gray-400 mb-4">
+                    <p className="text-muted-foreground mb-4">
                       The <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link> serves as a public ledger, recording every transaction in an immutable chain of blocks. This transparency allows anyone to verify transactions while maintaining user privacy through cryptographic addresses.
                     </p>
                     <div className="relative w-full aspect-video rounded-lg overflow-hidden my-4 border border-primary/10 shadow-lg">
@@ -161,14 +161,14 @@ export default function LearnPage() {
                         className="object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <p className="text-gray-400">
+                    <p className="text-muted-foreground">
 
                       With no single point of control or failure, Bitcoin operates 24/7/365 across borders, enabling anyone with internet access to participate in the global economy.
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 rounded-lg bg-primary/10">
@@ -176,10 +176,10 @@ export default function LearnPage() {
                       </div>
                       <h3 className="text-2xl font-bold text-foreground">The Currency</h3>
                     </div>
-                    <p className="text-gray-400 mb-4">
+                    <p className="text-muted-foreground mb-4">
                       bitcoin (with lowercase 'b') refers to the digital currency units. Each <Link href="/glossary/btc" className="text-primary hover:underline">BTC</Link> can be divided into 100 million smaller units called satoshis, making it possible to transact in tiny fractions.
                     </p>
-                    <p className="text-gray-400 mb-4">
+                    <p className="text-muted-foreground mb-4">
                       With a fixed supply cap of 21 million bitcoins, it's designed to be scarce and deflationary by nature - no government or entity can print more. This predictable supply makes Bitcoin fundamentally different from traditional currencies that can be inflated at will.
                     </p>
                     <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
@@ -191,20 +191,20 @@ export default function LearnPage() {
                       />
                     </div>
 
-                    <p className="text-gray-400">
+                    <p className="text-muted-foreground">
                       Bitcoin offers fast, borderless transactions with lower fees than traditional international transfers, operating independently of banking hours or geographic restrictions.
                     </p>
                   </CardContent>
                 </Card>
               </div>
 
-              <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+              <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <FileText className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-2">The Original Vision</h3>
-                      <p className="text-gray-400 mb-4">
+                      <p className="text-muted-foreground mb-4">
                         In 2008, an individual or group using the pseudonym <span className="font-semibold text-primary">Satoshi Nakamoto</span> published the Bitcoin whitepaper titled <span className="italic">"Bitcoin: A Peer-to-Peer Electronic Cash System"</span>.
                       </p>
                       <Button variant="outline" asChild className="border-primary/20 hover:bg-primary/10 hover:text-primary">
@@ -238,7 +238,7 @@ export default function LearnPage() {
 
               <div className="space-y-8">
                 {/* Transactions */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -246,7 +246,7 @@ export default function LearnPage() {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-foreground mb-4">Transactions</h3>
-                        <p className="text-gray-400 mb-4">
+                        <p className="text-muted-foreground mb-4">
                           When you send bitcoin, you're creating a transaction that transfers ownership from your <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link> to another. Each transaction is digitally signed using your <Link href="/glossary/private-key" className="text-primary hover:underline">private key</Link>, proving you own the funds.
                         </p>
                         <div className="bg-secondary/30 p-4 rounded-lg border border-border">
@@ -254,7 +254,7 @@ export default function LearnPage() {
                             <Database className="h-5 w-5 text-primary" />
                             Transaction Anatomy
                           </h4>
-                          <ul className="space-y-2 text-sm text-gray-400">
+                          <ul className="space-y-2 text-sm text-muted-foreground">
                             <li className="flex items-start">
                               <span className="text-primary mr-2">•</span>
                               <span><strong>Inputs:</strong> References to previous transactions (your <Link href="/glossary/utxo" className="text-primary hover:underline">UTXOs</Link>)</span>
@@ -275,7 +275,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Mining and Consensus */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -283,10 +283,10 @@ export default function LearnPage() {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-foreground mb-4">Mining & Security</h3>
-                        <p className="text-gray-400 mb-4">
+                        <p className="text-muted-foreground mb-4">
                           <Link href="/glossary/mining" className="text-primary hover:underline">Mining</Link> is the process of adding new transactions to the blockchain. Miners compete to solve complex mathematical puzzles, and the winner gets to add the next <Link href="/glossary/block" className="text-primary hover:underline">block</Link> of transactions.
                         </p>
-                        <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
+                        <div className="relative w-full aspect-[21/9] rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
                           <Image
                             src="/images/mining_security_illustration.png"
                             alt="Bitcoin Mining and Security Illustration"
@@ -299,10 +299,10 @@ export default function LearnPage() {
                             <TrendingUp className="h-5 w-5 text-primary" />
                             Proof-of-Work
                           </h4>
-                          <p className="text-sm text-gray-400 mb-3">
+                          <p className="text-sm text-muted-foreground mb-3">
                             This computational work requires significant energy, making it extremely expensive to attack the network. The more <Link href="/glossary/hash-rate" className="text-primary hover:underline">hash rate</Link> (computing power) on the network, the more secure Bitcoin becomes.
                           </p>
-                          <p className="text-sm text-gray-400">
+                          <p className="text-sm text-muted-foreground">
                             Each block contains a reference to the previous block, creating an immutable chain. Changing historical data would require redoing all the computational work since that block - practically impossible.
                           </p>
                         </div>
@@ -312,7 +312,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Decentralization */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -320,19 +320,19 @@ export default function LearnPage() {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-foreground mb-4">Decentralization</h3>
-                        <p className="text-gray-400 mb-4">
+                        <p className="text-muted-foreground mb-4">
                           Bitcoin operates on a <Link href="/glossary/p2p" className="text-primary hover:underline">peer-to-peer network</Link> of thousands of nodes (computers) worldwide. No single entity controls the network, making it censorship-resistant and resilient.
                         </p>
                         <div className="grid sm:grid-cols-2 gap-4">
                           <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                             <h4 className="font-semibold mb-2">Full Nodes</h4>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-muted-foreground">
                               Independently verify all transactions and blocks, ensuring network rules are followed.
                             </p>
                           </div>
                           <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                             <h4 className="font-semibold mb-2">No Central Authority</h4>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-muted-foreground">
                               Consensus is reached through the proof-of-work mechanism, not by any governing body.
                             </p>
                           </div>
@@ -343,7 +343,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Cryptography */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -351,10 +351,10 @@ export default function LearnPage() {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-foreground mb-4">Cryptography</h3>
-                        <p className="text-gray-400 mb-4">
+                        <p className="text-muted-foreground mb-4">
                           <Link href="/glossary/cryptography" className="text-primary hover:underline">Cryptography</Link> is fundamental to Bitcoin's security. It enables:
                         </p>
-                        <ul className="space-y-3 text-gray-400">
+                        <ul className="space-y-3 text-muted-foreground">
                           <li className="flex items-start">
                             <span className="text-primary mr-2 mt-1">•</span>
                             <span><strong className="text-foreground">Ownership verification</strong> through public-key cryptography without revealing private keys</span>
@@ -391,7 +391,7 @@ export default function LearnPage() {
 
               <div className="space-y-8">
                 {/* Cryptocurrency Exchanges */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -399,7 +399,7 @@ export default function LearnPage() {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-foreground mb-4">Cryptocurrency Exchanges</h3>
-                        <p className="text-gray-400 mb-4">
+                        <p className="text-muted-foreground mb-4">
                           The most common way to buy bitcoin is through regulated cryptocurrency exchanges like Coinbase, Kraken, or Binance. These platforms allow you to purchase bitcoin using traditional payment methods.
                         </p>
                         <div className="bg-secondary/30 p-4 rounded-lg border border-border">
@@ -407,7 +407,7 @@ export default function LearnPage() {
                             <CreditCard className="h-5 w-5 text-primary" />
                             Getting Started on an Exchange
                           </h4>
-                          <ul className="space-y-2 text-sm text-gray-400">
+                          <ul className="space-y-2 text-sm text-muted-foreground">
                             <li className="flex items-start">
                               <span className="text-primary mr-2">•</span>
                               <span><strong>Create an account:</strong> Sign up with your email and create a secure password</span>
@@ -432,7 +432,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Peer-to-Peer and Other Methods */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -440,31 +440,31 @@ export default function LearnPage() {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-foreground mb-4">Alternative Acquisition Methods</h3>
-                        <p className="text-gray-400 mb-4">
+                        <p className="text-muted-foreground mb-4">
                           Beyond exchanges, there are several other ways to obtain bitcoin depending on your preferences and needs.
                         </p>
                         <div className="grid sm:grid-cols-2 gap-4">
                           <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                             <h4 className="font-semibold mb-2">P2P Platforms</h4>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-muted-foreground">
                               Trade directly with other users through peer-to-peer marketplaces like LocalBitcoins or Bisq for more privacy and payment flexibility.
                             </p>
                           </div>
                           <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                             <h4 className="font-semibold mb-2">Bitcoin ATMs</h4>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-muted-foreground">
                               Purchase bitcoin with cash at Bitcoin ATMs found in many cities, though fees are typically higher than online exchanges.
                             </p>
                           </div>
                           <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                             <h4 className="font-semibold mb-2">Earn Bitcoin</h4>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-muted-foreground">
                               Accept bitcoin as payment for goods or services, earn it through employment, or participate in the Bitcoin network as a miner.
                             </p>
                           </div>
                           <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                             <h4 className="font-semibold mb-2">Gift & Transfer</h4>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-muted-foreground">
                               Receive bitcoin as a gift from friends or family, or through promotional campaigns and rewards programs.
                             </p>
                           </div>
@@ -475,13 +475,13 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Important Considerations */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
                       <Shield className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-2">Important Considerations</h3>
-                        <ul className="space-y-2 text-gray-400">
+                        <ul className="space-y-2 text-muted-foreground">
                           <li className="flex items-start">
                             <span className="text-primary mr-2">•</span>
                             <span><strong className="text-foreground">Start small:</strong> Begin with a modest amount to familiarize yourself with the buying process and wallet management</span>
@@ -522,7 +522,7 @@ export default function LearnPage() {
 
               <div className="space-y-8">
                 {/* Storing Bitcoin */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -530,7 +530,7 @@ export default function LearnPage() {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-foreground mb-4">Storing Your Bitcoin</h3>
-                        <p className="text-gray-400 mb-4">
+                        <p className="text-muted-foreground mb-4">
                           A <Link href="/glossary/wallet" className="text-primary hover:underline">Bitcoin wallet</Link> is software that stores your <Link href="/glossary/private-key" className="text-primary hover:underline">private keys</Link> and enables you to send and receive bitcoin. Choosing the right wallet depends on your security needs and usage frequency.
                         </p>
                         <div className="grid sm:grid-cols-2 gap-4 mb-4">
@@ -539,10 +539,10 @@ export default function LearnPage() {
                               <Globe className="h-5 w-5 text-primary" />
                               Hot Wallets
                             </h4>
-                            <p className="text-sm text-gray-400 mb-2">
+                            <p className="text-sm text-muted-foreground mb-2">
                               Connected to the internet for convenient access. Ideal for everyday transactions and smaller amounts.
                             </p>
-                            <p className="text-xs text-gray-400 italic">
+                            <p className="text-xs text-muted-foreground italic">
                               Examples: Mobile apps, desktop software, exchange wallets
                             </p>
                           </div>
@@ -551,16 +551,16 @@ export default function LearnPage() {
                               <Lock className="h-5 w-5 text-primary" />
                               Cold Wallets
                             </h4>
-                            <p className="text-sm text-gray-400 mb-2">
+                            <p className="text-sm text-muted-foreground mb-2">
                               Offline storage for maximum security. Best for long-term holdings and larger amounts.
                             </p>
-                            <p className="text-xs text-gray-400 italic">
+                            <p className="text-xs text-muted-foreground italic">
                               Examples: Hardware wallets (Ledger, Trezor), paper wallets
                             </p>
                           </div>
                         </div>
                         <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
-                          <p className="text-sm text-gray-400">
+                          <p className="text-sm text-muted-foreground">
                             <strong className="text-foreground">Critical:</strong> Never share your private keys or seed phrase with anyone. These give complete control over your bitcoin. If lost, your funds are unrecoverable.
                           </p>
                         </div>
@@ -570,7 +570,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Sending and Receiving */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -578,7 +578,7 @@ export default function LearnPage() {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-foreground mb-4">Sending & Receiving Bitcoin</h3>
-                        <p className="text-gray-400 mb-4">
+                        <p className="text-muted-foreground mb-4">
                           Bitcoin transactions are straightforward once you understand the basics. You'll use Bitcoin addresses (similar to email addresses) to send and receive funds.
                         </p>
                         <div className="space-y-4">
@@ -587,7 +587,7 @@ export default function LearnPage() {
                               <DownloadCloud className="h-5 w-5 text-primary" />
                               Receiving Bitcoin
                             </h4>
-                            <ul className="space-y-2 text-sm text-gray-400">
+                            <ul className="space-y-2 text-sm text-muted-foreground">
                               <li className="flex items-start">
                                 <span className="text-primary mr-2">•</span>
                                 <span>Open your wallet and locate your Bitcoin address (a long string starting with 1, 3, or bc1)</span>
@@ -607,7 +607,7 @@ export default function LearnPage() {
                               <Send className="h-5 w-5 text-primary" />
                               Sending Bitcoin
                             </h4>
-                            <ul className="space-y-2 text-sm text-gray-400">
+                            <ul className="space-y-2 text-sm text-muted-foreground">
                               <li className="flex items-start">
                                 <span className="text-primary mr-2">•</span>
                                 <span>Enter the recipient's Bitcoin address (triple-check for accuracy - transactions can't be reversed!)</span>
@@ -633,7 +633,7 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Spending Bitcoin */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
@@ -641,31 +641,31 @@ export default function LearnPage() {
                       </div>
                       <div>
                         <h3 className="text-2xl font-bold text-foreground mb-4">Spending Bitcoin</h3>
-                        <p className="text-gray-400 mb-4">
+                        <p className="text-muted-foreground mb-4">
                           Bitcoin's growing acceptance means you can use it for an increasing range of purchases, from online shopping to real-world transactions.
                         </p>
                         <div className="grid sm:grid-cols-2 gap-4">
                           <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                             <h4 className="font-semibold mb-2">Online Merchants</h4>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-muted-foreground">
                               Major companies like Microsoft, Overstock, and Newegg accept bitcoin payments. Payment processors like BitPay make it easy for businesses to accept BTC.
                             </p>
                           </div>
                           <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                             <h4 className="font-semibold mb-2">Gift Cards</h4>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-muted-foreground">
                               Convert bitcoin to gift cards for popular retailers through services like Bitrefill, extending your spending options indirectly.
                             </p>
                           </div>
                           <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                             <h4 className="font-semibold mb-2">Bitcoin Debit Cards</h4>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-muted-foreground">
                               Load bitcoin onto crypto debit cards that automatically convert to local currency at point of sale, accepted anywhere traditional cards work.
                             </p>
                           </div>
                           <div className="bg-secondary/30 p-4 rounded-lg border border-border">
                             <h4 className="font-semibold mb-2">Peer-to-Peer</h4>
-                            <p className="text-sm text-gray-400">
+                            <p className="text-sm text-muted-foreground">
                               Pay individuals directly for services, send money internationally, or exchange with friends - fast, borderless, and without intermediaries.
                             </p>
                           </div>
@@ -676,13 +676,13 @@ export default function LearnPage() {
                 </Card>
 
                 {/* Best Practices */}
-                <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+                <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
                       <Shield className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-2">Security Best Practices</h3>
-                        <ul className="space-y-2 text-gray-400">
+                        <ul className="space-y-2 text-muted-foreground">
                           <li className="flex items-start">
                             <span className="text-primary mr-2">•</span>
                             <span><strong className="text-foreground">Use hardware wallets</strong> for significant holdings to protect against online threats</span>
@@ -775,7 +775,7 @@ export default function LearnPage() {
                   },
                 ].map((concept) => (
                   <Link key={concept.slug} href={`/glossary/${concept.slug}`} className="group">
-                    <Card className="h-full bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl group transition-all duration-300">
+                    <Card className="h-full bg-card border-none shadow-xl hover:shadow-2xl group transition-all duration-300">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-3 mb-3">
                           <div className="p-2 rounded-lg transition-colors bg-primary/10 group-hover:bg-primary/20">
@@ -785,7 +785,7 @@ export default function LearnPage() {
                             {concept.term}
                           </h3>
                         </div>
-                        <p className="text-gray-400 text-sm">
+                        <p className="text-muted-foreground text-sm">
                           {concept.description}
                         </p>
                         <div className="mt-4 flex items-center text-sm group-hover:underline text-primary">
@@ -813,13 +813,13 @@ export default function LearnPage() {
           <section className="py-16 md:py-20 lg:py-24 bg-background relative overflow-hidden">
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-4xl mx-auto px-4 md:px-6 relative z-10">
-              <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl">
+              <Card className="bg-card border-none shadow-xl">
                 <CardContent className="p-8 md:p-12">
                   <div className="text-center space-y-6">
                     <h2 className="text-3xl font-bold sm:text-4xl text-foreground">
                       Ready to Get Started?
                     </h2>
-                    <p className="text-lg text-gray-400">
+                    <p className="text-lg text-muted-foreground">
                       Explore our tools to analyze Bitcoin wallets and manage your own with privacy-first solutions
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">

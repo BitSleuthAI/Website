@@ -36,7 +36,7 @@ export default function PayJoinGlossaryPage() {
               PayJoin (also known as P2EP - Pay-to-Endpoint) is a privacy-enhancing Bitcoin transaction type where the receiver contributes one of their own <Link href="/glossary/utxo" className="text-primary hover:underline">UTXOs</Link> as an additional input to a payment. This breaks the common input ownership heuristic while looking like a normal transaction on the <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link>.
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Users className="mr-2 h-6 w-6 text-primary" />

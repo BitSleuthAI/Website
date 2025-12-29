@@ -35,7 +35,7 @@ export default function SidechainGlossaryPage() {
               A sidechain is a separate blockchain that runs in parallel to Bitcoin's main chain (mainchain), connected through a two-way peg that allows bitcoin to be transferred between chains. Sidechains enable new features and experimentation without affecting Bitcoin's core protocol.
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Lock className="mr-2 h-6 w-6 text-primary" />

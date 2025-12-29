@@ -162,7 +162,7 @@ export function GlossaryPageWrapper({ termSlug, children, relatedTerms }: Glossa
 
           {/* Quick Facts Section */}
           {meta.quickFacts && meta.quickFacts.length > 0 && (
-            <Card className="my-8 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl border-primary/20 not-prose">
+            <Card className="my-8 bg-card border-none shadow-xl border-primary/20 not-prose">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold flex items-center mb-4 text-foreground">
                   <FileText className="mr-2 h-6 w-6 text-primary" />
@@ -190,7 +190,7 @@ export function GlossaryPageWrapper({ termSlug, children, relatedTerms }: Glossa
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {relatedTerms.map((term) => (
                   <Link key={term.slug} href={`/glossary/${term.slug}`} className="group">
-                    <Card className="h-full bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all">
+                    <Card className="h-full bg-card border-none shadow-xl hover:shadow-2xl transition-all">
                       <CardContent className="p-4">
                         <h4 className="font-semibold text-primary group-hover:underline">{term.title}</h4>
                         <p className="text-sm text-gray-400 mt-1">{term.description}</p>

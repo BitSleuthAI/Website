@@ -73,6 +73,7 @@ export function EnhancedHomeHeroSection() {
                 src="/images/hero.png"
                 alt="Global Bitcoin Culture"
                 fill
+                priority
                 className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
@@ -81,10 +82,10 @@ export function EnhancedHomeHeroSection() {
       </section>
 
       {/* Product Cards Section */}
-      <section className="py-12 md:py-24 bg-background relative overflow-hidden">
+      <section className="py-12 md:py-20 lg:py-24 bg-background relative overflow-hidden">
         <div className="container max-w-6xl mx-auto px-4 md:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="group text-left bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full overflow-hidden">
+            <Card className="group text-left bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full overflow-hidden">
               <CardHeader className="flex flex-row items-center gap-4 pb-4">
                 <div className="p-3 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
                   <BarChart className="h-8 w-8 text-primary" />
@@ -101,7 +102,7 @@ export function EnhancedHomeHeroSection() {
               </CardContent>
             </Card>
 
-            <Card className="group text-left bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full overflow-hidden">
+            <Card className="group text-left bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full overflow-hidden">
               <CardHeader className="flex flex-row items-center gap-4 pb-4">
                 <div className="p-3 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
                   <ShieldCheck className="h-8 w-8 text-primary" />

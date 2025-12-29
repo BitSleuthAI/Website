@@ -48,7 +48,7 @@ export default function CompanyInformationPage() {
 
             <div className="space-y-8">
               {/* Legal Entity Card */}
-              <div className="bg-gray-100 dark:bg-[#1a1a1a] rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
+              <div className="bg-card rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <Building2 className="h-6 w-6 text-primary" />
@@ -60,7 +60,7 @@ export default function CompanyInformationPage() {
                     <p className="text-xl font-semibold text-foreground mb-1">
                       BitSleuth Ltd trading as BitSleuth
                     </p>
-                    <p className="text-gray-400 font-normal">
+                    <p className="text-muted-foreground font-normal">
                       Registered in England and Wales
                     </p>
                   </div>
@@ -68,7 +68,7 @@ export default function CompanyInformationPage() {
               </div>
 
               {/* Company Details Card */}
-              <div className="bg-gray-100 dark:bg-[#1a1a1a] rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
+              <div className="bg-card rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <FileText className="h-6 w-6 text-primary" />
@@ -82,7 +82,7 @@ export default function CompanyInformationPage() {
                   </div>
                   <div>
                     <span className="text-primary font-semibold text-lg">Registered Office:</span>
-                    <div className="mt-2 text-gray-400 font-normal leading-relaxed text-lg">
+                    <div className="mt-2 text-muted-foreground font-normal leading-relaxed text-lg">
                       65 Harland Avenue<br />
                       Sidcup, England<br />
                       DA15 7NY
@@ -92,7 +92,7 @@ export default function CompanyInformationPage() {
               </div>
 
               {/* Contact Information Card */}
-              <div className="bg-gray-100 dark:bg-[#1a1a1a] rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
+              <div className="bg-card rounded-xl border-none shadow-xl hover:shadow-2xl transition-all p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-primary/10">
                     <Mail className="h-6 w-6 text-primary" />
@@ -100,7 +100,7 @@ export default function CompanyInformationPage() {
                   Contact Information
                 </h2>
                 <div className="space-y-4 text-lg">
-                  <p className="text-gray-400 font-normal">
+                  <p className="text-muted-foreground font-normal">
                     For general inquiries, please contact us at{' '}
                     <a
                       href="mailto:hello@bitsleuth.ai"
@@ -109,7 +109,7 @@ export default function CompanyInformationPage() {
                       hello@bitsleuth.ai
                     </a>
                   </p>
-                  <p className="text-gray-400 font-normal">
+                  <p className="text-muted-foreground font-normal">
                     For support and technical assistance, please contact us at{' '}
                     <a
                       href="mailto:support@bitsleuth.ai"

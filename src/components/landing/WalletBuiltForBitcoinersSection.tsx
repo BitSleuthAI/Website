@@ -1,6 +1,7 @@
 // src/components/landing/WalletBuiltForBitcoinersSection.tsx
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ValueBadge } from "@/components/ui/value-badge";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Settings, Bitcoin, Users, Coins } from "lucide-react";
 
 const bitcoinerFeatures = [
@@ -24,6 +25,7 @@ const bitcoinerFeatures = [
 export function WalletBuiltForBitcoinersSection() {
   return (
     <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Built for <span className="text-primary">Bitcoiners</span></h2>
@@ -34,7 +36,7 @@ export function WalletBuiltForBitcoinersSection() {
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {bitcoinerFeatures.map((feature, idx) => (
-            <Card key={idx} className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden">
+            <Card key={idx} className="bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group overflow-hidden">
               <CardHeader className="flex flex-col items-center text-center p-6">
                 <div className="p-3 mb-4 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
                   <div className="text-primary [&>svg]:h-6 [&>svg]:w-6">
@@ -44,7 +46,7 @@ export function WalletBuiltForBitcoinersSection() {
                 <CardTitle className="font-bold text-lg text-foreground">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent className="p-6 pt-0">
-                <CardDescription className="font-normal text-center text-gray-400 leading-relaxed">{feature.description}</CardDescription>
+                <CardDescription className="font-normal text-center text-muted-foreground leading-relaxed">{feature.description}</CardDescription>
               </CardContent>
             </Card>
           ))}

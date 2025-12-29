@@ -38,7 +38,7 @@ export default function PrivateKeyGlossaryPage() {
               A private key is the secret, cryptographic key that proves your ownership of bitcoins and gives you the ability to spend them. It is the single most important piece of information you need to protect in your Bitcoin <Link href="/glossary/wallet" className="text-primary hover:underline">wallet</Link>.
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                 <h3 className="text-xl font-bold flex items-center mb-2">
                     <KeyRound className="mr-2 h-6 w-6 text-primary" />

@@ -453,16 +453,16 @@ export default function GlossaryIndexPage() {
               <div className="space-y-6">
                 {filteredTerms.sort((a, b) => a.term.localeCompare(b.term)).map((item) => (
                   <Link key={item.term} href={item.href} className="block group">
-                    <Card className="bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl transition-all">
+                    <Card className="bg-card border-none shadow-xl hover:shadow-2xl transition-all">
                       <CardContent className="p-6 flex items-center justify-between">
                         <div className="flex-1">
                           <h2 className="text-2xl font-bold group-hover:underline text-primary">
                             {item.term}
                           </h2>
-                          <p className="text-gray-400 mt-2 font-normal">{item.definition}</p>
+                          <p className="text-muted-foreground mt-2 font-normal">{item.definition}</p>
                         </div>
                         <div className="flex-shrink-0 ml-4">
-                          <ChevronRight className="h-6 w-6 text-gray-400 transition-colors group-hover:text-primary" />
+                          <ChevronRight className="h-6 w-6 text-muted-foreground transition-colors group-hover:text-primary" />
                         </div>
                       </CardContent>
                     </Card>

@@ -36,7 +36,7 @@ export default function SchnorrSignatureGlossaryPage() {
               Schnorr signatures are a type of digital <Link href="/glossary/signature" className="text-primary hover:underline">signature</Link> scheme that Bitcoin adopted with the <Link href="/glossary/taproot" className="text-primary hover:underline">Taproot</Link> upgrade. They offer key advantages over the original ECDSA signatures: signature aggregation, batch verification, and improved privacy for complex scripts.
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Shield className="mr-2 h-6 w-6 text-primary" />

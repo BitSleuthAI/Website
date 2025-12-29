@@ -36,7 +36,7 @@ export default function MempoolGlossaryPage() {
               The mempool (memory pool) is a waiting area where unconfirmed Bitcoin transactions are held before being included in a <Link href="/glossary/block" className="text-primary hover:underline">block</Link>. Each node maintains its own mempool, creating a distributed staging area for pending transactions across the network.
             </p>
 
-            <Card className="my-6 bg-gray-100 dark:bg-[#1a1a1a] border-none shadow-xl hover:shadow-2xl">
+            <Card className="my-6 bg-card border-none shadow-xl hover:shadow-2xl">
               <CardContent className="p-4">
                  <h3 className="text-xl font-bold flex items-center mb-2">
                     <Inbox className="mr-2 h-6 w-6 text-primary" />
