@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,6 +19,7 @@ import Link from "next/link";
 export function EducationalSection() {
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-background relative overflow-hidden">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">

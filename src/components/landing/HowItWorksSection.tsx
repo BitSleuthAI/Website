@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const steps = [
   {
@@ -22,6 +23,7 @@ const steps = [
 export function HowItWorksSection() {
   return (
     <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 relative overflow-hidden bg-background">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-5xl mx-auto text-center relative z-10">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold mb-4 text-foreground">How It <span className="text-primary">Works</span></h2>
