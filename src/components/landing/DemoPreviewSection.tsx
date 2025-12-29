@@ -1,10 +1,12 @@
 
 import { Button } from "@/components/ui/button";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import Image from "next/image";
 
 export function DemoPreviewSection() {
   return (
     <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-4xl mx-auto text-center relative z-10">
         <div className="text-center mb-6">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Try It <span className="text-primary">Yourself</span></h2>

@@ -1,10 +1,12 @@
 // src/components/landing/WalletAboutSection.tsx
 import { ValueBadge } from "@/components/ui/value-badge";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Bitcoin, Shield, UserX, Blocks } from "lucide-react";
 
 export function WalletAboutSection() {
   return (
     <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-3xl mx-auto text-center relative z-10">
         <h2 className="text-3xl font-bold mb-6 text-foreground">About <span className="text-primary">BitSleuth Wallet</span></h2>
         <p className="text-lg text-muted-foreground font-normal">

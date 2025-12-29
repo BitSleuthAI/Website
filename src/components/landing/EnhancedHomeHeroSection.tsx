@@ -73,6 +73,7 @@ export function EnhancedHomeHeroSection() {
                 src="/images/hero.png"
                 alt="Global Bitcoin Culture"
                 fill
+                priority
                 className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>

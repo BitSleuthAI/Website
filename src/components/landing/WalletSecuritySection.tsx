@@ -1,6 +1,7 @@
 // src/components/landing/WalletSecuritySection.tsx
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ValueBadge } from "@/components/ui/value-badge";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Key, Lock, Fingerprint, ShieldCheck } from "lucide-react";
 
 const securityFeatures = [
@@ -27,6 +28,7 @@ const securityFeatures = [
 export function WalletSecuritySection() {
   return (
     <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 relative overflow-hidden bg-background">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Uncompromising <span className="text-primary">Security & Self-Custody</span></h2>

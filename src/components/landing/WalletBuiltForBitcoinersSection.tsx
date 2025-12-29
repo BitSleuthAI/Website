@@ -1,6 +1,7 @@
 // src/components/landing/WalletBuiltForBitcoinersSection.tsx
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ValueBadge } from "@/components/ui/value-badge";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Settings, Bitcoin, Users, Coins } from "lucide-react";
 
 const bitcoinerFeatures = [
@@ -24,6 +25,7 @@ const bitcoinerFeatures = [
 export function WalletBuiltForBitcoinersSection() {
   return (
     <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Built for <span className="text-primary">Bitcoiners</span></h2>

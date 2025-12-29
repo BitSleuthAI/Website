@@ -286,7 +286,7 @@ export default function LearnPage() {
                         <p className="text-muted-foreground mb-4">
                           <Link href="/glossary/mining" className="text-primary hover:underline">Mining</Link> is the process of adding new transactions to the blockchain. Miners compete to solve complex mathematical puzzles, and the winner gets to add the next <Link href="/glossary/block" className="text-primary hover:underline">block</Link> of transactions.
                         </p>
-                        <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
+                        <div className="relative w-full aspect-[21/9] rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
                           <Image
                             src="/images/mining_security_illustration.png"
                             alt="Bitcoin Mining and Security Illustration"

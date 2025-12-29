@@ -1,5 +1,6 @@
 // src/components/landing/WalletSeamlessExperienceSection.tsx
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import Image from "next/image";
 import { Smartphone, QrCode, Palette, BarChart3 } from "lucide-react";
 
@@ -29,6 +30,7 @@ const experienceFeatures = [
 export function WalletSeamlessExperienceSection() {
   return (
     <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 relative overflow-hidden bg-background">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 text-foreground">A <span className="text-primary">Seamless</span> User Experience</h2>

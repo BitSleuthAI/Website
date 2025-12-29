@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ValueBadge } from "@/components/ui/value-badge";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { BarChart3, Search, Bot, LineChart, ShieldAlert, BookUser, Zap, Bitcoin } from "lucide-react";
 
 const features = [
@@ -45,6 +46,7 @@ const features = [
 export function FeaturesSection() {
   return (
     <section id="features" className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Your Bitcoin <span className="text-primary">Investigation Toolkit</span></h2>

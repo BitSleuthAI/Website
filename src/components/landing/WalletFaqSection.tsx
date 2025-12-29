@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import Link from "next/link";
 
 const faqs = [
@@ -33,6 +34,7 @@ const faqs = [
 export function WalletFaqSection() {
   return (
     <section id="faq" className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+      <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-4xl mx-auto relative z-10">
         <h2 className="text-3xl font-bold mb-10 text-center text-foreground">
           Frequently Asked <span className="text-primary">Questions</span>
