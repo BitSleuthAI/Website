@@ -23,7 +23,7 @@ const ACRONYM_MAX_LENGTH = 4;
  *   - replaceNonPrintable: If true, replace non-printable chars with "_" (default false = remove).
  *   - flattenWhitespace: If true, replace linebreaks and tabs with spaces, else remove only CR.
  */
-function sanitizeForLogGeneral(
+function sanitizeString(
   input: string,
   {
     maxLength = 1000,
@@ -60,7 +60,7 @@ function sanitizeForLogGeneral(
 
 // Legacy function -- for normal/detailed logs. Removes line breaks, removes control chars, truncates to 1000.
 function sanitizeForLog(input: string, maxLength = 1000): string {
-  return sanitizeForLogGeneral(input, {maxLength, replaceNonPrintable: false, flattenWhitespace: true});
+  return sanitizeString(input, {maxLength, replaceNonPrintable: false, flattenWhitespace: true});
 }
 
 // Module-scoped cache for slug validation.
@@ -71,6 +71,8 @@ function sanitizeForLog(input: string, maxLength = 1000): string {
 //   - If this module is ever used from multiple worker threads or shared across isolates, each
 //     worker SHOULD have its own module instance or an alternative thread-safe cache mechanism.
 const slugValidationCache: Map<string, boolean> = new Map();
+// Tracks insertion order of slugs for eviction without creating iterators.
+const slugValidationOrder: string[] = [];
 
 // Maximum number of entries to keep in slugValidationCache to avoid unbounded growth.
 // This can be tuned based on expected traffic patterns; kept small to bound memory usage.
@@ -86,15 +88,23 @@ const MAX_SLUG_CACHE_SIZE = 1000;
 /**
  * Insert a slug validation result into the cache, enforcing a simple size bound.
  * If the cache is at or above MAX_SLUG_CACHE_SIZE, evict the oldest inserted key.
- * Note: Relies on Map maintaining insertion order (guaranteed in ES2015+).
+ * Uses a simple array to track insertion order to avoid per-eviction iterator allocation.
  */
 function setSlugValidationCache(slug: string, isValid: boolean): void {
-  if (slugValidationCache.size >= MAX_SLUG_CACHE_SIZE) {
-    // Evict the first key iterated (oldest insertion, per ES2015+ Map specification).
-    const firstKey = slugValidationCache.keys().next().value as string | undefined;
-    if (firstKey !== undefined) {
-      slugValidationCache.delete(firstKey);
+  if (slugValidationCache.size >= MAX_SLUG_CACHE_SIZE && !slugValidationCache.has(slug)) {
+    // Evict the oldest still-present key from the order array.
+    while (slugValidationOrder.length > 0) {
+      const oldest = slugValidationOrder.shift();
+      if (oldest !== undefined && slugValidationCache.has(oldest)) {
+        slugValidationCache.delete(oldest);
+        break;
+      }
     }
+  }
+
+  // Only add to tracking array if it's a new entry to avoid unbounded growth
+  if (!slugValidationCache.has(slug)) {
+    slugValidationOrder.push(slug);
   }
   slugValidationCache.set(slug, isValid);
 }
@@ -137,8 +147,16 @@ const EDGE_CHARS = 'a-zA-Z0-9_~-';     // allowed at start/end (excluding period
 function describeAllowedSlugChars(chars: string): string {
   // Find all x-y ranges, e.g. 'a-z', '0-9'
   const parts: string[] = [];
+  const unique = new Set<string>();
   const ranges: Array<{start: string, end: string}> = [];
   let working = chars;
+
+  const addPart = (description: string) => {
+    if (!unique.has(description)) {
+      unique.add(description);
+      parts.push(description);
+    }
+  };
 
   // Regex for x-y, but not escaped hyphens
   const CHAR_RANGE_REGEX = /([a-zA-Z0-9])-([a-zA-Z0-9])/g;
@@ -151,27 +169,22 @@ function describeAllowedSlugChars(chars: string): string {
   }
   // Describe ranges
   for (const r of ranges) {
-    if (r.start === 'a' && r.end === 'z') parts.push('lowercase letters (a-z)');
-    else if (r.start === 'A' && r.end === 'Z') parts.push('uppercase letters (A-Z)');
-    else if (r.start === '0' && r.end === '9') parts.push('digits (0-9)');
-    else parts.push(`range (${r.start}-${r.end})`);
+    if (r.start === 'a' && r.end === 'z') addPart('lowercase letters (a-z)');
+    else if (r.start === 'A' && r.end === 'Z') addPart('uppercase letters (A-Z)');
+    else if (r.start === '0' && r.end === '9') addPart('digits (0-9)');
+    else addPart(`range (${r.start}-${r.end})`);
   }
   // Each remaining character is a literal allowed char
   for (const ch of working) {
-    if (ch === '_') parts.push('underscore (_)');
-    else if (ch === '.') parts.push('period (.)');
-    else if (ch === '~') parts.push('tilde (~)');
-    else if (ch === '-') parts.push('hyphen (-)');
-    else parts.push(`'${ch}'`);
+    if (ch === '_') addPart('underscore (_)');
+    else if (ch === '.') addPart('period (.)');
+    else if (ch === '~') addPart('tilde (~)');
+    else if (ch === '-') addPart('hyphen (-)');
+    else addPart(`'${ch}'`);
   }
-  // Combine parts, avoiding repeated entries
-  const uniqueParts = Array.from(new Set(parts));
-  return `Allowed characters: ${chars} (${uniqueParts.join(', ')})`;
+  return `Allowed characters: ${chars} (${parts.join(', ')})`;
 }
 const ALLOWED_SLUG_CHARACTERS_DESCRIPTION = describeAllowedSlugChars(ALLOWED_CHARS);
-
-// Precompiled regex for a single allowed character in a slug
-const ALLOWED_SLUG_CHAR_REGEX = new RegExp(`^[${ALLOWED_CHARS}]$`);
 
 const CONFIG = {
   organization: {
@@ -354,7 +367,7 @@ export interface CombinedGlossarySchema {
  */
 function sanitizeForLogPreview(input: string): string {
   // Equivalent to previous logic: replace non-printable with _, flatten, max 30 characters.
-  return sanitizeForLogGeneral(input, {
+  return sanitizeString(input, {
     maxLength: 30,
     replaceNonPrintable: true,
     flattenWhitespace: true
@@ -386,13 +399,9 @@ function getGlossaryTermUrl(term: string): string {
 
   // Strictly validate input and collect invalid characters in a single pass
   if (!VALID_SLUG_PATTERN.test(trimmedTerm)) {
-    // Identify invalid characters in a single loop for debugging
-    const invalidChars: string[] = [];
-    for (const ch of trimmedTerm) {
-      if (!ALLOWED_SLUG_CHAR_REGEX.test(ch)) {
-        invalidChars.push(ch);
-      }
-    }
+    // Identify invalid characters using a single regex operation for debugging
+    const matches = trimmedTerm.match(/[^a-zA-Z0-9_-]/g) || [];
+    const invalidChars: string[] = matches;
     throw new Error(
       `Invalid characters in term slug '${sanitizeForLogPreview(trimmedTerm)}'.`
       + getInvalidCharactersMessage(invalidChars)
