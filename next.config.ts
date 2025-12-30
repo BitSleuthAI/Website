@@ -20,20 +20,9 @@ const nextConfig: NextConfig = {
     return [
       {
         // Apply security headers to all routes
+        // Note: CSP is handled in middleware.ts with nonce support
         source: '/:path*',
         headers: [
-          {
-            key: 'Content-Security-Policy',
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "img-src 'self' data: https:",
-              "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com",
-              "font-src 'self' data: https://fonts.gstatic.com",
-              "frame-ancestors 'self'",
-            ].join('; '),
-          },
           {
             key: 'X-DNS-Prefetch-Control',
             value: 'on'
@@ -50,7 +39,6 @@ const nextConfig: NextConfig = {
             key: 'X-Content-Type-Options',
             value: 'nosniff'
           },
-
           {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin'
