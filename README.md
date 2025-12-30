@@ -744,8 +744,8 @@ npx tsc --noEmit --watch
 npm run build
 npm run start
 
-# The production server runs on port 3000 by default
-# Visit http://localhost:3000
+# The production server runs on port 9002 by default
+# Visit http://localhost:9002
 
 # Check for build errors
 npm run build 2>&1 | tee build.log
@@ -774,7 +774,7 @@ npm run build -- --analyze  # (if configured)
 lsof -ti:9002 | xargs kill -9
 
 # Or use a different port
-npm run dev -- -p 3000
+npm run dev -- -p 9002
 ```
 
 **Build errors after pulling latest changes:**
@@ -974,7 +974,7 @@ For detailed security information:
 A: No! All environment variables are optional. The site runs fully without any configuration. Only add them if you need Google Analytics.
 
 **Q: What port does the dev server use?**  
-A: Port 9002 by default. You can change it with `npm run dev -- -p 3000`.
+A: Port 9002 by default. You can change it with `npm run dev -- -p 9002`.
 
 **Q: Which branch should I base my work on?**  
 A: Always use `dev` as your base branch. Create feature branches from `dev`, not from `main`.
@@ -1033,7 +1033,7 @@ A: Use the helper functions in `src/lib/structured-data.ts`. See existing pages 
 A: Production deploys automatically when you merge to `main`. No manual deployment needed.
 
 **Q: How do I test the production build locally?**  
-A: Run `npm run build` then `npm run start`. The production server runs on port 3000 by default.
+A: Run `npm run build` then `npm run start`. The production server runs on port 9002 by default.
 
 **Q: Where do I set production environment variables?**  
 A: In Firebase App Hosting secrets (Firebase Console → App Hosting → Secrets). Never commit secrets to the repository.
