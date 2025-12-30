@@ -9,6 +9,9 @@ import { type GlossaryTermMeta } from './glossary-metadata';
 // Define allowed slug separators RegExp (hyphen, underscore, period) for universal use.
 const SLUG_SEPARATOR_REGEX = /[-_.]/;
 
+// Maximum length (in characters) for treating a single-word slug as an acronym candidate.
+const ACRONYM_MAX_LENGTH = 4;
+
 // Sanitizes strings for safe logging by escaping linebreaks and truncating.
 /**
  * General-purpose sanitizer for strings used in logs or elsewhere.
@@ -65,6 +68,13 @@ const slugValidationCache: Map<string, boolean> = new Map();
 
 // Maximum number of entries to keep in slugValidationCache to avoid unbounded growth.
 // This can be tuned based on expected traffic patterns; kept small to bound memory usage.
+// Performance/memory rationale:
+//   - Typical slugs are short ASCII strings (e.g., 20–80 bytes) plus a boolean flag.
+//   - With 1,000 entries, the total heap usage for this cache is on the order of a few hundred KB,
+//     including Map overhead, which is negligible for this library in typical Node.js runtimes.
+//   - Increasing MAX_SLUG_CACHE_SIZE may improve cache hit rate under very high cardinality,
+//     but at the cost of proportionally more memory; decreasing it will reduce memory further
+//     but increase eviction and recomputation of slug validity.
 const MAX_SLUG_CACHE_SIZE = 1000;
 
 /**
@@ -111,7 +121,7 @@ const BASE_URL = 'https://www.bitsleuth.ai';
 
 // Allowed characters for glossary slugs, defined once for re-use.
 const ALLOWED_CHARS = 'a-zA-Z0-9_.~-'; // alphanumerics, underscore (_), period (.), tilde (~), hyphen (-)
-const EDGE_CHARS = 'a-zA-Z0-9_~-';     // allowed at start/end (excluding period)
+const _EDGE_CHARS = 'a-zA-Z0-9_~-';     // allowed at start/end (excluding period)
 
 // Description of allowed characters (derived from the constants above)
 // Parse the character class string and generate a human-readable description
@@ -205,9 +215,7 @@ const CONFIG = {
 // (?:[ALLOWED_CHARS]*    : Zero or more allowed chars (including '.')
 //   [EDGE_CHARS])?       : If more than one char, last must not be '.' (cannot end with period)
 // $                      : End of string
-const VALID_SLUG_PATTERN = new RegExp(
-  `^[${EDGE_CHARS}](?:[${ALLOWED_CHARS}]*[${EDGE_CHARS}])?$`
-);
+const VALID_SLUG_PATTERN = /^[A-Za-z0-9_\-~](?:[A-Za-z0-9_\-~.]*[A-Za-z0-9_\-~])?$/;
 
 // ============================================================================
 // TYPES & INTERFACES
@@ -406,7 +414,7 @@ function formatSlugToTitle(slug: string): string {
 
   // For very short slugs, avoid regex checks and just use length/digit heuristics.
   // This also treats common acronyms like "btc", "utxo", "p2p" as uppercase.
-  if (len <= 4 || /\d/.test(trimmedSlug)) {
+  if (len <= ACRONYM_MAX_LENGTH || /\d/.test(trimmedSlug)) {
     return trimmedSlug.toUpperCase();
   }
 
@@ -447,10 +455,8 @@ function mapRelatedTermsToDefinedTerms(
     if (!trimmedTerm) {
       continue;
     }
-    let isValid: boolean;
-    if (slugValidationCache.has(trimmedTerm)) {
-      isValid = slugValidationCache.get(trimmedTerm)!;
-    } else {
+    let isValid = slugValidationCache.get(trimmedTerm);
+    if (isValid === undefined) {
       isValid = VALID_SLUG_PATTERN.test(trimmedTerm);
       setSlugValidationCache(trimmedTerm, isValid);
     }
