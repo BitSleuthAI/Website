@@ -57,9 +57,9 @@ export function Header({ basePath = '' }: HeaderProps) {
       </Link>
       <nav className="ml-auto hidden gap-8 sm:flex items-center">
         <ThemeToggle />
-        <DropdownMenu modal={false}>
+        <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors touch-manipulation" suppressHydrationWarning>
+            <Button variant="ghost" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors touch-manipulation select-none" suppressHydrationWarning>
               Products <ChevronDown className="h-4 w-4 ml-1" />
             </Button>
           </DropdownMenuTrigger>
@@ -122,9 +122,9 @@ export function Header({ basePath = '' }: HeaderProps) {
           </Link>
         ))}
 
-        <DropdownMenu modal={false}>
+        <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-none touch-manipulation" suppressHydrationWarning>
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-none touch-manipulation select-none" suppressHydrationWarning>
               <Rocket className="mr-2 h-4 w-4" />
               Launch App
               <ChevronDown className="h-4 w-4 ml-1" />
@@ -182,9 +182,9 @@ export function Header({ basePath = '' }: HeaderProps) {
               <ThemeToggle />
             </div>
 
-            <DropdownMenu modal={false}>
+            <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full justify-start touch-manipulation" suppressHydrationWarning>
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full justify-start touch-manipulation select-none" suppressHydrationWarning>
                   <Rocket className="mr-2 h-4 w-4" />
                   Launch App
                   <ChevronDown className="h-4 w-4 ml-auto" />
