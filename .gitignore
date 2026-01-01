@@ -50,3 +50,7 @@ firestore-debug.log
 # playwright test files (temporary)
 test-*.js
 screenshots-demo/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+tests/screenshots/

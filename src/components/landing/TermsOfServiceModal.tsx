@@ -25,8 +25,8 @@ export function TermsOfServiceModal({ isOpen, onOpenChange, onPrivacyClick }: Te
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl">
+    <Dialog open={isOpen} onOpenChange={onOpenChange} modal>
+      <DialogContent className="max-w-3xl touch-manipulation">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-primary">Terms of Service</DialogTitle>
           <DialogDescription className="font-medium">Last updated: 15 September 2025</DialogDescription>

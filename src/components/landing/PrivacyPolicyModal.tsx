@@ -18,8 +18,8 @@ interface PrivacyPolicyModalProps {
 
 export function PrivacyPolicyModal({ isOpen, onOpenChange }: PrivacyPolicyModalProps) {
   return (
-    <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl">
+    <Dialog open={isOpen} onOpenChange={onOpenChange} modal>
+      <DialogContent className="max-w-3xl touch-manipulation">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-primary">Privacy Policy</DialogTitle>
           <DialogDescription className="font-medium">Effective Date: 15 September 2025</DialogDescription>

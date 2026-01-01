@@ -47,10 +47,18 @@ export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
             >
               Nostr
             </a>
-            <button onClick={onTermsClick} className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-foreground font-medium transition-colors">
+            <button 
+              onClick={onTermsClick} 
+              type="button"
+              className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-foreground font-medium transition-colors cursor-pointer touch-manipulation"
+            >
               Terms of Service
             </button>
-            <button onClick={onPrivacyClick} className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-foreground font-medium transition-colors">
+            <button 
+              onClick={onPrivacyClick} 
+              type="button"
+              className="text-sm hover:text-primary hover:underline underline-offset-4 text-gray-400 hover:text-foreground font-medium transition-colors cursor-pointer touch-manipulation"
+            >
               Privacy Policy
             </button>
             <Link

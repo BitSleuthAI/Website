@@ -20,9 +20,9 @@ export function ThemeToggle() {
   }, []);
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" aria-label="Toggle theme" suppressHydrationWarning>
+        <Button variant="ghost" size="icon" aria-label="Toggle theme" className="touch-manipulation" suppressHydrationWarning>
           {mounted && resolvedTheme === "dark" ? (
             <Moon className="h-5 w-5" />
           ) : (
@@ -30,7 +30,7 @@ export function ThemeToggle() {
           )}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      <DropdownMenuContent align="end" sideOffset={8}>
         <DropdownMenuItem onClick={() => setTheme("light")}>
           <Sun className="mr-2 h-4 w-4" /> Light
         </DropdownMenuItem>

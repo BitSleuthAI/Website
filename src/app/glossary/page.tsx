@@ -383,8 +383,9 @@ export default function GlossaryIndexPage() {
                   placeholder="Search glossary terms and definitions..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 h-12 text-base shadow-none border-primary/20 focus-visible:border-primary/50"
+                  className="pl-10 h-12 text-base shadow-none border-primary/20 focus-visible:border-primary/50 touch-manipulation"
                   aria-label="Search glossary"
+                  autoComplete="off"
                 />
               </div>
 
@@ -394,15 +395,17 @@ export default function GlossaryIndexPage() {
                   variant={categoryFilter === '' ? 'default' : 'outline'}
                   size="sm"
                   onClick={() => setCategoryFilter('')}
-                  className={categoryFilter === '' ? '' : 'border-primary/20 hover:bg-primary/10 hover:text-primary'}
+                  className={categoryFilter === '' ? 'touch-manipulation' : 'border-primary/20 hover:bg-primary/10 hover:text-primary touch-manipulation'}
+                  type="button"
                 >
-                  Clear
+                  All Terms
                 </Button>
                 <Button
                   variant={categoryFilter === 'wallet-basics' ? 'default' : 'outline'}
                   size="sm"
                   onClick={() => setCategoryFilter('wallet-basics')}
-                  className={categoryFilter === 'wallet-basics' ? '' : 'border-primary/20 hover:bg-primary/10 hover:text-primary'}
+                  className={categoryFilter === 'wallet-basics' ? 'touch-manipulation' : 'border-primary/20 hover:bg-primary/10 hover:text-primary touch-manipulation'}
+                  type="button"
                 >
                   Wallet Basics
                 </Button>
@@ -410,7 +413,8 @@ export default function GlossaryIndexPage() {
                   variant={categoryFilter === 'wallet-standards' ? 'default' : 'outline'}
                   size="sm"
                   onClick={() => setCategoryFilter('wallet-standards')}
-                  className={categoryFilter === 'wallet-standards' ? '' : 'border-primary/20 hover:bg-primary/10 hover:text-primary'}
+                  className={categoryFilter === 'wallet-standards' ? 'touch-manipulation' : 'border-primary/20 hover:bg-primary/10 hover:text-primary touch-manipulation'}
+                  type="button"
                 >
                   Wallet Standards
                 </Button>
@@ -418,7 +422,8 @@ export default function GlossaryIndexPage() {
                   variant={categoryFilter === 'privacy-features' ? 'default' : 'outline'}
                   size="sm"
                   onClick={() => setCategoryFilter('privacy-features')}
-                  className={categoryFilter === 'privacy-features' ? '' : 'border-primary/20 hover:bg-primary/10 hover:text-primary'}
+                  className={categoryFilter === 'privacy-features' ? 'touch-manipulation' : 'border-primary/20 hover:bg-primary/10 hover:text-primary touch-manipulation'}
+                  type="button"
                 >
                   Privacy Features
                 </Button>
@@ -426,7 +431,8 @@ export default function GlossaryIndexPage() {
                   variant={categoryFilter === 'advanced-bitcoin' ? 'default' : 'outline'}
                   size="sm"
                   onClick={() => setCategoryFilter('advanced-bitcoin')}
-                  className={categoryFilter === 'advanced-bitcoin' ? '' : 'border-primary/20 hover:bg-primary/10 hover:text-primary'}
+                  className={categoryFilter === 'advanced-bitcoin' ? 'touch-manipulation' : 'border-primary/20 hover:bg-primary/10 hover:text-primary touch-manipulation'}
+                  type="button"
                 >
                   Advanced Bitcoin
                 </Button>
@@ -441,11 +447,15 @@ export default function GlossaryIndexPage() {
                 <p className="text-muted-foreground">
                   Try adjusting your search terms or{' '}
                   <button
-                    onClick={() => setSearchQuery('')}
-                    className="text-primary hover:underline font-medium"
-                    aria-label="Clear search"
+                    onClick={() => {
+                      setSearchQuery('');
+                      setCategoryFilter('');
+                    }}
+                    type="button"
+                    className="text-primary hover:underline font-medium cursor-pointer touch-manipulation"
+                    aria-label="Clear search and filters"
                   >
-                    clear the search
+                    clear all filters
                   </button>
                 </p>
               </div>
