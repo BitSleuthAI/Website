@@ -8,7 +8,6 @@ export default defineConfig({
       '**/dist/**',
       '**/.{idea,git,cache,output,temp}/**',
       '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
-      '**/tests/**/*.e2e.{ts,tsx}', // Exclude Playwright/e2e test files
     ],
     // Include only unit test files in src
     include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
