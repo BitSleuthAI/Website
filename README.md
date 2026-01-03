@@ -2,7 +2,7 @@
 
 > **Bitcoin Wallet Analysis & Privacy Tools**
 
-BitSleuth is a comprehensive Next.js 16.0.10 website that serves as the primary marketing and educational hub for Bitcoin analysis tools. The platform includes product landing pages for a Bitcoin wallet analyzer and Bitcoin wallet app, as well as an extensive educational glossary, SEO optimization, and privacy-compliant analytics.
+BitSleuth is a comprehensive Next.js 16.0.10 website that serves as the primary marketing and educational learning hub for Bitcoin analysis tools. The platform includes product landing pages for a Bitcoin wallet analyzer and Bitcoin wallet app, as well as an extensive educational glossary, SEO optimization, and privacy-compliant analytics.
 
 - **🌐 Production:** [https://www.bitsleuth.ai](https://www.bitsleuth.ai)
 - **🧑‍💻 Development:** [https://website-dev--bitsleuth.us-central1.hosted.app](https://website-dev--bitsleuth.us-central1.hosted.app)
@@ -20,7 +20,7 @@ BitSleuth is a comprehensive Next.js 16.0.10 website that serves as the primary 
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 16.0.10 (App Router), React 19.2.0, TypeScript 5.9.3
+- **Frameworks**: Next.js 16.0.10 (App Router), React 19.2.0, and TypeScript 5.9.3
 - **Styling**: Tailwind CSS, shadcn/ui, Radix primitives
 - **UX**: Embla Carousel, Lucide icons
 - **SEO**: App Router metadata routes (`robots.ts`, `sitemap.ts`)
@@ -274,7 +274,7 @@ The project implements comprehensive SEO optimization:
 - **Structured Data**: JSON-LD schemas for rich search results (see `src/lib/structured-data.ts`)
 - **Sitemap**: Auto-generated at `/sitemap.xml` via `src/app/sitemap.ts`
 - **Robots.txt**: Custom robots configuration via `src/app/robots.ts`
-- **Canonical URLs**: Proper canonical tags to prevent duplicate content
+- **Canonical URL's**: Proper canonical tags that prevents duplicate content
 - **Dynamic Metadata**: SEO metadata helpers in `src/lib/glossary-metadata.ts`
 
 ### Security Configuration
@@ -572,7 +572,7 @@ The project has **MCP server enabled** (`experimental.mcpServer: true` in `next.
 
 ## 🤝 Contributing
 
-We welcome contributions to the BitSleuth Website! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on:
+We welcome contributions to the BitSleuth Website! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on the following areas:
 
 - 📚 **Documentation Organization**: All markdown documentation files must be stored in the `docs/` folder
 - 🚀 Getting started with development
