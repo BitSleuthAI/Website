@@ -2,7 +2,7 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    // Exclude Playwright tests from vitest
+    // Exclude e2e tests and build artifacts from vitest
     exclude: [
       '**/node_modules/**',
       '**/dist/**',
