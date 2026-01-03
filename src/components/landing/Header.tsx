@@ -55,8 +55,8 @@ export function Header({ basePath = '' }: HeaderProps) {
         <ThemeToggle />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="text-[15px] md:text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-all duration-200 header-dropdown-trigger px-3 py-2 group">
-              Products <ChevronDown className="h-4 w-4 ml-1 shrink-0 group-hover:rotate-180 transition-transform duration-300" />
+            <Button variant="ghost" className="text-[15px] md:text-base font-semibold text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-all duration-200 header-dropdown-trigger px-3 py-2 group data-[state=open]:text-foreground">
+              Products <ChevronDown className="h-4 w-4 ml-1 shrink-0 transition-transform duration-300 data-[state=open]:rotate-180" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56" sideOffset={8}>
@@ -123,7 +123,7 @@ export function Header({ basePath = '' }: HeaderProps) {
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] header-dropdown-trigger px-4 py-2.5 transition-all duration-200 group">
               <Rocket className="mr-2 h-4 w-4 shrink-0 group-hover:rotate-12 transition-transform duration-300" />
               Launch App
-              <ChevronDown className="h-4 w-4 ml-1 shrink-0 group-hover:rotate-180 transition-transform duration-300" />
+              <ChevronDown className="h-4 w-4 ml-1 shrink-0 transition-transform duration-300 data-[state=open]:rotate-180" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" sideOffset={8}>
@@ -183,7 +183,7 @@ export function Header({ basePath = '' }: HeaderProps) {
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full justify-start touch-manipulation select-none" suppressHydrationWarning>
                   <Rocket className="mr-2 h-4 w-4" />
                   Launch App
-                  <ChevronDown className="h-4 w-4 ml-auto" />
+                  <ChevronDown className="h-4 w-4 ml-auto transition-transform duration-300 data-[state=open]:rotate-180" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-full" sideOffset={8}>
