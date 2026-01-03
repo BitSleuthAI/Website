@@ -774,7 +774,7 @@ npm run build -- --analyze  # (if configured)
 lsof -ti:9002 | xargs kill -9
 
 # Or use a different port
-npm run dev -- -p 9002
+npm run dev -- -p 3001
 ```
 
 **Build errors after pulling latest changes:**
@@ -974,7 +974,7 @@ For detailed security information:
 A: No! All environment variables are optional. The site runs fully without any configuration. Only add them if you need Google Analytics.
 
 **Q: What port does the dev server use?**  
-A: Port 9002 by default. You can change it with `npm run dev -- -p 9002`.
+A: Port 9002 by default. You can change it with `npm run dev -- -p 3001`.
 
 **Q: Which branch should I base my work on?**  
 A: Always use `dev` as your base branch. Create feature branches from `dev`, not from `main`.
