@@ -40,6 +40,10 @@ export default async function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        
+        {/* Preload critical hero image for homepage */}
+        <link rel="preload" as="image" href="/images/hero.png" fetchPriority="high" />
+        
         <title>BitSleuth | AI-Powered Bitcoin Wallet Analysis & Privacy Wallet</title>
         <meta
           name="description"

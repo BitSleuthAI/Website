@@ -74,6 +74,8 @@ export function EnhancedHomeHeroSection() {
                 alt="Global Bitcoin Culture"
                 fill
                 priority
+                fetchPriority="high"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                 className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
