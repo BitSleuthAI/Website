@@ -67,7 +67,7 @@ export function EnhancedHomeHeroSection() {
             </div>
 
             {/* Right side - Cinematic Image */}
-            <div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 animate-in fade-in duration-1000 slide-in-from-right-8">
+            <div className="relative h-[400px] lg:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 animate-in fade-in duration-1000 slide-in-from-right-8 bg-background">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay z-10" />
               <Image
                 src="/images/hero.png"
@@ -76,7 +76,7 @@ export function EnhancedHomeHeroSection() {
                 priority
                 fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-contain hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
           </div>
