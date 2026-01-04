@@ -14,7 +14,7 @@ import { Menu, ChevronDown, BarChart, Lock, Rocket, GraduationCap, ScrollText } 
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 
-const APP_URL = "https://app.bitsleuth.ai/";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.bitsleuth.ai/";
 
 const LAUNCH_BUTTON_DESKTOP_CLASSNAME =
   "bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] header-dropdown-trigger px-4 py-2.5 transition-all duration-200 group";
@@ -32,15 +32,15 @@ const logoLinkClassName = cn(
 const logoImageClassName =
   "rounded-2xl shadow-sm group-hover:shadow-md group-hover:shadow-primary/20 transition-shadow duration-300";
 
-const headerProductsButtonClassName = `
-  text-[15px] md:text-base font-semibold
-  text-muted-foreground
-  hover:text-foreground hover:bg-primary/5
-  transition-all duration-200
-  header-dropdown-trigger
-  px-3 py-2
-  group data-[state=open]:text-foreground
-`;
+const headerProductsButtonClassName = cn(
+  "text-[15px] md:text-base font-semibold",
+  "text-muted-foreground",
+  "hover:text-foreground hover:bg-primary/5",
+  "transition-all duration-200",
+  "header-dropdown-trigger",
+  "px-3 py-2",
+  "group data-[state=open]:text-foreground"
+);
 
 interface HeaderProps {
   basePath?: string;
@@ -70,10 +70,11 @@ export function Header({ basePath = '' }: HeaderProps) {
     paddingRight: 'max(1rem, env(safe-area-inset-right))',
   };
 
-  const headerClassName =
-    "edge-to-edge-section pt-4 pb-4 flex items-center shadow-md sticky top-0 z-50 " +
-    "bg-gradient-to-b from-primary/15 via-background/95 to-background/95 " +
-    "backdrop-blur-xl border-b border-border/40";
+  const headerClassName = cn(
+    "edge-to-edge-section pt-4 pb-4 flex items-center shadow-md sticky top-0 z-50",
+    "bg-gradient-to-b from-primary/15 via-background/95 to-background/95",
+    "backdrop-blur-xl border-b border-border/40"
+  );
 
   return (
     <header
