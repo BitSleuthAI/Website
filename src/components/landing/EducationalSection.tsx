@@ -7,18 +7,13 @@ import { Button } from "@/components/ui/button";
 import {
   BookOpen,
   Clock,
-  Lightbulb,
-  Network,
-  Shield,
-  Zap,
-  ArrowRight,
-  FileText
+  ArrowRight
 } from "lucide-react";
 import Link from "next/link";
 
 export function EducationalSection() {
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-background relative overflow-hidden">
+    <section className="py-10 md:py-14 lg:py-16 bg-background relative overflow-hidden">
       <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
@@ -38,57 +33,45 @@ export function EducationalSection() {
         {/* Main Cards Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {/* Learning Hub Card - Featured with Image */}
-          <Card className="group bg-card border-border/50 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col h-full">
-            <div className="relative h-80 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
+          <Card className="group relative bg-card border-none shadow-xl overflow-hidden flex flex-col h-96">
+            <div className="absolute inset-0 z-0">
               <Image
                 src="/images/educational.png"
                 alt="Bitcoin Education"
                 fill
-                className="object-cover will-change-transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 priority
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
             </div>
-            <CardContent className="p-8 flex-1 flex flex-col">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <BookOpen className="h-8 w-8 text-primary" />
+            
+            <CardContent className="h-full flex flex-col justify-end p-8 relative z-10 text-white">
+              <div className="mb-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded-lg bg-orange-500/20 backdrop-blur-sm">
+                    <BookOpen className="h-6 w-6 text-orange-400" />
+                  </div>
+                  <h3 className="text-3xl font-bold">Learning Hub</h3>
                 </div>
+                <p className="text-gray-200 font-medium">Master Bitcoin fundamentals</p>
+              </div>
+
+               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 pt-4 border-t border-white/10">
                 <div>
-                  <h3 className="text-2xl font-bold mb-1">Learning Hub</h3>
-                  <p className="text-sm text-muted-foreground">Master Bitcoin fundamentals</p>
+                   <div className="font-semibold text-sm text-orange-200">Fundamentals</div>
+                   <div className="text-xs text-gray-300">How it works</div>
+                </div>
+                 <div>
+                   <div className="font-semibold text-sm text-orange-200">Security</div>
+                   <div className="text-xs text-gray-300">Best practices</div>
+                </div>
+                 <div>
+                   <div className="font-semibold text-sm text-orange-200">Usage</div>
+                   <div className="text-xs text-gray-300">Getting started</div>
                 </div>
               </div>
 
-              <p className="text-muted-foreground mb-8 leading-relaxed flex-1">
-                Understand how Bitcoin works, from basic concepts to advanced topics. Learn about transactions, mining, wallets, and the revolutionary technology behind the world's first decentralized currency.
-              </p>
-
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-3">
-                  <Network className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-sm">How Bitcoin Works</div>
-                    <div className="text-xs text-muted-foreground">Blockchain, mining, and consensus</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Shield className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-sm">Security & Privacy</div>
-                    <div className="text-xs text-muted-foreground">Keys, wallets, and best practices</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Zap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-sm">Getting Started</div>
-                    <div className="text-xs text-muted-foreground">How to acquire, store, and use Bitcoin</div>
-                  </div>
-                </div>
-              </div>
-
-              <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] transition-all duration-200">
+              <Button asChild className="w-fit bg-orange-500 hover:bg-orange-600 text-white border-none">
                 <Link href="/learn">
                   Start Learning
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -98,64 +81,50 @@ export function EducationalSection() {
           </Card>
 
           {/* Bitcoin History Card */}
-          <Card className="group bg-card border-border/50 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col h-full">
-            <div className="relative h-80 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
-              <Image
+          <Card className="group relative bg-card border-none shadow-xl overflow-hidden flex flex-col h-96">
+            <div className="absolute inset-0 z-0">
+               <Image
                 src="/images/history.png"
                 alt="Bitcoin History"
                 fill
-                className="object-cover will-change-transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 priority
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
             </div>
-            <CardContent className="p-8 flex-1 flex flex-col">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <Clock className="h-8 w-8 text-primary" />
+
+            <CardContent className="h-full flex flex-col justify-end p-8 relative z-10 text-white">
+               <div className="mb-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded-lg bg-orange-500/20 backdrop-blur-sm">
+                    <Clock className="h-6 w-6 text-orange-400" />
+                  </div>
+                  <h3 className="text-3xl font-bold">Bitcoin History</h3>
                 </div>
+                <p className="text-gray-200 font-medium">From whitepaper to phenomenon</p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 pt-4 border-t border-white/10">
                 <div>
-                  <h3 className="text-2xl font-bold mb-1">Bitcoin History</h3>
-                  <p className="text-sm text-muted-foreground">From whitepaper to global phenomenon</p>
+                   <div className="font-semibold text-sm text-orange-200">Origins</div>
+                   <div className="text-xs text-gray-300">The Whitepaper</div>
+                </div>
+                 <div>
+                   <div className="font-semibold text-sm text-orange-200">Genesis</div>
+                   <div className="text-xs text-gray-300">First Block</div>
+                </div>
+                 <div>
+                   <div className="font-semibold text-sm text-orange-200">Impact</div>
+                   <div className="text-xs text-gray-300">Global change</div>
                 </div>
               </div>
 
-              <p className="text-muted-foreground mb-8 leading-relaxed flex-1">
-                Discover the fascinating story of Bitcoin, from Satoshi Nakamoto's revolutionary whitepaper to its lasting impact on global finance and technology.
-              </p>
-
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-3">
-                  <FileText className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-sm">The Whitepaper</div>
-                    <div className="text-xs text-muted-foreground">Satoshi's vision simplified</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Lightbulb className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-sm">Genesis Block</div>
-                    <div className="text-xs text-muted-foreground">The birth of Bitcoin in 2009</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Network className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-semibold text-sm">Global Impact</div>
-                    <div className="text-xs text-muted-foreground">How Bitcoin changed finance forever</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-auto">
-                <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] transition-all duration-200">
-                  <Link href="/history">
-                    Explore History
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
-              </div>
+              <Button asChild className="w-fit bg-orange-500 hover:bg-orange-600 text-white border-none">
+                <Link href="/history">
+                  Explore History
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
             </CardContent>
           </Card>
         </div>

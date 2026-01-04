@@ -24,7 +24,7 @@ export function EnhancedHomeHeroSection() {
   return (
     <>
       {/* Main Hero Section with Cinematic Image */}
-      <section className="edge-to-edge-section relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-32">
+      <section className="edge-to-edge-section relative overflow-hidden pt-10 pb-20 md:pt-16 md:pb-36">
         {/* Background Gradient - Orange from top */}
         <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
         <BackgroundBeams intensity="subtle" className="opacity-30" />
@@ -36,7 +36,7 @@ export function EnhancedHomeHeroSection() {
               <div className="space-y-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-700 motion-safe:slide-in-from-bottom-4">
                 <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl xl:text-6xl/none text-foreground drop-shadow-sm">
                   One Brand. <br />
-                  <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
                     Two Powerful Tools.
                   </span>
                 </h1>
@@ -87,9 +87,9 @@ export function EnhancedHomeHeroSection() {
       </section>
 
       {/* Product Cards Section */}
-      <section className="py-12 md:py-20 lg:py-24 bg-background relative overflow-hidden">
-        <div className="container max-w-6xl mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <section className="py-0 relative z-20 -mt-24 md:-mt-48">
+        <div className="container max-w-6xl mx-auto px-4 md:px-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <Card className="group text-left bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full overflow-hidden">
               <CardHeader className="flex flex-row items-center gap-4 pb-4">
                 <div className="p-3 rounded-2xl bg-primary/20 group-hover:bg-primary/30 transition-colors">
