@@ -211,7 +211,7 @@ export function Header({ basePath = '' }: HeaderProps) {
                 className="text-muted-foreground hover:text-primary font-medium"
                 prefetch={false}
               >
-                {product.name}
+                {product.title}
               </Link>
             ))}
 
