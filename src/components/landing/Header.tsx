@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { products } from "@/components/landing/products-data";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, ChevronDown, BarChart, Lock, Rocket, GraduationCap, ScrollText } from "lucide-react";
+import { Menu, ChevronDown, BarChart, Lock, Rocket } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 
@@ -39,37 +40,10 @@ function getValidatedAppUrl(): string {
 
 const APP_URL = getValidatedAppUrl();
 
-const PRODUCTS = [
-  {
-    href: "/analyzer",
-    icon: BarChart,
-    title: "Wallet Analyzer",
-    description: "AI-powered transaction analysis",
-  },
-  {
-    href: "/wallet",
-    icon: Lock,
-    title: "Privacy Wallet",
-    description: "Non-custodial, private BTC wallet",
-  },
-  {
-    href: "/learn",
-    icon: GraduationCap,
-    title: "Learning Hub",
-    description: "Bitcoin Educational Hub",
-  },
-  {
-    href: "/history",
-    icon: ScrollText,
-    title: "Bitcoin History",
-    description: "History of Bitcoin",
-  },
-];
-
-const LAUNCH_BUTTON_DESKTOP_CLASSNAME =
+const launchButtonDesktopClassName =
   "bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] header-dropdown-trigger px-4 py-2.5 transition-all duration-200 group";
 
-const LAUNCH_BUTTON_MOBILE_CLASSNAME =
+const launchButtonMobileClassName =
   "bg-primary hover:bg-primary/90 text-primary-foreground w-full justify-start touch-manipulation select-none";
 
 const logoLinkClassName = cn(
@@ -151,7 +125,7 @@ export function Header({ basePath = '' }: HeaderProps) {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-56" sideOffset={8}>
-            {PRODUCTS.map((product) => {
+            {products.map((product) => {
               const Icon = product.icon;
               return (
                 <DropdownMenuItem asChild key={product.href}>
@@ -185,7 +159,7 @@ export function Header({ basePath = '' }: HeaderProps) {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button className={LAUNCH_BUTTON_DESKTOP_CLASSNAME}>
+            <Button className={launchButtonDesktopClassName}>
               <Rocket className="mr-2 h-4 w-4 shrink-0 group-hover:rotate-12 transition-transform duration-300" />
               Launch App
               <ChevronDown className="h-4 w-4 ml-1 shrink-0 transition-transform duration-300 data-[state=open]:rotate-180" />
@@ -193,7 +167,7 @@ export function Header({ basePath = '' }: HeaderProps) {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" sideOffset={8}>
             <DropdownMenuItem asChild>
-              <a href={APP_URL} target="_blank" rel="noopener noreferrer nofollow" className="w-full cursor-pointer">
+              <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="w-full cursor-pointer">
                 <div className="flex items-start gap-3">
                   <BarChart className="h-5 w-5 mt-0.5 text-primary" />
                   <div>
@@ -230,10 +204,16 @@ export function Header({ basePath = '' }: HeaderProps) {
               <Image src="/images/logo-icon.jpg" alt="BitSleuth Logo" width={32} height={32} className="rounded-lg" />
               <span className="ml-2 font-bold text-lg">BitSleuth</span>
             </Link>
-            <Link href="/analyzer" className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>Wallet Analyzer</Link>
-            <Link href="/wallet" className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>Privacy Wallet</Link>
-            <Link href="/learn" className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>Learning Hub</Link>
-            <Link href="/history" className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>Bitcoin History</Link>
+            {products.map((product) => (
+              <Link
+                key={product.href}
+                href={product.href}
+                className="text-muted-foreground hover:text-primary font-medium"
+                prefetch={false}
+              >
+                {product.title}
+              </Link>
+            ))}
 
             {showNavLinks && navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-muted-foreground hover:text-primary font-medium" prefetch={false}>{link.label}</Link>
@@ -246,7 +226,7 @@ export function Header({ basePath = '' }: HeaderProps) {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button
-                  className={LAUNCH_BUTTON_MOBILE_CLASSNAME}
+                  className={launchButtonMobileClassName}
                   suppressHydrationWarning
                 >
                   <Rocket className="mr-2 h-4 w-4" />
@@ -256,7 +236,7 @@ export function Header({ basePath = '' }: HeaderProps) {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-full" sideOffset={8}>
                 <DropdownMenuItem asChild>
-                  <a href={APP_URL} target="_blank" rel="noopener noreferrer nofollow" className="w-full font-medium">
+                  <a href={APP_URL} target="_blank" rel="noopener noreferrer" className="w-full font-medium">
                     Wallet Analyzer
                   </a>
                 </DropdownMenuItem>
