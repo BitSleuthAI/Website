@@ -6,7 +6,7 @@ import { Bitcoin, Shield, Blocks } from "lucide-react";
 
 export function AnalyzerAboutSection() {
   return (
-    <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 bg-secondary/30 relative overflow-hidden">
+    <section className="edge-to-edge-section py-12 md:py-16 lg:py-20 bg-secondary/30 relative overflow-hidden">
       <BackgroundBeams intensity="subtle" />
       <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">

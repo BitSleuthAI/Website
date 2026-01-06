@@ -27,7 +27,7 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <section id="faq" className="edge-to-edge-section py-20 md:py-24 lg:py-32 relative overflow-hidden bg-background">
+    <section id="faq" className="edge-to-edge-section py-12 md:py-16 lg:py-20 relative overflow-hidden bg-background">
       <BackgroundBeams intensity="subtle" className="opacity-20" />
       <div className="container max-w-4xl mx-auto relative z-10">
         <h2 className="text-3xl font-bold mb-10 text-center text-foreground">

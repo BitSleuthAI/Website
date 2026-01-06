@@ -49,7 +49,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="edge-to-edge-section relative overflow-hidden py-20 md:py-24 lg:py-32">
+    <section className="edge-to-edge-section relative overflow-hidden py-12 md:py-16 lg:py-20">
       {/* Background Gradient - Orange from top */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
       <BackgroundBeams intensity="subtle" className="opacity-30" />
