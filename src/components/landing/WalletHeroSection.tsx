@@ -4,6 +4,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ArrowRight, Zap } from "lucide-react";
 
 export function WalletHeroSection() {
   return (
@@ -35,13 +36,15 @@ export function WalletHeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <Button size="lg" className="px-8" asChild>
+              <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Link href="/wallet/download">
                   Download Privacy Wallet
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="px-8 bg-transparent border-foreground text-foreground hover:bg-foreground/5 hover:text-foreground" asChild>
+              <Button size="lg" variant="outline" asChild className="border-primary/20 hover:bg-primary/10 hover:text-primary">
                 <a href="#features">
+                  <Zap className="mr-2 h-5 w-5" />
                   Explore Features
                 </a>
               </Button>

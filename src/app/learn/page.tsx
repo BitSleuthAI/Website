@@ -77,7 +77,7 @@ export default function LearnPage() {
         <Header basePath="/learn" />
         <main className="flex-1">
           {/* Hero Section */}
-          <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 text-foreground relative overflow-hidden">
+          <section className="edge-to-edge-section pt-12 pb-12 md:pt-16 md:pb-28 text-foreground relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
             {/* Top border removed for cleaner look */}
             <BackgroundBeams intensity="subtle" className="opacity-30" />
@@ -113,7 +113,7 @@ export default function LearnPage() {
                     src="/images/learn_hero_illustration.png"
                     alt="Bitcoin Education Hero Illustration"
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                     priority
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
@@ -122,8 +122,84 @@ export default function LearnPage() {
             </div>
           </section>
 
+          {/* Quick Navigation Cards */}
+          <section className="py-4 relative z-20 -mt-24 md:-mt-48 mb-2">
+            <div className="container max-w-7xl mx-auto px-4 md:px-6">
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* How Bitcoin Works Card */}
+                <Link href="#how-it-works" className="group">
+                  <Card className="h-full bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                    <CardContent className="p-6 flex flex-col items-center text-center">
+                      <div className="mb-4 relative h-20 w-20 transition-transform duration-300 group-hover:scale-110">
+                        <Image
+                          src="/images/learn_icon_how_works.png"
+                          alt="How Bitcoin Works Icon"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">How Bitcoin Works</h3>
+                      <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                        Understand the mechanics behind the decentralized network, mining, transactions, and security.
+                      </p>
+                      <Button className="w-full mt-auto bg-primary text-primary-foreground hover:bg-primary/90">
+                        Learn More
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Bitcoin History Card */}
+                <Link href="/history" className="group">
+                  <Card className="h-full bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                    <CardContent className="p-6 flex flex-col items-center text-center">
+                      <div className="mb-4 relative h-20 w-20 transition-transform duration-300 group-hover:scale-110">
+                        <Image
+                          src="/images/learn_icon_history.png"
+                          alt="Bitcoin History Icon"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Bitcoin History</h3>
+                      <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                        Explore the origins of Bitcoin, from Satoshi Nakamoto's whitepaper to key milestones.
+                      </p>
+                      <Button className="w-full mt-auto bg-primary text-primary-foreground hover:bg-primary/90">
+                        Learn More
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
+
+                {/* Terminology Glossary Card */}
+                <Link href="/glossary" className="group">
+                  <Card className="h-full bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                    <CardContent className="p-6 flex flex-col items-center text-center">
+                      <div className="mb-4 relative h-20 w-20 transition-transform duration-300 group-hover:scale-110">
+                        <Image
+                          src="/images/learn_icon_glossary.png"
+                          alt="Terminology Glossary Icon"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Terminology Glossary</h3>
+                      <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                        Demystify common Bitcoin terms and concepts with our comprehensive glossary.
+                      </p>
+                      <Button className="w-full mt-auto bg-primary text-primary-foreground hover:bg-primary/90">
+                        Learn More
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* Bitcoin Basics Section */}
-          <section id="basics" className="py-16 md:py-20 lg:py-24 relative overflow-hidden">
+          <section id="basics" className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
               <div className="text-center mb-12">
@@ -158,7 +234,7 @@ export default function LearnPage() {
                         src="/images/bitcoin_network_illustration.png"
                         alt="Bitcoin Network Decentralization Illustration"
                         fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
+                        className="object-cover object-center hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <p className="text-muted-foreground">
@@ -187,7 +263,7 @@ export default function LearnPage() {
                         src="/images/bitcoin_currency_illustration.png"
                         alt="Bitcoin Currency Scarcity Illustration"
                         fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
+                        className="object-cover object-center hover:scale-105 transition-transform duration-500"
                       />
                     </div>
 
@@ -221,7 +297,7 @@ export default function LearnPage() {
           </section>
 
           {/* How It Works Section */}
-          <section className="py-16 md:py-20 lg:py-24 bg-background relative overflow-hidden">
+          <section id="how-it-works" className="py-12 md:py-16 lg:py-20 bg-background relative overflow-hidden">
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
               <div className="text-center mb-12">
@@ -377,7 +453,7 @@ export default function LearnPage() {
           </section>
 
           {/* How to Get Bitcoin Section */}
-          <section className="py-16 md:py-20 lg:py-24 relative overflow-hidden">
+          <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
               <div className="text-center mb-12">
@@ -508,7 +584,7 @@ export default function LearnPage() {
           </section>
 
           {/* How to Use Bitcoin Section */}
-          <section className="py-16 md:py-20 lg:py-24 bg-background relative overflow-hidden">
+          <section className="py-12 md:py-16 lg:py-20 bg-background relative overflow-hidden">
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
               <div className="text-center mb-12">
@@ -717,7 +793,7 @@ export default function LearnPage() {
           </section>
 
           {/* Key Concepts Section */}
-          <section className="py-16 md:py-20 lg:py-24 relative overflow-hidden">
+          <section className="py-12 md:py-16 lg:py-20 relative overflow-hidden">
             <BackgroundBeams intensity="subtle" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
               <div className="text-center mb-12">
