@@ -138,7 +138,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `.github/workflows/README.md` updated for new test structure
   - Copilot test workflow refactored (build, lint, typecheck, route testing)
   - Removed Google Sheets credential requirements
-  - Port consistency fixed (9002 throughout)
+  - Port consistency fixed (3000 throughout)
 - **NEW: Coding Standards Review**:
   - `docs/STRUCTURED_DATA_CODING_STANDARDS_REVIEW.md`
   - Comprehensive analysis of code quality and best practices
@@ -214,7 +214,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Refactored `copilot-test.yml` workflow
   - Removed Google Sheets environment variables
   - Added route testing and health checks
-  - Fixed port references (3000 → 9002)
+  - Fixed port references (consistent at 3000)
 
 ### 📊 Statistics & Metrics
 
@@ -388,7 +388,7 @@ The first release of the BitSleuth Website - a comprehensive Next.js 15 marketin
 - TypeScript strict mode enabled
 - ESLint for code quality
 - PostCSS for CSS processing
-- Custom dev server on port 9002
+- Custom dev server on port 3000
 - Production build optimization
 
 #### 📱 Responsive Design
@@ -509,7 +509,7 @@ The first release of the BitSleuth Website - a comprehensive Next.js 15 marketin
 1. Clone the repository
 2. Run `npm install` to install dependencies
 3. Copy `.env.example` to `.env.local` and configure
-4. Run `npm run dev` to start development server (port 9002)
+4. Run `npm run dev` to start development server (port 3000)
 5. Read README.md and CONTRIBUTING.md for guidelines
 
 #### Key Areas to Understand

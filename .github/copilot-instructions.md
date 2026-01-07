@@ -26,7 +26,7 @@
   - Responsive and dark/light mode support
 
 ## Developer Workflow
-- **Start Dev Server:** `npm run dev` (default port: 9002)
+- **Start Dev Server:** `npm run dev` (default port: 3000)
 - **Build:** `npm run build`
 - **Lint:** `npm run lint`
 - **Typecheck:** `npm run typecheck`
@@ -34,7 +34,7 @@
 - **Manual Testing:**
   - Check all routes, theme toggle, cookie consent, analytics gating
 - **Troubleshooting:**
-  - Port 9002: `lsof -ti:9002 | xargs kill -9`
+  - Port 3000: `lsof -ti:3000 | xargs kill -9`
   - Clear cache: `rm -rf .next`
 
 ## Integration Points

@@ -50,7 +50,7 @@ When creating new documentation (guides, specifications, strategies, etc.), alwa
 4. **Start the Development Server:**
    ```bash
    npm run dev
-   # Server runs on http://localhost:9002
+   # Server runs on http://localhost:3000
    ```
 
 5. **Verify Everything Works:**

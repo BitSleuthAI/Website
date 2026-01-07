@@ -44,7 +44,7 @@ cp .env.example .env.local
 
 # 3. Start development server
 npm run dev
-# Visit http://localhost:9002
+# Visit http://localhost:3000
 
 # 4. Verify everything works
 npm run ci  # Runs lint + typecheck + test + build
@@ -82,12 +82,12 @@ npm run ci  # Runs lint + typecheck + test + build
 3. **Start Development Server:**
    ```bash
    npm run dev
-   # Server runs on http://localhost:9002
+   # Server runs on http://localhost:3000
    ```
 
 4. **Available Scripts:**
    ```bash
-   npm run dev          # Development server with Turbopack (port 9002)
+   npm run dev          # Development server with Turbopack (port 3000)
    npm run build        # Production build
    npm run start        # Production server
    npm run lint         # ESLint checking
@@ -448,7 +448,7 @@ curl https://www.bitsleuth.ai/robots.txt
 |-------------|-----|--------|-------------|
 | Production | https://www.bitsleuth.ai | `main` | ✅ Yes |
 | Development | https://website-dev--bitsleuth.us-central1.hosted.app | `dev` | ✅ Yes |
-| Local | http://localhost:9002 | Any | N/A |
+| Local | http://localhost:3000 | Any | N/A |
 
 ---
 
@@ -744,8 +744,8 @@ npx tsc --noEmit --watch
 npm run build
 npm run start
 
-# The production server runs on port 9002 by default
-# Visit http://localhost:9002
+# The production server runs on port 3000 by default
+# Visit http://localhost:3000
 
 # Check for build errors
 npm run build 2>&1 | tee build.log
@@ -768,10 +768,10 @@ npm run build -- --analyze  # (if configured)
 
 ### Common Issues
 
-**Port 9002 already in use:**
+**Port 3000 already in use:**
 ```bash
-# Find and kill process using port 9002
-lsof -ti:9002 | xargs kill -9
+# Find and kill process using port 3000
+lsof -ti:3000 | xargs kill -9
 
 # Or use a different port
 npm run dev -- -p 3001
@@ -974,7 +974,7 @@ For detailed security information:
 A: No! All environment variables are optional. The site runs fully without any configuration. Only add them if you need Google Analytics.
 
 **Q: What port does the dev server use?**  
-A: Port 9002 by default. You can change it with `npm run dev -- -p 3001`.
+A: Port 3000 by default. You can change it with `npm run dev -- -p 3001`.
 
 **Q: Which branch should I base my work on?**  
 A: Always use `dev` as your base branch. Create feature branches from `dev`, not from `main`.
@@ -1033,7 +1033,7 @@ A: Use the helper functions in `src/lib/structured-data.ts`. See existing pages 
 A: Production deploys automatically when you merge to `main`. No manual deployment needed.
 
 **Q: How do I test the production build locally?**  
-A: Run `npm run build` then `npm run start`. The production server runs on port 9002 by default.
+A: Run `npm run build` then `npm run start`. The production server runs on port 3000 by default.
 
 **Q: Where do I set production environment variables?**  
 A: In Firebase App Hosting secrets (Firebase Console → App Hosting → Secrets). Never commit secrets to the repository.

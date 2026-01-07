@@ -160,14 +160,14 @@ cp .env.example .env.local
 
 ### Development Server
 ```bash
-# Start development server on port 9002
+# Start development server on port 3000
 npm run dev
-# Access at http://localhost:9002
+# Access at http://localhost:3000
 ```
 
 ### Available Commands
 ```bash
-npm run dev          # Start dev server with Turbopack on port 9002
+npm run dev          # Start dev server with Turbopack on port 3000
 npm run build        # Create production build
 npm run start        # Start production server
 npm run lint         # Run ESLint checks
@@ -178,7 +178,7 @@ npm run typecheck    # Run TypeScript type checking
 1. Make changes to TypeScript/React files
 2. Run `npm run typecheck` to verify types
 3. Run `npm run lint` to check code style
-4. Test manually in browser on port 9002
+4. Test manually in browser on port 3000
 5. Build with `npm run build` before committing
 
 ---
@@ -339,7 +339,7 @@ firebase deploy --only hosting
 ```
 
 ### Environment Configuration
-- **Development:** `http://localhost:9002`
+- **Development:** `http://localhost:3000`
 - **Production:** `https://www.bitsleuth.ai`
 - **Staging:** Configured in Firebase dashboard
 
@@ -397,10 +397,10 @@ npx shadcn-ui@latest add button
 
 ## Troubleshooting
 
-### Port 9002 Already in Use
+### Port 3000 Already in Use
 ```bash
-# Kill process using port 9002
-lsof -ti:9002 | xargs kill -9
+# Kill process using port 3000
+lsof -ti:3000 | xargs kill -9
 
 # Then restart dev server
 npm run dev
