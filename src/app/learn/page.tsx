@@ -108,7 +108,7 @@ export default function LearnPage() {
                     </a>
                   </Button>
                 </div>
-                <div className="relative w-full max-w-4xl mx-auto mt-12 aspect-[21/9] rounded-xl overflow-hidden shadow-2xl border border-primary/20">
+                <div className="image-container-stable w-full max-w-4xl mx-auto mt-12 aspect-[21/9] min-h-[200px] rounded-xl overflow-hidden shadow-2xl border border-primary/20">
                   <Image
                     src="/images/learn_hero_illustration.png"
                     alt="Bitcoin Education Hero Illustration"
@@ -131,7 +131,7 @@ export default function LearnPage() {
                 <Link href="#how-it-works" className="group">
                   <Card className="h-full bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     <CardContent className="p-6 flex flex-col items-center text-center">
-                      <div className="mb-4 relative h-20 w-20 transition-transform duration-300 group-hover:scale-110">
+                      <div className="image-container-stable mb-4 h-20 w-20 transition-transform duration-300 group-hover:scale-110">
                         <Image
                           src="/images/learn_icon_how_works.png"
                           alt="How Bitcoin Works Icon"
@@ -155,7 +155,7 @@ export default function LearnPage() {
                 <Link href="/history" className="group">
                   <Card className="h-full bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     <CardContent className="p-6 flex flex-col items-center text-center">
-                      <div className="mb-4 relative h-20 w-20 transition-transform duration-300 group-hover:scale-110">
+                      <div className="image-container-stable mb-4 h-20 w-20 transition-transform duration-300 group-hover:scale-110">
                         <Image
                           src="/images/learn_icon_history.png"
                           alt="Bitcoin History Icon"
@@ -179,7 +179,7 @@ export default function LearnPage() {
                 <Link href="/glossary" className="group">
                   <Card className="h-full bg-card border-none shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     <CardContent className="p-6 flex flex-col items-center text-center">
-                      <div className="mb-4 relative h-20 w-20 transition-transform duration-300 group-hover:scale-110">
+                      <div className="image-container-stable mb-4 h-20 w-20 transition-transform duration-300 group-hover:scale-110">
                         <Image
                           src="/images/learn_icon_glossary.png"
                           alt="Terminology Glossary Icon"
@@ -233,7 +233,7 @@ export default function LearnPage() {
                     <p className="text-muted-foreground mb-4">
                       The <Link href="/glossary/blockchain" className="text-primary hover:underline">blockchain</Link> serves as a public ledger, recording every transaction in an immutable chain of blocks. This transparency allows anyone to verify transactions while maintaining user privacy through cryptographic addresses.
                     </p>
-                    <div className="relative w-full aspect-video rounded-lg overflow-hidden my-4 border border-primary/10 shadow-lg">
+                    <div className="image-container-stable w-full aspect-video min-h-[150px] rounded-lg overflow-hidden my-4 border border-primary/10 shadow-lg">
                       <Image
                         src="/images/bitcoin_network_illustration.png"
                         alt="Bitcoin Network Decentralization Illustration"
@@ -263,7 +263,7 @@ export default function LearnPage() {
                     <p className="text-muted-foreground mb-4">
                       With a fixed supply cap of 21 million bitcoins, it's designed to be scarce and deflationary by nature - no government or entity can print more. This predictable supply makes Bitcoin fundamentally different from traditional currencies that can be inflated at will.
                     </p>
-                    <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
+                    <div className="image-container-stable w-full aspect-video min-h-[150px] rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
                       <Image
                         src="/images/bitcoin_currency_illustration.png"
                         alt="Bitcoin Currency Scarcity Illustration"
@@ -368,7 +368,7 @@ export default function LearnPage() {
                         <p className="text-muted-foreground mb-4">
                           <Link href="/glossary/mining" className="text-primary hover:underline">Mining</Link> is the process of adding new transactions to the blockchain. Miners compete to solve complex mathematical puzzles, and the winner gets to add the next <Link href="/glossary/block" className="text-primary hover:underline">block</Link> of transactions.
                         </p>
-                        <div className="relative w-full aspect-[21/9] rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
+                        <div className="image-container-stable w-full aspect-[21/9] min-h-[150px] rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
                           <Image
                             src="/images/mining_security_illustration.png"
                             alt="Bitcoin Mining and Security Illustration"
