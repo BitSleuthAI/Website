@@ -59,7 +59,7 @@ Copilot agents can reference this workflow to:
 - Clear cache: `rm -rf .next` and rebuild
 
 **Server Start Failures:**
-- Ensure port 9002 is available
+- Ensure port 3000 is available
 - Check for build errors in the previous step
 - Verify all dependencies are installed correctly
 

@@ -24,13 +24,13 @@ Use this skill when you need to:
 ## Prerequisites
 
 - Node.js 18+ installed (20+ recommended)
-- BitSleuth website running locally on port 9002
+- BitSleuth website running locally on port 3000
 - Playwright will be installed automatically if not present
 
 ### Starting the Development Server
 ```bash
 npm run dev
-# Server runs on http://localhost:9002
+# Server runs on http://localhost:3000
 ```
 
 ## Core Capabilities
@@ -85,19 +85,19 @@ npm run dev
 ### Example 1: Basic Navigation Test
 ```javascript
 // Navigate to homepage and verify title
-await page.goto('http://localhost:9002');
+await page.goto('http://localhost:3000');
 const title = await page.title();
 console.log('Page title:', title);
 
 // Navigate to analyzer page
-await page.goto('http://localhost:9002/analyzer');
+await page.goto('http://localhost:3000/analyzer');
 await page.waitForSelector('h1');
 ```
 
 ### Example 2: Theme Toggle Test
 ```javascript
 // Test dark/light theme switching
-await page.goto('http://localhost:9002');
+await page.goto('http://localhost:3000');
 
 // Click theme toggle button
 await page.click('[aria-label*="Toggle theme"]');
@@ -113,7 +113,7 @@ await page.screenshot({ path: 'dark-theme.png', fullPage: true });
 ### Example 3: Cookie Consent Test
 ```javascript
 // Test cookie consent banner
-await page.goto('http://localhost:9002');
+await page.goto('http://localhost:3000');
 
 // Wait for cookie consent banner to appear
 await page.waitForSelector('[role="dialog"]', { timeout: 3000 });
@@ -129,7 +129,7 @@ console.log('Banner still visible:', bannerVisible);
 ### Example 4: Glossary Navigation Test
 ```javascript
 // Navigate to glossary and verify terms load
-await page.goto('http://localhost:9002/glossary');
+await page.goto('http://localhost:3000/glossary');
 await page.waitForSelector('h1');
 
 // Click on a glossary term
@@ -145,7 +145,7 @@ console.log('Term heading:', heading);
 ```javascript
 // Test mobile viewport
 await page.setViewportSize({ width: 375, height: 667 });
-await page.goto('http://localhost:9002');
+await page.goto('http://localhost:3000');
 await page.screenshot({ path: 'mobile-view.png' });
 
 // Test tablet viewport
@@ -160,7 +160,7 @@ await page.screenshot({ path: 'desktop-view.png' });
 ### Example 6: Form Submission Test (Waitlist)
 ```javascript
 // Navigate to a page with waitlist signup
-await page.goto('http://localhost:9002/analyzer');
+await page.goto('http://localhost:3000/analyzer');
 
 // Fill out waitlist form
 await page.fill('input[type="email"]', 'test@example.com');
@@ -172,7 +172,7 @@ await page.waitForSelector('.success-message', { timeout: 5000 });
 
 ## Guidelines
 
-1. **Always verify the app is running** - Check that http://localhost:9002 is accessible before running tests
+1. **Always verify the app is running** - Check that http://localhost:3000 is accessible before running tests
 2. **Use explicit waits** - Wait for elements or navigation to complete before interacting
 3. **Capture screenshots on failure** - Take screenshots to help debug issues
 4. **Clean up resources** - Always close the browser when done
@@ -187,7 +187,7 @@ await page.waitForSelector('.success-message', { timeout: 5000 });
 
 ### Pattern: Wait for Page Load
 ```javascript
-await page.goto('http://localhost:9002/analyzer');
+await page.goto('http://localhost:3000/analyzer');
 await page.waitForLoadState('networkidle');
 ```
 
@@ -199,7 +199,7 @@ const exists = await page.locator('h1').count() > 0;
 ### Pattern: Get Console Logs
 ```javascript
 page.on('console', msg => console.log('Browser log:', msg.text()));
-await page.goto('http://localhost:9002');
+await page.goto('http://localhost:3000');
 ```
 
 ### Pattern: Handle Errors with Screenshots

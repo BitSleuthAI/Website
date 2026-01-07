@@ -477,7 +477,7 @@ git clone https://github.com/BitSleuthAI/Website.git
 cd Website
 npm install
 
-# Start development server (port 9002)
+# Start development server (port 3000)
 npm run dev
 
 # Available scripts
@@ -490,9 +490,9 @@ npm run ci           # Full CI pipeline
 ```
 
 #### Development Server
-- **Port:** 9002 (configured to avoid conflicts)
+- **Port:** 3000 (default Next.js port)
 - **Hot Reload:** Enabled with Turbopack
-- **URL:** http://localhost:9002
+- **URL:** http://localhost:3000
 
 ### Build & Deployment
 
