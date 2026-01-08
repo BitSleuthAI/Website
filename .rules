@@ -59,6 +59,9 @@ policies:
     match:
       any:
         - regex: .+  # any content triggers
+    exclude_if:
+      any:
+        - regex: \.env\.example$  # Allow .env.example files (templates)
     remediation:
       guidance: |
         Add these to .gitignore, keep local only (e.g., .env.local), and source values from a vault/CI store.
