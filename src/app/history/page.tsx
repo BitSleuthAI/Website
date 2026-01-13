@@ -974,11 +974,11 @@ export default function HistoryPage() {
                   Major Market <span className="text-primary">Cycles</span>
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                   Bitcoin has experienced four distinct 4-year cycles, often correlated with the halving events.
+                  Bitcoin has experienced four distinct 4-year cycles, often correlated with the halving events.
                 </p>
               </div>
 
-               <div className="grid lg:grid-cols-2 gap-8">
+               <div className="grid lg:grid-cols-2 gap-12">
                  <Card className="bg-card border-none shadow-xl hover:shadow-2xl transition-all">
                     <CardContent className="p-8">
                        <div className="flex items-start gap-4">
@@ -1191,7 +1191,6 @@ export default function HistoryPage() {
                           </p>
                         </div>
                       </div>
-
                     </div>
                   </CardContent>
                 </Card>
