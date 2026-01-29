@@ -305,10 +305,7 @@
     contain: layout style;
   }
 
-  /* Add containment to main sections */
-  section {
-    contain: layout;
-  }
+  /* Section containment removed - was causing desktop scrolling issues */
 
   /* Prevent layout shifts from animations */
   .animate-in {
