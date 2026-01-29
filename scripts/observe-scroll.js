@@ -4,6 +4,10 @@ const { chromium, devices } = require('playwright');
 (async () => {
   const url = 'http://localhost:3000';
 
+  // Ensure screenshots directory next to this script
+  const screenshotsDir = path.join(__dirname, 'screenshots');
+  fs.mkdirSync(screenshotsDir, { recursive: true });
+  
   const browser = await chromium.launch();
   try {
     const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
