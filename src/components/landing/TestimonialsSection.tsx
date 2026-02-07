@@ -12,21 +12,24 @@ const testimonials = [
     content: "Finally, a tool that makes UTXO management intuitive. The visualization features helped me consolidate my stack without compromising privacy.",
     author: "Alex M.",
     role: "Privacy Advocate",
-    initials: "AM"
+    initials: "AM",
+    avatarBg: "bg-orange-100 text-orange-700"
   },
   {
     id: 2,
     content: "The wallet analyzer is a game changer for my investigations. Being able to trace fund flows visually saves me hours of manual work.",
     author: "Sarah K.",
     role: "Blockchain Analyst",
-    initials: "SK"
+    initials: "SK",
+    avatarBg: "bg-sky-100 text-sky-700"
   },
   {
     id: 3,
     content: "BitSleuth strikes the perfect balance between power and usability. It's the first tool I recommend to newcomers who want to understand their on-chain footprint.",
     author: "David R.",
     role: "Bitcoin Educator",
-    initials: "DR"
+    initials: "DR",
+    avatarBg: "bg-emerald-100 text-emerald-700"
   }
 ];
 
@@ -70,7 +73,7 @@ export function TestimonialsSection() {
                 </p>
                 <div className="flex items-center gap-4 mt-auto pt-6 border-t border-gray-100">
                   <Avatar className="h-12 w-12 border-2 border-white shadow-none">
-                    <AvatarFallback className="bg-gray-100 text-gray-600 font-bold">
+                    <AvatarFallback className={`${testimonial.avatarBg} font-bold`}>
                       {testimonial.initials}
                     </AvatarFallback>
                   </Avatar>
