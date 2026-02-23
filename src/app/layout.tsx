@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 import { headers } from "next/headers";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import type { ReactNode } from "react";
 
 import "./globals.css";
@@ -10,12 +10,11 @@ import { Providers } from "@/components/Providers";
 // This supports analytics in demo/pre-prod contexts where the env var may be absent.
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-RPS0XSGWJ5";
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: "./fonts/InterVariable.woff2",
   variable: "--font-inter",
-  weight: ["400", "500", "600", "700"],
-  display: "swap", // Prevent layout shift during font load
-  preload: true, // Preload the font
+  weight: "100 900",
+  display: "swap",
 });
 
 export const cspNonce = async () => {
