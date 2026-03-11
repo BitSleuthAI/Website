@@ -68,6 +68,15 @@ export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
             >
               Company Information
             </Link>
+            <a
+              href="https://www.pingara.io/status/bitsleuth"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Status (opens in new tab)"
+              className="text-xs sm:text-sm text-muted-foreground hover:text-primary font-medium transition-colors duration-200 hover:underline underline-offset-4"
+            >
+              Status
+            </a>
           </nav>
         </div>
       </div>
