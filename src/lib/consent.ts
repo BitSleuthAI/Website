@@ -1,6 +1,10 @@
-'use server';
-
-import { cookies } from 'next/headers';
+// src/lib/consent.ts
+// Client-side consent preferences stored in localStorage.
+//
+// Consent is intentionally stored client-side (not in an httpOnly cookie) so that
+// the analytics gate can be evaluated in the browser without an origin request.
+// This keeps every page statically cacheable at the CDN edge. Consent is a user
+// preference, not a security secret, so localStorage is the appropriate store.
 
 export interface ConsentPreferences {
   necessary: boolean;
@@ -9,57 +13,68 @@ export interface ConsentPreferences {
   performance: boolean;
 }
 
-const CONSENT_COOKIE_NAME = 'cookie_consent';
-const CONSENT_COOKIE_MAX_AGE = 365 * 24 * 60 * 60; // 1 year in seconds
+const CONSENT_STORAGE_KEY = 'cookie_consent';
 
 /**
- * Sets the consent cookie with HTTP-only, Secure, and SameSite=Strict attributes
- * This provides tamper-resistant storage that cannot be modified by client-side JavaScript
+ * Reads the stored consent preferences, or null if the user has not chosen yet.
  */
-export async function setConsentCookie(consent: ConsentPreferences): Promise<void> {
-  const cookieStore = await cookies();
-  
-  cookieStore.set(CONSENT_COOKIE_NAME, JSON.stringify(consent), {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
-    maxAge: CONSENT_COOKIE_MAX_AGE,
-    path: '/',
-  });
-}
-
-/**
- * Gets the consent preferences from the HTTP-only cookie
- * Returns null if no consent has been given yet
- */
-export async function getConsentCookie(): Promise<ConsentPreferences | null> {
-  const cookieStore = await cookies();
-  const consentCookie = cookieStore.get(CONSENT_COOKIE_NAME);
-  
-  if (!consentCookie?.value) {
+export function getConsentPreferences(): ConsentPreferences | null {
+  if (typeof window === 'undefined') {
     return null;
   }
-  
+
   try {
-    return JSON.parse(consentCookie.value) as ConsentPreferences;
+    const raw = window.localStorage.getItem(CONSENT_STORAGE_KEY);
+    if (!raw) {
+      return null;
+    }
+    return JSON.parse(raw) as ConsentPreferences;
   } catch {
     return null;
   }
 }
 
 /**
- * Checks if analytics consent has been granted
- * This is the tamper-resistant signal used to gate analytics
+ * Persists the consent preferences to localStorage.
  */
-export async function hasAnalyticsConsent(): Promise<boolean> {
-  const consent = await getConsentCookie();
-  return consent?.analytics === true;
+export function setConsentPreferences(consent: ConsentPreferences): void {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    window.localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(consent));
+  } catch {
+    // Storage may be unavailable (private mode, quota). Fail silently.
+  }
 }
 
 /**
- * Removes the consent cookie
+ * Returns true if the user has made any consent choice.
  */
-export async function clearConsentCookie(): Promise<void> {
-  const cookieStore = await cookies();
-  cookieStore.delete(CONSENT_COOKIE_NAME);
+export function hasConsent(): boolean {
+  return getConsentPreferences() !== null;
+}
+
+/**
+ * Returns true only if the user has explicitly granted analytics consent.
+ * This is the signal used to gate the analytics scripts.
+ */
+export function hasAnalyticsConsent(): boolean {
+  return getConsentPreferences()?.analytics === true;
+}
+
+/**
+ * Removes the stored consent preferences.
+ */
+export function clearConsentPreferences(): void {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    window.localStorage.removeItem(CONSENT_STORAGE_KEY);
+  } catch {
+    // Fail silently.
+  }
 }

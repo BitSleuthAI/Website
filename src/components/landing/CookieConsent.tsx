@@ -6,50 +6,26 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '../ui/card';
 import { CookieCustomizationModal } from './CookieCustomizationModal';
-import { setConsentCookie } from '@/lib/consent';
-
-interface ConsentPreferences {
-  necessary: boolean;
-  functional: boolean;
-  analytics: boolean;
-  performance: boolean;
-}
+import { hasConsent, setConsentPreferences, type ConsentPreferences } from '@/lib/consent';
 
 export function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
   const [isCustomizeModalOpen, setIsCustomizeModalOpen] = useState(false);
 
   useEffect(() => {
-    // Check if consent cookie exists by trying to read it
-    // If no cookie exists, show the banner
-    const checkConsent = async () => {
-      try {
-        const response = await fetch('/api/consent/check');
-        const data = await response.json();
-        if (!data.hasConsent) {
-          setIsVisible(true);
-        }
-      } catch {
-        // If API fails, show banner to be safe
-        setIsVisible(true);
-      }
-    };
-    
-    requestAnimationFrame(() => {
-      checkConsent();
-    });
+    // Show the banner only if the user has not made a consent choice yet.
+    // Read happens client-side from localStorage (no origin request).
+    if (!hasConsent()) {
+      setIsVisible(true);
+    }
   }, []);
 
-  const setConsent = async (consent: ConsentPreferences) => {
-    try {
-      await setConsentCookie(consent);
-      setIsVisible(false);
-      setIsCustomizeModalOpen(false);
-      // Reload to apply analytics script changes
-      window.location.reload();
-    } catch (error) {
-      console.error('Failed to set consent:', error);
-    }
+  const setConsent = (consent: ConsentPreferences) => {
+    setConsentPreferences(consent);
+    setIsVisible(false);
+    setIsCustomizeModalOpen(false);
+    // Reload to apply analytics script changes
+    window.location.reload();
   };
 
   const handleAccept = () => {

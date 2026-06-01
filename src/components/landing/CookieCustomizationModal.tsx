@@ -19,13 +19,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { ScrollArea } from '../ui/scroll-area';
-
-interface ConsentPreferences {
-  necessary: boolean;
-  functional: boolean;
-  analytics: boolean;
-  performance: boolean;
-}
+import type { ConsentPreferences } from '@/lib/consent';
 
 interface CookieCustomizationModalProps {
   isOpen: boolean;

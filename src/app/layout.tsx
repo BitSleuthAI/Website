@@ -1,10 +1,13 @@
 // src/app/layout.tsx
-import { headers } from "next/headers";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
 
 import "./globals.css";
 import { Providers } from "@/components/Providers";
+
+// Revalidate every hour so statically generated pages are served with a
+// cacheable `s-maxage` header that Firebase App Hosting's CDN can cache at the edge.
+export const revalidate = 3600;
 
 // Intentionally keep a hard-coded GA fallback ID for environments without env configuration.
 // This supports analytics in demo/pre-prod contexts where the env var may be absent.
@@ -17,18 +20,11 @@ const inter = localFont({
   display: "swap",
 });
 
-export const cspNonce = async () => {
-  const nonceHeader = (await headers()).get("x-nonce");
-  return nonceHeader ?? undefined;
-};
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const nonce = await cspNonce();
-
   return (
     <html lang="en" className="!scroll-smooth" suppressHydrationWarning>
       <head>
@@ -89,7 +85,6 @@ export default async function RootLayout({
 
         {/* Structured Data */}
         <script
-          nonce={nonce ?? undefined}
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -126,7 +121,7 @@ export default async function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-body antialiased`}>
-        <Providers gaMeasurementId={GA_MEASUREMENT_ID} nonce={nonce}>
+        <Providers gaMeasurementId={GA_MEASUREMENT_ID}>
           {children}
         </Providers>
       </body>
