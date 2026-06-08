@@ -1066,11 +1066,9 @@ A: If you're adding new utility functions or business logic, yes. UI components 
 
 ## 📄 License
 
-**PROPRIETARY SOFTWARE** - Copyright (c) 2025 BitSleuth. All rights reserved.
+Copyright (c) 2025 BitSleuth. Licensed under the [GNU Affero General Public License v3.0](./LICENSE).
 
-This software is the proprietary and confidential information of BitSleuth. 
-It is provided solely for use by BitSleuth and its authorized personnel. 
-This software is not intended for public distribution or open source use.
+You are free to use, study, modify, and distribute this software under the terms of the AGPL-3.0. Any modified version deployed over a network must also be made available under the same license.
 
 For licensing inquiries, contact: legal@bitsleuth.ai
 

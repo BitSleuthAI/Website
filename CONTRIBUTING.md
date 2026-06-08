@@ -316,7 +316,7 @@ If you need help:
 
 ## 📜 License
 
-By contributing to BitSleuth Website, you agree that your contributions will be subject to the project's proprietary license. See `LICENSE` file for details.
+By contributing to BitSleuth Website, you agree that your contributions will be licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). See the `LICENSE` file for details.
 
 ---
 
