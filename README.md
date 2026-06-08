@@ -10,6 +10,8 @@
 
 BitSleuth is a comprehensive Next.js 16.1.1 website that serves as the primary marketing and educational learning hub for Bitcoin analysis tools. The platform includes product landing pages for a Bitcoin wallet analyzer and Bitcoin wallet app, as well as an extensive educational glossary, SEO optimization, and privacy-compliant analytics.
 
+![BitSleuth](public/1200x630.png)
+
 - **🌐 Production:** [https://www.bitsleuth.ai](https://www.bitsleuth.ai)
 
 ## ✨ Key Features
