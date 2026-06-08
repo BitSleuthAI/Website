@@ -77,24 +77,6 @@ export function Footer({ onTermsClick, onPrivacyClick }: FooterProps) {
             >
               Status
             </a>
-            <a
-              href="https://github.com/BitSleuthAI/Analyzer"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Wallet Analyzer source code on GitHub (opens in new tab)"
-              className="text-xs sm:text-sm text-muted-foreground hover:text-primary font-medium transition-colors duration-200 hover:underline underline-offset-4"
-            >
-              Analyzer (GitHub)
-            </a>
-            <a
-              href="https://github.com/BitSleuthAI/Wallet"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Privacy Wallet source code on GitHub (opens in new tab)"
-              className="text-xs sm:text-sm text-muted-foreground hover:text-primary font-medium transition-colors duration-200 hover:underline underline-offset-4"
-            >
-              Wallet (GitHub)
-            </a>
           </nav>
         </div>
       </div>
