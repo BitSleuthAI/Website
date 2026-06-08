@@ -10,7 +10,16 @@ export function WalletAboutSection() {
       <div className="container max-w-3xl mx-auto text-center relative z-10">
         <h2 className="text-3xl font-bold mb-6 text-foreground">About <span className="text-primary">BitSleuth Wallet</span></h2>
         <p className="text-lg text-muted-foreground font-normal">
-          The BitSleuth Wallet is built for privacy-conscious Bitcoiners. We believe in self-custody and minimizing your on-chain footprint. Our wallet is non-custodial, requires no personal information, and is designed to help you transact with greater privacy. Built by developers who believe in financial sovereignty.
+          The BitSleuth Wallet is built for privacy-conscious Bitcoiners. We believe in self-custody and minimizing your on-chain footprint. Our wallet is non-custodial, requires no personal information, and is designed to help you transact with greater privacy. Built by developers who believe in financial sovereignty. The Privacy Wallet is fully open source — review or contribute to the code on{" "}
+          <a
+            href="https://github.com/BitSleuthAI/Wallet"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-medium transition-colors duration-200 hover:underline underline-offset-4"
+          >
+            GitHub
+          </a>
+          .
         </p>
         <div className="flex flex-wrap justify-center gap-3 pt-6">
           <ValueBadge icon={Bitcoin} text="Bitcoin Only" variant="primary" />

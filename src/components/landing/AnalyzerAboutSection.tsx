@@ -35,7 +35,16 @@ export function AnalyzerAboutSection() {
               The BitSleuth Analyzer is built for Bitcoiners who want real transparency. Whether you're tracking address reuse, auditing wallets for OPSEC risks, or exploring the chain, our AI-powered tools help you make sense of the blockchain.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Built by privacy-focused developers who believe in open access to Bitcoin data and the sovereignty of the individual.
+              Built by privacy-focused developers who believe in open access to Bitcoin data and the sovereignty of the individual. The Wallet Analyzer is fully open source — review or contribute to the code on{" "}
+              <a
+                href="https://github.com/BitSleuthAI/Analyzer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary font-medium transition-colors duration-200 hover:underline underline-offset-4"
+              >
+                GitHub
+              </a>
+              .
             </p>
             <div className="pt-4 flex flex-wrap justify-center lg:justify-start gap-3">
               <ValueBadge icon={Bitcoin} text="Bitcoin Only" variant="primary" />
