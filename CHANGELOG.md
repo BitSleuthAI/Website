@@ -18,6 +18,92 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.1] - 2026-06-12
+
+> **Note:** Starting with this release, the changelog version numbers align with git tags and GitHub releases (the previous `0.2.0` entry corresponds to the `v2.0.0` tag/release).
+
+### 🎉 Highlights
+
+#### 🌍 Open Source Release
+- **Added LICENSE file** and resolved open source licensing inconsistencies across the repository
+- Added `SECURITY.md` adapted for the Website repository
+- Added GitHub issue and pull request templates
+- README updated with badges, corrected Node version requirement, and BitSleuth branding image
+- Product About sections now mention open source and link to the Analyzer and Wallet GitHub repositories (links moved from footer to product pages)
+
+### ✨ Features Added
+
+#### 📚 Content & Pages
+- Added new glossary terms to the glossary page
+- Added visual diagrams to glossary pages for key concepts
+- Expanded Bitcoin history page with future outlook and innovations sections
+- Added quick navigation cards on the Learn page for key topics (How It Works, History, Glossary) with new icons
+- Added "About BitSleuth" card to the company information page
+- Added Status link in footer pointing to the BitSleuth status page
+
+#### 🎨 UI/UX Improvements
+- Visual refresh of landing page sections with new card designs and simplified content presentation
+- Enhanced button, card, and logo hover effects and shadows
+- Added color to testimonial profile initials avatars
+- Reduced vertical padding across landing, learn, and history page sections for tighter layouts
+- Consistent header height across pages and balanced footer section heights
+- Added `BackgroundBeams` to all sections site-wide for consistent visual flow
+- Added motion-reduce accessibility classes and other accessibility improvements
+
+### 🛡️ Security Enhancements
+
+- **Hardened Content Security Policy**:
+  - Nonce-based script loading with Edge Runtime compatible crypto API
+  - Removed `unsafe-inline` from `style-src`
+  - Added `object-src 'none'` and `base-uri 'self'` directives
+- **Bitcoin address validation** utility with comprehensive test suite (`src/lib/bitcoin-validation.ts`)
+- Hardened consent storage with HTTP-only cookies and server-side validation
+- Added URL validation in the Header component
+- Fixed unbounded growth in rate limiter slug tracking array
+- Added explicit permissions to GitHub Actions workflows (resolved code scanning alert)
+
+### 🐛 Bug Fixes
+
+- Fixed dropdown menus and modals not responding to clicks (z-index stacking context, `onOpenChange` signature, missing `"use client"` directive)
+- Fixed double scrollbars on modals and persistent horizontal scrollbar
+- Fixed desktop page scrolling blocked by `contain: layout` on sections
+- Fixed image layout shift on the Learn page and hero sections (stable image containers, `sizes` prop, `fetchPriority` and preload)
+- Fixed build failure by switching to a local Inter font
+- Fixed `BackgroundBeams` intercepting clicks (`pointer-events-none`)
+- Fixed confusing arrow rotation behavior in dropdown buttons
+- Removed `console.log` statements from the homepage
+- Downgraded Tailwind CSS v4 back to stable v3 to resolve build issues
+
+### ⚡ Performance
+
+- Enabled CDN edge caching and removed per-pageview origin requests
+- Optimized regex usage, extracted constants, and improved caching patterns in structured data utilities
+
+### 🔧 Technical Improvements
+
+#### 🚀 Dependency Updates
+- **Next.js** → 16.2.x
+- **React** → 19.2.4
+- **lucide-react** → 1.x
+- **react-day-picker** → 10.x
+- **Vitest** → 4.1.x
+- ~90 dependency bumps via Dependabot, including security patches (minimatch, brace-expansion, postcss, and others)
+
+#### 🧪 Testing Infrastructure
+- Added Playwright-based theme toggle tests with robust wait conditions
+- Stabilized Vitest configuration (path aliases, e2e test exclusion patterns)
+- Added Bitcoin address validation test suite
+
+### 📚 Documentation Updates
+
+- **NEW: `CLAUDE.md`** - comprehensive guide for AI coding assistants
+- README revised for clarity, accurate versions, and developer onboarding
+- Added `.env.example` file and removed deprecated Google Sheets environment variables
+- Added dependency update plan and root folder cleanup documentation
+- Enhanced Dependabot configuration (grouped updates, increased open PR limit)
+
+---
+
 ## [0.2.0] - 2025-12-17
 
 ### 🎉 Major Updates
