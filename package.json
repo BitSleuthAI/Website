@@ -10,7 +10,7 @@
   "private": true,
   "packageManager": "npm@11.7.0",
   "engines": {
-    "node": ">=20.9.0"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "next dev --turbopack -p 3000",
@@ -89,7 +89,7 @@
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.5.0",
     "baseline-browser-mapping": "^2.9.19",
-    "eslint": "^10.4.1",
+    "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.7",
     "playwright": "^1.58.0",
     "postcss": "^8",

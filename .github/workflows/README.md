@@ -34,7 +34,7 @@ Run the workflow manually:
 ### What the Workflow Does
 
 1. **Checkout** - Clones the repository
-2. **Setup Node.js** - Installs Node.js 20 with npm caching
+2. **Setup Node.js** - Installs Node.js 22 with npm caching
 3. **Install dependencies** - Runs `npm ci` for clean install
 4. **Type check** - Validates TypeScript types (non-blocking)
 5. **Lint** - Runs ESLint checks (non-blocking)
