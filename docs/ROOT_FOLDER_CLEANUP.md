@@ -15,7 +15,7 @@ This document summarizes the cleanup and review of files in the root directory o
 **Purpose:** Google Project IDX cloud-based development environment configuration
 
 **Contents:**
-- `dev.nix` - Nix configuration for the development environment (Node.js 20, Java)
+- `dev.nix` - Nix configuration for the development environment (Node.js 22, Java)
 - `icon.png` - Workspace icon for Project IDX
 
 **Decision:** Added to `.gitignore`

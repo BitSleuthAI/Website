@@ -16,7 +16,7 @@
 - **Framework:** Next.js 16.0.10 (App Router)
 - **Language:** TypeScript 5.9.3 (strict mode enabled)
 - **Runtime:** React 19.2.0
-- **Node.js:** 20.9+ (required by Next.js 16)
+- **Node.js:** 22.x (LTS — Node 20 is end-of-life)
 
 ### UI & Styling
 - **CSS Framework:** Tailwind CSS 3.4.18
