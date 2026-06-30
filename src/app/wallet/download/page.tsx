@@ -80,14 +80,14 @@ export default function DownloadPage() {
 
             <main className="flex-1 flex flex-col items-center justify-center relative overflow-hidden min-h-[80vh]">
                 {/* Background Styles matching Wallet Page */}
-                <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
+                <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background/50 to-background z-0" />
                 <BackgroundBeams intensity="subtle" className="opacity-30" />
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
                     <div className="space-y-6">
-                        <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl xl:text-6xl/none text-foreground drop-shadow-sm">
+                        <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl xl:text-6xl/none text-foreground drop-shadow-xs">
                             Download <br className="hidden sm:block" />
-                            <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+                            <span className="text-primary bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/80">
                                 BitSleuth Wallet
                             </span>
                         </h1>

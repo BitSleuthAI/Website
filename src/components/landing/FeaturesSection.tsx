@@ -75,7 +75,7 @@ export function FeaturesSection() {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="p-6 pt-2 flex-grow">
+              <CardContent className="p-6 pt-2 grow">
                 <CardTitle className="font-bold text-xl mb-2 text-foreground">{feature.title}</CardTitle>
                 <CardDescription className="font-normal text-muted-foreground">{feature.description}</CardDescription>
               </CardContent>

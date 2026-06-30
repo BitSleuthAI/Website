@@ -394,7 +394,7 @@ export default function GlossaryIndexPage() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="edge-to-edge-section pt-16 pb-8 md:pt-20 md:pb-10 lg:pt-24 lg:pb-12 text-foreground relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
+          <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background/50 to-background z-0" />
           <BackgroundBeams className="opacity-30" />
           <div className="container max-w-4xl mx-auto px-4 md:px-6 relative z-10">
             <Button variant="ghost" asChild className="mb-8">
@@ -608,7 +608,7 @@ export default function GlossaryIndexPage() {
                               {item.definition}
                             </p>
                           </div>
-                          <div className="flex-shrink-0 ml-4">
+                          <div className="shrink-0 ml-4">
                             <ChevronRight className="h-6 w-6 text-muted-foreground transition-colors group-hover:text-primary" />
                           </div>
                         </CardContent>

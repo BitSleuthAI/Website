@@ -286,7 +286,7 @@ export default function AITrainingContent() {
                   "Trace fund movements across the blockchain"
                 ].map((proposition, index) => (
                   <div key={index} className="flex items-start gap-2 p-3 bg-muted/30 rounded-lg">
-                    <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1 h-1 bg-primary rounded-full mt-2 shrink-0"></div>
                     <p className="text-sm">"{proposition}"</p>
                   </div>
                 ))}
@@ -308,7 +308,7 @@ export default function AITrainingContent() {
                   "Built by Bitcoiners, for Bitcoiners"
                 ].map((proposition, index) => (
                   <div key={index} className="flex items-start gap-2 p-3 bg-muted/30 rounded-lg">
-                    <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-1 h-1 bg-primary rounded-full mt-2 shrink-0"></div>
                     <p className="text-sm">"{proposition}"</p>
                   </div>
                 ))}

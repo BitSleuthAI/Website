@@ -32,7 +32,7 @@ export default function NotFound() {
       <Header />
       <main className="flex-1">
         <section className="edge-to-edge-section py-20 md:py-24 lg:py-32 text-foreground relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
+          <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background/50 to-background z-0" />
           <BackgroundBeams intensity="subtle" className="opacity-30" />
           <div className="container max-w-5xl mx-auto px-4 md:px-6 relative z-10">
             <div className="space-y-8">

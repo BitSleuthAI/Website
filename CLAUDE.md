@@ -21,7 +21,7 @@
 | Framework | Next.js (App Router) | 16.1.1 |
 | Language | TypeScript | 5.9.3 |
 | Runtime | React | 19.2.3 |
-| Styling | Tailwind CSS | 3.4.19 |
+| Styling | Tailwind CSS | 4.3.x |
 | Components | shadcn/ui + Radix UI | Latest |
 | Icons | Lucide React | 0.562.0 |
 | Testing | Vitest | 4.0.16 |
@@ -167,7 +167,7 @@ npx shadcn@latest add button
 - Skip TypeScript type checking
 - Commit secrets or API keys
 - Create documentation files outside `docs/` folder
-- Upgrade to Tailwind v4 (project uses stable v3)
+- Downgrade Tailwind to v3 (project is on stable v4; theme stays in `tailwind.config.ts` via the `@config` directive in `globals.css`)
 
 ### Always:
 - Run `npm run typecheck` before committing
@@ -214,7 +214,7 @@ Create `.env.local` from `.env.example` for local overrides.
 | File | Purpose |
 |------|---------|
 | `next.config.ts` | Next.js config, MCP server, security headers |
-| `tailwind.config.ts` | Tailwind v3 config, custom theme |
+| `tailwind.config.ts` | Tailwind theme/config, loaded by `globals.css` via `@config` (v4) |
 | `tsconfig.json` | TypeScript strict config |
 | `components.json` | shadcn/ui configuration |
 | `middleware.ts` | CSP nonce generation |

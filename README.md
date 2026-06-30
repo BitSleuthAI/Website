@@ -1003,8 +1003,8 @@ A: The project uses strict TypeScript mode. Run `npm run typecheck` to see all e
 **Q: How do I test my changes before deploying?**  
 A: Run `npm run ci` to execute the full test suite (lint + typecheck + test + build). This is what runs in the CI pipeline.
 
-**Q: Can I use Tailwind v4?**  
-A: No, the project uses Tailwind v3.4.x. Do not upgrade to v4 without thorough testing and team approval.
+**Q: Which Tailwind version does the project use?**  
+A: Tailwind CSS v4.3.x. The theme still lives in `tailwind.config.ts`, which is loaded from `src/app/globals.css` via the `@config` directive. PostCSS uses `@tailwindcss/postcss` (autoprefixer is bundled in v4 and no longer a separate dependency).
 
 ### Styling Questions
 

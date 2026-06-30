@@ -96,7 +96,7 @@ export function BackgroundBeams({ className, children, intensity = "medium" }: B
         {randomValues.verticalPositions.map((position, index) => (
           <div
             key={`vertical-${index}`}
-            className="absolute top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-primary/50 to-transparent shadow-none"
+            className="absolute top-0 w-0.5 h-full bg-linear-to-b from-transparent via-primary/50 to-transparent shadow-none"
             style={{
               left: `${position}%`,
               animation: `beam-${(index % 7) + 1} ${randomValues.durations[index]}s ease-in-out infinite`,
@@ -110,7 +110,7 @@ export function BackgroundBeams({ className, children, intensity = "medium" }: B
         {randomValues.horizontalPositions.map((position, index) => (
           <div
             key={`horizontal-${index}`}
-            className="absolute left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent shadow-none shadow-primary/15"
+            className="absolute left-0 w-full h-0.5 bg-linear-to-r from-transparent via-primary/30 to-transparent shadow-none shadow-primary/15"
             style={{
               top: `${position}%`,
               animation: `beam-horizontal-${(index % 3) + 1} ${randomValues.durations[index + 7]}s ease-in-out infinite`,
@@ -125,7 +125,7 @@ export function BackgroundBeams({ className, children, intensity = "medium" }: B
           {randomValues.diagonalRotations.map((rotation, index) => (
             <div
               key={`diagonal-${index}`}
-              className="absolute left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-primary/25 to-transparent shadow-none shadow-primary/15"
+              className="absolute left-0 w-full h-0.5 bg-linear-to-r from-transparent via-primary/25 to-transparent shadow-none shadow-primary/15"
               style={{
                 top: `${20 + index * 20}%`,
                 transform: `rotate(${rotation}deg)`,
@@ -154,7 +154,7 @@ export function BackgroundBeams({ className, children, intensity = "medium" }: B
       </div>
       
       {/* Overlay for better text readability */}
-      <div className={`absolute inset-0 bg-gradient-to-b pointer-events-none ${intensityClasses.overlay}`} />
+      <div className={`absolute inset-0 bg-linear-to-b pointer-events-none ${intensityClasses.overlay}`} />
       
       {/* Content */}
       {children && (

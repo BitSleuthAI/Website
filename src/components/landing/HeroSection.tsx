@@ -51,7 +51,7 @@ export function HeroSection() {
   return (
     <section className="edge-to-edge-section relative overflow-hidden py-12 md:py-16 lg:py-20">
       {/* Background Gradient - Orange from top */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
+      <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background/50 to-background z-0" />
       <BackgroundBeams intensity="subtle" className="opacity-30" />
       <div className="container max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
         <div className="space-y-6">
@@ -62,7 +62,7 @@ export function HeroSection() {
             Visualize transactions, trace flows, and spot OPSEC risks with AI-powered insights. Advanced analytics, visualized insights, and total transparency.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <div className="relative flex-grow">
+            <div className="relative grow">
               <Bitcoin className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 type="text"
@@ -86,7 +86,7 @@ export function HeroSection() {
         </div>
         <div className="relative">
           <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full -z-10"></div>
-          <Card className="shadow-2xl bg-card/80 backdrop-blur-sm border-border/50 overflow-hidden transform hover:scale-105 transition-transform duration-500 shadow-primary/10 hover:border-primary/50">
+          <Card className="shadow-2xl bg-card/80 backdrop-blur-xs border-border/50 overflow-hidden transform hover:scale-105 transition-transform duration-500 shadow-primary/10 hover:border-primary/50">
             <CardContent className="p-0">
               <Image
                 src="/images/dashboard-preview.png"

@@ -78,7 +78,7 @@ export default function LearnPage() {
         <main className="flex-1">
           {/* Hero Section */}
           <section className="edge-to-edge-section pt-12 pb-12 md:pt-16 md:pb-28 text-foreground relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
+            <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background/50 to-background z-0" />
             {/* Top border removed for cleaner look */}
             <BackgroundBeams intensity="subtle" className="opacity-30" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
@@ -108,7 +108,7 @@ export default function LearnPage() {
                     </a>
                   </Button>
                 </div>
-                <div className="image-container-stable w-full max-w-4xl mx-auto mt-12 aspect-[21/9] min-h-[200px] rounded-xl overflow-hidden shadow-2xl border border-primary/20">
+                <div className="image-container-stable w-full max-w-4xl mx-auto mt-12 aspect-21/9 min-h-[200px] rounded-xl overflow-hidden shadow-2xl border border-primary/20">
                   <Image
                     src="/images/learn_hero_illustration.png"
                     alt="Bitcoin Education Hero Illustration"
@@ -117,7 +117,7 @@ export default function LearnPage() {
                     className="object-cover object-center"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60" />
                 </div>
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function LearnPage() {
                         />
                       </div>
                       <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">How Bitcoin Works</h3>
-                      <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                      <p className="text-muted-foreground text-sm mb-6 grow">
                         Understand the mechanics behind the decentralized network, mining, transactions, and security.
                       </p>
                       <Button className="w-full mt-auto bg-primary text-primary-foreground hover:bg-primary/90">
@@ -165,7 +165,7 @@ export default function LearnPage() {
                         />
                       </div>
                       <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Bitcoin History</h3>
-                      <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                      <p className="text-muted-foreground text-sm mb-6 grow">
                         Explore the origins of Bitcoin, from Satoshi Nakamoto's whitepaper to key milestones.
                       </p>
                       <Button className="w-full mt-auto bg-primary text-primary-foreground hover:bg-primary/90">
@@ -189,7 +189,7 @@ export default function LearnPage() {
                         />
                       </div>
                       <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">Terminology Glossary</h3>
-                      <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                      <p className="text-muted-foreground text-sm mb-6 grow">
                         Demystify common Bitcoin terms and concepts with our comprehensive glossary.
                       </p>
                       <Button className="w-full mt-auto bg-primary text-primary-foreground hover:bg-primary/90">
@@ -283,7 +283,7 @@ export default function LearnPage() {
               <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <FileText className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <FileText className="h-6 w-6 text-primary mt-1 shrink-0" />
                     <div>
                       <h3 className="text-xl font-bold text-foreground mb-2">The Original Vision</h3>
                       <p className="text-muted-foreground mb-4">
@@ -322,7 +322,7 @@ export default function LearnPage() {
                 {/* Transactions */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Zap className="h-12 w-12 text-primary" />
                       </div>
@@ -359,7 +359,7 @@ export default function LearnPage() {
                 {/* Mining and Consensus */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Shield className="h-12 w-12 text-primary" />
                       </div>
@@ -368,7 +368,7 @@ export default function LearnPage() {
                         <p className="text-muted-foreground mb-4">
                           <Link href="/glossary/mining" className="text-primary hover:underline">Mining</Link> is the process of adding new transactions to the blockchain. Miners compete to solve complex mathematical puzzles, and the winner gets to add the next <Link href="/glossary/block" className="text-primary hover:underline">block</Link> of transactions.
                         </p>
-                        <div className="image-container-stable w-full aspect-[21/9] min-h-[150px] rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
+                        <div className="image-container-stable w-full aspect-21/9 min-h-[150px] rounded-lg overflow-hidden mb-4 border border-primary/10 shadow-lg">
                           <Image
                             src="/images/mining_security_illustration.png"
                             alt="Bitcoin Mining and Security Illustration"
@@ -397,7 +397,7 @@ export default function LearnPage() {
                 {/* Decentralization */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <GitBranch className="h-12 w-12 text-primary" />
                       </div>
@@ -428,7 +428,7 @@ export default function LearnPage() {
                 {/* Cryptography */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Lock className="h-12 w-12 text-primary" />
                       </div>
@@ -476,7 +476,7 @@ export default function LearnPage() {
                 {/* Cryptocurrency Exchanges */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Building2 className="h-12 w-12 text-primary" />
                       </div>
@@ -517,7 +517,7 @@ export default function LearnPage() {
                 {/* Peer-to-Peer and Other Methods */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Users className="h-12 w-12 text-primary" />
                       </div>
@@ -561,7 +561,7 @@ export default function LearnPage() {
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
-                      <Shield className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                      <Shield className="h-6 w-6 text-primary mt-1 shrink-0" />
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-2">Important Considerations</h3>
                         <ul className="space-y-2 text-muted-foreground">
@@ -607,7 +607,7 @@ export default function LearnPage() {
                 {/* Storing Bitcoin */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Wallet className="h-12 w-12 text-primary" />
                       </div>
@@ -655,7 +655,7 @@ export default function LearnPage() {
                 {/* Sending and Receiving */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Send className="h-12 w-12 text-primary" />
                       </div>
@@ -718,7 +718,7 @@ export default function LearnPage() {
                 {/* Spending Bitcoin */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <ShoppingCart className="h-12 w-12 text-primary" />
                       </div>
@@ -762,7 +762,7 @@ export default function LearnPage() {
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4">
-                      <Shield className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                      <Shield className="h-6 w-6 text-primary mt-1 shrink-0" />
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-2">Security Best Practices</h3>
                         <ul className="space-y-2 text-muted-foreground">

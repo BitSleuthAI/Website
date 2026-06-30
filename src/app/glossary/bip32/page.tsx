@@ -46,7 +46,7 @@ export default function BIP32GlossaryPage() {
 
                 <div className="flex flex-col items-center justify-center py-6 mb-2 bg-muted/30 rounded-lg">
                     {/* Level 1 */}
-                    <div className="px-4 py-2 bg-primary/10 border border-primary/20 rounded-md mb-2 shadow-sm">
+                    <div className="px-4 py-2 bg-primary/10 border border-primary/20 rounded-md mb-2 shadow-xs">
                         <span className="font-mono font-bold text-primary">Master Seed</span>
                     </div>
                     
@@ -57,7 +57,7 @@ export default function BIP32GlossaryPage() {
                     {/* Level 2 */}
                     <div className="flex gap-4 md:gap-12">
                          <div className="flex flex-col items-center">
-                            <div className="px-3 py-1.5 bg-card border border-border rounded-md shadow-sm mb-2">
+                            <div className="px-3 py-1.5 bg-card border border-border rounded-md shadow-xs mb-2">
                                 <span className="text-sm font-medium">Account 0</span>
                             </div>
                             <div className="text-muted-foreground mb-1">
@@ -69,7 +69,7 @@ export default function BIP32GlossaryPage() {
                         </div>
 
                         <div className="flex flex-col items-center">
-                            <div className="px-3 py-1.5 bg-card border border-border rounded-md shadow-sm mb-2">
+                            <div className="px-3 py-1.5 bg-card border border-border rounded-md shadow-xs mb-2">
                                 <span className="text-sm font-medium">Account 1</span>
                             </div>
                             <div className="text-muted-foreground mb-1">

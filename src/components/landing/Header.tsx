@@ -48,13 +48,13 @@ const launchButtonMobileClassName =
 
 const logoLinkClassName = cn(
   "group flex items-center justify-center gap-3 px-3 sm:px-3.5 py-2 rounded-full",
-  "hover:opacity-90 transition-all duration-300 bg-background/40 backdrop-blur",
-  "supports-[backdrop-filter]:bg-background/60 border border-border/60",
+  "hover:opacity-90 transition-all duration-300 bg-background/40 backdrop-blur-sm",
+  "supports-backdrop-filter:bg-background/60 border border-border/60",
   "hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10"
 );
 
 const logoImageClassName =
-  "rounded-2xl shadow-sm group-hover:shadow-md group-hover:shadow-primary/20 transition-shadow duration-300";
+  "rounded-2xl shadow-xs group-hover:shadow-md group-hover:shadow-primary/20 transition-shadow duration-300";
 
 const headerProductsButtonClassName = cn(
   "text-[15px] md:text-base font-semibold",
@@ -96,7 +96,7 @@ export function Header({ basePath = '' }: HeaderProps) {
 
   const headerClassName = cn(
     "edge-to-edge-section pt-4 pb-4 flex items-center shadow-md sticky top-0 z-50",
-    "bg-gradient-to-b from-primary/15 via-background/95 to-background/95",
+    "bg-linear-to-b from-primary/15 via-background/95 to-background/95",
     "backdrop-blur-xl border-b border-border/40"
   );
 

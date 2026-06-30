@@ -10,16 +10,16 @@ export function WalletHeroSection() {
   return (
     <section className="edge-to-edge-section relative overflow-hidden py-12 md:py-16 lg:py-20">
       {/* Background Gradient - Orange from top */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
+      <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background/50 to-background z-0" />
       <BackgroundBeams intensity="subtle" className="opacity-30" />
 
       <div className="container max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left side - Text Content */}
           <div className="space-y-8 text-center lg:text-left">
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl xl:text-6xl/none text-foreground drop-shadow-sm">
+            <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl xl:text-6xl/none text-foreground drop-shadow-xs">
               BitSleuth Wallet: <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+              <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/80">
                 Your Bitcoin. Your Keys.
               </span>
             </h1>

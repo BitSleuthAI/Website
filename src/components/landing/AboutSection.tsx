@@ -11,8 +11,8 @@ export function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Side */}
           <div className="relative order-2 lg:order-1">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/5 aspect-[4/3]">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent mix-blend-overlay z-10" />
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/5 aspect-4/3">
+              <div className="absolute inset-0 bg-linear-to-tr from-primary/10 to-transparent mix-blend-overlay z-10" />
               <Image
                 src="/images/about.png"
                 alt="BitSleuth Team Collaboration"
@@ -27,7 +27,7 @@ export function AboutSection() {
 
           {/* Content Side */}
           <div className="space-y-8 order-1 lg:order-2 text-center lg:text-left">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-background border border-border shadow-sm mb-2">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-background border border-border shadow-xs mb-2">
               <Users className="mr-2 h-4 w-4 text-primary" />
               <span className="text-sm font-medium">Our Mission</span>
             </div>

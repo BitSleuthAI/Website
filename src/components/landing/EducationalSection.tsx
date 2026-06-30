@@ -42,13 +42,13 @@ export function EducationalSection() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-transparent" />
             </div>
             
             <CardContent className="h-full flex flex-col justify-end p-8 relative z-10 text-white">
               <div className="mb-4">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-orange-500/20 backdrop-blur-sm">
+                  <div className="p-2 rounded-lg bg-orange-500/20 backdrop-blur-xs">
                     <BookOpen className="h-6 w-6 text-orange-400" />
                   </div>
                   <h3 className="text-3xl font-bold">Learning Hub</h3>
@@ -90,13 +90,13 @@ export function EducationalSection() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-transparent" />
             </div>
 
             <CardContent className="h-full flex flex-col justify-end p-8 relative z-10 text-white">
                <div className="mb-4">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-orange-500/20 backdrop-blur-sm">
+                  <div className="p-2 rounded-lg bg-orange-500/20 backdrop-blur-xs">
                     <Clock className="h-6 w-6 text-orange-400" />
                   </div>
                   <h3 className="text-3xl font-bold">Bitcoin History</h3>

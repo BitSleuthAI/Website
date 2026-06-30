@@ -84,7 +84,7 @@ export default function HistoryPage() {
         <main className="flex-1">
           {/* Hero Section */}
           <section className="edge-to-edge-section py-12 md:py-16 lg:py-20 text-foreground relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
+            <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background/50 to-background z-0" />
             <BackgroundBeams intensity="subtle" className="opacity-30" />
             <div className="container max-w-7xl mx-auto px-4 md:px-6 relative z-10">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -629,7 +629,7 @@ export default function HistoryPage() {
                 {/* Blockchain */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Network className="h-12 w-12 text-primary" />
                       </div>
@@ -670,7 +670,7 @@ export default function HistoryPage() {
                 {/* Proof-of-Work */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Shield className="h-12 w-12 text-primary" />
                       </div>
@@ -710,7 +710,7 @@ export default function HistoryPage() {
                 {/* Digital Signatures */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Lock className="h-12 w-12 text-primary" />
                       </div>
@@ -741,7 +741,7 @@ export default function HistoryPage() {
                 {/* Incentive System */}
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl">
                   <CardContent className="p-8">
-                    <div className="grid md:grid-cols-[auto,1fr] gap-6 items-start">
+                    <div className="grid md:grid-cols-[auto_1fr] gap-6 items-start">
                       <div className="p-4 rounded-xl bg-primary/10">
                         <Coins className="h-12 w-12 text-primary" />
                       </div>

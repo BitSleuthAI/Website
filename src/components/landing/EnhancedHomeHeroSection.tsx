@@ -26,7 +26,7 @@ export function EnhancedHomeHeroSection() {
       {/* Main Hero Section with Cinematic Image */}
       <section className="edge-to-edge-section relative overflow-hidden pt-10 pb-20 md:pt-16 md:pb-36">
         {/* Background Gradient - Orange from top */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-0" />
+        <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background/50 to-background z-0" />
         <BackgroundBeams intensity="subtle" className="opacity-30" />
 
         <div className="container max-w-7xl mx-auto relative z-10">
@@ -34,9 +34,9 @@ export function EnhancedHomeHeroSection() {
             {/* Left side - Text Content */}
             <div className="space-y-8 text-center lg:text-left">
               <div className="space-y-6 motion-safe:animate-in motion-safe:fade-in motion-safe:duration-700 motion-safe:slide-in-from-bottom-4">
-                <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl xl:text-6xl/none text-foreground drop-shadow-sm">
+                <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl xl:text-6xl/none text-foreground drop-shadow-xs">
                   One Brand. <br />
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+                  <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/80">
                     Two Powerful Tools.
                   </span>
                 </h1>
@@ -71,7 +71,7 @@ export function EnhancedHomeHeroSection() {
 
             {/* Right side - Cinematic Image */}
             <div className="relative aspect-square w-full max-w-lg mx-auto lg:max-w-none rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 animate-in fade-in duration-1000 slide-in-from-right-8 bg-background">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay z-10" />
+              <div className="absolute inset-0 bg-linear-to-tr from-primary/20 to-transparent mix-blend-overlay z-10" />
               <Image
                 src="/images/hero.png"
                 alt="Global Bitcoin Culture"

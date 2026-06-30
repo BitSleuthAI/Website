@@ -19,7 +19,7 @@
 - **Node.js:** 24.x (LTS — Node 20 is end-of-life)
 
 ### UI & Styling
-- **CSS Framework:** Tailwind CSS 3.4.18
+- **CSS Framework:** Tailwind CSS 4.3.x (theme in `tailwind.config.ts` via `@config`)
 - **Component Library:** shadcn/ui with Radix UI primitives
 - **Icons:** Lucide React 0.475.0
 - **Carousel:** Embla Carousel 8.6.0

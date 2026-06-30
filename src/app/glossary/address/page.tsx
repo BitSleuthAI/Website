@@ -102,7 +102,7 @@ export default function AddressGlossaryPage() {
                     <Card key={format.title} className="bg-card border-none shadow-xl hover:shadow-2xl shadow-glow">
                         <CardHeader className="flex flex-row items-start gap-4 p-4">
                             {format.icon}
-                            <div className="flex-grow">
+                            <div className="grow">
                                 <CardTitle className="font-bold text-xl">{format.title}</CardTitle>
                                 <CardDescription className="font-medium">{format.prefix}</CardDescription>
                             </div>
@@ -115,7 +115,7 @@ export default function AddressGlossaryPage() {
                 <Card className="bg-card border-none shadow-xl hover:shadow-2xl shadow-glow">
                     <CardHeader className="flex flex-row items-start gap-4 p-4">
                        <Shield className="h-6 w-6 text-primary" />
-                       <div className="flex-grow">
+                       <div className="grow">
                            <CardTitle className="font-bold text-xl">Nested SegWit &amp; Script (P2SH)</CardTitle>
                            <CardDescription className="font-medium">Starts with "3"...</CardDescription>
                         </div>

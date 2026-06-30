@@ -44,7 +44,7 @@ export function PricingSection() {
           {plans.map((plan, idx) => (
             <Card
               key={idx}
-              className={`relative flex flex-col text-left overflow-hidden shadow-xl bg-card border-none hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ${plan.comingSoon ? 'blur-sm pointer-events-none opacity-70' : ''
+              className={`relative flex flex-col text-left overflow-hidden shadow-xl bg-card border-none hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 ${plan.comingSoon ? 'blur-xs pointer-events-none opacity-70' : ''
                 }`}
             >
               {plan.comingSoon && (
@@ -55,8 +55,8 @@ export function PricingSection() {
                 <p className="text-3xl text-primary font-bold">{plan.price}</p>
                 <CardDescription className="font-normal text-gray-400">{plan.desc}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow flex flex-col">
-                <ul className="space-y-2 mb-8 flex-grow font-medium text-muted-foreground">
+              <CardContent className="grow flex flex-col">
+                <ul className="space-y-2 mb-8 grow font-medium text-muted-foreground">
                   {plan.features.map(feature => <li key={feature} className="flex items-center gap-2"><span className="text-primary">✅</span><span>{feature}</span></li>)}
                 </ul>
                 <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-none">

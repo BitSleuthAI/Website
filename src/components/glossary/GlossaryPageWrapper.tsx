@@ -114,8 +114,8 @@ export function GlossaryPageWrapper({ termSlug, children, relatedTerms }: Glossa
     <main className="flex-1 relative bg-background min-h-screen">
       {/* Hero Background Layer - Limited Height */}
       <div className="absolute top-0 inset-x-0 h-[600px] overflow-hidden pointer-events-none z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background z-10" />
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent z-20" />
+        <div className="absolute inset-0 bg-linear-to-b from-primary/10 via-background/50 to-background z-10" />
+        <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-primary/20 to-transparent z-20" />
         <BackgroundBeams className="opacity-30" />
       </div>
 

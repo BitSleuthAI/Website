@@ -54,7 +54,7 @@ export function CookieConsent() {
     <>
       {!isCustomizeModalOpen && (
         <div className="cookie-banner-container md:left-4 md:right-auto md:max-w-md animate-in slide-in-from-bottom-4 duration-300">
-            <Card className="max-w-md p-6 bg-background/80 backdrop-blur-sm border-border/50 shadow-glow">
+            <Card className="max-w-md p-6 bg-background/80 backdrop-blur-xs border-border/50 shadow-glow">
                 <h3 className="text-lg font-bold mb-2">We value your privacy</h3>
                 <p className="text-sm text-muted-foreground mb-4 font-normal">
                     We use cookies to enhance your browsing experience, and analyze our traffic. By clicking
