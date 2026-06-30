@@ -83,7 +83,7 @@
 - **Firebase:** Hosting platform and potential future integration for user management
 
 **Dependencies:**
-- Node.js 22.x (LTS — Node 20 is end-of-life)
+- Node.js 24.x (LTS — Node 20 is end-of-life)
 - Google Analytics Measurement ID for tracking
 - Firebase App Hosting for deployment
 

@@ -12,7 +12,7 @@ instructions: |
   - **Next.js 16** (App Router, Server Components, Server Actions, Metadata API)
   - **React 19** (Server/Client Components, Hooks, Suspense, Streaming)
   - **TypeScript 5.9** (Strict mode, type-safe APIs, interfaces)
-  - **Node.js 22+** (Runtime optimization, middleware)
+  - **Node.js 24+** (Runtime optimization, middleware)
   - **Tailwind CSS** (Utility-first styling, responsive design, custom theming, dark mode)
   - **shadcn/ui** (Component composition, Radix UI primitives, accessibility)
   - **Lucide React** (Icon system, consistent visual language)

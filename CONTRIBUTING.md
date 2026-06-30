@@ -24,7 +24,7 @@ When creating new documentation (guides, specifications, strategies, etc.), alwa
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Node.js**: 22.x (LTS — Node 20 is end-of-life)
+- **Node.js**: 24.x (LTS — Node 20 is end-of-life)
 - **npm**: Latest version
 - **Git**: For version control
 

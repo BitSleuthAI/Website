@@ -64,7 +64,7 @@ npm run ci  # Runs lint + typecheck + test + build
 ## 🚀 Development Workflow
 
 ### Prerequisites
-- **Node.js**: 22.x (LTS — Node 20 is end-of-life)
+- **Node.js**: 24.x (LTS — Node 20 is end-of-life)
 - **npm**: Latest version (11.7.0 configured via `packageManager`)
 - **Git**: For version control
 
@@ -390,7 +390,7 @@ Environment variables for production are managed as **Firebase App Hosting secre
 
 **Deployment Settings:**
 - **Max Instances**: 1 (configured in apphosting.*.yaml)
-- **Runtime**: Node.js 22.x
+- **Runtime**: Node.js 24.x
 - **Build Command**: `npm run build`
 - **Start Command**: `npm run start`
 
@@ -883,7 +883,7 @@ Can't find a solution? Try these steps:
    npm run ci
    
    # Check versions
-   node --version  # Should be 22+
+   node --version  # Should be 24+
    npm --version   # Should be 11.7.0
    
    # Verify dependencies
