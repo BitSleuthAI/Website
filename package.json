@@ -84,19 +84,19 @@
   },
   "devDependencies": {
     "@eslint/compat": "^2.1.0",
-    "@playwright/test": "^1.60.0",
-    "@tailwindcss/language-server": "^0.14.29",
-    "@tailwindcss/postcss": "^4.3.2",
+    "@playwright/test": "^1.62.1",
+    "@tailwindcss/language-server": "^0.16.0",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^25",
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",
-    "baseline-browser-mapping": "^2.9.19",
+    "baseline-browser-mapping": "^2.11.20",
     "eslint": "^9.39.4",
-    "eslint-config-next": "^16.2.7",
+    "eslint-config-next": "^16.3.3",
     "playwright": "^1.58.0",
     "postcss": "^8",
     "tailwindcss": "^4.3.2",
     "typescript": "5.9.3",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.11"
   }
 }
