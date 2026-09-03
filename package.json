@@ -26,7 +26,7 @@
     "tmp": ">=0.2.4",
     "qs": "^6.15.2",
     "yaml": "^2.9.0",
-    "@floating-ui/core": "^1.7.5",
+    "@floating-ui/core": "^1.8.0",
     "@floating-ui/dom": "^1.7.6",
     "@floating-ui/utils": "^0.2.11",
     "@floating-ui/react-dom": "^2.1.8",
